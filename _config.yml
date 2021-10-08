@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Tobias Rebholz"
+title                    : "Tobias R. Rebholz"
 title_separator          : "-"
-name                     : &name "Tobias Rebholz"
+name                     : &name "Tobias R. Rebholz"
 description              : &description "Research Associate in the Social Cognition and Decision Sciences group at the University of Tübingen | PhD Candidate in Statisticaql Modeling in Psychology (SMiP; RTG 2277)"
 url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
