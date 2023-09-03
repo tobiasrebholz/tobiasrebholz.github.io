@@ -1,7 +1,7 @@
 ---
 title: "The advice less taken: The consequences of receiving unexpected advice"
 collection: publications
-permalink: /publication/Rebholz_Hutter(2022)-unexpected_receipt_of_advice
+permalink: /publication/Rebholz_Huetter(2022)-unexpected_receipt_of_advice
 excerpt: 'Although new information technologies and social networks make a wide variety of opinions and advice easily accessible, one can never be sure to get support on a focal judgment task. Nevertheless, participants in traditional advice taking studies are by default informed in advance about the opportunity to revise their judgment in the light of advice. The expectation of advice, however, may affect theweight assigned to it. The present research therefore investigateswhether the advice taking process depends on the expectation of advice in the judge-advisor system(JAS). Five preregistered experiments (total <i>N</i> = 2019) compared low and high levels of advice expectation. While there was no evidence for expectation effects in three experiments with block-wise structure, we obtained support for a positive influence of advice expectation on advice weighting in two experiments implementing sequential advice taking. The paradigmatic disclosure of the full procedure to participants thus constitutes an important boundary condition for the ecological study of advice taking behavior. The results suggest that the conventional JAS procedure fails to capture a class of judgment processeswhere advice is unexpected and therefore weighted less.'
 date: 2022-01-01
 venue: 'Judgment and Decision Making'
