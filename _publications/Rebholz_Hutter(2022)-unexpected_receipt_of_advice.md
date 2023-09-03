@@ -3,7 +3,7 @@ title: "The advice less taken: The consequences of receiving unexpected advice"
 collection: publications
 permalink: /publication/Rebholz_Hutter(2022)-unexpected_receipt_of_advice
 excerpt: 
-date: 2022
+date: 2022-01-01
 venue: 'Judgment and Decision Making'
 paperurl: 'https://doi.org/10.1017/S1930297500008950'
 citation: '<b>Rebholz, T. R.</b>, & Hütter, M. (2022). The advice less taken: The consequences of receiving unexpected advice. <i>Judgment and Decision Making</i>, <i>17</i>(4), 816–848. <href a=https://doi.org/10.1017/S1930297500008950>https://doi.org/10.1017/S1930297500008950</href>'
