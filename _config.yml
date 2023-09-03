@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Tobias R. Rebholz"
 title_separator          : "-"
 name                     : &name "Tobias R. Rebholz"
-description              : &description "Research Associate in the Social Cognition and Decision Sciences group at the University of Tübingen | PhD Candidate in Statisticaql Modeling in Psychology (SMiP; RTG 2277)"
+description              : &description "Postdoctoral Research Associate | University of Tübingen"
 url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Tobias Rebholz"
   avatar           : "profile.png"
-  bio              : "Research Associate | PhD Candidate | Member of SMiP (RTG 2277)"
-  location         : "Location"
+  bio              : "Postdoctoral Research Associate"
+  location         : "University of Tübingen"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "http://yourfullgooglescholarurl.com"
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "tobiasrebholz"
   google_plus      :
   keybase          :
   instagram        :
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : "TobiasRebholz"
   vine             :
   weibo            :
   xing             :
