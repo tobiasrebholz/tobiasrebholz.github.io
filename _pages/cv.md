@@ -10,5 +10,5 @@ redirect_from:
 {% include base_path %}
 
 <div style="text-align: center"> 
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vTKBhe6aX4ApN1-yKjKNRikd4Y7taXraVOdyj2eePBg0cds1eCUY2oywUI8rn6OPA/pub?embedded=true" width="100%" height="100%" frameborder=”0”></iframe>
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vTKBhe6aX4ApN1-yKjKNRikd4Y7taXraVOdyj2eePBg0cds1eCUY2oywUI8rn6OPA/pub?embedded=true" width="50%" height="100%"></iframe>
 </div>
