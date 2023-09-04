@@ -11,7 +11,7 @@ author_profile: true
 
 {% include base_path %}
 
-## Most recent publications (see [CV](% link ../cv/ %) for full list of publications):
+## Most recent (see [CV](../cv/) for full list):
 
 Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2010). The interaction game: A reciprocity‐based minimal paradigm for the induction of social distance <i>Journal of Applied Social Psychology</i>, <i>53</i>(8), 796–814. <a href='https://doi.org/10.1111/jasp.12969' target="_blank">https://doi.org/10.1111/jasp.12969</a>
 
