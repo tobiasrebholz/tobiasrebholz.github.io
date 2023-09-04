@@ -6,7 +6,7 @@ excerpt: 'People’s estimates are biased toward previously considered numbers (
 date: 2022-01-01
 venue: 'Journal of Open Psychology Data'
 paperurl: 'https://doi.org/10.5334/jopd.67'
-citation: 'The open anchoring quest dataset: Anchored estimates from 96 studies on anchoring effects. <i>Journal of Open Psychology Data</i>, <i>10</i>(1), 1–12. https://doi.org/10.5334/jopd.67'
+citation: 'Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The open anchoring quest dataset: Anchored estimates from 96 studies on anchoring effects. <i>Journal of Open Psychology Data</i>, <i>10</i>(1), 1–12. https://doi.org/10.5334/jopd.67'
 ---
 
 [Download paper here](https://reff.f.bg.ac.rs/bitstream/handle/123456789/3866/bitstream_9134.pdf?sequence=1&isAllowed=y)
