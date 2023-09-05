@@ -11,7 +11,7 @@ author_profile: true
 
 {% include base_path %}
 
-## See [CV](../cv/) for full list of publications.
+- <b>See [CV](../cv/) for full list of publications.</b>
 
 ## Most recent:
 
