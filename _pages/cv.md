@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-- <b>Download <a href="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/view?usp=sharing" target="_blank">full CV as pdf</a></b> here.
+- <b>Download <a href="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/view?usp=sharing" target="_blank">full CV as pdf</a> here.</b>
 
 ## Preview:
 
