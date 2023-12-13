@@ -16,5 +16,5 @@ author_profile: true
 ## Schematic summary of my research interestes and projects:
 
 <div style="text-align: center"> 
-  <iframe src="https://drive.google.com/file/d/11Ar0HXOfNkAxqcWyDZTlQ8ZeMAeLh17d/view" width="85%" height="400px"></iframe>
+  <iframe src="https://drive.google.com/file/d/11Ar0HXOfNkAxqcWyDZTlQ8ZeMAeLh17d/preview" width="85%" height="400px"></iframe>
 </div>
