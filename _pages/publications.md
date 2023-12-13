@@ -5,11 +5,9 @@ permalink: /publications/
 author_profile: true
 ---
 
-You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-
 {% include base_path %}
 
-- <b>See [CV](../cv/) for full list of publications.</b>
+- See [CV](../cv/) or <u><a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ">my Google Scholar profile</a>.</u> for full list of publications.
 
 ## Most recent:
 
