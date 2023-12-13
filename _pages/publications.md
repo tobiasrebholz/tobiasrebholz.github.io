@@ -7,7 +7,7 @@ author_profile: true
 
 {% include base_path %}
 
-- See [CV](../cv/) or <u><a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ">my Google Scholar profile</a>.</u> for full list of publications.
+- See [CV](../cv/) or <a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">my Google Scholar profile</a> for a full list of publications.
 
 ## Most recent:
 

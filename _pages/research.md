@@ -13,7 +13,7 @@ author_profile: true
 -	<b>Human-Computer Interaction</b> <i>(e.g., Algorithm Aversion/Appreciation, Augmented Judgment and Decision-Making, Artificial Intelligence, Large Language Models)</i>
 
 
-## Sematic summary of my research interestes and projects:
+## Schematic summary of my research interestes and projects:
 
 <div style="text-align: center"> 
   <iframe src="https://drive.google.com/file/d/11Ar0HXOfNkAxqcWyDZTlQ8ZeMAeLh17d/view" width="85%" height="400px"></iframe>

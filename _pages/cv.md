@@ -14,5 +14,5 @@ redirect_from:
 ## Preview:
 
 <div style="text-align: center"> 
-  <iframe src="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/view" width="85%" height="400px"></iframe>
+  <iframe src="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/preview" width="85%" height="400px"></iframe>
 </div>
