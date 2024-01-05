@@ -7,9 +7,14 @@ author_profile: true
 
 {% include base_path %}
 
-- See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a> for a full list of publications.
+- See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a> for full lists of publications.
 
 ## Most recent:
+
+<b>Rebholz, T. R.</b>, Biella, M., & Hütter, M. (in press). Mixed-effects regression weights for advice taking and related phenomena of information sampling and utilization <i>Journal of Behavioral Decision Making</i>. <a href='https://doi.org/10.31234/osf.io/x36az' target="_blank">https://doi.org/10.31234/osf.io/x36az</a>
+
+- [Download paper here](https://doi.org/10.31234/osf.io/x36az)
+
 
 Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The interaction game: A reciprocity‐based minimal paradigm for the induction of social distance <i>Journal of Applied Social Psychology</i>, <i>53</i>(8), 796–814. <a href='https://doi.org/10.1111/jasp.12969' target="_blank">https://doi.org/10.1111/jasp.12969</a>
 
