@@ -9,26 +9,26 @@ author_profile: true
 
 ## Winter 23/24
 
-- <b>Advice Taking</b> <i>(Project seminar, B.Sc. Psychology, University of Tübingen, together with Johanna Höhs)</i>
+- <b>Advice Taking</b><br> Project seminar, B.Sc. Psychology, University of Tübingen, together with Johanna Höhs
 
-- <b>Judgement and Decision-Making in Social Contexts</b> <i>(Research seminar, B.Sc. Psychology, University of Tübingen)</i>
+- <b>Judgement and Decision-Making in Social Contexts</b><br> Research seminar, B.Sc. Psychology, University of Tübingen
 
 ## Summer 2023
 
-- <b>Advice Taking</b> <i>(Research seminar, B.Sc. Psychology, University of Tübingen, together with Johanna Höhs)</i>
+- <b>Advice Taking</b><br> Research seminar, B.Sc. Psychology, University of Tübingen, together with Johanna Höhs
 
 ## Winter 22/23
 
-- <b>R-Programming</b> <i>(Method seminar, B.Sc. Psychology, University of Tübingen)</i>
+- <b>R-Programming</b><br> Method seminar, B.Sc. Psychology, University of Tübingen
 
 ## Summer 22
 
-- <b>Judgement and Decision-Making in Social Contexts</b> <i>(Research seminar, B.Sc. Psychology, University of Tübingen)</i>
+- <b>Judgement and Decision-Making in Social Contexts</b><br> Research seminar, B.Sc. Psychology, University of Tübingen
 
 ## Winter 21/22
 
-- <b>Advanced Data Collection and Data Analysis</b> <i>(Method seminar, B.Sc. Psychology, University of Tübingen)</i>
+- <b>Advanced Data Collection and Data Analysis</b><br> Method seminar, B.Sc. Psychology, University of Tübingen
 
 ## Winter 20/21
 
-- <b>Advanced Data Collection and Data Analysis</b> <i>(Method seminar, B.Sc. Psychology, University of Tübingen)</i>
+- <b>Advanced Data Collection and Data Analysis</b><br> Method seminar, B.Sc. Psychology, University of Tübingen
