@@ -7,6 +7,10 @@ author_profile: true
 
 {% include base_path %}
 
+## Summer 24
+
+- <b>Machine Learning for Data-Driven Decision-Making</b><br> Combined research and project seminar, M.Sc. Psychology, University of Tübingen
+
 ## Winter 23/24
 
 - <b>Advice Taking</b><br> Project seminar, B.Sc. Psychology, University of Tübingen, together with Johanna Höhs
