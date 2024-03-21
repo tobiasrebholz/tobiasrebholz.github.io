@@ -11,12 +11,15 @@ author_profile: true
 
 ## Most recent:
 
-<b>Rebholz, T. R.</b>, Biella, M., & Hütter, M. (2024). Mixed-effects regression weights for advice taking and related phenomena of information sampling and utilization <i>Journal of Behavioral Decision Making</i>, <i>37</i>(2), e2369. <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">http://dx.doi.org/10.1002/bdm.2369</a>
+Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (in press). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie/Journal of Psychology</i>.
+
+
+<b>Rebholz, T. R.</b>, Biella, M., & Hütter, M. (2024). Mixed-effects regression weights for advice taking and related phenomena of information sampling and utilization. <i>Journal of Behavioral Decision Making</i>, <i>37</i>(2), e2369. <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">http://dx.doi.org/10.1002/bdm.2369</a>
 
 - [Download paper here](http://dx.doi.org/10.1002/bdm.2369)
 
 
-Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The interaction game: A reciprocity‐based minimal paradigm for the induction of social distance <i>Journal of Applied Social Psychology</i>, <i>53</i>(8), 796–814. <a href='https://doi.org/10.1111/jasp.12969' target="_blank">https://doi.org/10.1111/jasp.12969</a>
+Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The interaction game: A reciprocity‐based minimal paradigm for the induction of social distance. <i>Journal of Applied Social Psychology</i>, <i>53</i>(8), 796–814. <a href='https://doi.org/10.1111/jasp.12969' target="_blank">https://doi.org/10.1111/jasp.12969</a>
 
 - [Download paper here](https://onlinelibrary.wiley.com/doi/epdf/10.1111/jasp.12969)
 
