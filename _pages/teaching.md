@@ -7,6 +7,17 @@ author_profile: true
 
 {% include base_path %}
 
+## Winter 24/25
+
+- <b>Heuristics and Biases</b><br>
+Research seminar, B.Sc. Psychology, University of Tübingen
+
+- <b>Introduction to Machine Learning</b><br>
+Method workshop, Ph.D. Statistical Modeling in Psychology (SMiP), Universities of Freiburg, Heidelberg, Landau, Mannheim, and Tübingen
+
+- <b>R-Programming</b><br>
+Method seminar, B.Sc. Psychology, University of Tübingen
+
 ## Summer 24
 
 - <b>Machine Learning for Data-Driven Decision-Making</b><br> Combined research and project seminar, M.Sc. Psychology, University of Tübingen
