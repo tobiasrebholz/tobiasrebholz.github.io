@@ -23,6 +23,8 @@ Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilo
 
 Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (in press). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie/Journal of Psychology</i>.
 
+Download link follows<br><br>
+
 
 <b>Rebholz, T. R.</b>, Biella, M., & Hütter, M. (2024). Mixed-effects regression weights for advice taking and related phenomena of information sampling and utilization. <i>Journal of Behavioral Decision Making</i>, <i>37</i>(2), e2369. <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">http://dx.doi.org/10.1002/bdm.2369</a>
 
