@@ -16,6 +16,11 @@ Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilo
 - [Download preprint here](https://doi.org/10.31234/osf.io/m4c7f)
 
 
+<b>Rebholz, T. R.</b>, Koop, A., & Hütter, M. (in press). Conversational user interfaces: Explanations and interactivity positively influence advice taking from generative artificial intelligence. <i>Technology, Mind, and Behavior</i>.
+
+- [Download preprint here](https://doi.org/10.31234/osf.io/jq9se)
+
+
 Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (in press). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie/Journal of Psychology</i>.
 
 
