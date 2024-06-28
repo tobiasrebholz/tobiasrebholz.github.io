@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 <p align="center">
-  <button onclick="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/view?usp=sharing">Download full CV as pdf</button>
+  <a href="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/view?usp=sharing">Download full CV as pdf</a><br><br>
 </p>
 
 <div style="text-align: center"> 
