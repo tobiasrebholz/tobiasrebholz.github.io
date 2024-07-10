@@ -13,17 +13,17 @@ See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cL
 
 Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilovich, T., ... <b>Rebholz, T. R.</b>, ... Weick, M. (in press). Kahneman in quotes and reflections. <i>Psychological Inquiry</i>.
 
-<a href="https://osf.io/m4c7f/download/">Download pdf</a><br><br>
+<a href="https://osf.io/m4c7f/download/">Download preprint as pdf</a><br><br>
 
 
 <b>Rebholz, T. R.</b>, Koop, A., & Hütter, M. (in press). Conversational user interfaces: Explanations and interactivity positively influence advice taking from generative artificial intelligence. <i>Technology, Mind, and Behavior</i>.
 
-<a href="https://osf.io/jq9se/download/">Download pdf</a><br><br>
+<a href="https://osf.io/jq9se/download/">Download preprint as pdf</a><br><br>
 
 
 Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (in press). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie/Journal of Psychology</i>.
 
-Download link follows<br><br>
+Download pdf<br><br>
 
 
 <b>Rebholz, T. R.</b>, Biella, M., & Hütter, M. (2024). Mixed-effects regression weights for advice taking and related phenomena of information sampling and utilization. <i>Journal of Behavioral Decision Making</i>, <i>37</i>(2), e2369. <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">http://dx.doi.org/10.1002/bdm.2369</a>
