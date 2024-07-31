@@ -20,7 +20,7 @@ author_profile: true
 </div>
 
 
-<br><br>
+<br>
 
 ## Preprints
 
