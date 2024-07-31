@@ -20,6 +20,8 @@ author_profile: true
 </div>
 
 
+<br><br><br>
+
 # Preprints
 
 Mayer, M., & <b>Rebholz, T. R.</b> (2024). <i>Navigating anchor relevance skillfully: Expertise reduces susceptibility to anchoring effects.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/69jwr' target="_blank">https://doi.org/10.31234/osf.io/69jwr</a>
