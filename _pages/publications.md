@@ -69,9 +69,9 @@ Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., ...
 - <a href="https://osf.io/me2ub/download/">Download preprint as pdf</a>
 
 
-Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2024). <i>Metacognitive myopia in large language models</i>. arXiv.
+Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2024). <i>Metacognitive myopia in large language models</i>. arXiv. <a href='https://doi.org/10.48550/arXiv.2408.05568' target="_blank">https://doi.org/10.48550/arXiv.2408.05568</a>
 
-- Download preprint as pdf
+- <a href="https://arxiv.org/pdf/2408.05568">Download preprint as pdf</a>
 
 
 <b>Rebholz, T. R.</b>, Hütter, M., & Voss, A. (2023). <i>Bayesian advice taking: Adaptive strategy selection in sequential advice seeking.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">https://doi.org/10.31234/osf.io/y8x92</a>
