@@ -16,11 +16,6 @@ See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cL
 - <a href="https://osf.io/jq9se/download/">Download preprint as pdf</a>
 
 
-Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (in press). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie/Journal of Psychology</i>.
-
-- Download pdf <i>(tbd)</i>
-
-
 Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilovich, T., ... <b>Rebholz, T. R.</b>, ... Weick, M. (2024). Kahneman in quotes and reflections. <i>Psychological Inquiry</i>, <i>35</i>(1), 3–10. <a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">https://doi.org/10.1080/1047840X.2024.2366813</a>
 
 - <a href="https://www.tandfonline.com/eprint/WBGT6BDDDDPTMZ4UXWRN/full?target=10.1080/1047840X.2024.2366813">Download pdf</a> (first 50 free) or <a href="https://osf.io/m4c7f/download/">preprint</a>
@@ -29,6 +24,11 @@ Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilo
 <b>Rebholz, T. R.</b>, Biella, M., & Hütter, M. (2024). Mixed-effects regression weights for advice taking and related phenomena of information sampling and utilization. <i>Journal of Behavioral Decision Making</i>, <i>37</i>(2), e2369. <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">http://dx.doi.org/10.1002/bdm.2369</a>
 
 - <a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/bdm.2369?download=true">Download pdf</a>
+
+
+Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (2024). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie/Journal of Psychology</i>. Advance online publication. <a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">https://doi.org/10.1027/2151-2604/a000571</a>
+
+- <a href="https://econtent.hogrefe.com/doi/pdf/10.1027/2151-2604/a000571">Download pdf</a>
 
 
 Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The interaction game: A reciprocity‐based minimal paradigm for the induction of social distance. <i>Journal of Applied Social Psychology</i>, <i>53</i>(8), 796–814. <a href='https://doi.org/10.1111/jasp.12969' target="_blank">https://doi.org/10.1111/jasp.12969</a>
