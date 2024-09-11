@@ -26,6 +26,11 @@ Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilo
 - <a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/bdm.2369?download=true">Download pdf</a>
 
 
+Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., ... & <b>Rebholz, T. R.</b>, ... Zhang, Y. (2024). The replication database: Documenting the replicability of psychological science. <i>Journal of Open Psychology Data</i>, <i>12</i>(8), 1–23. <a href='https://doi.org/10.5334/jopd.101' target="_blank">https://doi.org/10.5334/jopd.101</a>
+
+- <a href="https://openpsychologydata.metajnl.com/articles/101/files/66e18fdc5e1b7.pdf">Download pdf</a>
+
+
 Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (2024). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie/Journal of Psychology</i>. Advance online publication. <a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">https://doi.org/10.1027/2151-2604/a000571</a>
 
 - <a href="https://econtent.hogrefe.com/doi/pdf/10.1027/2151-2604/a000571">Download pdf</a>
@@ -62,11 +67,6 @@ Mayer, M., & <b>Rebholz, T. R.</b> (2024). <i>Navigating anchor relevance skillf
 <b>Rebholz, T. R.</b> (2024). <i>Theory of Machine 2.0: Artificial versus artificial intelligence.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/ekz9a' target="_blank">https://doi.org/10.31234/osf.io/ekz9a</a>
 
 - <a href="https://osf.io/ekz9a/download/">Download preprint as pdf</a>
-
-
-Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., ... & <b>Rebholz, T. R.</b>, ... Zhang, Y., Mr. (2024). <i>The replication database: Documenting the replicability of psychological science.</i> MetaArXiv. <a href='https://doi.org/10.31222/osf.io/me2ub' target="_blank">https://doi.org/10.31222/osf.io/me2ub</a>
-
-- <a href="https://osf.io/me2ub/download/">Download preprint as pdf</a>
 
 
 Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2024). <i>Metacognitive myopia in large language models</i>. arXiv. <a href='https://doi.org/10.48550/arXiv.2408.05568' target="_blank">https://doi.org/10.48550/arXiv.2408.05568</a>
