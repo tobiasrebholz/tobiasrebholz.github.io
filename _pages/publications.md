@@ -18,7 +18,7 @@ See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cL
 
 Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilovich, T., ... <b>Rebholz, T. R.</b>, ... Weick, M. (2024). Kahneman in quotes and reflections. <i>Psychological Inquiry</i>, <i>35</i>(1), 3–10. <a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">https://doi.org/10.1080/1047840X.2024.2366813</a>
 
-- <a href="https://www.tandfonline.com/eprint/WBGT6BDDDDPTMZ4UXWRN/full?target=10.1080/1047840X.2024.2366813">Download pdf</a> (first 50 free) or <a href="https://osf.io/m4c7f/download/">preprint</a>
+- <a href="https://www.tandfonline.com/eprint/WBGT6BDDDDPTMZ4UXWRN/full?target=10.1080/1047840X.2024.2366813">Download pdf</a> (first 50 free) or <a href="https://osf.io/m4c7f/download/">preprint</a> (unlimited free)
 
 
 <b>Rebholz, T. R.</b>, Biella, M., & Hütter, M. (2024). Mixed-effects regression weights for advice taking and related phenomena of information sampling and utilization. <i>Journal of Behavioral Decision Making</i>, <i>37</i>(2), e2369. <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">http://dx.doi.org/10.1002/bdm.2369</a>
