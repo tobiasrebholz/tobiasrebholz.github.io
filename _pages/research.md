@@ -13,7 +13,7 @@ author_profile: true
 -	<b>Human-Computer Interaction</b><br> E.g., Algorithm Aversion/Appreciation, Augmented Judgment and Decision-Making, Artificial Intelligence, Large Language Models
 
 
-## Schematic Summary of Research Interests and Projects
+## Schematic Summary of my Research Interests and Projects
 
 <br>
 <div style="text-align: center"> 
