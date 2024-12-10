@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/YYYY-semester-course-location
 venue: "University, Department"
-date: YYYY-MM-DD
+date: 2020-01-01
 location: "City, Country"
 ---
 
