@@ -40,11 +40,23 @@ location: "Tübingen, Germany"
 
 ## Tutorials
 
-- <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression.Rmd'>Module 1: Linear Regression</a></b>
+### Module 1
+
+- <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression.Rmd'>Linear Regression</a></b>
 
   <!-- - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Solution</a></b> -->
 
-- <b><a href='/files/2024-fall-ML-SMiP/module1-logistic_regression.Rmd'>Module 1: Logistic Regression</a></b>
+- <b><a href='/files/2024-fall-ML-SMiP/module1-logistic_regression.Rmd'>Logistic Regression</a></b>
 
   <!-- - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Solution</a></b> -->
+
+### Module 2
+
+- <b><a href='/files/2024-fall-ML-SMiP/module2-SVM.Rmd'>Support Vector Machines</a></b>
+
+  <!-- - <b><a href='/files/2024-fall-ML-SMiP/module2-SVM-SOLUTION.Rmd'>Solution</a></b> -->
+
+- <b><a href='/files/2024-fall-ML-SMiP/module2-trees.Rmd'>Trees</a></b>
+
+  <!-- - <b><a href='/files/2024-fall-ML-SMiP/module2-trees-SOLUTION.Rmd'>Solution</a></b> -->
 
