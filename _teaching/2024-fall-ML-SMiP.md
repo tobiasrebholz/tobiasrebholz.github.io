@@ -3,12 +3,12 @@ title: "Introduction to Machine Learning"
 collection: teaching
 type: "Workshop"
 permalink: /_teaching/2024-fall-ML-SMiP
-venue: "University of Tübingen, Department of Psychology"
+venue: "SMiP, University of Tübingen"
 date: 2024-12-19
 location: "Tübingen, Germany"
 ---
 
-{% include base_path %}
+<!-- {% include base_path %} -->
 
 <!-- naive password protection -->
 <script>
@@ -21,6 +21,8 @@ location: "Tübingen, Germany"
         }
     });
 </script>
+
+
 
 ## Slides
 
@@ -40,9 +42,9 @@ location: "Tübingen, Germany"
 
 - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression.Rmd'>Module 1: Linear Regression</a></b>
 
-  - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Module 1: Linear Regression</a></b>
+  - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Solution</a></b>
 
 - <b><a href='/files/2024-fall-ML-SMiP/module1-logistic_regression.Rmd'>Module 1: Logistic Regression</a></b>
 
-  - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Module 1: Linear Regression</a></b>
+  - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Solution</a></b>
 
