@@ -1,10 +1,10 @@
 ---
-title: "Teaching experience 2"
+title: "Teaching experience: Sample"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
+type: "Undergraduate course"
+permalink: /teaching/YYYY-semester-course-location
+venue: "University, Department"
+date: YYYY-MM-DD
 location: "City, Country"
 ---
 
