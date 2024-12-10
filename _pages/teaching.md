@@ -12,7 +12,7 @@ author_profile: true
 - <b>Heuristics and Biases</b><br>
 Research seminar, B.Sc. Psychology, University of Tübingen
 
-- <b><a href = https://tobiasrebholz.github.io/teaching/2024-fall-ML-SMiP>Introduction to Machine Learning</a></b><br>
+- <b><a href="https://tobiasrebholz.github.io/teaching/2024-fall-ML-SMiP">Introduction to Machine Learning</a></b><br>
 Method workshop, Ph.D. Statistical Modeling in Psychology (SMiP), Universities of Freiburg, Heidelberg, Landau, Mannheim, and Tübingen
 
 - <b>R-Programming</b><br>
