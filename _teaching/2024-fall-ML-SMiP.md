@@ -24,7 +24,7 @@ location: "Tübingen, Germany"
 
 ## Slides
 
-- <b><a href='/files/paper1.pdf'>Module 1</a></b>
+- <b><a href='/files/2024-fall-ML-SMiP/module1.pdf'>Module 1</a></b>
 
 ## Tutorials
 
