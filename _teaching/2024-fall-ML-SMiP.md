@@ -8,22 +8,17 @@ date: 2024-12-19
 location: "Tübingen, Germany"
 ---
 
-<!-- naive password protection -->
-<script>
-    const password = "Hastie_Tibshirani";
+{% include base_path %}
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const userPassword = prompt("Enter password to access this page:");
-        if (userPassword !== password) {
-            document.body.innerHTML = "<h1>Access Denied</h1>";
-        }
-    });
-</script>
+<!-- naive password protection -->
+
 
 ## Slides
 
 - <b>Module 1</b>
 
-## Programming Assignments
+<img src='/images/500x300.png'>
+
+## Tutorials
 
 - <b>Module 1</b>

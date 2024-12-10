@@ -355,25 +355,17 @@ display: none;
 </div>
 
 
-%naive password protection:
-<script>
-    const password = "Hastie_Tibshirani";
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const userPassword = prompt("Enter password to access this page:");
-        if (userPassword !== password) {
-            document.body.innerHTML = "<h1>Access Denied</h1>";
-        }
-    });
-</script>
+<p>{% include base_path %}</p>
+<!-- naive password protection -->
 <div id="slides" class="section level2">
 <h2>Slides</h2>
 <ul>
 <li><b>Module 1</b></li>
 </ul>
+<p><img role="img" src="/images/500x300.png"></p>
 </div>
-<div id="programming-assignments" class="section level2">
-<h2>Programming Assignments</h2>
+<div id="tutorials" class="section level2">
+<h2>Tutorials</h2>
 <ul>
 <li><b>Module 1</b></li>
 </ul>
