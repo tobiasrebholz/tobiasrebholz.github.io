@@ -14,7 +14,6 @@ Research seminar, B.Sc. Psychology, University of Tübingen
 
 - <b>Introduction to Machine Learning</b><br>
 Method workshop, Ph.D. Statistical Modeling in Psychology (SMiP), Universities of Freiburg, Heidelberg, Landau, Mannheim, and Tübingen
-
   - <a href='/_teaching/2024-fall-ML-SMiP'>Materials</a>
 
 - <b>R-Programming</b><br>
