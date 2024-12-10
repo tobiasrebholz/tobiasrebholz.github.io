@@ -14,10 +14,16 @@ location: "Tübingen, Germany"
 <script>
     const password = "Hastie_Tibshirani";
 
+    // Hide all content initially by manipulating the body style
     document.addEventListener("DOMContentLoaded", function() {
+        document.body.style.display = "none"; // Start with a blank page
+
         const userPassword = prompt("Enter password to access this page:");
-        if (userPassword !== password) {
-            document.body.innerHTML = "<h1>Access Denied</h1>";
+        if (userPassword === password) {
+            document.body.style.display = "block"; // Reveal the content
+        } else {
+            document.body.innerHTML = "<h1>Access Denied</h1>"; // Show "Access Denied" if the password is wrong
+            document.body.style.display = "block"; // Make the "Access Denied" message visible
         }
     });
 </script>
