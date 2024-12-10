@@ -26,6 +26,23 @@ location: "Tübingen, Germany"
 
 - <b><a href='/files/2024-fall-ML-SMiP/module1.pdf'>Module 1</a></b>
 
+- <b><a href='/files/2024-fall-ML-SMiP/module2.pdf'>Module 2</a></b>
+
+- <b><a href='/files/2024-fall-ML-SMiP/module3.pdf'>Module 3</a></b>
+
+- <b><a href='/files/2024-fall-ML-SMiP/module4.pdf'>Module 4</a></b>
+
+- <b><a href='/files/2024-fall-ML-SMiP/module5.pdf'>Module 5</a></b>
+
+
+
 ## Tutorials
 
-- <b>Module 1</b>
+- <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression.Rmd'>Module 1: Linear Regression</a></b>
+
+  - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Module 1: Linear Regression</a></b>
+
+- <b><a href='/files/2024-fall-ML-SMiP/module1-logistic_regression.Rmd'>Module 1: Logistic Regression</a></b>
+
+  - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Module 1: Linear Regression</a></b>
+
