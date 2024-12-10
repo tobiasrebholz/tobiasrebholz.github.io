@@ -42,9 +42,9 @@ location: "Tübingen, Germany"
 
 - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression.Rmd'>Module 1: Linear Regression</a></b>
 
-  - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Solution</a></b>
+  <!-- - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Solution</a></b> -->
 
 - <b><a href='/files/2024-fall-ML-SMiP/module1-logistic_regression.Rmd'>Module 1: Logistic Regression</a></b>
 
-  - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Solution</a></b>
+  <!-- - <b><a href='/files/2024-fall-ML-SMiP/module1-linear_regression-SOLUTION.Rmd'>Solution</a></b> -->
 
