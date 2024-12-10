@@ -11,13 +11,20 @@ location: "Tübingen, Germany"
 {% include base_path %}
 
 <!-- naive password protection -->
+<script>
+    const password = "Hastie_Tibshirani";
 
+    document.addEventListener("DOMContentLoaded", function() {
+        const userPassword = prompt("Enter password to access this page:");
+        if (userPassword !== password) {
+            document.body.innerHTML = "<h1>Access Denied</h1>";
+        }
+    });
+</script>
 
 ## Slides
 
-- <b>Module 1</b>
-
-<img src='/images/500x300.png'>
+- <b><a href='/files/paper1.pdf'>Module 1</a></b>
 
 ## Tutorials
 
