@@ -23,28 +23,4 @@ location: "Tübingen, Germany"
 </script>
 
 
-### Slides
-
-- <a href='/files/2024-fall-ML-SMiP/module1.zip'>Module 1</a>
-
-- <a href='/files/2024-fall-ML-SMiP/module2.zip'>Module 2</a>
-
-- <a href='/files/2024-fall-ML-SMiP/module3.zip'>Module 3</a>
-
-- <a href='/files/2024-fall-ML-SMiP/module4.zip'>Module 4</a>
-
-- <a href='/files/2024-fall-ML-SMiP/module5.zip'>Module 5</a>
-
-
-### Tutorials
-
-- <a href='/files/2024-fall-ML-SMiP/module1-tutorials.zip'>Module 1</a>
-
-- <a href='/files/2024-fall-ML-SMiP/module2-tutorials.zip'>Module 2</a>
-
-- <a href='/files/2024-fall-ML-SMiP/module3-tutorials.zip'>Module 3</a>
-
-- <a href='/files/2024-fall-ML-SMiP/module4-tutorials.zip'>Module 4</a>
-
-<!-- - <a href='/files/2024-fall-ML-SMiP/module5-tutorials.zip'>Module 5</a> -->
-
+<iframe src="https://drive.google.com/drive/folders/1-l7QqyLkxMsrCfB0iBbHvhoiZkpTRK1q?usp=sharing#grid" style="width:100%; height:600px; border:0;"></iframe>
