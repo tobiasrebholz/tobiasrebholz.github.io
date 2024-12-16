@@ -24,7 +24,7 @@ location: "Tübingen, Germany"
 
 
 
-## Module 1
+### Module 1
 
 - Slides:
   - <a href='/files/2024-fall-ML-SMiP/Slides/module1.pdf'>pdf</a>
@@ -39,7 +39,7 @@ location: "Tübingen, Germany"
     - <a href='/files/2024-fall-ML-SMiP/Tutorials/module1-linear_regression-SOLUTION.Rmd'>Solution</a>
 
 
-## Module 2
+### Module 2
 
 - Slides:
   - <a href='/files/2024-fall-ML-SMiP/Slides/module2.pdf'>pdf</a>
@@ -54,7 +54,7 @@ location: "Tübingen, Germany"
     - <a href='/files/2024-fall-ML-SMiP/Tutorials/module2-trees-SOLUTION.Rmd'>Solution</a>
 
 
-## Module 3
+### Module 3
 
 - Slides:
   - <a href='/files/2024-fall-ML-SMiP/Slides/module3.pdf'>pdf</a>
@@ -65,7 +65,7 @@ location: "Tübingen, Germany"
     - <a href='/files/2024-fall-ML-SMiP/Tutorials/module3-clustering-SOLUTION.Rmd'>Solution</a>
 
 
-## Module 4
+### Module 4
 
 - Slides:
   - <a href='/files/2024-fall-ML-SMiP/Slides/module4.pdf'>pdf</a>
@@ -76,7 +76,7 @@ location: "Tübingen, Germany"
     - <a href='/files/2024-fall-ML-SMiP/Tutorials/module4-deep_learnings-SOLUTION.Rmd'>Solution</a>
 
 
-## Module 5
+### Module 5
 
 - Slides:
   - <a href='/files/2024-fall-ML-SMiP/Slides/module5.pdf'>pdf</a>
