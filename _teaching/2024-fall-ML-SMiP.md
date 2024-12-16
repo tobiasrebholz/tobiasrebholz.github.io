@@ -17,7 +17,7 @@ location: "Tübingen, Germany"
     document.addEventListener("DOMContentLoaded", function() {
         const userPassword = prompt("Enter password to access this page:");
         if (userPassword !== password) {
-            document.body.innerHTML = "<h1>Access Denied</h1>";
+            document.body.innerHTML = "<h1>Access denied</h1>";
         }
     });
 </script>
