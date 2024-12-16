@@ -25,9 +25,9 @@ location: "Tübingen, Germany"
 
 ### Slides
 
-<iframe src="https://drive.google.com/embeddedfolderview?id=1-t7K_oENLJ54192cjvTejiuZXjPfsJXv#list" style="width:100%; height:600px; border:0;"></iframe>
+<iframe src="https://drive.google.com/embeddedfolderview?id=1-t7K_oENLJ54192cjvTejiuZXjPfsJXv#list" style="width:85%; height:300px; border:0;"></iframe>
 
 
 ### Tutorials
 
-<iframe src="https://drive.google.com/embeddedfolderview?id=https://drive.google.com/drive/folders/10EiREBfzM1-9niTGqHaFZlasS8-dqRF0?usp=sharing#list" style="width:100%; height:600px; border:0;"></iframe>
+<iframe src="https://drive.google.com/embeddedfolderview?id=10EiREBfzM1-9niTGqHaFZlasS8-dqRF0#list" style="width:85%; height:300px; border:0;"></iframe>
