@@ -23,62 +23,28 @@ location: "Tübingen, Germany"
 </script>
 
 
+### Slides
 
-### Module 1
+- <b><a href='/files/2024-fall-ML-SMiP/module1.zip'>Module 1</a></b>
 
-- Slides:
-  - <a href='/files/2024-fall-ML-SMiP/Slides/module1.pdf'>pdf</a>
-  - <a href='/files/2024-fall-ML-SMiP/Slides/module1.Rmd'>Rmd</a>
-  
-- Tutorials:
-  - <a href='/files/2024-fall-ML-SMiP/Tutorials/module1-linear_regression.Rmd'>Linear Regression</a>
-    - <a href='/files/2024-fall-ML-SMiP/Tutorials/module1-video_reading.csv'>Video reading data</a>
-    - <a href='/files/2024-fall-ML-SMiP/Tutorials/module1-linear_regression-SOLUTION.Rmd'>Solution</a>
-  - <a href='/files/2024-fall-ML-SMiP/Tutorials/module1-logistic_regression.Rmd'>Logistic Regression</a>
-    - <a href='/files/2024-fall-ML-SMiP/Tutorials/module1-auditory_strings.csv'>Auditory strings data</a>
-    - <a href='/files/2024-fall-ML-SMiP/Tutorials/module1-linear_regression-SOLUTION.Rmd'>Solution</a>
+- <b><a href='/files/2024-fall-ML-SMiP/module2.zip'>Module 2</a></b>
+
+- <b><a href='/files/2024-fall-ML-SMiP/module3.zip'>Module 3</a></b>
+
+- <b><a href='/files/2024-fall-ML-SMiP/module4.zip'>Module 4</a></b>
+
+- <b><a href='/files/2024-fall-ML-SMiP/module5.zip'>Module 5</a></b>
 
 
-### Module 2
+### Tutorials
 
-- Slides:
-  - <a href='/files/2024-fall-ML-SMiP/Slides/module2.pdf'>pdf</a>
-  - <a href='/files/2024-fall-ML-SMiP/Slides/module2.Rmd'>Rmd</a>
+- <b><a href='/files/2024-fall-ML-SMiP/module1-tutorials.zip'>Module 1</a></b>
 
-- Tutorials:
-  - <a href='/files/2024-fall-ML-SMiP/Tutorials/module2-SVM.Rmd'>Support Vector Machines</a>
-    - <a href='/files/2024-fall-ML-SMiP/Tutorials/module2-bfi.csv'>BFI data</a>
-    - <a href='/files/2024-fall-ML-SMiP/Tutorials/module2-SVM-SOLUTION.Rmd'>Solution</a>
-  - <a href='/files/2024-fall-ML-SMiP/Tutorials/module2-trees.Rmd'>Trees</a>
-    - <a href='/files/2024-fall-ML-SMiP/Tutorials/module2-bfi-imbalanced.csv'>Imbalanced BFI data</a>
-    - <a href='/files/2024-fall-ML-SMiP/Tutorials/module2-trees-SOLUTION.Rmd'>Solution</a>
+- <b><a href='/files/2024-fall-ML-SMiP/module2-tutorials.zip'>Module 2</a></b>
 
+- <b><a href='/files/2024-fall-ML-SMiP/module3-tutorials.zip'>Module 3</a></b>
 
-### Module 3
+- <b><a href='/files/2024-fall-ML-SMiP/module4-tutorials.zip'>Module 4</a></b>
 
-- Slides:
-  - <a href='/files/2024-fall-ML-SMiP/Slides/module3.pdf'>pdf</a>
-  - <a href='/files/2024-fall-ML-SMiP/Slides/module3.Rmd'>Rmd</a>
-
-- Tutorials:
-  - <a href='/files/2024-fall-ML-SMiP/Tutorials/module3-clustering.Rmd'>Support Vector Machines</a>
-    - <a href='/files/2024-fall-ML-SMiP/Tutorials/module3-clustering-SOLUTION.Rmd'>Solution</a>
-
-
-### Module 4
-
-- Slides:
-  - <a href='/files/2024-fall-ML-SMiP/Slides/module4.pdf'>pdf</a>
-  - <a href='/files/2024-fall-ML-SMiP/Slides/module4.Rmd'>Rmd</a>
-
-- Tutorials:
-  - <a href='/files/2024-fall-ML-SMiP/Tutorials/module4-deep_learning.Rmd'>Support Vector Machines</a>
-    - <a href='/files/2024-fall-ML-SMiP/Tutorials/module4-deep_learnings-SOLUTION.Rmd'>Solution</a>
-
-
-### Module 5
-
-- Slides:
-  - <a href='/files/2024-fall-ML-SMiP/Slides/module5.pdf'>pdf</a>
-  - <a href='/files/2024-fall-ML-SMiP/Slides/module5.Rmd'>Rmd</a>
+- <b><a href='/files/2024-fall-ML-SMiP/module5-tutorials.zip'>Module 5</a></b>
 
