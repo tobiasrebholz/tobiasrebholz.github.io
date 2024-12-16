@@ -11,16 +11,7 @@ location: "Tübingen, Germany"
 <!-- {% include base_path %} -->
 
 <!-- naive password protection -->
-<script>
-    const password = "smip24";
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const userPassword = prompt("Enter password to access this page:");
-        if (userPassword !== password) {
-            document.body.innerHTML = "<h1>Access denied</h1>";
-        }
-    });
-</script>
 
 
 ### Slides
