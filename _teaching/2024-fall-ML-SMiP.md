@@ -23,4 +23,4 @@ location: "Tübingen, Germany"
 </script>
 
 
-<iframe src="https://drive.google.com/drive/folders/1-l7QqyLkxMsrCfB0iBbHvhoiZkpTRK1q?usp=sharing" style="width:100%; height:600px; border:0;"></iframe>
+<iframe src="https://drive.google.com/drive/folders/1-l7QqyLkxMsrCfB0iBbHvhoiZkpTRK1q/preview" style="width:100%; height:600px; border:0;"></iframe>
