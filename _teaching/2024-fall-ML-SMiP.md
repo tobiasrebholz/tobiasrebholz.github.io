@@ -25,26 +25,26 @@ location: "Tübingen, Germany"
 
 ### Slides
 
-- <b><a href='/files/2024-fall-ML-SMiP/module1.zip'>Module 1</a></b>
+- <a href='/files/2024-fall-ML-SMiP/module1.zip'>Module 1</a>
 
-- <b><a href='/files/2024-fall-ML-SMiP/module2.zip'>Module 2</a></b>
+- <a href='/files/2024-fall-ML-SMiP/module2.zip'>Module 2</a>
 
-- <b><a href='/files/2024-fall-ML-SMiP/module3.zip'>Module 3</a></b>
+- <a href='/files/2024-fall-ML-SMiP/module3.zip'>Module 3</a>
 
-- <b><a href='/files/2024-fall-ML-SMiP/module4.zip'>Module 4</a></b>
+- <a href='/files/2024-fall-ML-SMiP/module4.zip'>Module 4</a>
 
-- <b><a href='/files/2024-fall-ML-SMiP/module5.zip'>Module 5</a></b>
+- <a href='/files/2024-fall-ML-SMiP/module5.zip'>Module 5</a>
 
 
 ### Tutorials
 
-- <b><a href='/files/2024-fall-ML-SMiP/module1-tutorials.zip'>Module 1</a></b>
+- <a href='/files/2024-fall-ML-SMiP/module1-tutorials.zip'>Module 1</a>
 
-- <b><a href='/files/2024-fall-ML-SMiP/module2-tutorials.zip'>Module 2</a></b>
+- <a href='/files/2024-fall-ML-SMiP/module2-tutorials.zip'>Module 2</a>
 
-- <b><a href='/files/2024-fall-ML-SMiP/module3-tutorials.zip'>Module 3</a></b>
+- <a href='/files/2024-fall-ML-SMiP/module3-tutorials.zip'>Module 3</a>
 
-- <b><a href='/files/2024-fall-ML-SMiP/module4-tutorials.zip'>Module 4</a></b>
+- <a href='/files/2024-fall-ML-SMiP/module4-tutorials.zip'>Module 4</a>
 
-- <b><a href='/files/2024-fall-ML-SMiP/module5-tutorials.zip'>Module 5</a></b>
+<!-- - <a href='/files/2024-fall-ML-SMiP/module5-tutorials.zip'>Module 5</a> -->
 
