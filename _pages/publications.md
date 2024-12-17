@@ -11,11 +11,6 @@ See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cL
 
 ## Peer-Reviewed Journal Articles
 
-<b>Rebholz, T. R.</b>, Koop, A., & Hütter, M. (in press). Conversational user interfaces: Explanations and interactivity positively influence advice taking from generative artificial intelligence. <i>Technology, Mind, and Behavior</i>.
-
-- <a href="https://osf.io/jq9se/download/">Download preprint as pdf</a>
-
-
 Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilovich, T., ... <b>Rebholz, T. R.</b>, ... Weick, M. (2024). Kahneman in quotes and reflections. <i>Psychological Inquiry</i>, <i>35</i>(1), 3–10. <a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">https://doi.org/10.1080/1047840X.2024.2366813</a>
 
 - <a href="https://www.tandfonline.com/eprint/WBGT6BDDDDPTMZ4UXWRN/full?target=10.1080/1047840X.2024.2366813">Download pdf</a> (first 50 free) or <a href="https://osf.io/m4c7f/download/">preprint</a> (unlimited free)
@@ -24,6 +19,11 @@ Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilo
 <b>Rebholz, T. R.</b>, Biella, M., & Hütter, M. (2024). Mixed-effects regression weights for advice taking and related phenomena of information sampling and utilization. <i>Journal of Behavioral Decision Making</i>, <i>37</i>(2), e2369. <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">http://dx.doi.org/10.1002/bdm.2369</a>
 
 - <a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/bdm.2369?download=true">Download pdf</a>
+
+
+<b>Rebholz, T. R.</b>, Koop, A., & Hütter, M. (2024). Conversational user interfaces: Explanations and interactivity positively influence advice taking from generative artificial intelligence. <i>Technology, Mind, and Behavior</i>, 5(4). <a href='https://doi.org/10.1037/tmb0000136' target="_blank">https://doi.org/10.1037/tmb0000136</a>.
+
+- <a href="https://assets.pubpub.org/bbvzfpn2/tmb_tmb0000136-01733760227226.pdf">Download pdf</a>
 
 
 Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., ... & <b>Rebholz, T. R.</b>, ... Zhang, Y. (2024). The replication database: Documenting the replicability of psychological science. <i>Journal of Open Psychology Data</i>, <i>12</i>(8), 1–23. <a href='https://doi.org/10.5334/jopd.101' target="_blank">https://doi.org/10.5334/jopd.101</a>
