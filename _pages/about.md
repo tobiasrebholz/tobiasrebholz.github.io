@@ -12,4 +12,4 @@ My name is Tobias Rebholz. I am a quantitative psychologist and econometrician w
 
 My research interests include quantitative methods, social cognition, and judgment and decision-making, especially in the context of information sampling and utilization. My doctoral thesis was on the "Advanced Statistical Modeling of Ecological Constraints in Information Sampling and Utilization" (<a href='http://doi.org/10.15496/publikation-83023' target="_blank">http://doi.org/10.15496/publikation-83023</a>). 
 
-More information on my research can be found on this website and in my [CV](/cv/). Please don’t hesitate to contact me if you have any questions (<a href='mailto:tobias.rebholz@uni-tuebingen.de'>tobias.rebholz@uni-tuebingen.de</a>)!
+More information on my research can be found on this website and in my [CV](/cv/). Please don’t hesitate to contact me if you have any questions (<a href='mailto:tr.rebholz@gmail.com'>tr.rebholz@gmail.com</a>)!
