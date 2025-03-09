@@ -21,7 +21,7 @@ Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (2025). Time for 
 - <a href="https://econtent.hogrefe.com/doi/pdf/10.1027/2151-2604/a000571">Download pdf</a>
 
 
-von Dielingen, J., Rebholz, T. R., & Papenmeier, F. (2025). Empirical investigation of a GPT-4o mini-based tutor for the learning of R programming. <i>Zeitschrift für Hochschulentwicklung (Journal for Higher Education Development)</i>, <i>20</i>(SH-KI-2), 253–274. <a href='https://doi.org/10.21240/zfhe/SH-KI-2/13' target="_blank">https://doi.org/10.21240/zfhe/SH-KI-2/13</a>
+von Dielingen, J., <b>Rebholz, T. R.</b>, & Papenmeier, F. (2025). Empirical investigation of a GPT-4o mini-based tutor for the learning of R programming. <i>Zeitschrift für Hochschulentwicklung (Journal for Higher Education Development)</i>, <i>20</i>(SH-KI-2), 253–274. <a href='https://doi.org/10.21240/zfhe/SH-KI-2/13' target="_blank">https://doi.org/10.21240/zfhe/SH-KI-2/13</a>
 
 - <a href="https://www.zfhe.at/index.php/zfhe/article/download/2119/1341">Download pdf</a>
 
