@@ -11,6 +11,21 @@ See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cL
 
 ## Peer-Reviewed Journal Articles
 
+Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>,Seida, C., & Papenmeier, F. (in press). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <i>Meta-Psychology</i>. Preprint available at: <a href='https://doi.org/10.31234/osf.io/jztk2' target="_blank">https://doi.org/10.31234/osf.io/jztk2</a>
+
+- <a href="https://osf.io/jztk2/download/">Download preprint as pdf</a>
+
+
+Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (2025). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie (Journal of Psychology)</i>, <i>233</i>(1), 17–29. <a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">https://doi.org/10.1027/2151-2604/a000571</a>
+
+- <a href="https://econtent.hogrefe.com/doi/pdf/10.1027/2151-2604/a000571">Download pdf</a>
+
+
+von Dielingen, J., Rebholz, T. R., & Papenmeier, F. (2025). Empirical investigation of a GPT-4o mini-based tutor for the learning of R programming. <i>Zeitschrift für Hochschulentwicklung (Journal for Higher Education Development)</i>, <i>20</i>(SH-KI-2), 253–274. <a href='https://doi.org/10.21240/zfhe/SH-KI-2/13' target="_blank">https://doi.org/10.21240/zfhe/SH-KI-2/13</a>
+
+- <a href="https://www.zfhe.at/index.php/zfhe/article/download/2119/1341">Download pdf</a>
+
+
 Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilovich, T., ... <b>Rebholz, T. R.</b>, ... Weick, M. (2024). Kahneman in quotes and reflections. <i>Psychological Inquiry</i>, <i>35</i>(1), 3–10. <a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">https://doi.org/10.1080/1047840X.2024.2366813</a>
 
 - <a href="https://www.tandfonline.com/eprint/WBGT6BDDDDPTMZ4UXWRN/full?target=10.1080/1047840X.2024.2366813">Download pdf</a> (first 50 free) or <a href="https://osf.io/m4c7f/download/">preprint</a> (unlimited free)
@@ -29,11 +44,6 @@ Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilo
 Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., ... & <b>Rebholz, T. R.</b>, ... Zhang, Y. (2024). The replication database: Documenting the replicability of psychological science. <i>Journal of Open Psychology Data</i>, <i>12</i>(8), 1–23. <a href='https://doi.org/10.5334/jopd.101' target="_blank">https://doi.org/10.5334/jopd.101</a>
 
 - <a href="https://openpsychologydata.metajnl.com/articles/101/files/66e18fdc5e1b7.pdf">Download pdf</a>
-
-
-Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (2024). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie/Journal of Psychology</i>. Advance online publication. <a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">https://doi.org/10.1027/2151-2604/a000571</a>
-
-- <a href="https://econtent.hogrefe.com/doi/pdf/10.1027/2151-2604/a000571">Download pdf</a>
 
 
 Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The interaction game: A reciprocity‐based minimal paradigm for the induction of social distance. <i>Journal of Applied Social Psychology</i>, <i>53</i>(8), 796–814. <a href='https://doi.org/10.1111/jasp.12969' target="_blank">https://doi.org/10.1111/jasp.12969</a>
@@ -77,11 +87,6 @@ Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2024). <i>Metacognitive myop
 <b>Rebholz, T. R.</b>, Hütter, M., & Voss, A. (2023). <i>Bayesian advice taking: Adaptive strategy selection in sequential advice seeking.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">https://doi.org/10.31234/osf.io/y8x92</a>
 
 - <a href="https://osf.io/y8x92/download/">Download preprint as pdf</a>
-
-
-Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>,Seida, C., & Papenmeier, F. (2023). <i>Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/jztk2' target="_blank">https://doi.org/10.31234/osf.io/jztk2</a>
-
-- <a href="https://osf.io/jztk2/download/">Download preprint as pdf</a>
 
 
 Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (2023). <i>Investigating factors influencing audiences’ integration of scientific evidence.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">https://doi.org/10.31234/osf.io/hkct6</a>
