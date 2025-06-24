@@ -69,6 +69,11 @@ Röseler, L., Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., .
 
 ## Preprints
 
+<b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2025). <i>Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v1</a>
+
+- <a href="https://osf.io/5u8br_v1/download/">Download preprint as pdf</a>
+
+
 Mayer, M., & <b>Rebholz, T. R.</b> (2024). <i>Navigating anchor relevance skillfully: Expertise reduces susceptibility to anchoring effects.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/69jwr' target="_blank">https://doi.org/10.31234/osf.io/69jwr</a>
 
 - <a href="https://osf.io/69jwr/download/">Download preprint as pdf</a>
