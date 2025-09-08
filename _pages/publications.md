@@ -16,6 +16,11 @@ Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>,Seida, C., & Papenmeier, F. (in
 - <a href="https://osf.io/jztk2/download/">Download preprint as pdf</a>
 
 
+Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (in press). Investigating factors influencing audiences’ integration of scientific evidence. <i>Journal of Experimental Psychology: Applied</i>. Preprint available at: <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">https://doi.org/10.31234/osf.io/hkct6</a>
+
+- <a href="https://osf.io/hkct6/download/">Download preprint as pdf</a>
+
+
 Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (2025). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie (Journal of Psychology)</i>, <i>233</i>(1), 17–29. <a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">https://doi.org/10.1027/2151-2604/a000571</a>
 
 - <a href="https://econtent.hogrefe.com/doi/pdf/10.1027/2151-2604/a000571">Download pdf</a>
@@ -92,8 +97,3 @@ Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2024). <i>Metacognitive myop
 <b>Rebholz, T. R.</b>, Hütter, M., & Voss, A. (2023). <i>Bayesian advice taking: Adaptive strategy selection in sequential advice seeking.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">https://doi.org/10.31234/osf.io/y8x92</a>
 
 - <a href="https://osf.io/y8x92/download/">Download preprint as pdf</a>
-
-
-Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (2023). <i>Investigating factors influencing audiences’ integration of scientific evidence.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">https://doi.org/10.31234/osf.io/hkct6</a>
-
-- <a href="https://osf.io/hkct6/download/">Download preprint as pdf</a>
