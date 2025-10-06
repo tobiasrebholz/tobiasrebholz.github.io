@@ -9,10 +9,11 @@ author_profile: true
 
 ## Research Interests and Areas of Expertise
 
-- <b>Quantitative Methods for Behavioral Research</b><br> I.e., Machine/Deep Learning, Generative AI, Data Science, Applied Statistics and Econometrics
--	<b>Social Cognition/Rationality in Judgment and Decision-Making</b><br> E.g., Judgment Aggregation, Wisdom of Crowds, Joint Decision-Making
--	<b>Information Sampling and Utilization</b><br> E.g., Advice Taking, Multidimensional Belief Updating, Anchoring Effects, Hindsight Bias, Science Communication Acceptance
--	<b>Human-Computer Interaction</b><br> E.g., Algorithm Aversion/Appreciation, Augmented Cognition, Large Language Models
+- <b>Quantitative methods for behavioral research</b><br> I.e., machine/deep learning, generative AI, data science, applied statistics and econometrics
+-	<b>Social cognition/rationality in judgment and decision-making</b><br> E.g., judgment aggregation, wisdom of crowds, confirmation bias, overconfidence
+-	<b>Information sampling and utilization</b><br> E.g., advice taking, multidimensional belief updating, anchoring effects, hindsight bias, science communication/acceptance
+-	<b>Artificial cognition and human-computer interaction</b><br> E.g., algorithm aversion/appreciation, augmented cognition, large language models
+
 
 
 ## Schematic Summary of my Research Interests and Projects
