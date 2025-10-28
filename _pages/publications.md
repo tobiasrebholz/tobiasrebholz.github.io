@@ -11,7 +11,7 @@ See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cL
 
 ## Peer-Reviewed Journal Articles
 
-Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>,Seida, C., & Papenmeier, F. (in press). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <i>Meta-Psychology</i>. Preprint available at: <a href='https://doi.org/10.31234/osf.io/jztk2' target="_blank">https://doi.org/10.31234/osf.io/jztk2</a>
+Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>, Seida, C., & Papenmeier, F. (in press). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <i>Meta-Psychology</i>. Preprint available at: <a href='https://doi.org/10.31234/osf.io/jztk2' target="_blank">https://doi.org/10.31234/osf.io/jztk2</a>
 
 - <a href="https://osf.io/jztk2/download/">Download preprint as pdf</a>
 
