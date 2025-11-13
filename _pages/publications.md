@@ -46,11 +46,6 @@ Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilo
 - <a href="https://assets.pubpub.org/bbvzfpn2/tmb_tmb0000136-01733760227226.pdf">Download pdf</a>
 
 
-Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., ... & <b>Rebholz, T. R.</b>, ... Zhang, Y. (2024). The replication database: Documenting the replicability of psychological science. <i>Journal of Open Psychology Data</i>, <i>12</i>(8), 1–23. <a href='https://doi.org/10.5334/jopd.101' target="_blank">https://doi.org/10.5334/jopd.101</a>
-
-- <a href="https://openpsychologydata.metajnl.com/articles/101/files/66e18fdc5e1b7.pdf">Download pdf</a>
-
-
 Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The interaction game: A reciprocity‐based minimal paradigm for the induction of social distance. <i>Journal of Applied Social Psychology</i>, <i>53</i>(8), 796–814. <a href='https://doi.org/10.1111/jasp.12969' target="_blank">https://doi.org/10.1111/jasp.12969</a>
 
 - <a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/jasp.12969?download=true">Download pdf</a>
@@ -59,6 +54,13 @@ Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The inte
 <b>Rebholz, T. R.</b>, & Hütter, M. (2022). The advice less taken: The consequences of receiving unexpected advice. <i>Judgment and Decision Making</i>, <i>17</i>(4), 816–848. <a href='https://doi.org/10.1017/S1930297500008950' target="_blank">https://doi.org/10.1017/S1930297500008950</a>
 
 - <a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F50E07AA9C120A295D42736A184331B4/S1930297500008950a.pdf/the-advice-less-taken-the-consequences-of-receiving-unexpected-advice.pdf">Download pdf</a>
+
+
+## Peer-Reviewed Software & Data (<a href="https://github.com/TobiasRebholz">GitHub profile</a>; <a href="https://osf.io/fd8gn">OSF profile</a>)
+
+Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., ... & <b>Rebholz, T. R.</b>, ... Zhang, Y. (2024). The replication database: Documenting the replicability of psychological science. <i>Journal of Open Psychology Data</i>, <i>12</i>(8), 1–23. <a href='https://doi.org/10.5334/jopd.101' target="_blank">https://doi.org/10.5334/jopd.101</a>
+
+- <a href="https://openpsychologydata.metajnl.com/articles/101/files/66e18fdc5e1b7.pdf">Download pdf</a>
 
 
 Röseler, L., Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., ... <b>Rebholz, T. R.</b>, ... Schütz, A. (2022). The open anchoring quest dataset: Anchored estimates from 96 studies on anchoring effects. <i>Journal of Open Psychology Data</i>, <i>10</i>(1), 1–12. https://doi.org/10.5334/jopd.67
@@ -74,7 +76,7 @@ Röseler, L., Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., .
 
 ## Preprints
 
-<b>Rebholz, T. R.</b> (2025). <i>Lay theories about artificial versus artificial intelligence: Rethinking theory of machine.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/ekz9a' target="_blank">https://doi.org/10.31234/osf.io/ekz9a</a>
+<b>Rebholz, T. R.</b> (2025). <i>Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/ekz9a' target="_blank">https://doi.org/10.31234/osf.io/ekz9a</a>
 
 - <a href="https://osf.io/ekz9a/download/">Download preprint as pdf</a>
 
@@ -82,6 +84,11 @@ Röseler, L., Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., .
 <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2025). <i>Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v1</a>
 
 - <a href="https://osf.io/5u8br_v1/download/">Download preprint as pdf</a>
+
+
+<b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025). <i>Algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a>
+
+- <a href="https://arxiv.org/pdf/2511.09454">Download preprint as pdf</a>
 
 
 Mayer, M., & <b>Rebholz, T. R.</b> (2024). <i>Navigating anchor relevance skillfully: Expertise reduces susceptibility to anchoring effects.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/69jwr' target="_blank">https://doi.org/10.31234/osf.io/69jwr</a>
