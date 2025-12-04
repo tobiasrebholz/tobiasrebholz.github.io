@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "How do people make judgments and decisions when the information they rely on is incomplete, noisy, or purely qualitative—and how is this changing in the age of AI?"
+title: "How do people make judgments and decisions when the information they rely on is noisy and incomplete—and how is this changing in the age of AI?"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
