@@ -7,5 +7,5 @@ author_profile: true
 
 {% include base_path %}
 
-# Coming soon! Stay tuned ...
+## Coming soon! Stay tuned ...
 
