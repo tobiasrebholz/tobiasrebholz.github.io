@@ -7,6 +7,7 @@ author_profile: true
 
 {% include base_path %}
 
+<br>
 <div style="text-align: center"> 
   <img src="https://drive.google.com/thumbnail?id=11Ar0HXOfNkAxqcWyDZTlQ8ZeMAeLh17d&sz=w1000" width="85%">
 </div>
