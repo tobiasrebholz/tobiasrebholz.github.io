@@ -1,11 +1,11 @@
 ---
 layout: archive
 title: "Culinary Corner"
-permalink: /cv/
+permalink: /culinary/
 author_profile: true
 ---
 
 {% include base_path %}
 
-# Coming soon, stay tuned ...
+# Coming soon! Stay tuned ...
 

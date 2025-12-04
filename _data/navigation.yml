@@ -1,6 +1,9 @@
 # main links links
 main:
 
+  - title: "Vita"
+    url: /cv/
+
   - title: "Research"
     url: /research/
 
@@ -18,9 +21,6 @@ main:
     
   # - title: "Software & Data"
     # url: /software/
-
-  - title: "Vita"
-    url: /cv/
 
   - title: "Culinary"
     url: /culinary/
