@@ -9,21 +9,7 @@ author_profile: true
 
 ## Research Interests and Areas of Expertise
 
-- <b>Quantitative methods for behavioral research</b>
-  - I.e., machine/deep learning, generative AI, data science, applied statistics and econometrics
-
--	<b>Social cognition/rationality in judgment and decision-making</b>
-  - E.g., judgment aggregation, error decomposition, wisdom of crowds, confirmation bias, overconfidence
-
--	<b>Information sampling and utilization</b>
-  - E.g., advice taking, multidimensional belief updating, anchoring effects, hindsight bias, science communication/acceptance
-
--	<b>Artificial cognition and human-computer interaction</b>
-  - E.g., algorithm aversion/appreciation, augmented cognition, large language models
-
-
-
-## Schematic Summary of my Research Interests and Projects
+A schematic overview of my research identity and agenda is shown in the figure below. It centers on behavioral experimentation (see the examples below) and on developing and applying advanced quantitative methods (e.g., Rebholz, Biella, et al., <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">2024</a>) to investigate human judgment and decision-making (JDM) processes and belief updating. The specific phenomena that interest me most cluster into four pillars: informational and social influence from others (e.g., advice taking; Rebholz & Hütter, <a href='https://doi.org/10.1017/S1930297500008950' target="_blank">2022</a>); the sequential sampling and utilization of external evidence (e.g., Bayesian updating; Rebholz et al., <a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">2023</a>); people’s adaptiveness or rationality of belief updating in these contexts (e.g., heuristics and biases; Rebholz, Groß, et al., <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">2025</a>; but also science communication; Schreiner et al., <a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">2025</a>, <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">in press</a>); and the implications of these phenomena for human-computer interaction (e.g., algorithm aversion vs. appreciation; Rebholz, <a href='https://doi.org/10.31234/osf.io/ekz9a' target="_blank">conditionally recommended</a>; Rebholz, Koop, et al., <a href='https://doi.org/10.1037/tmb0000136' target="_blank">2024</a>; Rebholz, Uphoff, et al., <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">2025</a>). This last pillar primarily concerns augmented JDM settings, where human decision-makers retain responsibility for the final decision but receive input from AI and other decision-support systems before or during the judgment process.
 
 <br>
 <div style="text-align: center"> 
