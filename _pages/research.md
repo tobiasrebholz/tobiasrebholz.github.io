@@ -20,6 +20,6 @@ author_profile: true
 
 <br>
 <div style="text-align: center"> 
-  <iframe src="https://drive.google.com/file/d/11Ar0HXOfNkAxqcWyDZTlQ8ZeMAeLh17d/preview" width="85%" height="400px"></iframe>
+  <img src="https://drive.google.com/thumbnail?id=11Ar0HXOfNkAxqcWyDZTlQ8ZeMAeLh17d&sz=w1000" width="85%"></img>
 </div>
 
