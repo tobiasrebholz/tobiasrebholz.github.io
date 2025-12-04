@@ -19,8 +19,8 @@ main:
   # - title: "Software & Data"
     # url: /software/
 
-  - title: "Academic CV"
+  - title: "CV"
     url: /cv/
 
-  - title: "Cooking"
-    url: /cooking/
+  - title: "Culinary"
+    url: /culinary/
