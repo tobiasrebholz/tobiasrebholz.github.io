@@ -43,8 +43,8 @@ Method seminar, B.Sc. Psychology, University of Tübingen
 
 ## Winter 21/22
 
-- <b>Advanced Data Collection and Data Analysis</b><br> Method seminar, B.Sc. Psychology, University of Tübingen
+- <b>Experimental Psychology: Advanced Data Collection and Data Analysis</b><br> Method seminar, B.Sc. Psychology, University of Tübingen
 
 ## Winter 20/21
 
-- <b>Advanced Data Collection and Data Analysis</b><br> Method seminar, B.Sc. Psychology, University of Tübingen
+- <b>Experimental Psychology: Advanced Data Collection and Data Analysis</b><br> Method seminar, B.Sc. Psychology, University of Tübingen
