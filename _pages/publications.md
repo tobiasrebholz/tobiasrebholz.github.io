@@ -11,14 +11,19 @@ See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cL
 
 ## Peer-Reviewed Journal Articles
 
-Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>, Seida, C., & Papenmeier, F. (in press). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <i>Meta-Psychology</i>. Preprint available at: <a href='https://doi.org/10.31234/osf.io/jztk2' target="_blank">https://doi.org/10.31234/osf.io/jztk2</a>
+<b>Rebholz, T. R.</b> (2025). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Peer-reviewed and recommended by PCI: Psychology</i>. <a href='https://doi.org/10.31234/osf.io/ekz9a' target="_blank">https://doi.org/10.31234/osf.io/ekz9a</a>
+
+- <a href="https://osf.io/ekz9a/download/">Download preprint as pdf</a>
+
+
+Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>, Seida, C., & Papenmeier, F. (in press). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <i>Meta-Psychology</i>. [OA-Preprint: <a href='https://doi.org/10.31234/osf.io/jztk2' target="_blank">https://doi.org/10.31234/osf.io/jztk2</a>]
 
 - <a href="https://osf.io/jztk2/download/">Download preprint as pdf</a>
 
 
-Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (in press). Investigating factors influencing audiences’ integration of scientific evidence. <i>Journal of Experimental Psychology: Applied</i>. Preprint available at: <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">https://doi.org/10.31234/osf.io/hkct6</a>
+Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (2025). Investigating factors influencing audiences’ integration of scientific evidence. <i>Journal of Experimental Psychology: Applied</i>. <a href='https://doi.org/10.1037/xap0000552' target="_blank">https://doi.org/10.1037/xap0000552</a>
 
-- <a href="https://osf.io/hkct6/download/">Download preprint as pdf</a>
+- <a href="https://osf.io/hkct6/download/">Download postprint as pdf</a>
 
 
 Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (2025). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie (Journal of Psychology)</i>, <i>233</i>(1), 17–29. <a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">https://doi.org/10.1027/2151-2604/a000571</a>
@@ -75,11 +80,6 @@ Röseler, L., Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., .
 -->
 
 ## Preprints
-
-<b>Rebholz, T. R.</b> (2025). <i>Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/ekz9a' target="_blank">https://doi.org/10.31234/osf.io/ekz9a</a>
-
-- <a href="https://osf.io/ekz9a/download/">Download preprint as pdf</a>
-
 
 <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2025). <i>Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v1</a>
 
