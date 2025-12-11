@@ -11,12 +11,12 @@ See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cL
 
 ## Peer-Reviewed Journal Articles
 
-<b>Rebholz, T. R.</b> (2025). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Peer-reviewed and recommended by PCI: Psychology</i>. <a href='https://doi.org/10.31234/osf.io/ekz9a' target="_blank">https://doi.org/10.31234/osf.io/ekz9a</a>
+<b>Rebholz, T. R.</b> (2025). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Peer-reviewed and recommended by PCI: Psychology</i>. <a href='https://doi.org/10.24072/pci.psych.100010' target="_blank">https://doi.org/10.24072/pci.psych.100010</a>
 
 - <a href="https://osf.io/ekz9a/download/">Download preprint as pdf</a>
 
 
-Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>, Seida, C., & Papenmeier, F. (in press). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <i>Meta-Psychology</i>. [OA-Preprint: <a href='https://doi.org/10.31234/osf.io/jztk2' target="_blank">https://doi.org/10.31234/osf.io/jztk2</a>]
+Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>, Seida, C., & Papenmeier, F. (in press). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <i>Meta-Psychology</i>. <a href='https://doi.org/10.15626/MP.2024.4137' target="_blank">https://doi.org/10.15626/MP.2024.4137</a>
 
 - <a href="https://osf.io/jztk2/download/">Download preprint as pdf</a>
 
