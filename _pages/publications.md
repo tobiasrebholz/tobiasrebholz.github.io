@@ -18,6 +18,7 @@ author_profile: true
 ## Peer-Reviewed Journal Articles <i><a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a></i>
 
 <div class="pubs">
+<p>
 
 <b>Rebholz, T. R.</b> (in press). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Collabra: Psychology</i>.
 <a href="https://osf.io/ekz9a/download/"><button>Download preprint as pdf</button></a>
@@ -58,6 +59,7 @@ Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The inte
 <b>Rebholz, T. R.</b>, & Hütter, M. (2022). The advice less taken: The consequences of receiving unexpected advice. <i>Judgment and Decision Making</i>, <i>17</i>(4), 816–848. <a href='https://doi.org/10.1017/S1930297500008950' target="_blank">https://doi.org/10.1017/S1930297500008950</a>
 <a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F50E07AA9C120A295D42736A184331B4/S1930297500008950a.pdf/the-advice-less-taken-the-consequences-of-receiving-unexpected-advice.pdf"><button>Download article as pdf</button></a>
 
+</p>
 </div>
 
 
