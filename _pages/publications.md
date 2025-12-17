@@ -7,9 +7,8 @@ author_profile: true
 
 {% include base_path %}
 
-See my [CV](../cv/) or my <a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a> for full lists of publications.
 
-## Peer-Reviewed Journal Articles
+## Peer-Reviewed Journal Articles <i><a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a></i>
 
 <b>Rebholz, T. R.</b> (in press). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Collabra: Psychology</i>.<br>
 <a href="https://osf.io/ekz9a/download/"><button>Download preprint as pdf</button></a>
@@ -51,7 +50,7 @@ Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The inte
 <a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F50E07AA9C120A295D42736A184331B4/S1930297500008950a.pdf/the-advice-less-taken-the-consequences-of-receiving-unexpected-advice.pdf"><button>Download article as pdf</button></a>
 
 
-## Peer-Reviewed Software & Data (<a href="https://github.com/TobiasRebholz">GitHub profile</a>; <a href="https://osf.io/fd8gn">OSF profile</a>)
+## Peer-Reviewed Software & Data <i>(<a href="https://github.com/TobiasRebholz">GitHub profile</a>; <a href="https://osf.io/user/fd8gn?tab=2">OSF profile</a>)</i>
 
 Röseler, L., Kaiser, L., Doetsch, C. A., Klett, N., Seida, C., Schütz, A., ... & <b>Rebholz, T. R.</b>, ... Zhang, Y. (2024). The replication database: Documenting the replicability of psychological science. <i>Journal of Open Psychology Data</i>, <i>12</i>(8), 1–23. <a href='https://doi.org/10.5334/jopd.101' target="_blank">https://doi.org/10.5334/jopd.101</a><br>
 <a href="https://openpsychologydata.metajnl.com/articles/101/files/66e18fdc5e1b7.pdf"><button>Download article as pdf</button></a>
@@ -67,7 +66,7 @@ Röseler, L., Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., .
 {% endfor %}
 -->
 
-## Preprints
+## Preprints <i>(<a href="https://osf.io/user/fd8gn?tab=5">PsyArXiv profile</a>; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R">arXiv profile</a>)</i>
 
 <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2025). <i>Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v1</a><br>
 <a href="https://osf.io/5u8br_v1/download/"><button>Download preprint as pdf</button></a>
@@ -87,3 +86,8 @@ Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2024). <i>Metacognitive myop
 
 <b>Rebholz, T. R.</b>, Hütter, M., & Voss, A. (2023). <i>Bayesian advice taking: Adaptive strategy selection in sequential advice seeking.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">https://doi.org/10.31234/osf.io/y8x92</a><br>
 <a href="https://osf.io/y8x92/download/"><button>Download preprint as pdf</button></a>
+
+
+## Manuscripts
+
+See my [CV](../cv/).
