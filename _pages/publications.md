@@ -15,21 +15,22 @@ author_profile: true
 {% include base_path %}
 
 
-## Peer-Reviewed Journal Articles <i><a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a></i>
+## Peer-Reviewed Journal Articles <i>(<a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a>)</i>
 
 <div class="pubs">
-
 <b>Rebholz, T. R.</b> (in press). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Collabra: Psychology</i>.
 <a href="https://osf.io/ekz9a/download/"><button>Download preprint as pdf</button></a>
-<br>
+</div>
 
+<div class="pubs">
 Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>, Seida, C., & Papenmeier, F. (in press). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <i>Meta-Psychology</i>. <a href='https://doi.org/10.15626/MP.2024.4137' target="_blank">https://doi.org/10.15626/MP.2024.4137</a>
 <a href="https://osf.io/jztk2/download/"><button>Download preprint as pdf</button></a>
-<br>
+</div>
 
+<div class="pubs">
 Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (2025). Investigating factors influencing audiences’ integration of scientific evidence. <i>Journal of Experimental Psychology: Applied</i>. <a href='https://doi.org/10.1037/xap0000552' target="_blank">https://doi.org/10.1037/xap0000552</a>
 <a href="https://osf.io/hkct6/download/"><button>Download postprint as pdf</button></a>
-<br>
+</div>
 
 Schreiner, M. R., Quevedo Pütter, J., & <b>Rebholz, T. R.</b> (2025). Time for an update: Belief updating based on ambiguous scientific evidence. <i>Zeitschrift für Psychologie (Journal of Psychology)</i>, <i>233</i>(1), 17–29. <a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">https://doi.org/10.1027/2151-2604/a000571</a>
 <a href="https://econtent.hogrefe.com/doi/pdf/10.1027/2151-2604/a000571"><button>Download article as pdf</button></a>
