@@ -7,11 +7,11 @@ author_profile: true
 
 {% include base_path %}
 
--	<b>Quantitative Behavioral Research Methods</b>
+-	Quantitative Methods
 
--	<b>Judgment & Decision-Making (JDM) and Belief Updating</b>
+-	Judgment and Decision-Making (JDM)
 
--	<b>Human-AI Interaction</b>
+-	Human-Computer Interaction (HCI)
 
 <br>
 <div style="text-align: center"> 
