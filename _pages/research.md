@@ -7,11 +7,9 @@ author_profile: true
 
 {% include base_path %}
 
--	Quantitative Methods
-
--	Judgment and Decision-Making (JDM)
-
--	Human-Computer Interaction (HCI)
+-	<b>Quantitative Methods</b>
+-	<b>Judgment and Decision-Making (JDM)</b>
+-	<b>Human-Computer Interaction (HCI)</b>
 
 <br>
 <div style="text-align: center"> 
