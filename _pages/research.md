@@ -7,6 +7,11 @@ author_profile: true
 
 {% include base_path %}
 
+-	Quantitative methods for behavioral research (i.e., machine/deep learning, generative AI, data science, applied statistics and econometrics)
+-	Social cognition/rationality in judgment and decision-making (e.g., judgment aggregation, error decomposition, wisdom of crowds, confirmation bias, overconfidence)
+-	Information sampling and utilization (e.g., advice taking, multidimensional belief updating, anchoring effects, hindsight bias, science communication/acceptance)
+-	Artificial cognition and human-computer interaction (e.g., algorithm aversion/appreciation, augmented cognition, large language models)
+
 <br>
 <div style="text-align: center"> 
   <img src="https://drive.google.com/thumbnail?id=11Ar0HXOfNkAxqcWyDZTlQ8ZeMAeLh17d&sz=w1000" width="85%">
