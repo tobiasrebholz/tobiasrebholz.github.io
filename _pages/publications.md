@@ -26,7 +26,7 @@ author_profile: true
 
 
 <p>
-Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>, Seida, C., & Papenmeier, F. (in press). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <i>Meta-Psychology</i>. <a href='https://doi.org/10.15626/MP.2024.4137' target="_blank">https://doi.org/10.15626/MP.2024.4137</a><br>
+Röseler, L., Incerti, L., <b>Rebholz, T. R.</b>, Seida, C., & Papenmeier, F. (in press). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <i>Meta-Psychology</i>, <i>9</i>, MP.2024.4137. <a href='https://doi.org/10.15626/MP.2024.4137' target="_blank">https://doi.org/10.15626/MP.2024.4137</a><br>
 <a href="https://open.lnu.se/index.php/metapsychology/article/view/4137/4300"><button>Download article as pdf</button></a>
 </p>
 
