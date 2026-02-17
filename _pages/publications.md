@@ -20,8 +20,8 @@ author_profile: true
 <div class="apa">
 
 <p>
-<b>Rebholz, T. R.</b> (in press). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Collabra: Psychology</i>.<br>
-<a href="https://osf.io/ekz9a/download/"><button>Download preprint as pdf</button></a>
+<b>Rebholz, T. R.</b> (2026). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Collabra: Psychology</i>, <i>12</i>(1). <a href='https://doi.org/10.1525/collabra.155671' target="_blank">https://doi.org/10.1525/collabra.155671</a><br>
+<a href="https://online.ucpress.edu/collabra/article-pdf/12/1/155671/927168/collabra_2026_12_1_155671.pdf"><button>Download article as pdf</button></a>
 </p>
 
 
