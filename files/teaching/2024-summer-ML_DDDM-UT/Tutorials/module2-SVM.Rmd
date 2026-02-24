@@ -1,0 +1,74 @@
+---
+title: "Module 2: Tutorial: Support Vector Machines"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+# Support Vector Machines
+
+Support Vector Machines (SVMs) can also be applied for multiclass classification tasks through techniques such as one-vs-one or one-vs-all. In the one-vs-one strategy, SVM constructs multiple binary classifiers, each trained to distinguish between pairs of classes. In the one-vs-all strategy, SVM constructs a single classifier for each class, which is trained to distinguish that class from all other classes.
+
+## Description of data set
+
+We use a version of the `bfi` dataset from class to predict the level of education by Big-5 personality traits. For the data, a subset of observations is chosen from the original dataset where educational levels are balanced. The reason is that classifiers often struggle with imbalanced classes (e.g., majority of `education` being 3).
+
+For simplicity, we treat `education` as a categorical variable here, although it is actually an ordinal variable (i.e., 1 \< 2 \< 3 \< 4 \< 5).
+
+Type ?psych::bfi into your console for more information on the dataset. Note that the Big-5 triats `agree`, `conscientious`, `extra`, `neuro`, and `open` were created by averaging each participant's targets to the five survey items per trait (e.g., `A1`-`A5`).
+
+## Tasks
+
+1.  Read the data file modeul2-bfi.csv into R (assign it to a variable called "dat").
+
+```{r}
+
+```
+
+2.  Transform the education variable to a factor and assign the data set "dat" to a `mlr3` classification task called "tsk" with `education` as target and `agree` and `conscientious` as features.
+
+```{r}
+
+```
+
+3.  Randomly separate the dataset into 80% training and 20% testing data (Hint: Set the seed to ensure reproducibility of your results).
+
+```{r}
+
+```
+
+4.  Use the training sample to build a SVM (with default settings) to predict the target `education` with `agree` and `conscientious` as features.
+
+```{r}
+
+```
+
+5.  Visualize the classifier for agreeableness on the x-axis and conscientiousness on the y-axis.
+
+```{r out.width="50%", fig.align='center'}
+
+```
+
+6.  Now use the training sample to build a SVM (with default settings) for `education` as target and all Big-5 traits as features.
+
+```{r}
+
+```
+
+7.  Predict the educational levels of the observations in the training sample as well as in the held-out test sample. Also calculate the the in-sample training classification error and compare it to the out-of-sample testing classification error. Why is the former likely (much) smaller than the latter?
+
+```{r}
+
+```
+
+8.  Assess the expected out-of-sample performance of your learner from task 6 using 10-fold cross-validation (CV). Does CV improve the prediction of your model's out-of-sample classification performance? (Hint: Set the seed to ensure reproducibility of your results)
+
+```{r}
+
+```
+
+9.  Bonus: Using 10-fold cross-validation, choose a value for the tuning parameter $C$ (`cost`) from the set `(1, 10, 50, 100)`. (Hint: Set the seed to ensure reproducibility of your results)
+
+```{r}
+
+```

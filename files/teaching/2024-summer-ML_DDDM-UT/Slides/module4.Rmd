@@ -1,0 +1,837 @@
+---
+title: "Machine Learning (ML) for Data-Driven Decision-Making (DDDM)"
+subtitle: "Module 4: Deep Learning"
+output:
+  beamer_presentation:
+    slide_level: 3
+    keep_tex: true
+    includes:
+      in_header: subfiles/preamble.tex
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption:
+- aspectratio=43 
+#- "handout" #see https://stackoverflow.com/a/49666042 for details
+- t #start first line on top of slide (https://stackoverflow.com/a/42471345/11118919)
+bibliography:
+- ../../../Literature/!Bibliographies/all.bib
+csl: apa.csl
+fontsize: 10pt
+header-includes:
+- \titlegraphic{\includegraphics[width=4.5cm]{subfiles/UT_WBMW_Rot_RGB_01.png}}
+- \AtBeginDocument{\author[Tobias Rebholz]{Tobias Rebholz}}
+- \AtBeginDocument{\institute[University of Tübingen]{University of Tübingen}}
+- \AtBeginDocument{\date[Summer Term 2024]{Summer Term 2024}}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(verbose = TRUE)
+knitr::opts_chunk$set(echo = TRUE
+                      , collapse = TRUE
+                      , cache = FALSE
+                      )
+
+# R options
+Sys.setenv(LANG = "en") #--> english error messages
+#options(scipen=999) #turn off scientific notation
+
+# load packages here
+library(papaja)
+library(jsonlite)
+library(tidyverse)
+
+# bibliography
+#references_TRR <- bibtex::read.bib("../../../Literature/references_TRR.bib")
+#cite via "`r capture.output(print(references_TRR["Rebholz_Hutter.2022"]))`" on slide then (https://stackoverflow.com/a/61528568/11118919)
+
+# set path
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+# data
+# dat <- read.csv('subfiles/data/???.csv', header = TRUE, check.names = FALSE)
+```
+
+
+# Deep Learning
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/AI_ML_DL.png}
+\end{figure}
+
+(https://towardsdatascience.com/redefining-data-science-d7f2026a021a)
+
+
+### Deep Learning
+
+- Deep Learning (DL) is a sub-field of Machine Learning that uses multi-layered or "deep" neural networks (NNs) for classification, regression, and other DDDM tasks
+
+- Motivation: Most of the world's data is held in unstructured formats
+
+  - NNs can process unstructured data (e.g., text and images) quite well
+
+  - Classical ML algorithms usually leverage structured data to make predictions
+
+- NNs automate feature extraction, removing some of the dependency on human experts
+
+  - E.g., in a set of photos of different people, DL algorithms can determine which features (e.g., shape of mouth, eyes, ...) are most important in distinguishing emotional expressions from one another
+  
+  - In classical ML, this hierarchy of features must be established manually by a human expert
+
+- A DL algorithm adjusts and fits itself (through gradient descent and backpropagation; not discussed!) to improve its out-of-sample prediction performance
+
+
+### Deep Learning
+
+- Good performance of DL algorithms usually requires intensive knowledge, time, and (computational) resources to train the models
+  
+  - There is a whole industry trying to make money out of training good DL models
+  
+  - In other words, we cannot afford these resources!
+  
+- Instead of training the models ourselves, we focus on using pre-trained models to solve our own DDDM problems in this module
+
+  - Costs: We give up control over what the (pre-)trained model can actually do---and some understanding of how it achieved this competence
+
+- E.g., the Hugging Face community provides access to many pre-trained models and datasets: https://huggingface.co/
+
+
+
+
+
+
+
+
+# Neural Networks
+
+- NNs represent state-of-the-art DL technology
+
+  - They are trained on massive amounts of data to identify and classify phenomena, recognize patterns and relationships, evaluate possibilities, make predictions and decisions, ...
+  
+- NNs required a lot of tinkering, whereas newer methods (e.g., SVM, RF) are more automatic
+
+  - On many problems, the newer methods outperform **poorly-trained** NNs
+
+  - But: NNs are successful especially on some **niche problems**, such as: 
+  
+    - Image recognition (first half of today's session)
+    
+    - Video classification
+    
+    - Speech and text modeling (second half of today's session)
+    
+    - ...
+
+
+### Neural Networks
+
+- Single layer NN: The hidden layer computes so-called "activations" $A_k = h_k(X)$ that are nonlinear transformations of linear combinations of the vector of input features $X = \left(x_1, x_2, \ldots, x_p\right)$
+
+  - "Hidden" because the activations $A_k$ are not directly observed
+
+  - The functions $h_k(\cdot)$ for transforming the observed features are not fixed in advance, but learned during the training of the NN 
+
+  - The output layer is a linear model that uses the activations $A_k$ as inputs, resulting in a function $f(X)$ to make predictions (cf. regression)
+
+\begin{figure}
+  \includegraphics[width=0.325\textwidth]{subfiles/pics/James21-NN.png}
+\end{figure}
+
+(James et al., 2021, Figure 10.1)
+
+
+### Neural Networks
+
+- NNs are inspired by the functioning of the human brain:
+
+  - Activations $A_k$: Neurons receive signals (inputs) from other neurons, process them, and send signals to other neurons
+  
+  - Learning of $h_k(\cdot)$: This process is akin to the brain's ability to form new connections and strengthen existing ones based on experiences
+  
+  - Output: The brain processes information from neurons (i.e., activations) and generates responses (i.e., predictions)
+  
+\begin{figure}
+  \includegraphics[height=0.33\textheight]{subfiles/pics/NN_vs_brain-NN.jpg}
+  \includegraphics[height=0.33\textheight]{subfiles/pics/NN_vs_brain-brain.jpg}
+\end{figure}
+\vspace{-\baselineskip}
+(adapted from https://www.quora.com/How-is-AI-similar-different-to-the-human-brain)
+
+
+### Neural Networks
+
+- More complex NN with multiple hidden layers and outputs:
+
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{subfiles/pics/James21-NN-multiple_layers_and_outputs.png}
+\end{figure}
+
+(James et al., 2021, Figure 10.4)
+
+
+### Most Important Types of NNs
+
+- Feedforward NNs: Simplest type of NN, where information travels in one direction only, from the input layer, through any hidden layers, to the output layer
+
+  - Widely used in pattern recognition and standard classification tasks
+
+- Convolutional NNs: Designed to automatically and adaptively learn spatial hierarchies of features from the input (our focus today!)
+
+  - Primarily used for image processing, classification, and segmentation
+
+- Recurrent NNs: Have "memory" in the form of hidden state vectors that capture information about what has been computed so far
+
+  - Mainly used for sequential data tasks, such as language modeling and time series prediction (more on this later!)
+
+- Autoencoders (AEs): Encoding the input into a latent-space representation, and then decoding the latent representation back to the original input
+
+  - Great for feature extraction, dimensionality reduction, compression, ...
+
+
+### Important Programming Notes
+
+- DL is much more established in Python than in R
+
+  - Therefore, many R packages actually implement Python code in the background
+
+  - Implication: DL tasks that are easy to implement in Python can be quite tricky to get running in R 
+
+- `mlr3keras`: The DL package from the `mlr3verse` is still in a very early stage and under active development
+
+  - Therefore, we will use the `reticulate` R-package as an interface to Python in order to access state-of-the-art DL technology (e.g., `tf-keras` for NNs, `transformers` for NLP)
+
+
+### Important Programming Notes
+
+- Preparation in R:
+
+  - This setup chunk only needs to be run once and takes a while until finished
+
+```{r}
+if (!('reticulate' %in% installed.packages())) {
+  # Python:
+  install.packages("reticulate")
+  library(reticulate)
+  install_miniconda()
+  
+  # NNs:
+  reticulate::py_install('torch', pip=T)
+  reticulate::py_install('tf-keras', pip=T)
+  
+  # Transformers:
+  reticulate::py_install('transformers', pip=T)
+  
+  # Hugging Face:
+  reticulate::py_install('datasets', pip=T)
+}
+```
+
+
+
+
+
+
+  
+# Image Recognition
+
+- Image recognition: A classification task where the goal is to assign a label to an image
+
+  - Feature **matrix**: The pixel values that make up an image (incl. color, if applicable)
+  
+  - Target: The object shown in the image
+  
+    - Note: The target "object" can also be an entire scenery, specific situations or actions, ... 
+  
+- Performance measurement: Usual metrics (i.e., classification error/accuracy)
+
+
+### Applications in Behavioral Science: Handwriting Detection
+
+- Classification of handwritten digits:
+
+\begin{figure}
+  \includegraphics[width=0.6\textwidth]{subfiles/pics/James21-DL-handwriting.png}
+\end{figure}
+
+(James et al., 2021, Figure 10.3)
+
+
+### Applications in Neuroscience: Brain Scans
+
+- Screening fMRI scans for signs of disease such as cancer:
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/brain_scans-NN.jpg}
+\end{figure}
+
+(adapted from Zhu et al., 2019)
+
+
+### CNNs for Image Recognition
+
+- CNN layers for image identification:
+
+  - Takes in the image and identifies local features (e.g., a specific shape of a line or a color)
+
+  - Combines the local features in order to create compound features (e.g., eyes and ears) 
+  
+  - Compound features are used to output the target label “tiger”
+
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{subfiles/pics/James21-CNN-tiger.jpg}
+\end{figure}
+
+(James et al., 2021, Figure 10.6)
+
+
+### Image Recognition in `tf-keras`
+
+- Facial emotion recognition task:
+
+\begin{figure}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/afb096570c99251a4d4710e1e15460e6a5dbdfe28ab6d7ea7347f2b16b5b00e3.jpg}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/51412d16fa795358b8155fc9bd126337648f67d24c10aa412b4f1661795324ab.png}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/f605c69b3ed20322bf5e05fd46d7c7a7b6a90cb1cfa029a771615899144ba908.png}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/4665b2fdfdcf78cd86ed9bf869c1e15a866d9016a63ae1faf9338e0d5800187e.png}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/14c74e25d720087ff0acbda96a94f0cad4bc8880e80523a6574fd93fb76f145e.jpg}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/c9b0f4f6fc9d28565dbb0cdb42a8b5454a8e5353d687f6b3ed5df6e3cfa165c3.jpg}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/261675d9f504c350093c0691ff1dcc23547d9b76b896f9cc7c1a1743fce0b2c7.png}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/3ee97c1389248a028c6c410fd2d9d5f6fb5f82623d2afa85f594ae888c29ff9e.jpg}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/b1762e739d40a50131fcebb30c912cd95f4f4697c461c313bd188ab83f3442b2.png}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/53f6c7a6db74def47bf930fa4dcc1dfb292b526de3afc22f06d04027875e1c88.jpg}
+\end{figure}
+
+
+### Image Recognition in `tf-keras`
+
+- Reading the images as data into `R`:
+
+```{r cache=FALSE}
+library(reticulate) #; py_config() #; use_condaenv("r-reticulate")
+datasets <- import("datasets") #import Python package as "variable" into R
+dat = datasets$load_dataset("FastJobs/Visual_Emotional_Analysis", split = 'train')
+
+# Translate true numeric class to verbal label and transforming Python to R data:
+dict_emo <- dat$features$label$names
+dat <- dat$to_pandas() %>% 
+  as_tibble() %>% 
+  mutate(emotion = dict_emo[label+1])
+
+# Selecting a random subset of images:
+set.seed(1)
+dat_subset <- dat %>% sample_n(10)
+head(dat_subset)
+```
+
+
+### Image Recognition in `tf-keras`
+
+- Loading a pre-trained CNN (as a pipeline, i.e., incl. image data pre-processor) that is fine-tuned for facial emotion recognition:
+
+```{r cache=FALSE}
+transformers <- import("transformers") #import Python package as "variable" into R
+prc <- transformers$AutoImageProcessor$from_pretrained("dennisjooo/emotion_classification")
+ppl <- transformers$pipeline(model = 'dennisjooo/emotion_classification', 
+                             image_processor = prc)
+ppl
+```
+
+
+### Image Recognition in `tf-keras`
+
+- Model predictions:
+
+```{r cache=FALSE}
+# Exemplary prediction for first image:
+ppl(dat_subset$image[[1]]$path) %>% as.data.frame()
+
+# Predictions for all images:
+dat_subset <- dat_subset %>%
+  rowwise() %>% 
+  mutate(pred = ppl(image$path) %>% as.data.frame())
+tail(dat_subset)
+```
+
+
+
+### Excurse: Image Generation
+
+- Technically, CNNs cannot only be used for image recognition, but also for image creation
+
+- Generative Adversarial Network (GAN): This is like a game between two players, one player being the Generator (i.e., the artist) and the other player being the Discriminator (i.e., an art critic, who tries to tell if an image is real or fake)
+  
+  - The Generator-CNN takes random noise as input and transforms it through several layers to produce an image
+  
+    - It starts with basic features and gradually adds more detail to generate a complete image
+
+  - The Discriminator-CNN takes an image from the Generator-CNN as input and processes it through several layers to produce a single output: fake vs. real
+
+
+### Hands-on Practical Tutorial
+
+- Now it's your turn: 
+
+  - Go to ILIAS
+  
+  - Navigate to the "Tutorials" folder
+  
+  - Download the "Module 4" folder
+  
+  - Work on the tutorial "module4-DL"
+
+
+
+
+
+
+
+
+
+# Natural Language Processing
+
+### Text Mining Applications
+
+- Classification of news stories, social media posts, journal entries from experience sampling studies, ... according to their content
+  
+- Content filtering (e.g., spam emails, hate speech on social media)
+
+- Content summarizing, paraphrasing, and translation, ...
+  
+- Clustering of documents and web pages according to shared features (e.g., similar topics)
+  
+- Insights about trends (e.g., trending hashtags on Twitter/X)
+
+
+### Challenges in Text Mining
+  
+- Large and unstructured textual data bases
+  
+  - Sometimes documents are not even available in electronic form
+    
+- Very high number of possible "dimensions" (but sparse): All possible word and phrase types in a language
+  
+- Complex and subtle relationships between concepts in text, such as: 
+  
+  - Word ambiguity: E.g., Apple (the company) vs. apple (the fruit) 
+    
+  - Context sensitivity: E.g., humor
+  
+  - Irony, sarcasm, ... 
+  
+- Rather noisy data: E.g., spelling or grammar mistakes (esp. relevant and problematic for social media data)
+
+- ...
+
+
+### Tokenization
+
+- Tokenization: The process of breaking text into pieces such as words, keywords, phrases, symbols, and other elements called "tokens"
+
+  - Tokens: Often individual words, but they can also be be special characters such as punctuation marks or emojis
+  
+  - The tokens from tokenization are machine readable and can then be analyzed using NLP
+
+
+### Tokenization: Most Simple Forms
+
+```{r}
+"Psychology is the science of the behavior."
+```
+
+- Bag-of-words:
+
+```{r}
+cbind(c("psychology", 1), c("is", 1), c("the", 2), c("science", 1), c("of", 1),
+      c("behavior", 1))
+```
+
+- String-of-words:
+
+```{r}
+cbind(c("psychology", 1), c("is", 2), c("the", 3), c("science", 4), c("of", 5), 
+      c("the", 6), c("behavior", 7))
+```
+
+- Why is this distinction so important?
+
+  - Shakespeare's plays contain ca. 885,000 words, but the count of unique word forms is only 29,000 (https://www.opensourceshakespeare.org/statistics/)
+
+
+### Visualizations of Text Data
+
+- Word clouds: Visualizing the information contained in text data (i.e., open comments in teaching evaluations) by displaying the most frequently occurring words
+
+  - The size of each word represents its frequency (as a proxy for its importance) within the text corpus
+  
+  - Linking words (e.g., "and"), articles (e.g., "the") and so on are typically excluded because they have no meaning on their own
+
+\begin{figure}
+  \includegraphics[width=.325\textwidth]{subfiles/pics/Jacobucci23-word_cloud.jpg}
+\end{figure}
+
+(Jacobucci et al., Figure 11.10)
+
+
+### Visualizations of Text Data
+
+- A little more informative in terms of content than individual word clouds: The most frequently occurring bi- (left) and trigrams (right):
+
+\begin{figure}
+  \includegraphics[width=.425\textwidth]{subfiles/pics/Jacobucci23-word_cloud-bigrams.jpg}\hfill
+  \includegraphics[width=.425\textwidth]{subfiles/pics/Jacobucci23-word_cloud-trigrams.jpg}
+\end{figure}
+
+(Jacobucci et al., Figures 11.12 \& 11.13)
+
+
+### Word Embeddings
+
+- In general, language is much more than a loose collection of its constituent components
+
+  - Network plot: Visualizing the associations between the top used words:
+
+\begin{figure}
+  \includegraphics[width=.6\textwidth]{subfiles/pics/Jacobucci23-word_network.png}
+\end{figure}
+
+(Jacobucci et al., Figure 11.14)
+
+
+### Word Embeddings
+
+- Word2Vec (Mikolov et al., 2013): Unsupervised learning technique to learn continuous, multi-dimensional vector representations of words that capture information about its meaning based on the surrounding words
+
+  - In other words, Word2Vec by design captures the similarity of words in a training corpus (i.e., how far or near a word is in vector space to other words), which represents a notion of word-sense
+
+- Approach: Given a center word, learning to predict the most likely words in a fixed-sized window around it
+
+\begin{figure}
+  \includegraphics[width=.7\textwidth]{subfiles/pics/Word2Vec.png}
+\end{figure}
+
+(https://towardsdatascience.com/word2vec-to-transformers-caf5a3daa08a) 
+
+
+### Example
+
+\vspace{-\baselineskip}
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/LLM4JDM-word2vec1.png}
+\end{figure}
+
+(https://www.webnovel.com/book/solaris-2.0_25879657706474305)
+
+
+### Example
+
+\vspace{-\baselineskip}
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/LLM4JDM-word2vec2.png}
+\end{figure}
+
+(https://www.webnovel.com/book/solaris-2.0_25879657706474305)
+
+
+
+
+
+
+# Transformers
+
+- Word2Vec: Generates **static** word embeddings \newline $\Rightarrow$ The vector representation for a word is the same regardless of its context
+
+  - Transformers: Generate **dynamic** word embeddings \newline $\Rightarrow$ The vector representation for a word can change based on its context
+  
+- Word2Vec: Learns representations based on the **local** context (i.e., surrounding words)
+
+  - Transformers: Learn representations based on the **entire** context of the sentence or even multiple sentences
+
+- Most contemporary Large Language Models (LLMs) implement a transformer architecture, such as:
+
+  - OpenAI's ChatGPT
+  
+  - Google's Gemini
+  
+  - Meta's LLaMA
+  
+  - Anthropic's Claude
+
+
+### Transformers
+
+- Transformers rely on more advanced tokenizations:
+
+\vspace{-1.5\baselineskip}
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/LLM4JDM-tokenization1.png}
+\end{figure}
+\vspace{-\baselineskip}
+(https://www.webnovel.com/book/solaris-2.0_25879657706474305)
+
+
+### Transformers
+
+- Transformers rely on more advanced tokenizations:
+
+\vspace{-1.5\baselineskip}
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/LLM4JDM-tokenization2.png}
+\end{figure}
+\vspace{-\baselineskip}
+(https://www.webnovel.com/book/solaris-2.0_25879657706474305)
+
+
+### Excurse: Components of Transformers
+
+- At each layer, each token is contextualized within the scope of the context window with other (unmasked) tokens
+
+  - This is done via a parallel multi-head attention mechanism, which allows the signal for key tokens to be amplified and the one for less important tokens to be diminished
+
+\vspace{-.75\baselineskip}
+\begin{figure}
+  \includegraphics[width=.7\textwidth]{subfiles/pics/LLM4JDM-transformers-components.png}
+\end{figure}
+
+(Vaswani et al., 2017)
+
+
+### Excurse: Attention Mechanism of Transformers
+
+- Multi-head attention: Splitting the input embeddings into multiple "heads," each learning different types of information, and calculating attention scores that are used to weight the embedding vectors
+
+  - The outputs from all heads are concatenated and transformed to produce the final output
+
+\vspace{-0.5\baselineskip}
+\begin{figure}
+  \includegraphics[width=.8\textwidth]{subfiles/pics/LLM4JDM-transformers-attention.png}
+\end{figure}
+
+(adapted from https://x.com/dirkuwulff/status/1694988985225839048)
+
+
+### Excurse: Evolution of Transformers
+
+\begin{figure}
+  \includegraphics[width=.7\textwidth]{subfiles/pics/Transformers-evolution.jpg}
+\end{figure}
+
+(https://x.com/DrJimFan/status/1651968203701231616)
+
+
+### Transformers from Python in R
+
+- Sentiment classification task: 
+
+  - We will use DistilBERT, which is a light and fast transformer LLM trained by distilling Google's BERT (Bidirectional Encoder Representations from Transformers), which is the predecessor of Gemini
+
+```{r cache=FALSE, warning=FALSE}
+library(reticulate) #; py_config() #; use_condaenv("r-reticulate")
+
+# Loading the tokenizer (i.e., pre-processor) and transformer model:
+transformers <- import("transformers") #import Python package as "variable" into R
+tkn <- transformers$AutoTokenizer$from_pretrained('distilbert-base-uncased-finetuned-sst-2-english')
+ppl <- transformers$pipeline(model = 'distilbert-base-uncased-finetuned-sst-2-english'
+                             , tokenizer = tkn)
+ppl
+
+# Exemplary sentiment predictions:
+ppl(c("I like you!", "I don't like you!")) %>% as.data.frame()
+```
+
+
+### Transformers from Python in R
+
+- The `emotion` dataset from Hugging Face contains English tweets that are classified according to six basic emotions: joy, love, anger, fear, sadness, and surprise
+
+```{r}
+datasets <- import("datasets") #import Python package as "variable" into R
+dat = datasets$load_dataset("dair-ai/emotion", split = 'test')
+
+# Translate true numeric class to verbal label and transforming Python to R data:
+dict_emo <- dat$features$label$names
+dat <- dat$to_pandas() %>% 
+  as_tibble() %>% 
+  mutate(emotion = dict_emo[label+1]) #NOTE: indexing starts at 0 in Python (vs. 1 in R)
+
+# Selecting a random subset of tweets:
+set.seed(1)
+dat_subset <- dat %>% sample_n(100)
+tail(dat_subset)
+```
+
+
+### Transformers from Python in R
+
+- We can use DestilBERT to classify the tweets as positive or negative sentiment:
+
+```{r}
+# Predictions for all tweets:
+dat_subset <- dat_subset %>%
+  rowwise() %>% 
+  mutate(pred = ppl(text) %>% as.data.frame())
+tail(dat_subset)
+```
+
+
+### Transformers from Python in R
+
+- Comparison of predicted sentiment, separately for each of the six actual basic emotions:
+
+```{r out.width="70%", fig.align="center", fig.width=6, fig.height=4}
+ggplot(dat_subset, aes(x = emotion, y = pred$score, color = pred$label)) +
+  geom_boxplot(outliers = FALSE) 
+```
+
+
+### Excurse: Generative AI from Python in R
+
+- Google's BERT:
+
+```{r}
+# Loading the tokenizer and transformer model:
+tkn_bert <- transformers$AutoTokenizer$from_pretrained('distilbert/distilgpt2')
+ppl_bert <- transformers$pipeline(model = 'distilbert/distilgpt2', 
+                                  tokenizer = tkn_bert)
+ppl_bert
+
+# Exemplary text generation:
+pred_bert <- ppl_bert("My name is Tobias and I am teaching a class on Machine Learning")
+pred_bert[[1]]$generated_text %>% strwrap(., width = 80)
+```
+
+
+### Excurse: Generative AI from Python in R
+
+- OpenAI's GPT:
+
+```{r}
+# Loading the tokenizer and transformer model:
+tkn_gpt2 <- transformers$AutoTokenizer$from_pretrained('openai-community/gpt2-medium')
+ppl_gpt2 <- transformers$pipeline(model = 'openai-community/gpt2-medium', 
+                                  tokenizer = tkn_gpt2)
+ppl_gpt2
+
+# Exemplary text generation:
+pred_gpt2 <- ppl_gpt2("My name is Tobias and I am teaching a class on Machine Learning")
+pred_gpt2[[1]]$generated_text %>% strwrap(., width = 80)
+```
+
+
+
+
+
+# PA-Projects
+
+### Schedule
+
+\begin{figure}
+  \includegraphics[width=.8\textwidth]{../schedule-v02.png}
+\end{figure}
+
+
+### Suggested Structure of Proposal Presentations
+
+1. Theoretical background and motivation of the original study
+
+2. Brief summary of the (most important) original results
+
+    - Ideally using original graphs/tables for quick and easy comprehension
+
+3. Detailed description of the original research methodology
+
+4. Detailed description of the planned reanalysis
+
+    - Including feasibility assessment 
+
+5. Speculation on potential/desired outcomes 
+
+    - E.g., new substantive and methodological insights
+
+6. Open questions
+
+\vspace{\baselineskip}
+- Duration: **20-25 minutes**
+
+- Format: Rmd, Powerpoint, ...
+
+
+### Group Project Planning
+
+- Current state of your project ideas?
+
+  - Any specific issues/questions?
+
+- Does Aka and Bhatia (2022) clarify the expected format and scope of the written summaries?
+
+
+### Potential Project Suggestions
+
+- Data from this year's Bachelor-ExPra project: Continued influence effect (after retraction of certain news articles) with 5 open text responses
+  
+  - Originally to be manually classified by ExPra-students as exhibiting continued influence despite later information that the article was wrong
+  
+  - Incl. sentiment analysis (e.g., use of specific keywords like "the victim was murdered **in cold blood**")
+
+- Custom LLM (e.g., GPT) that actively neglects updated beliefs in multi-shot prompting interactions for, e.g., political events forecasting
+
+- Machine Learning Weights of Advice (ML-WOA): ML-based extension of Mixed-Effects Regression Weights of Advice (MER-WOA; Rebholz et al., 2024) with multiple options:
+
+    1. Shapley values
+  
+    2. Based on individual conditional expectation plots (see also Pargent et al., 2023)
+      
+    3. ???
+
+
+
+
+
+
+
+
+# Summary
+
+- DL is attractive for: 
+
+  - Extremely large training sample sizes
+  
+  - Low priority of model interpretability ($\rightarrow$ next week!)
+
+- NNs are particularly suited for niche tasks, such as:
+
+  - Image recognition
+    
+  - Speech and text modeling
+
+- Classic NLP tasks: E.g., sentiment analysis, but also things like language translation
+
+  - Recurrent NNs and transformers have shown great success in these areas due to their ability to handle sequential data and capture long-term dependencies
+
+
+  
+### Homework
+
+- FS:
+
+  - Finish/Revisit the programming tutorials
+
+  - Readings for next week:
+
+    - Taylor, J. E. T., \& Taylor, G. W. (2021). Artificial cognition: How experimental psychology can help generate explainable artificial intelligence. \textit{Psychonomic Bulletin \& Review}, \textit{28}(2), 454–475. https://doi.org/10.3758/s13423-020-01825-5
+  
+- FP:
+
+  - Continuing the group project planning
+  
+    - **To be finalized next week!**
+
+  - Starting to prepare the proposal presentation of your group project
+  
+
+
+

@@ -1,0 +1,96 @@
+---
+title: "Module 1: Tutorial: Regression"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+# R Markdown
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+RStudio is able to **simulate the final formatting live**, by switching from "Source" to "Visual" in the task bar above.
+
+# Linear Regression
+
+## Description of data set
+
+The file module1-video_reading.csv contains the following data:
+
+-   participant: unique id for each participant
+
+-   score_reading: number of points the participant scored in a reading test
+
+-   hours_video: average number of hours the participant spends watching video stream (TV, movies, ..) each day.
+
+## Tasks
+
+1.  Read the data file module1-video_reading.csv into R and assign it to a variable called "dat".
+
+```{r}
+
+```
+
+2.  Draw a scatter plot of "hours_video" and "score_reading".
+
+```{r}
+
+```
+
+3.  Estimate a linear regression model for "score_reading" as target (dependent variable) and "hours_video" as feature (independent/explanatory variable) using the `lm()` function.
+
+```{r}
+
+```
+
+4.  Redo task 3 using the `mlr3verse` package. Does your final model output (applying the `summary()` function on the fitted model object) differ from the one in task 3, which was estimated using `base` R functionality?
+
+```{r}
+
+```
+
+5.  Add the regression line from task 4 to the plot from task 2.
+
+```{r}
+
+```
+
+6.  Identify and exclude the outlier, and redo tasks 4 and 5 (i.e., estimate the model again and add the new line to the scatter plot).
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+7.  What would be the reading score ("score_reading") of a participant with a video consumption ("hours_video") equivalent to the 95th percentile as predicted by the model? (Hint: you can use the `predict_newdata()` method on the fitted model object, which behaves similar to the `predict()` function in `base` R)
+
+```{r}
+
+```
+
+8.  Add the prediction from task 7 to the scatter plot from task 6.
+
+```{r}
+
+```
+
+9.  Bonus: What is the effect of "hours_video" on "score_reading" in standardized units? How would you interpret this effect? (Hint: You can use a linear regression model to determine the correlation between "hours_video" and "score_reading")
+
+```{r}
+
+```

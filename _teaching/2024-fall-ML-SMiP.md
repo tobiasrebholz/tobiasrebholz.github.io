@@ -10,7 +10,7 @@ location: "Tübingen, Germany"
 
 <!-- {% include base_path %} -->
 
-<!-- naive password protection -->
+<!-- naive password protection
 <script>
     const password = "smip24";
 
@@ -21,7 +21,7 @@ location: "Tübingen, Germany"
         }
     });
 </script>
-
+ -->
 
 ## Syllabus
 

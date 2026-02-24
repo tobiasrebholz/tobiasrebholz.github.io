@@ -1,0 +1,73 @@
+---
+title: "Module 2: Tutorial: Trees and Forests"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+# Tree-Based Classifiers
+
+Similar to Support Vector Machines (SVMs), trees are very good in multiclass classification. Essentially, however, the majority voting procedure to assign classes to terminal nodes implies that there is no need for techniques such as one-vs-one (OvO) or one-vs-all (OvA) strategies.
+
+## Description of data set
+
+In contrast to the SVM tutorial, we use the `bfi` dataset to predict level of education by the Big-5 personality traits. We do not select a subset of observations that has balanced educational levels, because trees are much better in handling unbalanced data. 
+
+For simplicity, we treat `education` as a categorical variable here, although it is actually an ordinal variable (i.e., 1 \< 2 \< 3 \< 4 \< 5).
+
+Type ?psych::bfi into your console for more information on the dataset. Note that the Big-5 triats `agree`, `conscientious`, `extra`, `neuro`, and `open` were created by averaging each participant's targets to the five survey items per trait (e.g., `A1`-`A5`).
+
+## Tasks
+
+1.  Read the data file modeul2-bfi-imbalanced.csv into R (assign it to a variable called "dat").
+
+```{r}
+
+```
+
+2.  Transform all discrete variables to factors for the tree algorithm to work as intended.
+
+```{r}
+
+```
+
+3.  Build a tree model to predict the target "education" by all features except for the identifier "CASE". (Hint: Set the seed to ensure reproducibility of your results, e.g., if your model has to randomly break ties)
+
+```{r}
+
+```
+
+4.  Visualize your result from task 3 as a tree.
+
+```{r}
+
+```
+
+5.  Prune your tree from task 3 by means of 10-fold cross-validation. That is, choose the complexity penalty parameter `cp` (between 0 and 0.05 in steps of 0.01) to potentially remove unnecessary terminal nodes and reduce overfitting. Visualize your final result (i.e., best model) as a tree. Would your pruned tree be able to predict all available class labels. In other words, are there any educational levels for which no combination of features would result in the tree making a corresponding prediction? (Hint: Set the seed to ensure reproducibility of your results)
+
+```{r}
+
+```
+
+6.  Because of the instability of a single tree, build an ensamble of trees using the random forest approach and default tuning parameter settings. To proceed later with task 7, you must set the `importance` argument of the learner equal to "permutation". (Hint: Set the seed to ensure reproducibility of your results)
+
+```{r}
+
+```
+
+7.  Plot the feature importance of all features used in your random forest from task 8.
+
+```{r}
+
+```
+8.  Build a random forest and tune the hyperparameters `num.trees` from 500 to 1500 in steps of 500 and `mtry` from 2 to 5 in steps of 1. To proceed later with task 9, you must again set the `importance` argument of the learner equal to "permutation". (Hint: Set the seed to ensure reproducibility of your results)
+
+```{r}
+
+```
+
+9.  Plot the feature importance of the tuned random forest and compare the ranking to the feature importance plot of the random forest that was fit with default tuning parameter settings in task 6. Are there substantial differences between the two plots?
+
+```{r}
+
+```

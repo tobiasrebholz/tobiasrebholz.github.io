@@ -1,0 +1,82 @@
+---
+title: "Module 4: Tutorial: Deep Learning"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+# Neural Networks
+
+## Description of Data and Task
+
+In this tutorial, we will reproduce the facial emotion recognition task from the slides using a pre-trained Convolutional Neural Network (CNN) from Hugging Face that is fine-tuned for facial emotion recognition based on image data (i.e., "dennisjooo/emotion_classification").
+
+## Tasks
+
+1.  Setup R by installing the `reticulate` package (R-interface to Python) and `miniconda` (small Python distribution). Then install the Python packages `torch` and `tf-keras` for NNs, `transformers` for Transformers, and `datasets` for access to the Hugging Face database.
+
+```{r}
+if (!('reticulate' %in% installed.packages())) {
+  # Python:
+  install.packages("reticulate")
+  library(reticulate)
+  install_miniconda()
+  
+  # NNs:
+  reticulate::py_install('torch', pip=T)
+  reticulate::py_install('tf-keras', pip=T)
+  
+  # Transformers:
+  reticulate::py_install('transformers', pip=T)
+  
+  # Hugging Face:
+  reticulate::py_install('datasets', pip=T)
+  
+  # Image Processing:
+  reticulate::py_install('pillow', pip=T)
+}
+```
+
+2.  Import the `datasets` Python package into your current R session using the `import()` function (i.e., similar to loading R packages with `library()`). Note that you have to save Python packages as variables (i.e., they also occur in your "Environment" in RStudio, similar to defining `x = 1`), and that you can only use it by calling this variable each time you want to use a function from this package using the syntax `package$function()` (i.e., (a) similar to the `mlr3verse` syntax, where models etc. are objects that have certain attributes (e.g., functions) that can be accessed with `object$attribute` as well as (b) similar to accessing functions from R packages without loading the entire package using the syntax `package::function()`).
+
+```{r}
+library(reticulate)
+#py_config()
+#use_condaenv("r-reticulate")
+datasets <- import("datasets") #import Python package as "variable" into R
+```
+
+3.  Load the dataset "FastJobs/Visual_Emotional_Analysis" from Hugging Face into R and save it as "dat". Make sure to download only the training data by calling the `load_dataset()` function using the argument `split = 'train'`.
+
+```{r}
+dat = datasets$load_dataset("pyronear/openfire", split = 'train')
+```
+
+4. Transform the Python variable "dat" into a data type that can be used in R (e.g., a `tibble`; Hint: If you copy the code from the slides, you should also include the part where the true numeric classes are translated to verbal labels).
+
+```{r}
+library(tidyverse)
+dat <- dat$to_pandas() %>% 
+  as_tibble()
+```
+
+5. Load the pre-trained CNN "dennisjooo/emotion_classification" as a pipeline (i.e., incl. the associated image data pre-processor with the same name/path at Hugging Face) and save it as "ppl" to be used for a facial emotion recognition task below.
+
+```{r}
+transformers <- import("transformers") #import Python package as "variable" into R
+prc <- transformers$AutoImageProcessor$from_pretrained("dennisjooo/emotion_classification")
+ppl <- transformers$pipeline(model = 'dennisjooo/emotion_classification', 
+                             image_processor = prc)
+```
+
+6.  For one randomly selected image from the dataset "dat", use the pipleline from task 5 to predict the facial emotion. According to the model, what are the most likely and least likely emotions that the person in the image is displaying? Note that we only do this task for one of the images because it will take a while to run for the whole dataset, but feel free to play around with it as you like.
+
+```{r}
+set.seed(1)
+pic <- sample(1:nrow(dat), size = 1)
+pred <- ppl(dat$image_url[[pic]]) %>% as.data.frame()
+pred
+```
+
+7.  Bonus: Explore other pre-trained models at https://huggingface.co/models. Note that you can filter all available models by the task(s) to which they can be applied, or by the data they use. The "Model card" usually contains some useful information about how the model can be used (in Python; Hint: Use GPT to translate to R-`reticulate` code). Furthermore, note that since Hugging Face is open source, anyone can publish models or datasets there, so there is also a lot of crappy stuff available (e.g., a positive example is https://huggingface.co/j-hartmann/emotion-english-distilroberta-base, but a negative one is https://huggingface.co/MG31/license_aug). Pay attention to the number of likes and downloads, which are indicative of whether the model/dataset might be useful or not.
+

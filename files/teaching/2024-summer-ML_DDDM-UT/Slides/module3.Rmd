@@ -1,0 +1,896 @@
+---
+title: "Machine Learning (ML) for Data-Driven Decision-Making (DDDM)"
+subtitle: "Module 3: Unsupervised Learning"
+output:
+  beamer_presentation:
+    slide_level: 3
+    keep_tex: true
+    includes:
+      in_header: subfiles/preamble.tex
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption:
+- aspectratio=43 
+#- "handout" #see https://stackoverflow.com/a/49666042 for details
+- t #start first line on top of slide (https://stackoverflow.com/a/42471345/11118919)
+bibliography:
+- ../../../Literature/!Bibliographies/all.bib
+csl: apa.csl
+fontsize: 10pt
+header-includes:
+- \titlegraphic{\includegraphics[width=4.5cm]{subfiles/UT_WBMW_Rot_RGB_01.png}}
+- \AtBeginDocument{\author[Tobias Rebholz]{Tobias Rebholz}}
+- \AtBeginDocument{\institute[University of Tübingen]{University of Tübingen}}
+- \AtBeginDocument{\date[Summer Term 2024]{Summer Term 2024}}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(verbose = TRUE)
+knitr::opts_chunk$set(echo = TRUE
+                      , collapse = TRUE
+                      , cache = TRUE
+                      )
+
+# R options
+Sys.setenv(LANG = "en") #--> english error messages
+#options(scipen=999) #turn off scientific notation
+
+# load packages here
+library(papaja)
+library(corrplot)
+library(mlr3verse)
+library(GGally)
+library(tidyverse)
+
+# bibliography
+#references_TRR <- bibtex::read.bib("../../../Literature/references_TRR.bib")
+#cite via "`r capture.output(print(references_TRR["Rebholz_Hutter.2022"]))`" on slide then (https://stackoverflow.com/a/61528568/11118919)
+
+# set path
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+# data
+dat <- read.csv('subfiles/data/Mall_Customers.csv', header = TRUE, check.names = FALSE) #(SOURCE: https://www.kaggle.com/code/vjchoudhary7/kmeans-clustering-in-customer-segmentation/input)
+
+dat <- dat %>% rename('Annual_Income' = 'Annual Income (k$)', 'Spending_Score' = 'Spending Score (1-100)')
+
+set.seed(42)
+dat_subset <- dat[sample(1:nrow(dat), 20),] %>% arrange(CustomerID)
+```
+
+
+
+
+# Unsupervised Learning
+
+- For each individual $i$ in a population, we have:
+
+  - Vector of features, $X_{i} = \left(x_{i1}, x_{i2}, \ldots, x_{ip}\right)$
+  
+  - \textbf{No target}
+
+- Goal: Discover "interesting things" (James et al., 2021), that is, patterns, structures, or relationships within the data
+
+  - In other words, we are not interested in prediction, because there is no target that could be predicted
+
+
+### Unsupervised Learning Tasks
+
+- Clustering: Grouping similar instances together based on certain criteria
+
+  - That is, discovering unknown subgroups in the dataset
+
+- Dimensionality reduction: Reducing the number of features in a dataset while preserving its critical structure and important relationships
+
+  - Used for visualization or data pre-processing before Supervised Learning techniques may be applied
+
+- Anomaly detection: Identifying outliers or anomalies in the data that deviate significantly from the norm
+
+- Association rule mining: Discovering interesting relationships or associations between variables in large datasets (not discussed!)
+
+  - Example: If a customer buys strawberries, does he/she always also buy cream?
+  
+- ...
+
+
+
+
+
+# Clustering
+
+- Goal: Grouping instances that are similar into a cluster
+
+  - Intra-cluster homogeneity: Instances within a cluster should be similar
+
+  - Inter-cluster heterogeneity: Clusters should be dissimilar to other clusters
+  
+- Conditions: 
+
+  - Each observation is in one group
+
+  - The groups do not overlap
+  
+- Terminology: "clustering" = collection of clusters
+
+- Types:
+
+  - Hierarchical
+
+  - Partitional (e.g., $k$-means, $k$-medians)
+
+
+### Applications in Behavioral Science: Process Tracing
+
+- Movement tracing: Tracking reaching movements of the hand (e.g., using a computer mouse)
+
+  - Participants choose between two spatially separated options in a so-called two-options forced-choice paradigm
+
+  - Movement trajectory: Assumed to reflect the psychological processes that gave rise to the final choice
+
+\begin{figure}
+  \includegraphics[width=0.45\textwidth]{subfiles/pics/Wulff23-task-process_tracing.jpg}
+\end{figure}
+
+(Wulff et al., 2023, Figure 1)
+
+
+### Applications in Behavioral Science: Process Tracing
+
+- With chaotic motion data, how to know what strategy someone has executed?
+
+\begin{figure}
+  \includegraphics[width=0.425\textwidth]{subfiles/pics/Wulff23-clustering-process_tracing.jpg}
+\end{figure}
+
+(Wulff et al., 2023, Figure 8, where cCoM = continuous change of mind, dCoM = discrete change of mind, and dCoM2 = discrete double change of mind)
+
+
+### Applications in Behavioral Science: Learning Curves
+
+\begin{figure}
+  \includegraphics[width=0.85\textwidth]{subfiles/pics/Peach19-clustering-online_learning_trajectories.jpg}
+\end{figure}
+
+(Peach et al., 2019, Figure 6a)
+
+
+### Applications in Behavioral Science: Learning Curves
+
+- Note: Learners in Peach et al. (2019) were classifier according to their performance using SVMs and Decision Trees
+
+\begin{figure}
+  \includegraphics[width=0.9\textwidth]{subfiles/pics/Peach19-classification-learning_performance.png}
+\end{figure}
+
+(Peach et al., 2019, Figure 5c)
+
+
+### Dissimilarity
+
+- Measuring dissimilarity between instances through distance:
+
+  - Euclidean distance: $d(X_{1}, X_{2}) = \sqrt{(x_{11} - x_{21})^2 + \cdots + (x_{1p} - x_{2p})^2}$
+
+  - Manhattan distance: $d(X_{1}, X_{2}) = |x_{11} - x_{21}| + \cdots + |x_{1p} - x_{2p}|$
+
+  - Maximum distance: $d(X_{1}, X_{2}) = \max{\left\{|x_{11} - x_{21}|, \ldots, |x_{1p} - x_{2p}|\right\}}$
+
+  - ...
+  
+\begin{figure}
+  \includegraphics[width=0.225\textwidth]{subfiles/pics/distance-euclidean.png}
+  \includegraphics[width=0.225\textwidth]{subfiles/pics/distance-manhattan.png}
+\end{figure}
+
+(https://www.maartengrootendorst.com/blog/distances/)
+
+
+### Dissimilarity
+
+- Distances for categorical variables:
+
+  - Hamming distance: $d(X_{i}, X_{j}) = |\left\{s:x_{is} \neq x_{js}\right\}|$
+  
+    - Note: $|.|$ denotes the cardinality (i.e., number of unique levels)
+  
+  - Jaccard distance: $d(X_{i}, X_{j}) = 1 - \frac{X_{i} \cap X_{j}}{X_{i} \cup X_{j}}$
+  
+  - ...
+
+\begin{figure}
+  \includegraphics[width=0.225\textwidth]{subfiles/pics/distance-hamming.png}
+  \includegraphics[width=0.225\textwidth]{subfiles/pics/distance-jaccard.png}
+\end{figure}
+
+(https://www.maartengrootendorst.com/blog/distances/)
+
+
+### Dissimilarity
+
+- Dissimilarity is measured as the distance between two instances
+
+  - But, what is the distance (or "linkage") between two clusters?
+
+
+### Dissimilarity
+
+- Linkage between sets $S_{A}$ and $S_{B}$:
+
+  - Single: Minimal intercluster dissimilarity, that is, smallest pairwise dissimilarity between all instances 
+  \begin{equation}
+    L(S_{A}, S_{B}) = \minimize_{X_{A} \in S_{A}, X_{B} \in S_{B}} d(X_{A}, X_{B})
+  \end{equation}
+  
+  - Complete: Maximal intercluster dissimilarity, that is, largest pairwise dissimilarity between all instances 
+  \begin{equation}
+    L(S_{A}, S_{B}) = \maximize_{X_{A} \in S_{A}, X_{B} \in S_{B}} d(X_{A}, X_{B})
+  \end{equation}
+
+\begin{figure}
+  \includegraphics[width=0.6\textwidth]{subfiles/pics/clustering-linkage1.png}
+\end{figure}
+
+(https://harikabonthu96.medium.com/single-link-clustering-clearly-explained-90dff58db5cb)
+
+
+### Dissimilarity
+
+- Linkage between sets $S_{A}$ and $S_{B}$:
+
+  - Average: Average distance between all pairs of instances in both sets
+  \begin{equation}
+    L(S_{A}, S_{B}) = \frac{1}{|S_{A}| \times |S_{B}|} \sum_{X_{A} \in S_{A}, X_{B} \in S_{B}} d(X_{A}, X_{B})
+  \end{equation}
+  
+  - Centroid: Dissimilarity between the centroid for cluster A and the centroid for cluster B
+    
+    - Centroid $=$ mean vector of length $p$ (think of a prototipical instance)
+
+\begin{figure}
+  \includegraphics[width=0.6\textwidth]{subfiles/pics/clustering-linkage2.png}
+\end{figure}
+
+(https://harikabonthu96.medium.com/single-link-clustering-clearly-explained-90dff58db5cb)
+
+
+
+
+
+
+
+# Hierarchical Clustering
+
+- Idea: There is a hierarchy of clusters
+
+  - At the top, we have all individuals together in one huge cluster (i.e., sample)
+
+  - At the bottom we have each instance into a cluster by itself (i.e., individual)
+
+- Procedure: By giving a horizontal cut, we obtain a clustering
+
+  - Visualization: Dendrogram (cf. decision trees)
+
+  - Different horizontal cuts give different clusterings:
+
+  <!-- - Allows to view at once the clusterings obtained for each possible number of clusters, from $1$ to $N$ -->
+
+\begin{figure}
+  \includegraphics[width=0.7\textwidth]{subfiles/pics/James21-dendrogram.png}
+\end{figure}
+\vspace{-\baselineskip}
+(James et al., 2021, Figure 12.11)
+
+
+### Hierarchical Clustering in `mlr3`
+
+- From a subset of [Kaggle data](https://www.kaggle.com/code/vjchoudhary7/kmeans-clustering-in-customer-segmentation/input), we have information on certain features (e.g., income) of customers of a store
+
+  - Note: For simplicity, we exclude discrete variables (i.e., gender)
+
+```{r}
+df <- dat_subset %>% select(-Gender)
+head(df)
+```
+
+- Goal: Customer segmentation
+
+  - By defining a clustering task using `as_task_clust()`, we want to group similar customers together in `k = 4` groups
+
+```{r}
+tsk = as_task_clust(df)
+k = 4
+```
+
+
+### Hierarchical Clustering in `mlr3`
+
+- Agglomerative: Start at the bottom, where each instance consitutes an individual cluster $\rightarrow$ Merge clusters that are similar
+
+```{r cache=FALSE, out.width="60%", fig.align="center", fig.width=6, fig.height=4.5}
+mdl_aggl = lrn("clust.agnes", stand = T, k = k)
+mdl_aggl$train(tsk)
+
+plot(mdl_aggl$model, hang = -1, which.plots = 2)
+rect.hclust(as.hclust(mdl_aggl$model), k = k, border = "red")
+```
+
+
+### Hierarchical Clustering in `mlr3`
+
+- Agglomerative clustering predictions:
+
+```{r}
+pred_aggl <- mdl_aggl$predict(tsk)
+pred_aggl
+
+table(pred_aggl$partition)
+```
+
+
+### Hierarchical Clustering in `mlr3`
+
+- Divisive: Start at the top, where all individuals are in the same cluster (i.e., entire sample) $\rightarrow$ Split clusters that are diverse
+
+```{r cache=FALSE, out.width="60%", fig.align="center", fig.width=6, fig.height=4.5}
+mdl_divi = lrn("clust.diana", stand = T, k = k)
+mdl_divi$train(tsk)
+
+plot(mdl_divi$model, hang = -1, which.plots = 2)
+rect.hclust(as.hclust(mdl_divi$model), k = k, border = "red")
+```
+
+
+### Hierarchical Clustering in `mlr3`
+
+- Divisive clustering predictions:
+
+```{r}
+pred_divi <- mdl_divi$predict(tsk)
+pred_divi
+
+table(pred_divi$partition)
+```
+
+
+### Hierarchical Clustering in `mlr3`
+
+- Comparison of agglomerative and divisive clustering predictions:
+
+```{r}
+table(pred_aggl$partition, pred_divi$partition)
+```
+
+```{r echo=FALSE, out.width="90%", fig.align="center", fig.width=8, fig.height=4}
+par(mfrow = c(1, 2))
+plot(mdl_aggl$model, hang = -1, which.plots = 2)
+rect.hclust(as.hclust(mdl_aggl$model), k = k, border = "red")
+plot(mdl_divi$model, hang = -1, which.plots = 2)
+rect.hclust(as.hclust(mdl_divi$model), k = k, border = "red")
+par(mfrow = c(1, 1))
+```
+
+### Summary
+
+- Comparison of agglomerative and divisive clustering approaches:
+
+\begin{figure}
+  \includegraphics[width=0.9\textwidth]{subfiles/pics/clustering-aggl_vs_divi.png}
+\end{figure}
+
+(https://quantdare.com/hierarchical-clustering/)
+
+
+
+
+
+
+
+
+# Partitional Clustering
+
+- The hierarchical method permits clusters to have subclusters (cf. decision tree)
+
+  - Consequence: Once a cluster is formed, it cannot be split or combined with other clusters anymore
+  
+  - More flexible in terms of reshaping the clusters: Partitional clustering
+  
+\begin{figure}
+  \includegraphics[width=0.9\textwidth]{subfiles/pics/clustering-hierarchical_vs_partitioning.png}
+\end{figure}
+
+(https://quantdare.com/hierarchical-clustering/)
+
+
+
+### Partitional Clustering
+
+- Problem: Partitioning a dataset of $N$ individuals into $k$ clusters is combinatorially hard because there are many possible combinations
+
+  - For $N$ individuals and $k$ clusters, the number of possible partitions is:
+  \begin{equation}
+    \sum_{l=1}^{k} (-1)^{k-l} \frac{1}{(k-l)!l!} l^{N}
+  \end{equation}
+  
+  - E.g., for $N = 20$ instances and $k = 4$ clusters: Extremely large number of more than $4 \times 10^{10}$ possible partitions
+
+- Goal: Find the best partitioning using iterative procedures that alleviate this computational complexity
+
+  - Across all clusters, minimizing the within cluster distance to its centroid $P_{l}$, serving as a prototypical representative of cluster $l$, to improve the total intra-cluster homogeneity
+  \begin{equation}
+    \minimize \sum_{l=1}^{k} \sum_{i \in C_{l}} d(X_{i},P_{l})
+  \end{equation}
+
+
+
+### $k$-means Clustering
+
+The iterative partitioning algorithm of $k$-means clustering:
+
+1.  Choosing $k$ initial centroids, $P_1, \ldots, P_k$ (which represent the vector of means of each clusters)
+
+    - These can be randomly selected data points or be randomly generated
+    
+    - Multistart $\Rightarrow$ Avoids getting trapped in local optima
+
+2.  Clustering around the centroids, i.e., each observation is assigned to the closest prototype
+
+    - Goal: Minimizing the total within sum of squares (i.e., improving the total intra-cluster homogeneity)
+
+3. Calculate the new centroids by taking the mean of all data points assigned to each centroid’s cluster: $P_{l} = \mu_{l} = \frac{1}{|C_{l}|} \sum_{i \in C_{l}}X_{i}$
+
+4.  Repeat steps 2 and 3 until the centroids do not change significantly, or a maximum number of iterations is reached
+
+
+### $k$-means Clustering vs. Other Approaches
+
+- $k$-means clustering is applicable only for continuous data
+
+  - It uses the Euclidean distance as measure of dissimilarity
+
+- More outlier robust: $k$-medians clustering
+
+  - It uses the Manhattan distance as measure of dissimilarity and medians as cluster centroids
+
+- For data including categorical variables: $k$-mediods
+
+  - Any distance can be used to measure dissimilarity
+
+
+### $k$-means Clustering in `mlr3`
+
+```{r cache=FALSE}
+set.seed(42)
+df <- dat %>% select(-c(CustomerID, Gender, Age))
+tsk = as_task_clust(df)
+
+mdl = lrn("clust.kmeans", centers = k)
+mdl$train(tsk)
+mdl$model
+```
+
+
+### $k$-means Clustering in `mlr3`
+
+```{r out.width="60%", fig.align="center", fig.width=6, fig.height=4}
+ggplot() + 
+  # Plot data:
+  geom_point(data = df %>% mutate(cluster = factor(mdl$model$cluster)), 
+             aes(x = Annual_Income, y = Spending_Score, col = cluster)) +
+  # Add prototypes:
+  geom_point(data = as.data.frame(mdl$model$centers) %>% rownames_to_column('cluster'), 
+             aes(x = Annual_Income, y = Spending_Score, col = cluster),
+             size = 10, shape = 7, show.legend = F)
+```
+
+
+### $k$-means Clustering in `mlr3`
+
+- Hyperparameter: Number of clusters $k$
+
+```{r cache=FALSE}
+k_cv <- seq(2,10)
+
+mdl_cv = auto_tuner(
+  learner = lrn("clust.kmeans", centers = to_tune(levels = k_cv)),
+  resampling = rsmp("cv", folds = 5),
+  measure = msr("clust.dunn"),
+  tuner = tnr("grid_search"),
+  terminator = trm("none")
+)
+
+set.seed(42)
+mdl_cv$train(tsk)
+```
+
+
+### $k$-means Clustering in `mlr3`
+
+- Higher Dunn index $=$ Better clustering
+
+  - Compact: Small variance between members 
+  
+  - Well separated: Means of different clusters far apart from each other (as compared to the within cluster variance)
+
+```{r}
+mdl_cv$archive %>% 
+  as.data.table() %>% 
+  select(centers, clust.dunn) %>% 
+  arrange(as.numeric(centers))
+
+mdl_cv$tuning_result
+```
+
+
+### $k$-means Clustering in `mlr3`
+
+- For optimal $k = `r mdl_cv$tuning_result$centers`$: 
+
+  - The low versus high spending score clusters for low annual income are also successfully separated
+  
+  - In addition, the medium and high annual income clusters are separated only for high but not low spending score
+
+```{r echo=FALSE, out.width="60%", fig.align="center", fig.width=6, fig.height=4}
+ggplot() + 
+  geom_point(data = df %>% mutate(cluster = factor(mdl_cv$learner$model$cluster)), 
+             aes(x = Annual_Income, y = Spending_Score, col = cluster)) +
+  geom_point(data = as.data.frame(mdl_cv$learner$model$centers) %>% rownames_to_column('cluster'), 
+             aes(x = Annual_Income, y = Spending_Score, col = cluster), 
+             size = 10, shape = 7, show.legend = F)
+```
+
+
+
+### Excurse: Anomaly Detection
+
+- Clustering techniques can be used to detect anomalies in the data:
+
+\begin{figure}
+  \includegraphics[width=0.6\textwidth]{subfiles/pics/clustering-anomaly_detection.png}
+\end{figure}
+
+(https://towardsdatascience.com/best-clustering-algorithms-for-anomaly-detection-d5b7412537c8)
+
+- Note: $k$-means is not suitable for anomaly detection, as it is only good when clusters are expected to have fairly regular shapes
+
+
+### Excurse: Fuzzy Clustering
+
+- Fuzzy clustering: Allow data points to belong to multiple clusters to varying degrees (i.e., 0-100% membership in all available clusters)
+
+  - Cf. SVMs with soft margins: Allow for some degree of uncertainty in classification
+  
+  - E.g. ambiversion: Most people have both extroverted and introverted tendencies, rather than falling clearly into one category or the other
+
+- Fuzzy $c$-means clustering: Assigning a vector of membership levels to each instance based on its distance to all available cluster centroids (i.e., means)
+
+\begin{figure}
+  \includegraphics[width=0.6\textwidth]{subfiles/pics/clustering-hard_vs_fuzzy.png}
+\end{figure}
+\vspace{-\baselineskip}
+(https://medium.com/geekculture/fuzzy-c-means-clustering-fcm-algorithm-in-machine-learning-c2e51e586fff)
+
+
+### Excurse: Fuzzy Clustering
+
+- Hyperparameter $m$: The degree of fuzziness of the solution
+
+  - Larger values of $m$ will blur the clustering so that all instances tend to belong to all clusters
+
+```{r cache=FALSE}
+tsk <- as_task_clust(dat_subset %>% select(-Gender))
+
+mdl = lrn("clust.cmeans", centers = k, m = 2)
+mdl$train(tsk)
+mdl$model
+```
+
+
+### Excurse: Fuzzy Clustering
+
+- Visualization of the clustering:
+
+```{r error=TRUE, out.width="90%", fig.align="center", fig.width=6, fig.height=3}
+# mlr3:
+autoplot(mdl$model)
+
+# Other solutions:
+library(corrplot)
+corrplot(t(mdl$model$membership), is.corr = FALSE)
+```
+
+
+### Hands-on Practical Tutorial
+
+- Now it's your turn: 
+
+  - Go to ILIAS
+  
+  - Navigate to the "Tutorials" folder
+  
+  - Download the "Module 3" folder
+  
+  - Work on the tutorial "module3-clustering"
+
+
+
+
+
+
+
+  
+# Dimensionality Reduction
+
+### Visualizations
+
+- 1D:
+
+  - Histogram
+
+  - Pie Charts
+  
+  - ...
+  
+- 2D:
+
+  - xy-scatter plots
+  
+  - Bar charts
+  
+  - ...
+  
+- 3D:
+
+  - xyz-scatter plots
+  
+  - Contour plots
+  
+  - ...
+
+- $>$ 4D: 
+
+  - ???
+
+
+### Visualizations
+
+- What if we have many (>4) dimensions?
+
+  - E.g., pairwise plots:
+
+```{r warnings=FALSE, out.width="55%", fig.align="center", fig.width=6, fig.height=4}
+dat <- read.csv('subfiles/data/bfi.csv', header = TRUE)
+
+dat %>% 
+  select(agree, conscientious, extra, neuro, open) %>% 
+  ggpairs(upper = list(continuous = "points", combo = "facethist", discrete = "facetbar", na = "na"))
+```
+
+
+### Dimensionality Reduction
+
+- Dimension of a dataset: $N \times p$
+
+  - The number of instances: $N$
+
+  - The number of features: $p$
+
+- Dimension after reduction: $N \times l$, where $l < p$
+
+  - Goal: Represent the most valuable information in the lower dimension $l$
+
+- Why should we reduce dimensionality?
+  
+  - Visualization: If $l = 2$ or $3$, we can plot in 2/3D
+  
+  - Computational costs: Computations are more affordable with $l < p$ features
+
+
+### Dimensionality Reduction Techniques
+
+- Multidimensional Scaling
+
+- Factorial Analysis
+
+- Principal Components Analysis (our focus today!)
+
+- ...
+
+
+### Principal Component Analysis
+
+- In Principal Component Analysis (PCA), we look for the best linear representation of the feature space $X$ in a lower dimension $l<p$
+
+  - In the new space, the features are called "principal components"
+
+\begin{figure}
+  \includegraphics[width=0.9\textwidth]{subfiles/pics/James21-PCA.png}
+\end{figure}
+
+(James et al., 2021, Figure 6.15)
+
+
+### Principal Component Analysis
+
+- Total variance in $X$ is equal to $\sum_{j=1}^{p}\sigma_{j}^{2}$
+
+  - First PC: Explains the largest proportion of total variance in the data
+  
+  - Second PC: Explains the second largest proportion of total variance in the data
+
+  - ...
+  
+  - $p$-the PC: Explains the smallest proportion of total variance in the data
+
+- Any two PCs are uncorrelated
+
+  - Reduced risk of multicollinearity if using the PCs instead of the original variables as features (e.g., in a regression model)
+
+- There exists a strict hierarchy in the predictive value of all PCs 
+
+  - Using only a small subset of PCs as features: A reduced feature set that contains most of the signal (i.e., the first PCs) might increase the predictive performance of our ML model because it is not "distracted" by other noisy features
+
+
+### Principal Component Analysis in `mlr3`
+
+```{r}
+df <- dat %>% select(agree, conscientious, extra, neuro, open)
+head(df, 10)
+
+cor(as.matrix(df)) %>% round(., 2)
+```
+
+
+### Principal Component Analysis in `mlr3`
+
+- PCA is "only" a data preprocessing method (cf. $z$-standardization)
+
+  - Therefore, we need to combine it with a task (e.g., using the PCs as features in a clustering task) in a pipeline (i.e., a predefined sequence of modeling steps)
+
+```{r cache=FALSE}
+tsk <- as_task_clust(df)
+
+#combine pipe operation ("po()") and learner ("lrn()") into a pipeline:
+mdl <- as_learner(po("pca", scale. = T) %>>% lrn('clust.agnes')) 
+mdl$train(tsk)
+
+summary(mdl$model$pca)
+```
+
+
+### Principal Component Analysis in `mlr3`
+
+- It is a bit complicated to access the output of pipeline operations in `mlr3`, because they are only meant to be passed on to further modeling steps
+
+  - Therefore, we need to manually calculate the PCs using the rotation from the model training 
+
+```{r cache=FALSE}
+X <- scale(as.matrix(df)) %*% mdl$model$pca$rotation #manually calculate the PCs using the rotation
+
+head(X)
+
+cor(as.matrix(X)) %>% round(., 2)
+```
+
+```{r include=FALSE}
+# # PCA only:
+# tsk <- as_task_clust(df)
+# mdl <- po('pca', scale. = T)
+# mdl_trained <- mdl$train(list(tsk))
+# X <- mdl_trained[[1]]$data()
+# head(X, 10)
+# cor(as.matrix(X)) %>% round(., 2)
+```
+
+
+### Principal Component Analysis in `mlr3`
+
+```{r out.width="70%", fig.align="center", fig.width=6, fig.height=3}
+#autoplot(mdl$predict(tsk), type = 'pca')
+ggplot(X, aes(x = PC1, y = PC2)) + 
+  geom_point() + 
+  geom_hline(yintercept = mean(X[,'PC1']), 
+             col = 'darkgreen', linewidth = 1.5) +
+  geom_point(data = data.frame('PC1' = mean(X[,'PC1']), 'PC2' = mean(X[,'PC2'])), 
+             col = 'blue', size = 5)
+```
+
+
+
+
+
+
+
+# FP
+
+### Group Projects
+
+- Project work: 
+
+  - Reanalysis of a published study using a set of appropriate ML techniques 
+  
+  - In groups of **3-4 students**
+  
+  - Ideally, one modeling approach per group member (individual contribution!) 
+    
+  - Incl. comparison to original results (either using classical statistics or different ML approach)
+    
+- Project presentations:
+
+  - **20.06.2024**: Proposal presentation at the end of the FS
+
+  - **11.07.2024**: Final presentation at the end of the FP
+  
+- Project report:
+
+  - Deadline: **31.08.2024**
+  
+  - One written summary of the project and outcomes per group
+
+  - Max. 15 pages in total
+    
+  - Emphasis on analysis and modeling; theory and other substantive content are of secondary important
+    
+  - Formatting and style: APA 7
+
+
+### Group Projects
+
+- **Today: Group building**
+
+  - 3-4 students per group $\rightarrow$ Max. 5 groups
+
+  - Options:
+
+      1. Random
+    
+      2. Self-selected
+    
+      3. Any other suggestions?
+
+
+
+
+
+
+
+
+# Summary
+
+- Clustering:
+
+  - Hierarchical: Appealing for users, because it's visual and shows a collection of clusterings
+
+  - Partitional: Relies on the concept of prototypes, that is, representatives of clusters
+
+- Hyperparameters in clustering analyses:
+
+  - Number of clusters
+  
+  - But also: Distance between objects and linkage between sets
+
+- In order to visualize multivariate datasets, we can use dimensionality reduction techniques
+
+  - With Principal Component Analysis (PCA), we project the data into a lower-dimensional space
+
+  - For 2D (3D) visualizations, we can take the first two (three) PCs, capturing the largest proportion of total variance in the data
+
+
+### Homework
+
+- FS:
+  
+  - Finish/Revisit the programming tutorials
+
+  - Readings for next week
+
+    - Aka, A., & Bhatia, S. (2022). Machine learning models for predicting, understanding, and influencing health perception. \textit{Journal of the Association for Consumer Research}, \textit{7}(2), 142–153. https://doi.org/10.1086/718456
+  
+- FP:
+
+  - **Group project planning**
+
+
