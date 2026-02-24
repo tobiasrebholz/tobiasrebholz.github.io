@@ -58,7 +58,17 @@ location: "Tübingen, Germany"
 
 <ul>
   {% for file in site.static_files %}
-    {% if file.path contains '/files/teaching/2024-fall-ML-SMiP/Tutorials' %}
+    {% if file.path contains '/files/teaching/2024-fall-ML-SMiP/Tutorials' and file.extname == '.html' %}
+      <li><a href="{{ file.path | relative_url }}">{{ file.name }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+### Resources
+
+<ul>
+  {% for file in site.static_files %}
+    {% if file.path contains '/files/teaching/2024-fall-ML-SMiP/Tutorials' and file.extname != '.html' %}
       <li><a href="{{ file.path | relative_url }}">{{ file.name }}</a></li>
     {% endif %}
   {% endfor %}
