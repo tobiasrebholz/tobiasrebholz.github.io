@@ -22,6 +22,9 @@ location: "Tübingen, Germany"
     });
 </script>
 
+
+### Slides
+
 <ul>
   {% for file in site.static_files %}
     {% if file.path contains '/files/teaching/2024-fall-ML-SMiP/Slides' %}
@@ -30,8 +33,19 @@ location: "Tübingen, Germany"
   {% endfor %}
 </ul>
 
-### Slides
+### Tutorials
 
+<ul>
+  {% for file in site.static_files %}
+    {% if file.path contains '/files/teaching/2024-fall-ML-SMiP/Tutorials' %}
+      <li><a href="{{ file.path | relative_url }}">{{ file.name }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<!-- ALT: GDrive integration
+
+### Slides
 - <a href="https://drive.google.com/drive/folders/1-t7K_oENLJ54192cjvTejiuZXjPfsJXv?usp=drive_link">Download all slides here</a>
 
 <iframe src="https://drive.google.com/embeddedfolderview?id=1-t7K_oENLJ54192cjvTejiuZXjPfsJXv#list" style="width:90%; height:300px;"></iframe>
@@ -42,3 +56,5 @@ location: "Tübingen, Germany"
 - <a href="https://drive.google.com/drive/folders/10EiREBfzM1-9niTGqHaFZlasS8-dqRF0?usp=drive_link">Download all tutorial materials here</a>
 
 <iframe src="https://drive.google.com/embeddedfolderview?id=10EiREBfzM1-9niTGqHaFZlasS8-dqRF0#list" style="width:90%; height:300px;"></iframe>
+
+-->
