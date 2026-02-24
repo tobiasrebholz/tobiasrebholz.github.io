@@ -1,0 +1,185 @@
+---
+title: 'Module 2: Tutorial: Trees and Forests'
+output:
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: inline
+---
+
+# Tree-Based Classifiers
+
+Similar to Support Vector Machines (SVMs), trees are very good in multiclass classification. Essentially, however, there is no need for special techniques, such as one-vs-one or one-vs-all for SVMs, to handle multiclass problems. Instead, the majority voting procedure used to assign classes to terminal nodes implies a kind of one-vs-all strategy by default.
+
+## Description of data set
+
+As in the SVM tutorial, we will use the `bfi` dataset to predict level of education by the Big-5 personality traits. However, here we do not select a subset of observations that has balanced educational levels. The reason is that trees are much better in handling unbalanced data, as we will see below. 
+
+For simplicity, we treat `education` as a categorical variable here, although it is actually an ordinal variable (i.e., 1 \< 2 \< 3 \< 4 \< 5).
+
+Type ?psych::bfi into your console for more information on the dataset. Note that the Big-5 triats `agree`, `conscientious`, `extra`, `neuro`, and `open` were created by averaging each participant's targets to the five survey items per trait (e.g., `A1`-`A5`).
+
+## Tasks
+
+1.  Read the data file module2-bfi-imbalanced.csv into R (assign it to a variable called "dat").
+
+```{r}
+dat <- read.csv('module2-bfi-imbalanced.csv', header = TRUE)
+```
+
+2.  Transform all discrete variables to factors for the tree algorithm to work properly.
+
+```{r}
+library(tidyverse)
+dat <- dat %>% mutate_at(vars(education, gender), ~ factor(.))
+```
+
+3.  Build a tree model to predict the target `education` by all features. Make sure to set the learner's `keep_model` argument to TRUE, which is needed for task 4. (Hint: Avoid including the identifier `CASE` in the feature set; Hint: Set the seed to ensure reproducibility of your results, e.g., if your model has to randomly break ties)
+
+```{r}
+library(mlr3verse)
+
+set.seed(42)
+tsk = as_task_classif(education ~ ., data = dat %>% select(-CASE))
+mdl = lrn("classif.rpart", keep_model = TRUE)
+mdl$train(tsk)
+```
+
+4.  Visualize your result from task 3 as a binary decision tree.
+
+```{r}
+autoplot(mdl, type = "ggparty")
+```
+
+5.  Prune your tree from task 3 by means of 10-fold cross-validation. That is, choose the complexity penalty parameter `cp` (between 0 and 0.05 in steps of 0.01) to remove unnecessary terminal nodes and reduce overfitting. (Hint: Set the seed to ensure reproducibility of your results)
+
+```{r}
+set.seed(2)
+
+# Define set of complexity parameter values to be tested
+cp_cv <- seq(0, 0.05, 0.01)
+
+# Set up the conditions for the hyperparameter tuning
+mdl_cv = auto_tuner(
+  learner = lrn("classif.rpart", keep_model = TRUE, cp = to_tune(levels = cp_cv)),
+  resampling = rsmp("cv", folds = 10),
+  measure = msr("classif.ce"),
+  tuner = tnr("grid_search"),
+  terminator = trm("none")
+)
+
+# Actually tune the hyperparameter (i.e., cp) and fit the final model
+invisible({capture.output({ #remove console output from html document
+  mdl_cv$train(tsk)
+})})
+
+# Print the output of the tuning
+mdl_cv$archive %>% 
+  as.data.table() %>% 
+  select(cp, classif.ce) %>% 
+  arrange(as.numeric(cp))
+mdl_cv$tuning_result
+```
+
+6.   Visualize the final result (i.e., best model) of your tuning from task 5 as a tree. Would your pruned tree be able to predict all available class labels? In other words, are there any educational levels for which no combination of features would result in the tree making a corresponding prediction? 
+
+```{r}
+# Plot the final model
+autoplot(mdl_cv$learner, type = "ggparty")
+
+# Extract predicted labels
+pred_labs <- mdl_cv$learner$model$frame |> 
+  filter(var == '<leaf>') |> 
+  select(var, n, yval)
+pred_labs
+
+# Check for uniqueness and compare to actual target levels
+unique(pred_labs$yval)
+levels(dat$education)
+```
+
+For this specific tree, multiple education levels would never be predicted. However, trees are rather unstable and even small changes in the data can yield a completely different result. For instance, changing the seed to a different value produces a much more complex tree here, but still not all education levels will be predicted:
+
+```{r}
+set.seed(42)
+
+mdl_cv2 = auto_tuner(
+  learner = lrn("classif.rpart", keep_model = TRUE, cp = to_tune(levels = cp_cv)),
+  resampling = rsmp("cv", folds = 10),
+  measure = msr("classif.ce"),
+  tuner = tnr("grid_search"),
+  terminator = trm("none")
+)
+
+invisible({capture.output({ #remove console output from html document
+  mdl_cv2$train(tsk)
+})})
+
+mdl_cv2$archive %>% 
+  as.data.table() %>% 
+  select(cp, classif.ce) %>% 
+  arrange(as.numeric(cp))
+mdl_cv2$tuning_result
+
+autoplot(mdl_cv2$learner, type = "ggparty")
+```
+
+7.  Because of the instability of a single tree, build an ensamble of trees using the random forest approach and default tuning parameter settings. Make sure to set the learner's `importance` argument to "permutation", which is needed for task 8. (Hint: Set the seed to ensure reproducibility of your results)
+
+```{r}
+set.seed(42)
+mdl = lrn("classif.ranger", importance = 'permutation')
+mdl$train(tsk)
+mdl$model
+```
+
+8.  Plot the feature importance of all features used in your random forest from task 7.
+
+```{r}
+barplot(mdl$importance(), horiz = T, las = 2)
+```
+
+9.  Build a random forest and tune the hyperparameters `num.trees` from 500 to 1500 in steps of 500 and `mtry` from 2 to 5 in steps of 1. Again make sure to set the learner's `importance` argument to "permutation", which is needed for task 10. (Hint: Set the seed to ensure reproducibility of your results)
+
+```{r}
+set.seed(42)
+
+mtry_cv <- seq(2, 5)
+num.trees_cv <- c(500, 1000, 1500)
+
+mdl_cv = auto_tuner(
+  learner = lrn("classif.ranger", importance = 'permutation',
+                mtry = to_tune(levels = mtry_cv), 
+                num.trees = to_tune(levels = num.trees_cv)),
+  resampling = rsmp("cv", folds = 5),
+  measure = msr("classif.ce"),
+  tuner = tnr("grid_search"),
+  terminator = trm("none")
+)
+
+
+invisible({capture.output({ #remove console output from html document
+  mdl_cv$train(tsk)
+})})
+
+mdl_cv$archive %>% 
+  as.data.table() %>% 
+  select(mtry, num.trees, classif.ce) %>% 
+  arrange(as.numeric(mtry), as.numeric(num.trees))
+
+mdl_cv$tuning_result
+
+mdl_cv$learner$model
+```
+
+10.  Bonus: Plot the feature importance of the CV-tuned random forest from task 9 and compare the ranking to the feature importance plot of the untuned random forest fit with default hyperparameter settings from task 7. Are there any substantial differences between the two plots? Which ranking is more reliable?
+
+```{r}
+par(mfrow = c(1,2))
+barplot(mdl$importance(), horiz = T, las = 2, main = "Default RF")
+barplot(mdl_cv$importance(), horiz = T, las = 2, main = "Tuned RF")
+```
+
+There are rather substantial differences between the feature importance plots in terms of relative rankings of the features. Due to the tuned RF constituting the better model (in terms of using cross-validated hyperparameter settings), its ranking is more reliable. However, note that RFs are generally less sensitive to hyperparameter tuning (as compared with other ML methods, such as SVMs).
+
+Note: Feature importance scores are typically calculated based on metrics like Gini impurity or mean decrease in node impurity. Accordingly, these scores provide a relative measure of the importance of each feature in the model. Comparing the absolute values of feature importance scores across different models is thus not very informative.

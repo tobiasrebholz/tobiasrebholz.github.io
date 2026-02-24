@@ -1,0 +1,1331 @@
+---
+title: "Introduction to Machine Learning"
+subtitle: "Module 2: Supervised Learning"
+output:
+  beamer_presentation:
+    slide_level: 3
+    keep_tex: true
+    includes:
+      in_header: subfiles/preamble.tex
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption:
+- aspectratio=43 
+#- "handout" #see https://stackoverflow.com/a/49666042 for details
+- t #start first line on top of slide (https://stackoverflow.com/a/42471345/11118919)
+bibliography:
+- ../../../Literature/!Bibliographies/all.bib
+csl: apa.csl
+fontsize: 10pt
+header-includes:
+- \titlegraphic{\includegraphics[width=4.5cm]{subfiles/UT_WBMW_Rot_RGB_01.png}}
+- \AtBeginDocument{\author[Tobias Rebholz]{Tobias Rebholz}}
+- \AtBeginDocument{\institute[University of Tübingen]{University of Tübingen}}
+- \AtBeginDocument{\date[Fall 2024]{Fall 2024, SMiP Workshop}}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(verbose = TRUE)
+knitr::opts_chunk$set(echo = TRUE
+                      , collapse = TRUE
+                      , cache = TRUE
+                      )
+
+# R options
+Sys.setenv(LANG = "en") #--> english error messages
+#options(scipen=999) #turn off scientific notation
+
+# load packages here
+library(papaja)
+library(DALEXtra)
+library(mlr3verse)
+library(tidyverse)
+
+# bibliography
+#references_TRR <- bibtex::read.bib("../../../Literature/references_TRR.bib")
+#cite via "`r capture.output(print(references_TRR["Rebholz_Hutter.2022"]))`" on slide then (https://stackoverflow.com/a/61528568/11118919)
+
+# set path
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+# data
+dat <- read.csv('subfiles/data/bfi.csv', header = TRUE)
+```
+
+
+
+# Regularized Regression
+
+### Refresher: Multiple Linear Regression
+
+- For each instance $i$ in a population, we have:
+
+  - A vector of features, $X_{i} = \left(x_{i1}, x_{i2}, \ldots, x_{ip}\right)$
+  
+  - Continuous target, $y_{i} \in \mathbb{R}$
+
+- Goal: Predict the target for new instances of which we know the values of the features but not the value of the target:
+\begin{equation}
+  X_{new} \rightarrow \hat{y}_{new} \in \mathbb{R}
+\end{equation}
+
+  - We assume that there is a linear relationship between the features and the target: $\hat{y} = \hat{\beta}_{0} + \hat{\beta}_{1}x_{1} + \cdots + \hat{\beta}_{p}x_{p}$
+
+
+### Refresher: Multiple Linear Regression
+
+```{r out.width="70%", fig.align="center", fig.width=6, fig.height=3}
+ggplot(dat, aes(x = factor(education))) +
+  geom_bar()
+```
+
+- Note the imbalance: Most instances have `education` $= 3$
+
+- For simplicity, let's assume that educational level is a continuous variable in the following
+
+
+### Refresher: Multiple Linear Regression
+
+```{r cache=FALSE}
+tsk <- as_task_regr(education ~ ., data = dat %>% select(-CASE))
+mdl <- lrn('regr.lm')
+mdl$train(tsk)
+summary(mdl$model)
+```
+
+
+### (Automatic) Variable Selection
+
+If we have many features (e.g., personality traits) that may potentially explain the target (e.g., education), how to choose among them?
+
+- **Overfitting:** Including too many features can result in a model that fits the training data too closely 
+  
+  - High risk of capturing noise rather than the underlying relationships!
+  
+    - Cf. learning something by heart: Exactly recognizing each training instance but inability to transfer this knowledge to new observations
+  
+- **High dimensionality:** A large number of features increases the complexity of the model
+  
+  - Computationally intensive and difficult to interpret!
+  
+- **Multicollinearity:** Many features have a higher risk of being linearly dependent on each other
+    
+  - Difficult to determine the unique contribution of each feature!
+
+
+### Overfitting
+
+- Remember the bias-variance trade-off: Good test set performance requires low variance as well as low squared bias 
+
+  - The challenge lies in finding a model for which both are low
+  
+    - E.g., we can get the red model by removing polynomial terms (i.e., flexibility) from the blue model:
+
+\begin{figure}
+  \includegraphics[width=0.65\textwidth]{subfiles/pics/Pargent23-bias-variance_trade-off.png}
+\end{figure}
+
+\begin{srcs}
+  (Pargent et al., 2023, Figure 3a)
+\end{srcs}
+
+
+### Regularized Regression
+
+- Least Absolute Shrinkage and Selection Operator (LASSO): Regression models that penalize the absolute size of the estimated coefficients
+
+  - Relies upon the linear model but uses an alternative fitting procedure for estimating the coefficients $\beta_{0},\beta_{1},\ldots,\beta_{p}$:
+  \begin{equation}
+    \sum_{i=1}^{N} \left(y_{i} - \hat{y}_{i}\right)^{2} + \lambda \sum_{j=1}^{p}\left\|\beta_{j}\right\|
+  \end{equation}
+  
+  - Tends to use a lower number of features, effectively \textbf{selecting the most important ones}
+
+- $\lambda$ is called the "regularization", "tuning" or "hyper-" parameter
+
+  - Controls the trade-off between: 
+  
+    - minimizing the error on the training data (i.e., fitting the data well; first term) 
+    
+    - Penalizing model complexity (second term)
+  
+  - A larger value penalizes the coefficients more heavily, leading to a simpler model (i.e., less features) with potentially higher bias but lower variance
+
+
+### Regularized Regression
+
+- Penalization/Regularization shrinks some of the regression coefficients towards zero $\Rightarrow$ Original interpretability is lost: 
+
+  - Biased coefficients: Size no longer corresponds to the expected change in the response variable for a one-unit change in the predictor
+  
+  - Shrinkage is uneven: Depends on the relative importance of features and their correlation with other features 
+  
+    - Thus, comparisons between coefficients may also be misleading
+
+
+### Regularized Regression in `mlr3`
+
+```{r cache=FALSE}
+tsk = as_task_regr(education ~ ., data = dat %>% select(-CASE))
+mdl = lrn("regr.glmnet", lambda = 0.1)
+mdl$train(tsk)
+coef(mdl$model) %>% round(., 2)
+```
+
+
+### Regularized Regression in `mlr3`
+
+- Instead of arbitrarily choosing $\lambda = 0.1$, we can (rather: should!) try different values:
+
+```{r cache=FALSE}
+mdl = lrn("regr.glmnet", nlambda = 10)
+mdl$train(tsk)
+
+coef(mdl$model) %>% round(., 2)
+
+lambdas <- setNames(mdl$model$lambda, colnames(coef(mdl$model)))
+lambdas %>% round(., 4)
+```
+
+
+### Validation Set Approach
+
+- How to select the tuning- or hyperparameter?
+
+  - Easiest option: Validation set approach
+
+1. Dataset is split into training and validation sets
+  
+2. Model is trained on training set; performance is evaluated on validation set
+  
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{subfiles/pics/James21-validation_set.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 5.1)
+\end{srcs}
+
+
+### Validation Set Approach
+
+- The out-of-sample prediction performance on the validation set is a good (but conservative!) proxy for a model's real-world testing performance
+
+\begin{figure}
+  \includegraphics[width=0.825\textwidth]{subfiles/pics/Pargent23-train_test_split.jpg}
+\end{figure}
+
+\begin{srcs}
+  (Pargent et al., 2023, Figure 2)
+\end{srcs}
+
+
+### Validation Set Approach in `mlr3`
+
+1. Splitting the data into 2/3 \% training set and 1/3 \% test or validation set (`mlr3`'s default; see `?partition`)
+
+```{r}
+set.seed(42)
+row_ids <- partition(tsk)
+row_ids
+```
+
+
+### Validation Set Approach in `mlr3`
+
+2. Building the model with the training data and predicting the validation data's target
+
+    - Note the issue of treating the categorical `eduction` variable as continuous target: Predicting nonexistent education levels
+
+    - **Problem:** `mlr3`'s predict() does not (yet) support multiple lambda values (see \url{https://github.com/mlr-org/mlr3learners/issues/10)}
+
+```{r cache=FALSE}
+mdl = lrn("regr.glmnet", nlambda = 10)
+mdl$train(tsk, row_ids = row_ids$train)
+
+pred <- mdl$predict(tsk, row_ids = row_ids$test)
+lambdas <- setNames(mdl$model$lambda, colnames(coef(mdl$model)))
+lambdas %>% round(., 4)
+
+tail(cbind('true' = dat[row_ids$test,]$education, 'pred' = round(pred$response, 2)))
+```
+
+
+### Validation Set Approach in `mlr3`
+
+2. cont'd
+
+    - **Solution:** We can use the native package `glmnet`'s predict()
+
+```{r cache=FALSE}
+# Separation of X and y (needed for glmnet):
+X <- tsk$data(rows = row_ids$test) %>% select(-education)
+
+# Prediction:
+pred <- predict(mdl$model, newx = as.matrix(X))
+tail(cbind('true' = dat[row_ids$test,]$education, round(pred, 2)))
+```
+
+
+### Validation Set Approach: Hyperparameter Selection
+
+3. Minimizing the out-of-sample MSE
+
+```{r}
+MSE_pred <- colMeans((pred - dat[row_ids$test,]$education)^2)
+MSE_pred %>% round(., 4)
+
+# Which value of the hyperparameter (lambda) yields the smallest out-of-sample MSE?
+idx_lambda_best <- which.min(MSE_pred)
+idx_lambda_best
+
+lambda_best <- lambdas[idx_lambda_best] 
+lambda_best %>% round(., 4)
+
+# Choosing the model with the best out-of-sample prediction performance:
+coef(mdl$model)[,idx_lambda_best] %>% round(., 2)
+```
+
+```{r include=FALSE}
+MSE_lambda <- data.frame(lambda = mdl$model$lambda, MSE = MSE_pred)
+
+ggplot(MSE_lambda, aes(x = lambda, y = MSE)) +
+  geom_line() +
+  geom_point() +
+  geom_vline(xintercept = lambda_best, linetype = "dashed", color = "red")
+```
+
+
+### Validation Set Approach: Hyperparameter Selection
+
+- Trace plot: Visualizes the model selection process
+
+  - I.e., how the coefficients change as the regularization parameter $\lambda$ varies
+
+  - Best model: The $\lambda$ value at the dashed vertical line
+  
+```{r include=FALSE}
+df_lambda <- as.data.frame(lambdas) %>% 
+  rownames_to_column("lambda_name") %>% 
+  rename(lambda = lambdas)
+df_coef_long <- as.data.frame(as.matrix(coef(mdl$model))) %>%
+  rownames_to_column("feature") %>% 
+  pivot_longer(cols = starts_with("s"), names_to = "lambda_name", values_to = "coefficient") %>%
+  left_join(., df_lambda, by = "lambda_name") %>%
+  filter(feature != "(Intercept)") # Exclude intercept for clarity
+```
+
+```{r out.width="80%", fig.align="center", fig.width=6, fig.height=2.5}
+ggplot(df_coef_long, aes(x = log(lambda), y = coefficient, color = feature)) +
+  geom_line() +
+  geom_point() +
+  geom_vline(xintercept = log(lambda_best), linetype = "dashed")
+```
+
+
+### Excurse: Ridge Regression
+
+- Similar to LASSO, but stabilizing predictions by a shrinkage factor that only **reduces** the size of the coefficients 
+
+  - Instead of setting some of them to exactly zero (for any value of `lambda`, incl. $s0$):
+
+```{r cache=FALSE}
+options(digits=2) #reduce number of digits printed in output
+
+mdl = lrn("regr.glmnet", nlambda = 10, alpha = 0)
+mdl$train(tsk)
+coef(mdl$model)
+
+options(digits=6) #change back to default
+```
+
+
+### Excurse: Elastic Net
+
+- Elastic Net: Combination of LASSO and Ridge regularization
+
+  - Metaphorically, represents the idea of a "net" that addresses each method's individual limitations by retaining and grouping correlated predictors effectively
+
+    - Ridge: Effectively shrinks coefficients for correlated predictors, but does not perform feature selection
+
+    - LASSO: Selects features but struggles when predictors are highly correlated, arbitrarily choosing one
+
+  - Note that this is actually the algorithm we used by default in `mlr3` as learner: `"regr.glmnet"`
+
+- The "mixing parameter" `alpha` determines the penalty term:
+\begin{equation}
+  \frac{(1-\alpha)}{2} \|\beta\|_2^2 + \alpha \|\beta\|_1
+\end{equation}
+
+  - `alpha` = 1: Pure L1 regularization $\Rightarrow$ LASSO
+
+  - `alpha` = 0: Pure L2 regularization $\Rightarrow$ Ridge
+
+  - 0 < `alpha` < 1: Elastic Net, blending the two methods
+
+
+# Support Vector Classifier
+
+### Refresher: Logistic Regression
+
+- Everything is the same as in linear regression, except that we have discrete target
+
+- For each instance $i$ in a population, we have:
+
+  - A vector of features, $X_{i} = \left(x_{i1}, x_{i2}, \ldots, x_{ip}\right)$ 
+  
+  - \textbf{Binary} class membership, $y_{i} \in \left\{0,1\right\}$
+  
+    - E.g., buying vs. not buying a specific product
+    
+  - Probability of membership in class 1, $p$, and probability of membership in class 0, $1-p$
+  
+    - \textbf{Continuous, but bounded} target
+
+- Goal: Predict the target for new instances of which we know the vector of features but not the value of the target:
+\begin{equation}
+  X_{new} \rightarrow \hat{p}_{new} \in (0,1)
+\end{equation}
+
+  - Predicted probability of class 1:
+  \begin{equation}
+    \hat{p} = \frac{e^{\hat{\beta}_{0} + \hat{\beta}_{1}x_{1} + \cdots + \hat{\beta}_{p}x_{p}}}{1 + e^{\hat{\beta}_{0} + \hat{\beta}_{1}x_{1} + \cdots + \hat{\beta}_{p}x_{p}}}
+  \end{equation}
+
+
+### Refresher: Logistic Regression
+
+```{r out.width="70%", fig.align="center", fig.width=6, fig.height=3}
+df <- dat
+df$agree_high <- ifelse(df$agree > 4, 1, 0)
+df %>% 
+  ggplot(aes(y = agree_high, x = age)) + 
+  geom_point() + 
+  geom_smooth(method = "glm", method.args = list(family = binomial(link = "logit")))
+```
+
+
+### Refresher: Logistic Regression
+
+```{r cache=FALSE}
+tsk = as_task_classif(agree_high ~ age, data = df, positive = '1')
+mdl = lrn("classif.log_reg")
+mdl$train(tsk)
+summary(mdl$model)
+```
+
+
+### Other Types of Classifiers
+
+- Linear:
+
+  - Linear Discriminant Analysis (not discussed!)
+  
+  - Support Vector Machines (next up!)
+  
+  - ...
+  
+- Nonparamtertic:
+
+  - Classification trees (see below)
+  
+  - Random forests (see below)
+  
+  - Nearest neighbors (not discussed!)
+  
+  - ...
+
+\vspace{\baselineskip}
+- The remaining module is about using these methods for classification tasks
+
+  - But: They can analogously be used for regression tasks (not discussed!)
+  
+    - Usually requires some minor adaptions (e.g., specifying the respective task in `mlr3`)
+
+
+### Support Vector Classifier
+
+- There is a linear decision boundary (or "hyperplane") used to define the prediction: $\beta_{0} + \sum_{j=1}^{p}\beta_{j}x_{j} = 0$
+  
+  - Prediction depends on whether an instance is above or below this boundary:
+
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{subfiles/pics/James21-linear_classifier.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 9.2)
+\end{srcs}
+
+
+### Support Vector Classifier
+
+- Support Vector Classifier (SVC): Separating the classes with a hyperplane that maximizes the margin
+
+  - Margin (dashed line): The distance between the hyperplane (i.e., decision boundary) and the training data
+
+  - Predicted class: $\hat{y} = \begin{cases}1 \text{ if } \hat{\beta}_{0} + \sum_{j=1}^{p}\hat{\beta}_{j}x_{j} > 0 \\ -1 \text{ else}\end{cases}$
+
+\begin{figure}
+  \includegraphics[width=0.325\textwidth]{subfiles/pics/James21-SVM-linear.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 9.3)
+\end{srcs}
+
+
+### Support Vector Classifier
+
+- SVCs typically have a very good classification accuracy compared to other linear methods, but require more technicalities:
+
+  - Hard margin: Requires correct classification for all instances (see previous slide)
+  
+    - Overfitting $\Rightarrow$ Poor generalization!
+
+  - Soft margin: Does not require all instances to be correctly classified
+  
+    - I.e., some instances can be on the wrong side of the hyperplane
+
+\begin{figure}
+  \includegraphics[width=0.35\textwidth]{subfiles/pics/James21-SVM-soft_margin.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 9.6)
+\end{srcs}
+
+
+### Support Vector Classifier
+
+- $C$ is the hyperparameter for the trade-off between the size of the (soft) margin and correct classification
+
+  - Cf. $\lambda$ in regularized regression: Controlling the trade-off between minimizing the error on the training data and penalizing model complexity
+
+  - Larger $C$ (top left; decreasing to bottom right) $=$ Higher tolerance (i.e., less penalization) of misclassification in the training dataset
+
+\begin{figure}
+  \includegraphics[width=0.35\textwidth]{subfiles/pics/James21-SVM-soft_margin-C.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 9.7)
+\end{srcs}
+
+
+### Support Vector Classifier in `mlr3`
+
+- Data preparation:
+
+```{r}
+dat <- dat %>% 
+  mutate(gender = ifelse(gender == 1, 'male', 'female'))
+
+head(dat) 
+```
+
+### Support Vector Classifier in `mlr3`
+
+```{r cache=FALSE}
+tsk = as_task_classif(gender ~ agree + conscientious, data = dat, positive = 'male')
+mdl = lrn("classif.svm", type = 'C-classification', cost = 100, kernel = 'linear')
+mdl$train(tsk)
+summary(mdl$model)
+```
+
+
+### Support Vector Classifier in `mlr3`
+
+- The output summary is not as informative (in terms of model interpretability) for SVCs as for regression models
+
+  - But the plot of the hyperplane reveals some serious problems:
+
+```{r warning=FALSE, out.width="70%", fig.align="center", fig.width=6, fig.height=3}
+autoplot(mdl, task = tsk) + scale_fill_viridis_d(begin = .5)
+```
+
+
+
+
+
+# Support Vector Machines
+
+- Challenges for linear classifiers: 
+
+\begin{figure}
+  \includegraphics[width=0.45\textwidth]{subfiles/pics/James21-SVM-problem.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 9.8)
+\end{srcs}
+
+
+### Support Vector Machines
+
+- Solution: Nonlinear decision boundaries
+
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{subfiles/pics/James21-SVM-nonlinear.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 9.9)
+\end{srcs}
+
+
+### Excurse: The Kernel Trick
+
+- Nonlinear decision boundaries can be achieved via the "kernel trick"
+
+  - Left: Two linearly non-separable classes in 2D space spanned by original features $x$ and $y$
+
+  - Right: Linear separability with a plane in 3D space by adding a new feature which was constructed from the original two
+  
+    - Technically: Mapping the original 2D input data $x=(x,y)$ to a 3D feature space by a (polynomial) function $\Phi(x)=(x,y,x^2+y^2)$
+
+- Tuning parameters: Properties of kernel function $\Phi$ (e.g., radial)
+
+\vspace{-.9\baselineskip}
+\begin{figure}
+  \includegraphics[width=0.375\textwidth]{subfiles/pics/kernel_trick1.png}
+  \includegraphics[width=0.375\textwidth]{subfiles/pics/kernel_trick2.png}
+\end{figure}
+\vspace{-1.5\baselineskip}
+\begin{srcs}
+  (\url{https://www.efavdb.com/svm-classification})
+\end{srcs}
+
+
+### Support Vector Machines in `mlr3`
+
+- Using a nonlinear `kernel` (default: "radial"):
+
+```{r cache=FALSE}
+mdl = lrn("classif.svm", type = 'C-classification', cost = 100, kernel = 'radial')
+mdl$train(tsk)
+summary(mdl$model)
+```
+
+
+### Support Vector Machines in `mlr3`
+
+- **Support Vectors:** Only instances that lie directly on the margin, or on the wrong side of the margin for their class, affect the classifier
+
+  - These instances are marked with a cross
+  
+  - All remaining instances play no role for the classification
+  
+```{r warning=FALSE, out.width="70%", fig.align="center", fig.width=6, fig.height=3}
+autoplot(mdl, task = tsk) + scale_fill_viridis_d(begin = .5) + 
+  geom_point(data = tsk$data()[mdl$model$index,], shape = 4, size = 2)
+```
+
+
+### Support Vector Machines in `mlr3`
+
+- Training classification performance:
+
+  - Overfitting $\Rightarrow$ Too optimistic!
+
+```{r}
+pred <- mdl$predict(tsk)
+
+pred$confusion
+
+mes <- msrs(c("classif.ce", "classif.acc", "classif.recall", "classif.specificity"))
+pred$score(mes)
+```
+
+
+### Cross-Validation
+
+- **$k$-fold Cross-Validation (CV):** More elaborated extension of the validation set approach to assess out-of-sample prediction performance
+
+  1. Dataset is split into multiple ($k$) parts (= "folds")
+  
+  2. One fold (e.g., 20% in $5$-fold CV) is left out as validation set; the remaining folds are used as training set
+  
+  3. Model is trained on the current fold's training set and evaluated on the current fold's validation set
+
+  4. Steps 2 and 3 are repeated for each fold, and the average validation performance is reported as: $CV_{(k)} = \frac{1}{k} \sum_{i=1}^{k}{MMCE}_{i}$
+
+\begin{figure}
+  \includegraphics[width=0.35\textwidth]{subfiles/pics/James21-k-fold_CV.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 5.5)
+\end{srcs}
+
+
+### Cross-Validation in `mlr3`
+
+- The `mlr3` library includes a built-in function to perform CV
+
+  - Note: The estimated out-of-sample performance is worse than the in-sample performance (to be expected!)
+
+```{r}
+set.seed(42)
+cv <- rsmp("cv", folds = 5)
+mdl_cv <- resample(learner = mdl, task = tsk, resampling = cv)
+
+# Out-of-sample performance
+mdl_cv$aggregate(mes)
+
+# Remember: In-sample performance
+pred$score(mes)
+```
+
+
+### Cross-Validation: Hyperparameter Tuning
+
+- CV can be used to choose a good value for the tuning- or hyperparameter
+
+  - E.g., choosing the `cost` parameter $C$ for SVM to maximize out-of-sample classification accuracy
+
+
+
+- Remember: Hyperparameters are external configuration variables that control the training/behavior of the ML model
+
+  - Their values are manually set before training a model (e.g., regularization constant $\lambda$ in regularized regression)
+  
+  - In contrast, values of internal parameters are automatically derived during the learning process (e.g., regression coefficients $\beta$)
+
+
+### Hyperparameter Tuning in `mlr3`
+
+1. Define the set of values for $C$ that should be tested
+
+```{r cache=FALSE}
+C_cv <- c(10, 50, 100, 500, 1000)
+```
+
+2. Set the tuning conditions using `auto_tuner()`
+
+    - Which model should be trained? 
+    
+    - Which resampling method (i.e., validation approach) should be used? 
+    
+    - How should performance be assessed? 
+    
+    - ...
+
+```{r cache=FALSE}
+mdl_cv = auto_tuner(
+  learner = lrn("classif.svm", type = 'C-classification', cost = to_tune(levels = C_cv)),
+  resampling = rsmp("cv", folds = 5),
+  measure = msr("classif.ce"),
+  tuner = tnr("grid_search"),
+  terminator = trm("none")
+)
+```
+
+
+### Hyperparameter Tuning in `mlr3`
+
+3. Perform the actual tuning
+
+    - I.e., for each potential value of $C$ defined in Step 1, perform a $k$-fold CV using the `train()` argument on the to-be-tuned model from Step 2
+
+```{r cache=FALSE}
+set.seed(42)
+mdl_cv$train(tsk)
+```
+
+
+### Hyperparameter Tuning in `mlr3`
+
+4. Compare the performance for each potential value of $C$ and select (or rather extract) the best hyperparameter
+
+```{r cache=FALSE}
+mdl_cv$archive %>% 
+  as.data.table() %>% 
+  select(cost, classif.ce) %>% 
+  arrange(as.numeric(cost))
+
+mdl_cv$tuning_result
+```
+
+
+### Hyperparameter Tuning in `mlr3`
+
+5. Select the final model (i.e., optimal hyperparameter settings)
+
+  - This model is expected to predict best out-of-sample
+
+```{r}
+summary(mdl_cv$learner$model)
+```
+
+
+### Hyperparameter Tuning in `mlr3`
+
+6. Optional plotting of the best model's classification surface
+
+```{r warning=FALSE, cache=FALSE, out.width="70%", fig.align="center", fig.width=6, fig.height=3}
+autoplot(mdl_cv$learner, task = tsk) + scale_fill_viridis_d(begin = .5) + 
+  geom_point(data = tsk$data()[mdl$model$index,], shape = 4, size = 2)
+```
+
+
+### Excurse: Relationship between SVM \& Logistic Regression
+
+- Both, SVM and logistic regression can be rewritten as minimizing the so-called loss function
+\begin{equation}
+  \minimize_{\beta_{0}, \beta_{1}, \ldots, \beta_{p}}\left\{L(X,y,\beta) + \lambda P(\beta)\right\}
+\end{equation}
+
+  - Loss: Quantifies the extent to which the model, parametrized by $\beta = \left(\beta_{0},\beta_{1}, \ldots, \beta_{p}\right)$, fits the data $\left(X, y\right)$
+
+- Overall, the two loss functions have quite similar shape and thus behavior:
+
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{subfiles/pics/James21-hinge_vs_logistic_loss.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 9.9)
+\end{srcs}
+
+
+### Excurse: The Optimization Problem
+
+- Remember: 
+
+  - Linear decision boundary (or "hyperplane"): $\beta_{0} + \sum_{j=1}^{p}\beta_{j}x_{j} = 0$
+
+  - Predicted class of instance $i$: $\hat{y}_{i} = \hat{\beta}_{0} + \sum_{j=1}^{p}\hat{\beta}_{j}x_{ij}$
+
+- Condition for correct classification of **all** instances in the training data (i.e., "hard" margin):
+\begin{equation}
+  y_{i}\hat{y}_{i} \geq 1 \,\forall i = 1,\ldots,N
+\end{equation}
+
+  - $y_{i} = 1$ and $\hat{y}_{i} = 1  \Rightarrow y_{i}\hat{y}_{i} = 1$
+  
+  - $y_{i} = -1$ and $\hat{y}_{i} = -1  \Rightarrow y_{i}\hat{y}_{i} = 1$
+
+- In general, correct classification can be written as:
+\begin{equation}
+  y_{i}\left(\beta_{0} + \sum_{j=1}^{p}\beta_{j}x_{j}\right) > 0
+\end{equation}
+
+  - If this condition is true, only the two cases from above are possible
+  
+    - At least for hard margins
+
+
+### Excurse: The Optimization Problem
+
+- Maximizing the "soft" margin is equivalent to
+\begin{equation}
+  \minimize_{\beta_{0}, \beta_{1}, \ldots, \beta_{p},\xi} \frac{1}{2} \sum_{j=1}^{p} \beta_{j}^{2} + \frac{C}{N} \sum_{i=1}^{N} \xi_{i}
+\end{equation}
+s.t.
+\begin{equation}
+  y_{i}\left(\beta_{0} + \sum_{j=1}^{p}\beta_{j}x_{ij}\right) \geq 1 - \xi_{i} \,\forall i = 1,\ldots,N
+\end{equation}
+\begin{equation}
+  \xi_{i} \geq 0 \,\forall i = 1,\ldots,N
+\end{equation}
+
+- **"Slack variables" $\xi$:** Allow instances to be on the wrong side of the margin and hyperplane
+
+  - If $\xi_{i} = 0$: Instance $i$ is correctly classified
+
+  - Else if $0 < \xi_{i} \leq 1$: Instance $i$ is inside the margin but still on the correct side of the hyperplane (i.e., correctly classified)
+
+  - Else if $\xi_{i} > 1$: Instance $i$ is misclassified
+
+- $C = 0$: No budget for violations to the margin $\Rightarrow$ $\xi_{1} = \ldots = \xi_{N} = 0$
+
+
+### Hands-on Practical Tutorial
+
+- Now it's your turn: 
+
+  - Go to \url{https://tobiasrebholz.github.io/teaching}
+  
+  - Select "Introduction to Machine Learning" > "Materials"
+  
+    - Password: **smip24**
+  
+  - Download the "Support Vector Machines" tutorial
+  
+  - Work through the tasks
+
+```{r include=FALSE}
+library(psych) #needed for data (e.g., bfi)
+data(bfi)
+
+dat_tutorial <- bfi %>%
+  mutate(agree = rowMeans(select(., A1:A5), na.rm=T)
+         , conscientious = rowMeans(select(., C1:C5), na.rm=T)
+         , extra = rowMeans(select(., E1:E5), na.rm=T)
+         , neuro = rowMeans(select(., N1:N5), na.rm=T)
+         , open = rowMeans(select(., O1:O5), na.rm=T)
+         ) %>% 
+  select(-c(A1:O5)) %>% 
+  rownames_to_column('CASE') %>% 
+  filter(!is.na(education))
+
+# randomly sampling a subset participants with equal distribution of education
+set.seed(42)
+dat_tutorial1 <- dat_tutorial %>% group_by(education) %>% sample_n(20)
+
+write.csv(dat_tutorial1, file = '../Tutorials/module2-bfi.csv', row.names = F)
+
+# randomly sampling a subset participants with original distribution of education
+set.seed(42)
+dat_tutorial2 <- dat_tutorial %>% sample_n(100)
+
+write.csv(dat_tutorial2, file = '../Tutorials/module2-bfi-imbalanced.csv', row.names = F)
+```
+
+
+
+
+
+# Classification Trees
+
+- **Classification trees (CTs):** Recursively partition the feature space into a set of rectangular areas using `if`-statements
+
+  - Prediction: A class $y_{l}$ is assigned to each partition $\mathbf{R}_{l}$, and new objects receive the class assigned to their regions:
+  \begin{equation}
+    \text{If } X_{new} \in \mathbf{R}_{l}, \text{then } \hat{y}_{new} = y_{l}
+  \end{equation}
+
+\begin{figure}
+  \includegraphics[width=0.35\textwidth]{subfiles/pics/James21-recursive_partitioning.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 8.3)
+\end{srcs}
+
+
+### Classification Trees
+
+- The rectangular partitioning can alternatively be represented as a (binary) decision tree:
+
+\begin{figure}
+  \includegraphics[width=0.35\textwidth]{subfiles/pics/James21-recursive_partitioning.png}
+  \hspace{0.1\textwidth}
+  \includegraphics[width=0.35\textwidth]{subfiles/pics/James21-recursive_partitioning-tree.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 8.3)
+\end{srcs}
+
+
+### Splitting and Stopping
+
+- Splitting rule: Choose the feature $j$ and its threshold $\bar{x}$ to maximize the gain in purity
+
+  - Branches: $x_{j} \leq \bar{x}$ \& $x_{j} > \bar{x}$
+
+  - Aim: Decrease the impurity of the parent node (as measured by, e.g., Gini index $= 2\pi_{1}\pi_{-1}$)
+  
+    - $\pi_{1}$: proportion of instances in class $1$
+    
+    - $\pi_{-1}$: proportion of instances in class $-1$
+    
+  - A node is pure if it contains instances from only one single class: $\pi_{1}\pi_{-1} = 0$
+
+- Stopping criteria: Number of instances in each node should be above a minimum (e.g., 10)
+
+  - Branching improves the purity of the children nodes, but decreases the amount of instances in each children node
+  
+    - Going too deep $\Rightarrow$ Overfitting!
+
+
+### Classification Trees in `mlr3`
+
+- Participants in Logg et al. (2019, Experiment 3) had the choice between an algorithm and a human (other participant vs. self; between-subjects) to determine their performance-dependent bonus payment
+
+  - **"Algorithm aversion":** General preference for humans over algorithms (Mahmud et al., 2022)
+
+```{r}
+dat <- haven::read_sav('https://osf.io/download/kt47s')
+```
+```{r include=FALSE}
+dat <- dat %>% 
+  filter(!(is.na(A1_Self2) & is.na(A1_Other2))) %>% 
+  mutate(choice = ifelse(is.na(A1_Self2)
+                         , ifelse(A1_Other2 == 1, 'algorithm', 'human')
+                         , ifelse(A1_Self2 == 1, 'algorithm', 'human')
+                         )
+         , condition = ifelse(is.na(A1_Self2), 'other_human', 'self_human')
+         , confidence_alg = ifelse(is.na(Q25), Q57, Q25)
+         , accuracy_alg = ifelse(is.na(Q44), Q61, Q44) / 50
+         ) %>% 
+  select(choice, age, SexM1F2, condition, confidence_alg, accuracy_alg) %>% 
+  mutate(choice = factor(choice), SexM1F2 = factor(SexM1F2), condition = factor(condition))
+```
+```{r}
+tail(dat)
+```
+
+
+### Classification Trees in `mlr3`
+
+```{r cache=FALSE}
+tsk = as_task_classif(choice ~ ., data = dat, positive = 'algorithm')
+mdl = lrn("classif.rpart", keep_model = TRUE, cp = 0)
+mdl$train(tsk)
+mdl$model
+```
+
+### Classification Trees in `mlr3`
+
+- Compact tree representation of this complex partitioning:
+
+```{r cache=FALSE, out.width="80%", fig.align="center", fig.width=9, fig.height=6}
+autoplot(mdl, type = "ggparty")
+```
+
+
+### Classification Trees in `mlr3`
+
+- Class assignment: Majority class in a leaf/terminal node (i.e., partition)
+
+```{r}
+set.seed(42)
+pred <- mdl$predict(tsk)
+pred$confusion
+
+pred$score(msrs("classif.acc"))
+```
+
+- Note: If you re-run the `predict()` method for classification trees, you may get slightly different results, e.g., due to randomly broken ties
+
+  - Ties: Same amount of training instances per class in a terminal node
+
+
+### Classification Trees in `mlr3`
+
+- Many partitions in our example lead to the same prediction
+
+  - In other words, they are redundant/uninformative
+
+  - Solution: "Pruning" the tree by increasing the penalty on complexity `cp`
+
+```{r cache=FALSE}
+mdl = lrn("classif.rpart", keep_model = TRUE, cp = 0.005)
+mdl$train(tsk)
+mdl$model
+```
+
+
+### Classification Trees in `mlr3`
+
+- Pruned tree:
+
+```{r cache=FALSE, out.width="80%", fig.align="center", fig.width=9, fig.height=6}
+autoplot(mdl, type = "ggparty")
+```
+
+
+### Classification Trees in `mlr3`
+
+- Class assignment:
+
+```{r}
+set.seed(42)
+pred <- mdl$predict(tsk)
+pred$confusion
+
+pred$score(msrs("classif.acc"))
+```
+
+
+### Hyperparameter Tuning in `mlr3`
+
+- Better than pruning the tree manually to remove unnecessary partitions:
+
+  - Tuning the hyperparameter `cp` by means of CV (e.g., $5$-fold)
+
+```{r cache=FALSE}
+cp_cv <- seq(0, 0.05, 0.01)
+
+mdl_cv = auto_tuner(
+  learner = lrn("classif.rpart", keep_model = TRUE, cp = to_tune(levels = cp_cv)),
+  resampling = rsmp("cv", folds = 5),
+  measure = msr("classif.ce"),
+  tuner = tnr("grid_search"),
+  terminator = trm("none")
+)
+
+set.seed(42)
+mdl_cv$train(tsk)
+```
+
+### Hyperparameter Tuning in `mlr3`
+
+- Ideally, the best value for the hyperparamter lies somewhere "in the middle" of the grid to be searched
+
+  - Why? -- If it lies at the borders, there might be a better model for which the hyperparameter is smaller (larger) than the minimum (maximum) value tested
+
+```{r}
+mdl_cv$archive %>% 
+  as.data.table() %>% 
+  select(cp, classif.ce) %>% 
+  arrange(as.numeric(cp))
+
+mdl_cv$tuning_result
+```
+
+
+### Hyperparameter Tuning in `mlr3`
+
+- CV-pruned tree:
+
+```{r cache=FALSE, out.width="50%", fig.align="center", fig.width=6, fig.height=4.5}
+autoplot(mdl_cv$learner, type = "ggparty")
+```
+
+
+### Excurse: Classification Tree vs. SVM
+
+- Tree-based classifiers are ideal for nonlinear decision boundaries (bottom), but very bad for linear decision boundaries (top):
+
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{subfiles/pics/James21-tree_vs_linear_classifier.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 8.7)
+\end{srcs}
+
+
+
+### Hands-on Practical Tutorial
+
+- Now it's your turn: 
+
+  - Go to \url{https://tobiasrebholz.github.io/teaching}
+  
+  - Select "Introduction to Machine Learning" > "Materials"
+  
+    - Password: **smip24**
+  
+  - Download the "Trees" tutorial
+  
+  - Work through **tasks 1--5**
+
+
+
+
+
+# Random Forests
+
+- Advantages of trees: 
+
+  - Can easily handle both numerical and categorical variables
+
+  - Can easily handle multiclass problems
+
+  - Can easily handle imbalanced datasets
+
+- But: Trees are highly sensitive to small changes in the training data, especially if they are very deep (i.e., more complex)
+
+  - **Solution:** Random Forests
+  
+    - Building a collection of deep trees 
+    
+    - Classifying a new instance $X_{new}$ according to the class which is assigned to it by the **majority** of deep trees
+  
+  - Bias-variance trade-off: 
+  
+    - Deep trees naturally have low bias
+    
+    - Variance reduction is achieved by aggregating the predictions of many deep trees
+
+
+### Random Forests
+
+- Each cut only considers a random sample of features to split the data
+  
+  - Goal: Reducing the similarity of trees in the forest
+
+- Additionally, we build a collection of trees using a different training sample for each individual tree
+
+  - E.g., via boostrapping: Sampling from the training data with replacement
+  
+  - Intuition: Simulation of drawing multiple samples from the population
+
+\begin{figure}
+  \includegraphics[width=0.375\textwidth]{subfiles/pics/James21-bootstrap.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 5.11)
+\end{srcs}
+
+
+### Random Forests in `mlr3`
+
+```{r cache=FALSE}
+set.seed(42)
+mdl = lrn("classif.ranger", importance = "permutation")
+mdl$train(tsk)
+mdl$model
+```
+
+
+### Random Forests in `mlr3`
+
+- Simultaneous tuning of **multiple** important hyperparameters:
+
+  - `num.trees`: Number of trees in the forest
+  
+  - `mtry`: Number of features to be considered for each split
+
+```{r cache=FALSE}
+num.trees_cv <- c(100, 500, 1000)
+mtry_cv <- seq(2, 5)
+
+mdl_cv = auto_tuner(
+  learner = lrn("classif.ranger", importance = "permutation", 
+                num.trees = to_tune(levels = num.trees_cv),
+                mtry = to_tune(levels = mtry_cv)),
+  resampling = rsmp("cv", folds = 5),
+  measure = msr("classif.ce"),
+  tuner = tnr("grid_search"),
+  terminator = trm("none")
+)
+
+set.seed(42)
+mdl_cv$train(tsk)
+```
+
+
+### Random Forests in `mlr3`
+
+- Testing multiple combinations of hyperparameters:
+
+  - Computationally intensive with grid search!
+
+```{r cache=FALSE}
+mdl_cv$archive %>% 
+  as.data.table() %>% 
+  select(num.trees, mtry, classif.ce) %>% 
+  arrange(as.numeric(num.trees), as.numeric(mtry))
+
+mdl_cv$tuning_result
+```
+
+
+### Random Forests in `mlr3`
+
+- Final, optimal model:
+
+```{r cache=FALSE}
+mdl_cv$learner$model
+```
+
+
+### Random Forests in `mlr3`
+
+- Nice by-product: Measures for the importance of each feature for the classification task
+
+```{r out.width="70%", fig.align="center", fig.width=7, fig.height=3.5}
+par(mar = c(5, 10, 2.5, 2.5))  # Bottom, Left, Top, Right margins
+barplot(mdl_cv$importance(), horiz = T, las = 2)
+```
+
+- Note: The importance of a feature can also be negative, especially for noisy features (e.g., `SexM1F2`)
+
+  - We would expect improved predictive performance if these “bad” features were actually removed from the model
+
+
+### Excurse: Interpretable ML
+
+- **Permutation importance:** The importance of feature $x_{j}$ is defined as the change in accuracy by randomly reshuffling the values of $x_{j}$
+
+  - Note: **"Model-agnostic"** measure of feature importance (see also Module 5)
+  
+    - Can be applied with any trained predictive model (not only RFs)
+
+- `DALEXtra`: Package that offers many tools for interpretable ML (e.g., permutation importance)
+
+  - I.e., useful for making sense of the prediction behavior of black-box models
+
+```{r warning=FALSE, cache=FALSE}
+set.seed(42)
+
+library(DALEXtra)
+expl <- explain_mlr3(mdl_cv$learner, 
+                     data = dat %>% select(-choice),
+                     y = ifelse(dat$choice == "algorithm", 1, 0),
+                     predict_function = function(mdl, newdat) {
+                       mdl$predict_newdata(newdata = newdat)$response
+                     },
+                     verbose = FALSE
+                     )
+varimp <- model_parts(expl, B = 3) #B = number of permutations
+```
+
+
+### Excurse: Interpretable ML
+
+- Visualizing the variability of importance across permutations:
+
+  - By default, `DALEXtra` calculates $AUC$-based importance measures
+
+```{r out.width="55%", fig.align="center", fig.width=6, fig.height=3}
+plot(varimp)
+```
+
+```{r include=FALSE, echo=FALSE}
+png(filename="subfiles/pics/output-RF-var_imp.png")
+plot(varimp)
+#plot(varimp, max_vars = 3) #plots only the 3 most important features
+dev.off()
+```
+
+- Note: The ordering of `age` and `condition` is reversed now
+
+  - Classical scores (e.g., permutation) provide a **relative** measure of feature importance $\Rightarrow$ Absolute permutation score values are not very informative
+
+
+### Hands-on Practical Tutorial
+
+- Your turn: 
+  
+  - Finish the remaining tasks of the "Trees" tutorial
+
+
+
+
+
+
+# Summary
+
+- Supervised Learning is a main task in data-driven decision-making
+
+  - E.g., classification: The target to predict is class membership
+
+  - We have discussed regularized regression, Support Vector Machines and tree-based algorithms, incl. ensamble methods (i.e., RFs)
+
+- Advanced ML is much **more intuitive** than classical statistics
+
+  - No distributional assumptions, p-values, ...
+  
+  - But: No magical black box
+  
+    - Essentially consisting of a set of well-motivated mathematical principles for modelling data and predicting future instances
+
+- Challenges: 
+
+  - For classification: Inseparable classes, class imbalance, ...
+
+  - In general: Hyperparameter selection, bias-variance trade-off, curse of dimensionality, ...
+  
+

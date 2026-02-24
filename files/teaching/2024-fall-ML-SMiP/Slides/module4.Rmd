@@ -1,0 +1,1100 @@
+---
+title: "Introduction to Machine Learning"
+subtitle: "Module 4: Deep Learning"
+output:
+  beamer_presentation:
+    slide_level: 3
+    keep_tex: true
+    includes:
+      in_header: subfiles/preamble.tex
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption:
+- aspectratio=43 
+#- "handout" #see https://stackoverflow.com/a/49666042 for details
+- t #start first line on top of slide (https://stackoverflow.com/a/42471345/11118919)
+bibliography:
+- ../../../Literature/!Bibliographies/all.bib
+csl: apa.csl
+fontsize: 10pt
+header-includes:
+- \titlegraphic{\includegraphics[width=4.5cm]{subfiles/UT_WBMW_Rot_RGB_01.png}}
+- \AtBeginDocument{\author[Tobias Rebholz]{Tobias Rebholz}}
+- \AtBeginDocument{\institute[University of Tübingen]{University of Tübingen}}
+- \AtBeginDocument{\date[Fall 2024]{Fall 2024, SMiP Workshop}}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(verbose = TRUE)
+knitr::opts_chunk$set(echo = TRUE
+                      , collapse = TRUE
+                      , cache = FALSE
+                      )
+
+# R options
+Sys.setenv(LANG = "en") #--> english error messages
+#options(scipen=999) #turn off scientific notation
+
+# load packages here
+library(papaja)
+library(mlr3verse)
+library(NeuralNetTools) #plotting NNs
+library(jsonlite)
+library(tidyverse)
+
+# bibliography
+#references_TRR <- bibtex::read.bib("../../../Literature/references_TRR.bib")
+#cite via "`r capture.output(print(references_TRR["Rebholz_Hutter.2022"]))`" on slide then (https://stackoverflow.com/a/61528568/11118919)
+
+# set path
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+# data
+dat <- read.csv('subfiles/data/bfi.csv', header = TRUE)
+```
+
+
+# Deep Learning
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/AI_ML_DL.png}
+\end{figure}
+
+\begin{srcs}
+  (\url{https://towardsdatascience.com/redefining-data-science-d7f2026a021a})
+\end{srcs}
+
+
+### Deep Learning
+
+- Deep Learning (DL) is a sub-field of Machine Learning 
+
+  - Using multi-layered or "deep" neural networks (NNs) for classification, regression, and other data-driven decision-making tasks
+
+- Most of the world's data is held in unstructured formats (e.g., text, images)
+
+  - NN: Can process unstructured data quite well
+
+  - Classical ML: Usually leverages structured data for predictions
+
+- Removing some of the dependency on human experts
+
+  - NN: Automates feature extraction
+
+    - E.g., determining which features (e.g., shape of mouth, eyes, ...) are most important in distinguishing emotional expressions from one another in a set of photos of different people
+  
+  - Classical ML: Feature hierarchies must be established manually
+
+- NN: Can adjust and fit itself to improve the out-of-sample prediction performance
+    
+  - Through gradient descent and backpropagation (not discussed; see excurse for some ideas/concepts)
+
+
+### Deep Learning
+
+- Good performance: Usually requires intensive knowledge, time, and (computational) resources to train the models
+  
+  - There is a whole industry trying to make money out of training and benchmarking DL models
+  
+  - In other words, we cannot afford these resources!
+  
+- Instead of training the models ourselves, we focus on using pre-trained models to solve our own prediction problems in this module
+
+  - Costs: We give up control over what the (pre-)trained model can actually do
+  
+    - Thus inevitably also some understanding of how these competences are achieved
+
+  - E.g., the Hugging Face community provides access to many pre-trained models and datasets: \url{https://huggingface.co/}
+
+
+### Excurse: Optimization Algorithm
+
+- Unlike classical statistical models, such as regression, NNs do not rely on traditional estimation techniques like maximum likelihood to estimate unknown model parameters
+
+  - Instead, a stepwise optimization technique is used to iteratively improve the weights $\theta$ according to a cost or loss function $L(\theta)$
+  
+    - Small $L$: Good fit to the training data
+
+- To better understand the problem of finding the weights, let's pretend we do not have a formula to estimate the coefficients (i.e., "weights") of a simple linear regression model $y = c + m \cdot x + \varepsilon$
+
+  - Where: $\theta = (c,m)$
+
+
+### Excurse: Optimization Algorithm
+
+- Prediction error's dependence on the weights:
+
+\begin{figure}
+  \includegraphics[width=0.75\textwidth]{subfiles/pics/gradient_descent.jpg}
+\end{figure}
+
+\begin{srcs}
+  (adapted from \url{https://x.com/akshay_pachaar/status/1714619920955346995})
+\end{srcs}
+
+
+### Excurse: Optimization Algorithm
+
+- Gradient: A vector that points in the direction of the steepest ascent
+  
+  - For minimizing a cost function: Move in the opposite direction (i.e., steepest descent)
+    
+  - Think of rolling a ball downhill towards the lowest point in a valley
+
+- Gradient descent algorithm: General, iterative solver to minimize the cost function (e.g., MSE in regression)
+
+  1. Start with arbitrary initial values for the weights $\theta$ (e.g., regression coefficients)
+    
+  2. Compute the slope ("gradient") of the cost function at the current position
+    
+  3. Update the weights $\theta$ by moving in the direction opposite to the gradient (i.e., downhill) with a specified step size ("learning rate")
+    
+  4. Repeat until the change in the cost function becomes negligible ("convergence")
+    
+    
+<!--
+### Excurse: Optimization Algorithm
+
+- E.g., Stochastic Gradient Descent (SGD): 
+
+  - Randomly selects small subsets (mini-batches) of the data to compute the gradient
+  
+  - Fast and memory-efficient, but updates may be noisy
+  
+  - For non-convex cost functions, potentially leading to convergence to local minima instead of the global minimum
+
+- Why does it work?
+  
+  - Gradient descent minimizes the cost function iteratively, finding optimal coefficients even when an analytical solution is inadmissible
+-->
+
+
+### Excurse: Backpropagation
+
+- Purpose: Efficiently computing the gradients of the cost function with respect to each parameter in the NN
+
+  - Forward pass: Compute the predictions of the NN and evaluate the cost function based on the actual outputs
+
+  - Backward pass: Use the chain rule to propagate the error backward through the layers of the NN, calculating the gradients of the cost with respect to each parameter
+
+- I.e., gradient descent can be thought of the "outer loop" optimization process, while backpropagation is the "inner loop" method to compute the required gradients
+
+
+
+
+
+
+
+# Neural Networks
+
+- State-of-the-art DL technology: Neural Networks (NNs)
+
+  - Trained on massive amounts of data to identify and classify phenomena, recognize patterns and relationships, evaluate possibilities, make predictions and decisions, ...
+  
+  - Require a lot of tinkering, whereas newer methods (e.g., SVM, RF) are more automatic
+
+- On many problems, the newer methods outperform **poorly-trained** NNs
+
+  - But: NNs are successful especially on some **niche problems**, such as: 
+  
+    - Image recognition (first half of this module)
+    
+    - Video classification
+    
+    - Speech and text modeling (second half of this module)
+    
+    - ...
+
+
+### Single Hidden Layer
+
+- The hidden layer computes so-called "activations" $A_k = h_k(X)$, i.e., (nonlinear) transformations of linear combinations of the vector of input features $X = \left(x_1, x_2, \ldots, x_p\right)$
+
+  - "Hidden" because the activations $A_k$ are not directly observed
+
+  - The functions $h_k(\cdot)$ for transforming the observed features are not fixed in advance, but learned during the training of the NN 
+
+- The output layer is a **linear model** that uses the activations $A_k$ as inputs, resulting in a function $f(X)$ to make predictions (cf. regression)
+
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{subfiles/pics/James21-NN.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 10.1)
+\end{srcs}
+
+
+### Multiple Hidden Layers
+
+- Inspired by the functioning of brains:
+
+  - Activations $A_k$: Neurons receive signals (inputs) from other neurons, process them, and send signals to other neurons
+  
+  - Learning of $h_k(\cdot)$: This process is akin to brains' ability to form new connections and strengthen existing ones based on experiences
+  
+  - Output: The brain processes information from neurons (i.e., activations) and generates responses (i.e., predictions)
+  
+\begin{figure}
+  \includegraphics[height=0.33\textheight]{subfiles/pics/NN_vs_brain-NN.jpg}
+  \includegraphics[height=0.33\textheight]{subfiles/pics/NN_vs_brain-brain.jpg}
+\end{figure}
+\vspace{-\baselineskip}
+\begin{srcs}
+  (adapted from \url{https://www.quora.com/How-is-AI-similar-different-to-the-human-brain)}
+\end{srcs}
+
+
+### Single Hidden Layer
+
+- At their core, NNs extend linear regression
+
+  - A NN with a single hidden layer and a linear activation function reduces to linear regression: $f(x) = w \cdot x + b$
+  
+    - where: $x$ -- feature **vector**; $w$ -- weight; $b$ -- bias
+  
+  - Nonlinear activation functions: Enable the NN to learn any functional form (i.e., more complex patterns)
+
+\begin{figure}
+  \includegraphics[width=0.55\textwidth]{subfiles/pics/single_NN.png}
+\end{figure}
+
+\begin{srcs}
+  (\url{https://medium.com/@asifurrahmanaust/lesson-3-neural-network-is-nothing-but-a-linear-regression-e05a328a0f23})
+\end{srcs}
+
+
+### Single Hidden Layer
+
+- Multiple regression: $f(X) = w^{T}X + b$
+
+  - where: $X$ -- feature **matrix**; $w$ -- weight **vector**; $b$ -- bias
+
+\begin{figure}
+  \includegraphics[width=0.45\textwidth]{subfiles/pics/multiple_NN.png}
+\end{figure}
+
+\begin{srcs}
+  (\url{https://medium.com/@asifurrahmanaust/lesson-3-neural-network-is-nothing-but-a-linear-regression-e05a328a0f23})
+\end{srcs}
+
+
+### Multiple Hidden Layers
+
+- Complex NN with multiple hidden layers and outputs:
+
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{subfiles/pics/James21-NN-multiple_layers_and_outputs.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 10.4)
+\end{srcs}
+
+
+### Excurse: Most Important Types of NNs
+
+- **Feedforward NNs:** Simplest type of NN, where information travels in one direction only, from the input layer, through any hidden layers, to the output layer
+
+  - Widely used in pattern recognition and standard classification tasks
+
+- **Convolutional NNs:** Designed to automatically and adaptively learn spatial hierarchies of features from the input (our focus here!)
+
+  - Primarily used for image processing, classification, and segmentation
+
+- **Recurrent NNs:** Have "memory" in the form of hidden state vectors that capture information about what has been computed so far
+
+  - Mainly used for sequential data tasks, such as language modeling and time series prediction (more on this later!)
+
+- **Autoencoders (AEs):** Encoding the input into a latent-space representation, and then decoding the latent representation back to the original input
+
+  - Great for feature extraction, dimensionality reduction, compression, ...
+
+
+### Excurse: Hyperparameters
+
+- **Activation functions** (e.g., ReLU, Sigmoid, Tanh)
+
+  - Matching the type of variable that is predicted (e.g., binary or numerical)
+
+  - Similar to choosing between linear and logistic regression
+
+- **Number of layers:** The depth of the network (incl. input, hidden, and output layers)
+
+- **Learning rate** of optimizer: Step size for updating weights during training
+
+  - Too large: May overshoot the minimum or fail to converge
+      
+  - Too small: Convergence will be slow
+
+- **Batch sizes:** Weights are adjusted after processing mini-batches of the training sample
+
+  - Larger batches: More accurate steps towards minimizing the cost function, but require more computational resources
+
+- **Epochs:** Training involves multiple passes through the training sample
+
+  - Each epoch involves processing all mini-batches
+
+- ...
+
+
+### Single Hidden Layer in `mlr3` 
+
+- Fitting a very simple NN in `mlr3` to predict (categorical!) educational attainment using the Big Five and some demographic features:
+
+```{r}
+set.seed(1)
+tsk <- as_task_classif(education ~ ., data = dat %>% select(-CASE))
+mdl <- lrn('classif.nnet', size = 1)
+mdl$train(tsk)
+```
+
+
+### Single Hidden Layer in `mlr3` 
+
+- Model summary:
+
+```{r}
+summary(mdl$model)
+
+# cost:
+mdl$model$value
+```
+
+
+### Single Hidden Layer in `mlr3` 
+
+- Model visualization:
+
+  - Line color: positive weights = black; negative weights = grey
+  
+  - Line thickness: Proportion to relative magnitude of each weight
+
+```{r out.width="90%", fig.align="center", fig.width=12, fig.height=6}
+plotnet(mdl$model)
+```
+
+
+### Single Hidden Layer in `mlr3` 
+
+- (In-sample) Predictions:
+
+```{r}
+pred = mdl$predict(tsk)
+head(cbind('true' = dat$education, 'pred' = pred$response))
+
+pred$confusion
+```
+
+
+### Multiple Hidden Layers in `mlr3` 
+
+- We can do (much) better than that by using **more hidden layers**:
+
+```{r}
+set.seed(1)
+mdl2 <- lrn('classif.nnet', size = 5, maxit = 1e4)
+mdl2$train(tsk)
+```
+
+
+### Multiple Hidden Layers in `mlr3` 
+
+- Model summary: Much more complex model structure
+
+```{r}
+summary(mdl2$model)
+
+# cost:
+mdl2$model$value
+
+# compared to single layer NN:
+mdl$model$value
+```
+
+
+### Multiple Hidden Layers in `mlr3` 
+
+- Model visualization:
+
+```{r out.width="90%", fig.align="center", fig.width=12, fig.height=8}
+plotnet(mdl2$model)
+```
+
+
+### Multiple Hidden Layers in `mlr3` 
+
+- (In-sample) Predictions: No longer predicting just the majority class
+
+```{r}
+pred2 = mdl2$predict(tsk)
+head(cbind('true' = dat$education, 'pred' = pred2$response))
+
+pred2$confusion
+```
+
+
+### Important Programming Notes
+
+- The NNs trained on the previous slides were entirely for pedagogical purposes
+
+  - I.e., they are not state-of-the-art!
+
+- For technical reasons, powerful DL is tricky (if not impossible) in R, and thus established in Python, and typically requires specialized hardware
+
+  - Therefore, many R packages actually use Python code in the background
+
+  - Implication: DL tasks that are easy to implement in Python can be a bit tricky to get running in R
+
+- `mlr3keras`: The DL package from the `mlr3verse` is still in a very early stage and under active development
+
+  - Therefore, we will use the `reticulate` R-package as an interface to Python in order to access state-of-the-art DL technology (e.g., `tf-keras` for NNs, `transformers` for NLP)
+
+
+### Important Programming Notes
+
+- Preparation in R:
+
+  - This setup chunk only needs to be run once and takes a while until finished
+
+```{r}
+if (!('reticulate' %in% installed.packages())) {
+  # Python:
+  install.packages("reticulate")
+  library(reticulate)
+  install_miniconda()
+  
+  # NNs:
+  reticulate::py_install('torch', pip=T)
+  reticulate::py_install('tf-keras', pip=T)
+  
+  # Transformers:
+  reticulate::py_install('transformers', pip=T)
+  
+  # Hugging Face:
+  reticulate::py_install('datasets', pip=T)
+}
+```
+
+
+
+
+
+  
+# Image Recognition
+
+- Image recognition: A classification task where the goal is to assign a label to an image
+
+  - Feature **matrix**: The pixel values that make up an image (incl. color, if applicable)
+  
+  - Target: The object shown in the image
+  
+    - Note: The target "object" can also be an entire scenery, specific situations or actions, ... 
+  
+- Performance measurement: Usual metrics (i.e., classification error/accuracy)
+
+
+### Applications in Behavioral Science: Handwriting Detection
+
+- Classification of handwritten digits:
+
+\begin{figure}
+  \includegraphics[width=0.6\textwidth]{subfiles/pics/James21-DL-handwriting.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 10.3)
+\end{srcs}
+
+
+### Applications in Neuroscience: Brain Scans
+
+- Screening fMRI scans for signs of disease such as cancer:
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/brain_scans-NN.jpg}
+\end{figure}
+
+\begin{srcs}
+  (adapted from Zhu et al., 2019)
+\end{srcs}
+
+
+### CNNs for Image Recognition
+
+- CNN layers for image identification:
+
+  - Takes in the image and identifies local features (e.g., a specific shape of a line or a color)
+
+  - Combines the local features in order to create compound features (e.g., eyes and ears) 
+  
+  - Compound features are used to output the target label “tiger”
+
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{subfiles/pics/James21-CNN-tiger.jpg}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 10.6)
+\end{srcs}
+
+
+### Image Recognition in `tf-keras`
+
+- Facial emotion recognition task:
+
+\begin{figure}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/afb096570c99251a4d4710e1e15460e6a5dbdfe28ab6d7ea7347f2b16b5b00e3.jpg}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/51412d16fa795358b8155fc9bd126337648f67d24c10aa412b4f1661795324ab.png}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/f605c69b3ed20322bf5e05fd46d7c7a7b6a90cb1cfa029a771615899144ba908.png}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/4665b2fdfdcf78cd86ed9bf869c1e15a866d9016a63ae1faf9338e0d5800187e.png}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/14c74e25d720087ff0acbda96a94f0cad4bc8880e80523a6574fd93fb76f145e.jpg}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/c9b0f4f6fc9d28565dbb0cdb42a8b5454a8e5353d687f6b3ed5df6e3cfa165c3.jpg}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/261675d9f504c350093c0691ff1dcc23547d9b76b896f9cc7c1a1743fce0b2c7.png}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/3ee97c1389248a028c6c410fd2d9d5f6fb5f82623d2afa85f594ae888c29ff9e.jpg}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/b1762e739d40a50131fcebb30c912cd95f4f4697c461c313bd188ab83f3442b2.png}
+  \includegraphics[width=.15\textwidth]{subfiles/pics/facial_emotion_recognition/53f6c7a6db74def47bf930fa4dcc1dfb292b526de3afc22f06d04027875e1c88.jpg}
+\end{figure}
+
+
+### Image Recognition in `tf-keras`
+
+- Reading the images as data into `R`:
+
+```{r cache=FALSE}
+library(reticulate) #; py_config() #; use_condaenv("r-reticulate")
+datasets <- import("datasets") #import Python package as "variable" into R
+dat = datasets$load_dataset("FastJobs/Visual_Emotional_Analysis", split = 'train')
+
+# Translate true numeric class to verbal label and transforming Python to R data:
+dict_emo <- dat$features$label$names
+dat <- dat$to_pandas() %>% 
+  as_tibble() %>% 
+  mutate(emotion = dict_emo[label+1])
+
+# Selecting a random subset of images:
+set.seed(1)
+dat_subset <- dat %>% sample_n(10)
+head(dat_subset)
+```
+
+
+### Image Recognition in `tf-keras`
+
+- Loading a pre-trained CNN that is fine-tuned for facial emotion recognition
+
+  - As a pipeline: I.e., incl. image data pre-processor
+  
+    - E.g, standardizing the image size before fitting the model
+
+```{r cache=FALSE}
+transformers <- import("transformers") #import Python package as "variable" into R
+prc <- transformers$AutoImageProcessor$from_pretrained("dennisjooo/emotion_classification")
+ppl <- transformers$pipeline(model = 'dennisjooo/emotion_classification', 
+                             image_processor = prc)
+ppl
+```
+
+
+### Image Recognition in `tf-keras`
+
+- Model predictions:
+
+```{r cache=FALSE, include=FALSE}
+# Exemplary prediction for first image:
+ppl(dat_subset$image[[1]]$path) %>% as.data.frame()
+```
+
+```{r cache=FALSE}
+dat_subset <- dat_subset %>%
+  rowwise() %>% 
+  mutate(pred = ppl(image$path) %>% as.data.frame())
+tail(dat_subset)
+```
+
+
+
+### Excurse: Image Generation
+
+- Technically, CNNs cannot only be used for image recognition, but also for image creation
+
+- **Generative Adversarial Network (GAN):** Like a game between two players, one player being the Generator (i.e., the **artist**) and the other player being the Discriminator (i.e., an **art critic**, who tries to tell if an image is real or fake)
+  
+  - Generator-CNN: Takes random noise as input and transforms it through several layers to produce an image
+  
+    - Starts with basic features and gradually adds more detail to generate a complete image
+
+  - Discriminator-CNN: Takes an image from the Generator-CNN as input and processes it through several layers
+  
+    - Produces a single output: **Fake vs. real**
+
+
+### Hands-on Practical Tutorial
+
+- Now it's your turn: 
+
+  - Go to \url{https://tobiasrebholz.github.io/teaching}
+  
+  - Select "Introduction to Machine Learning" > "Materials"
+  
+    - Password: **smip24**
+  
+  - Download the "Deep Learning" tutorial
+  
+  - Work through the tasks
+
+
+
+
+
+
+
+
+
+# Natural Language Processing
+
+### Text Mining Applications
+
+- **Content classification** of news stories, social media posts, journal entries from experience sampling studies, ...
+  
+- **Content filtering** (e.g., spam emails, hate speech on social media)
+
+- Content **summarizing**, **paraphrasing**, and **translation**, ...
+  
+- Clustering of documents and web pages according to **shared features** (e.g., similar topics)
+  
+- Insights about **trends** (e.g., hashtags on Twitter/X, Google search)
+
+
+### Challenges in Text Mining
+  
+- Large and unstructured textual databases
+  
+  - Sometimes documents are not even available in electronic form
+    
+- Very high number of possible "dimensions", and extremely sparse
+
+  - All possible word and phrase types in a language
+  
+- Complex and subtle relationships between concepts in text
+  
+  - Word ambiguity: E.g., Apple (the company) vs. apple (the fruit) 
+    
+  - Context sensitivity: E.g., humor
+  
+  - Irony, sarcasm, ... 
+  
+- Rather noisy data: E.g., spelling or grammar mistakes
+
+  - Esp. relevant and problematic for social media data
+
+- ...
+
+
+### Tokenization
+
+- **Tokenization:** The tedata pre-processing process of breaking text into pieces (e.g., words, keywords, phrases, symbols, and other elements)
+
+  - "Tokens": Often individual words, but they can also be be special characters, such as punctuation marks or emojis
+  
+- The tokens resulting from a tokenization are machine readable 
+
+  - I.e., can be analyzed using (ML-based) NLP techniques
+
+
+### Tokenization: Most Simple Forms
+
+```{r}
+"Psychology is the science of the behavior."
+```
+
+- **Bag-of-words:**
+
+```{r}
+cbind(c("psychology", 1), c("is", 1), c("the", 2), c("science", 1), c("of", 1),
+      c("behavior", 1))
+```
+
+- **String-of-words:**
+
+```{r}
+cbind(c("psychology", 1), c("is", 2), c("the", 3), c("science", 4), c("of", 5), 
+      c("the", 6), c("behavior", 7))
+```
+
+- Why is this distinction so important?
+
+  - Shakespeare's plays contain ca. 885,000 words, but the count of unique word forms is only 29,000 (\url{https://www.opensourceshakespeare.org/statistics/})
+
+
+### Visualizations of Text Data
+
+- **Word clouds:** Visualizing the information contained in text data (i.e., open comments in teaching evaluations) by displaying the most frequently occurring words
+
+  - The size of each word represents its frequency (as a proxy for its **importance**) within the text corpus
+  
+  - Linking words (e.g., "and"), articles (e.g., "the"), and so on, are typically excluded because they have no meaning on their own
+
+\begin{figure}
+  \includegraphics[width=.325\textwidth]{subfiles/pics/Jacobucci23-word_cloud.jpg}
+\end{figure}
+
+\begin{srcs}
+  (Jacobucci et al., Figure 11.10)
+\end{srcs}
+
+
+### Visualizations of Text Data
+
+- A little more informative in terms of content than individual word clouds: 
+
+  - The most frequently occurring **bigrams** (left) and **trigrams** (right)
+
+\begin{figure}
+  \includegraphics[width=.425\textwidth]{subfiles/pics/Jacobucci23-word_cloud-bigrams.jpg}\hfill
+  \includegraphics[width=.425\textwidth]{subfiles/pics/Jacobucci23-word_cloud-trigrams.jpg}
+\end{figure}
+
+\begin{srcs}
+  (Jacobucci et al., Figures 11.12 \& 11.13)
+\end{srcs}
+
+
+### Word Embeddings
+
+- In general, language is much more than a loose collection of its constituent components
+
+  - **Network plot:** Visualizing the associations between the top used words
+
+\begin{figure}
+  \includegraphics[width=.6\textwidth]{subfiles/pics/Jacobucci23-word_network.png}
+\end{figure}
+
+\begin{srcs}
+  (Jacobucci et al., Figure 11.14)
+\end{srcs}
+
+
+### Word Embeddings
+
+- **Word2Vec** (Mikolov et al., 2013): Unsupervised Learning technique to learn continuous, multi-dimensional vector representations of words
+
+  - Idea: Similarity of words in a training corpus (i.e., how far or near a word is in vector space to other words) represents a notion of word-sense based on surrounding words
+
+- Given a center word, learning to predict the most likely words in a fixed-sized window around it:
+
+\begin{figure}
+  \includegraphics[width=.75\textwidth]{subfiles/pics/Word2Vec.png}
+\end{figure}
+
+\begin{srcs}
+  (\url{https://towardsdatascience.com/word2vec-to-transformers-caf5a3daa08a}) 
+\end{srcs}
+
+
+### Example I
+
+\vspace{-\baselineskip}
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/LLM4JDM-word2vec1.png}
+\end{figure}
+
+\begin{srcs}
+  (\url{https://www.webnovel.com/book/solaris-2.0_25879657706474305})
+\end{srcs}
+
+
+### Example II
+
+\vspace{-\baselineskip}
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/LLM4JDM-word2vec2.png}
+\end{figure}
+
+\begin{srcs}
+  (\url{https://www.webnovel.com/book/solaris-2.0_25879657706474305})
+\end{srcs}
+
+
+
+
+
+
+# Transformers
+
+\vspace{-\baselineskip}
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|>{\raggedright\arraybackslash}m{5cm}|>{\raggedright\arraybackslash}m{5cm}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{\textbf{Word2Vec}}} & \multicolumn{1}{|c|}{\textbf{\textbf{Transformers}}} \\
+\hline
+Generates \textbf{static} word embeddings \newline $\Rightarrow$ The vector representation for a word is the same, regardless of its context & Generates \textbf{dynamic} word embeddings \newline $\Rightarrow$ The vector representation for a word can change, based on its context \\
+\hline
+Learns representations based on the \textbf{local} context (i.e., surrounding words) & Learns representations based on the \textbf{entire} context of the sentence or even multiple sentences \\
+\hline
+\end{tabular}
+\end{table}
+
+- Transformers are the leading architecture for most contemporary Large Language Models (LLMs)
+
+  - OpenAI's ChatGPT, Google's Gemini, Meta's LLaMA, Anthropic's Claude, ...
+
+  - We will discuss some of the high-level concepts involved, but will mainly focus on using them in Python/R here
+
+
+### Evolution
+
+\vspace{-\baselineskip}
+\begin{figure}
+  \includegraphics[width=.8\textwidth]{subfiles/pics/Transformers-evolution.jpg}
+\end{figure}
+
+\begin{srcs}
+  (\url{https://x.com/DrJimFan/status/1651968203701231616})
+\end{srcs}
+
+
+### Tokenization: Example I
+
+- Transformers require more advanced tokenization approaches:
+
+\vspace{-1.4\baselineskip}
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/LLM4JDM-tokenization1.png}
+\end{figure}
+\vspace{-\baselineskip}
+\begin{srcs}
+  (\url{https://www.webnovel.com/book/solaris-2.0_25879657706474305})
+\end{srcs}
+
+
+### Tokenization: Example I
+
+- Transformers require more advanced tokenization approaches:
+
+\vspace{-1.4\baselineskip}
+\begin{figure}
+  \includegraphics[width=\textwidth]{subfiles/pics/LLM4JDM-tokenization2.png}
+\end{figure}
+\vspace{-\baselineskip}
+\begin{srcs}
+  (\url{https://www.webnovel.com/book/solaris-2.0_25879657706474305})
+\end{srcs}
+
+
+### Transformer Architecture
+
+- **Encoder:** Produces an encoded representation of the input sequence
+  
+  - The target sequence is converted into **embeddings** (i.e., "meaning")
+    
+- **Decoder:** Processes the embeddings along with the Encoders output to produce an encoded representation of the target sequence
+
+- **Output layer:** Converts encoded representations to word probabilities
+
+  - **Loss function:** Compares this output sequence with the target sequence from the training data
+
+\vspace{-.75\baselineskip}
+\begin{figure}
+  \includegraphics[width=.6\textwidth]{subfiles/pics/LLM4JDM-transformers-components.png}
+\end{figure}
+
+\begin{srcs}
+  (Vaswani et al., 2017)
+\end{srcs}
+
+
+### Key Component: Multi-Head Attention
+
+- Allows to encode multiple relationships and nuances for each word
+
+- Technically: At each layer, each token is contextualized within the scope of the context window with other (unmasked) tokens
+
+    1. Splitting the **input embeddings** into multiple "heads," each learning different types of information
+  
+    2. Calculating **attention scores** used to weight the embedding vectors
+
+    3. The outputs from all heads are concatenated and transformed to produce **contextualized embeddings**
+
+\vspace{-0.5\baselineskip}
+\begin{figure}
+  \includegraphics[width=.7\textwidth]{subfiles/pics/LLM4JDM-transformers-attention.png}
+\end{figure}
+
+\begin{srcs}
+  (adapted from \url{https://x.com/dirkuwulff/status/1694988985225839048)}
+\end{srcs}
+
+
+### Transformers from `Python` in `R`
+
+- Sentiment classification task using DistilBERT
+
+  - Light and fast transformer LLM trained by distilling Google's BERT (Bidirectional Encoder Representations from Transformers)
+  
+    - The predecessor of Google's Gemini
+
+```{r cache=FALSE, warning=FALSE}
+library(reticulate) #; py_config() #; use_condaenv("r-reticulate")
+
+# Loading the tokenizer (i.e., pre-processor) and transformer model:
+transformers <- import("transformers") #import Python package as "variable" into R
+tkn <- transformers$AutoTokenizer$from_pretrained('distilbert-base-uncased-finetuned-sst-2-english')
+ppl <- transformers$pipeline(model = 'distilbert-base-uncased-finetuned-sst-2-english'
+                             , tokenizer = tkn)
+ppl
+
+# Exemplary sentiment predictions:
+ppl(c("I like you!", "I don't like you!")) %>% as.data.frame()
+ppl(c("The sky is blue.", "The sky is red.")) %>% as.data.frame()
+```
+
+
+### Transformers from `Python` in `R`
+
+- Hugging Face dataset: `emotion` 
+
+  - Contains English tweets and labels that classify them according to six basic emotions: joy, love, anger, fear, sadness, and surprise
+
+```{r}
+datasets <- import("datasets") #import Python package as "variable" into R
+dat = datasets$load_dataset("dair-ai/emotion", split = 'test')
+
+# Translate true numeric class to verbal label and transforming Python to R data:
+dict_emo <- dat$features$label$names
+dat <- dat$to_pandas() %>% as_tibble() %>% 
+  mutate(emotion = dict_emo[label+1]) #NOTE: indexing starts at 0 in Python (vs. 1 in R)
+
+# Selecting a random subset of tweets:
+set.seed(1)
+dat_subset <- dat %>% sample_n(100)
+tail(dat_subset)
+```
+
+
+### Transformers from `Python` in `R`
+
+- DestilBERT's classification of tweets as positive vs. negative sentiment:
+
+```{r}
+# Predictions for all tweets:
+dat_subset <- dat_subset %>%
+  rowwise() %>% 
+  mutate(pred = ppl(text) %>% as.data.frame())
+tail(dat_subset)
+```
+
+
+### Transformers from `Python` in `R`
+
+- Comparison of DestilBERT's predicted sentiment to the six actual basic emotions displayed (according to human experts):
+
+```{r out.width="70%", fig.align="center", fig.width=6, fig.height=4}
+ggplot(dat_subset, aes(x = emotion, y = pred$score, color = pred$label)) +
+  geom_boxplot(outliers = FALSE) 
+```
+
+
+### Excurse: Generative AI from `Python` in `R`
+
+- Google's BERT:
+
+```{r}
+# Loading the tokenizer and transformer model:
+tkn_bert <- transformers$AutoTokenizer$from_pretrained('distilbert/distilgpt2')
+ppl_bert <- transformers$pipeline(model = 'distilbert/distilgpt2', 
+                                  tokenizer = tkn_bert)
+ppl_bert
+
+# Exemplary text generation:
+pred_bert <- ppl_bert("My name is Tobias and I am teaching a class on Machine Learning")
+pred_bert[[1]]$generated_text %>% strwrap(., width = 80)
+```
+
+
+### Excurse: Generative AI from `Python` in `R`
+
+- OpenAI's GPT:
+
+```{r}
+# Loading the tokenizer and transformer model:
+tkn_gpt2 <- transformers$AutoTokenizer$from_pretrained('openai-community/gpt2-medium')
+ppl_gpt2 <- transformers$pipeline(model = 'openai-community/gpt2-medium', 
+                                  tokenizer = tkn_gpt2)
+ppl_gpt2
+
+# Exemplary text generation:
+pred_gpt2 <- ppl_gpt2("My name is Tobias and I am teaching a class on Machine Learning")
+pred_gpt2[[1]]$generated_text %>% strwrap(., width = 80)
+```
+
+
+### Excurse: Transfer Learning
+
+<!-- - We could also use generative AI (e.g., BERT or GPT-2) for emotion recognition in text (i.e., instead of a model that was particularly trained for this task) -->
+
+<!--   - ... and much more tasks it was not particularly trained for! -->
+
+- **Transfer Learning**: Starting with layers trained to identify universal features (e.g., textures, shapes) and integrating new layers tailored to the specific task
+
+  - I.e., optimizing for unique challenges without starting from scratch
+
+  - Utilizing knowledge gained from previous training (i.e., leveraging pre-trained models) on a broad dataset and adapting it to new, often more specific tasks
+  
+- Technically: The last couple of hidden layers of the original NN are simply **replaced** with new layers trained for solving the new, specific task 
+
+  - Why? -- Because it was found to work well
+  
+  - Goal: Saving computational resources and training time
+  
+- Use cases:
+  
+  - Limited training data
+  
+    - E.g., recognizing specific persons from only a few images
+  
+  - Complex classification tasks
+  
+    - E.g., automated driving: Distinguishing between hundreds of traffic signs and other categories
+
+
+
+
+
+
+
+
+# Summary
+
+- DL is attractive for: 
+
+  - Extremely large, complex, and unstructured data
+  
+  - Low priority of model interpretability ($\rightarrow$ Module 5!)
+
+- NNs are particularly suited for niche tasks, such as:
+
+  - Image recognition
+    
+  - Speech and text modeling
+
+- Classic NLP tasks: 
+
+  - Sentiment analysis, language translation, ...
+
+  - Recurrent NNs and Transformers have shown great success in these areas 
+  
+    - Due to their ability to handle sequential data and capture long-term dependencies
+
+
+
+
+

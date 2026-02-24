@@ -1,0 +1,135 @@
+---
+title: 'Module 2: Tutorial: Support Vector Machines'
+output:
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: inline
+---
+
+# Support Vector Machines
+
+Support Vector Machines (SVMs) can also be applied for multiclass classification tasks using techniques such as one-vs-one or one-vs-all. For the one-vs-one strategy, SVM constructs multiple binary classifiers, each trained to distinguish between pairs of classes. For the one-vs-all strategy, SVM constructs a single classifier for each class, trained to distinguish that class from all other classes.
+
+## Description of data set
+
+We use a version of the `bfi` dataset from class to predict the level of education by Big-5 personality traits. For the data, a subset of observations with balanced educational levels is chosen from the original dataset. The reason is that classifiers often struggle with imbalanced classes (e.g., majority of `education` being 3 in the original data).
+
+For simplicity, we treat `education` as a categorical variable here, although it is actually an ordinal variable (i.e., 1 \< 2 \< 3 \< 4 \< 5).
+
+Type ?psych::bfi into your console for more information on the dataset. Note that the Big-5 traits `agree`, `conscientious`, `extra`, `neuro`, and `open` were created by averaging each participant's targets to the five survey items per trait (e.g., `A1`-`A5`).
+
+## Tasks
+
+1.  Read the data file module2-bfi.csv into R (assign it to a variable called "dat").
+
+```{r}
+library(tidyverse)
+dat <- read.csv('module2-bfi.csv', header = TRUE)
+```
+
+2.  Transform the education variable to a factor and assign the data set "dat" to a `mlr3` classification task called "tsk" with `education` as target and `agree` and `conscientious` as features.
+
+```{r}
+dat$education <- factor(dat$education)
+
+library(mlr3verse)
+tsk <- as_task_classif(education ~ agree + conscientious, data = dat)
+```
+
+3.  Randomly separate the dataset into 80% training and 20% testing data (Hint: Set the seed to ensure reproducibility of your results).
+
+```{r}
+set.seed(42)
+row_ids <- partition(tsk, ratio = 0.8)
+row_ids
+```
+
+4.  Use the training sample to build a SVM (with default settings) to predict the target `education` with `agree` and `conscientious` as features.
+
+```{r}
+mdl = lrn("classif.svm")
+mdl$train(tsk, row_ids = row_ids$train)
+summary(mdl$model)
+```
+
+5.  Visualize the classifier for agreeableness on the x-axis and conscientiousness on the y-axis.
+
+```{r out.width="50%", fig.align='center'}
+autoplot(mdl, task = tsk)
+```
+
+6.  Now use the training sample to fit another SVM (with default settings) for `education` as target and the full set of Big-5 traits as features.
+
+```{r}
+tsk <- as_task_classif(education ~ agree + conscientious + extra + neuro + open, data = dat)
+mdl$train(tsk, row_ids = row_ids$train)
+summary(mdl$model)
+```
+
+7.  Predict the educational levels of the observations in the training sample as well as in the held-out test sample. Also calculate the in-sample training classification error and compare it to the out-of-sample testing classification error. Why is the former likely (much) smaller than the latter?
+
+```{r}
+mes <- msrs("classif.ce")
+
+# In-sample performance:
+pred <- mdl$predict(tsk, row_ids = row_ids$train)
+pred$confusion
+pred$score(mes)
+
+# Out-of-sample performance:
+pred <- mdl$predict(tsk, row_ids = row_ids$test)
+pred$confusion
+pred$score(mes)
+```
+
+The in-sample training classification error is typically (much) smaller than the out-of-sample testing classification error due to overfitting the training data. Cross-validation (CV) helps to address this issue by partitioning the data into multiple subsets, allowing the model to be trained and evaluated on different combinations of training and validation sets, providing a more robust estimate of its performance on unseen data.
+
+8.  Assess the out-of-sample performance of your SVM from task 6 using 10-fold cross-validation (CV). Does CV improve the prediction of your model's out-of-sample classification performance as observed in task 7? (Hint: Set the seed to ensure reproducibility of your results)
+
+```{r}
+# 10-fold CV:
+set.seed(42)
+tsk_cv <- as_task_classif(education ~ agree + conscientious + extra + neuro + open, data = dat[row_ids$train,])
+cv <- rsmp("cv", folds = 10)
+mdl_cv <- resample(learner = mdl, task = tsk_cv, resampling = cv)
+
+mdl_cv$aggregate(mes)
+```
+
+The classification error derived from cross-validation should be much closer to the actual out-of-sample classification error (e.g., as observed in task 7).
+
+9.  Bonus: Using 10-fold cross-validation, choose a value for the tuning parameter $C$ (`cost`) from the set `(1, 10, 50, 100)` based on the full dataset. Also investigate the final (best) SVM by printing the summary of the model. (Hint: Set the seed to ensure reproducibility of your results)
+
+```{r}
+set.seed(42)
+
+# Define set of cost parameter values to be tested
+C_cv <- c(1, 10, 50, 100)
+
+# Set up the conditions for the hyperparameter tuning
+mdl_cv = auto_tuner(
+  learner = lrn("classif.svm", type = 'C-classification', cost = to_tune(levels = C_cv)),
+  resampling = rsmp("cv", folds = 10),
+  measure = msr("classif.ce"),
+  tuner = tnr("grid_search"),
+  terminator = trm("none")
+)
+
+# Actually tune the hyperparameter (i.e., cp) and fit the final model
+invisible({capture.output({ #remove console output from html document
+  mdl_cv$train(tsk)
+})})
+
+# Print the output of the tuning
+mdl_cv$archive %>% 
+  as.data.table() %>% 
+  select(cost, classif.ce) %>% 
+  arrange(as.numeric(cost))
+mdl_cv$tuning_result
+
+# Final model:
+summary(mdl_cv$learner$model)
+```
+
+Note that it is not possible (in `mlr3`; and quite complex in general) to plot classifiers using more than two features. Therefore, we cannot plot the classification surface of the final (best) SVM model here.

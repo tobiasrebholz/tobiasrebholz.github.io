@@ -1,0 +1,100 @@
+---
+title: 'Module 1: Tutorial: Regression'
+output:
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: inline
+---
+
+# Logistic Regression
+
+## Description of data set
+
+Within this study, the participants were aurally presented string combinations at varying audio volumes and were asked to identify the string.
+
+The file module1-auditory_strings.csv contains the following data:
+
+-   stimulus: character string that was aurally presented
+
+-   condition: the volume at which it was presented (1: very quiet to 100: very loud)
+
+-   response_correct: whether the response given by the participant was correct or incorrect
+
+-   response_time: response time in seconds
+
+## Tasks
+
+1.  Read the data file module1-auditory_strings.csv into R (assign it to a variable called "dat").
+
+```{r}
+
+```
+
+2.  Create three new variables in dat:
+
+    -   "volume" that contains the volume from "condition" as a numeric vector (e.g., 63 for the "condition" volume_63) (Hint: You can use the function `str_split_fixed()` from the `stringr` package)
+
+    -   "stimulus_length" that contains the length of the "stimulus" variable (Hint: You can use the function `str_length` from the `stringr` package)
+
+    -   "response_correct" that contains the value 1 when the response was correct and 0 otherwise
+
+```{r}
+
+```
+
+3.  Estimate a logistic regression model for "response_correct" as target and "volume", "stimulus_length", and "response_time" as features. How to interpret the coefficients of this model? In other words, what's the effect of each feature on the target in standardized units (i.e., odds ratio)?
+
+```{r}
+
+```
+
+
+4.  Using the model from task 3, calculate the predicted probability for a correct response for each observation and save it as "prob_correct_pred" in dat.
+
+```{r}
+
+```
+
+
+5.  Manually calculate the predicted value of "response_correct" using a cutoff value of 0.5 for the probabilities calculated in task 4 and save it as "response_correct_pred" in dat. Is the result equivalent to the default prediction of `mlr3`'s `predict()` method?
+
+```{r}
+
+```
+
+
+6.  Assess the prediction performance of the model by comparing the actual "response_correct" to the predicted "response_correct_pred" from task 5 using a contingency table. What's the prediction accuracy of the model?
+
+```{r}
+
+```
+
+
+7.  Calculate the predicted probability for a correct response for a "stimulus_length" of 3, the mean "volume", and the first and third quartiles of "response_time". Do the logistic model's predictions for "response_correct" differ between the first and third quartiles of "response_time" using a cutoff value of 0.5?
+
+```{r}
+
+```
+
+
+8.  Bonus: Also estimate a linear regression model for the model as specified in task 3, that is, for "response_correct" as target and "volume", "stimulus_length", and "response_time" as features.
+
+```{r}
+
+```
+
+
+9.  Bonus: Why is the linear model estimated in task 8 fundamentally wrong? (Hint: Use both models, i.e., linear and logistic regression, to predict the probability for a correct response for the following new data set "dat_new2" with extremely high "stimulus_length", and compare the results)
+
+```{r}
+# dat_new2 <- data.frame('stimulus_length' = 50
+#                        , 'response_time' = 5*max(dat$response_time)
+#                        , 'volume' = mean(dat$volume)
+#                        )
+```
+
+```{r}
+
+```
+

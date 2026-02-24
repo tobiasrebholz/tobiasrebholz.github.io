@@ -1,0 +1,1377 @@
+---
+title: "Introduction to Machine Learning"
+subtitle: "Module 1: Foundations"
+output:
+  beamer_presentation:
+    slide_level: 3
+    keep_tex: true
+    includes:
+      in_header: subfiles/preamble.tex
+  slidy_presentation: default
+  ioslides_presentation: default
+classoption:
+- aspectratio=43 
+#- "handout" #see https://stackoverflow.com/a/49666042 for details
+- t #start first line on top of slide (https://stackoverflow.com/a/42471345/11118919)
+bibliography:
+- ../../../Literature/!Bibliographies/all.bib
+csl: apa.csl
+fontsize: 10pt
+header-includes:
+- \titlegraphic{\includegraphics[width=4.5cm]{subfiles/UT_WBMW_Rot_RGB_01.png}}
+- \AtBeginDocument{\author[Tobias Rebholz]{Tobias Rebholz}}
+- \AtBeginDocument{\institute[University of Tübingen]{University of Tübingen}}
+- \AtBeginDocument{\date[Fall 2024]{Fall 2024, SMiP Workshop}}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(verbose = TRUE)
+knitr::opts_chunk$set(echo = TRUE
+                      , collapse = TRUE
+                      , cache = TRUE
+                      )
+
+# R options
+Sys.setenv(LANG = "en") #--> english error messages
+#options(scipen=999) #turn off scientific notation
+
+set.seed(42)
+
+# load packages here
+library(papaja)
+library(mlr3verse)
+library(tidyverse)
+
+# bibliography
+#references_TRR <- bibtex::read.bib("../../../Literature/references_TRR.bib")
+#cite via "`r capture.output(print(references_TRR["Rebholz_Hutter.2022"]))`" on slide then (https://stackoverflow.com/a/61528568/11118919)
+
+# set path
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+# data
+library(psych) #needed for data (e.g., bfi)
+data(bfi)
+
+dat <- bfi %>%
+  mutate(agree = rowMeans(select(., A1:A5), na.rm=T)
+         , conscientious = rowMeans(select(., C1:C5), na.rm=T)
+         , extra = rowMeans(select(., E1:E5), na.rm=T)
+         , neuro = rowMeans(select(., N1:N5), na.rm=T)
+         , open = rowMeans(select(., O1:O5), na.rm=T)
+         ) %>% 
+  mutate(age = jitter(age, amount = .5)) %>% #disturb age by about half a year, e.g., for better residual plotting below
+  select(-c(A1:O5)) %>% 
+  rownames_to_column('CASE') %>% 
+  filter(!is.na(education))
+
+# randomly sampling a subset participants
+set.seed(3)
+dat <- dat[sample(nrow(dat), 100),]
+
+write.csv(dat, file = 'subfiles/data/bfi.csv', row.names = F)
+```
+
+
+
+# Orga
+
+### Some Personal Information
+
+- SMiP alum: 
+
+  - April 2023: PhD thesis on statistical modeling in judgment and decision-making (JDM)
+
+- Since July 2023: Postdoc in the Social Cognition and Decision Sciences group in Tübingen
+
+  - I.e., where I also did my PhD
+
+- From April 2025: Visiting research scholar at Duke University
+
+  - Walter-Benjamin grant on advice taking from generative AI
+
+- Contact: tr.rebholz@gmail.com
+
+
+### My Research
+
+- 2019/20: Master's thesis on developing and benchmarking various machine learning (ML) approaches for modeling (i.e., predicting; more details later) ordinal-scaled dependent variables (= "targets" in ML jargon)
+
+  - This is also where most of my (likely outdated!) "expertise" in this area comes from
+
+- My current ML research covers only a very specific and limited domain
+
+  - Often not directly related to methodological aspects
+
+  - Instead, mainly from an augmented JDM perspective (i.e., focus on human-computer interaction)
+
+- How I still ended up giving this workshop on the broad topic of ML in general?
+
+  - Being excited about all kinds of methodological research (like you)
+
+- So beware: 
+
+  A) We will mostly stay on a rather conceptual and introductory level
+  
+  B) It is very likely that some of my slides will contain errors---both small and large
+
+    - Please let me know if you find any inconsistencies or mistakes!
+
+
+### Workshop Contents
+
+- Fundamentals of machine learning (ML), such as:
+
+  - Cross validation and hyperparameter tuning
+  
+  - Interpretable ML
+
+- Various ML methods, such as:
+
+  - Classification and regression trees (i.e., "Supervised Learning")
+  
+  - Cluster analysis (i.e., "Unsupervised Learning")
+  
+  - Neural networks (i.e., "Semi-Supervised Learning")
+  
+  - Large language models (i.e., "Natural Language Processing")
+
+- Applications in various applied psych and behavioral econ areas:
+
+  - Judgment and decision-making (JDM)
+  
+  - Management and consumer psychology
+  
+- Selected case studies, such as:
+
+  - Analyzing the effects of social and informational influences on human JDM
+  
+  - Identifying sentiment or emotion in language
+  
+  - Predicting consumer behavior or clustering brand perceptions
+  
+  <!-- - Analyze spread of misinformation in social networks -->
+
+
+### Learning Targets
+
+- Develop a basic understanding of ML and its value to applied psych/econ research
+
+  - Emphasis is on conceptual understanding, rather than (technical) details!
+  
+- Gain practical experience in applying specific ML techniques to solve real-world data-driven decision-making problems
+
+  - Incl. new skills: Analyze and interpret complex data sets, such as unstructured text data
+  
+- Acquire the competence to critically reflect on the results of ML methods 
+
+  - Incl. evaluating their implications for theory building and (psychological) research practice
+
+- Prerequisites:
+
+  - Basic understanding of statistics (e.g., linear regression)
+  
+  - Familiarity with R
+
+
+### Structure
+
+- The workshop is divided into five modules:
+
+    1. Introduction
+
+    2. Supervised Learning
+
+    3. Unsupervised Learning
+
+    4. Deep Learning
+
+    5. Interpretability (incl. Ethics)
+
+\vspace{\baselineskip}
+- ... each consisting of basically two parts:
+
+    1. Introduction to topics/methods
+  
+        - Mainly lectured by me!
+  
+    2. Solving simple programming assignments
+  
+        - Mainly hands-on programming by you!
+
+
+### Tentative Schedule
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Thursday}} & \multicolumn{2}{|c|}{\textbf{Friday}} \\ \hline
+10:00 - 11:30 & Module 1              & 09:00 - 10:30 & Module 3 (cont'd) \\ \hline
+\multicolumn{4}{|c|}{\textit{Coffee Break (15 min)}} \\ \hline
+11:45 - 13:00 & Module 2              & 10:45 - 12:15 & Module 4 \\ \hline
+\multicolumn{4}{|c|}{\textit{Lunch Break (1:15 h)}} \\ \hline
+14:15 - 16:00 & Module 2 (cont'd)     & 13:30 - 15:00 & Module 4 (cont'd) \\ \hline
+\multicolumn{4}{|c|}{\textit{Coffee Break (15 min)}} \\ \hline
+16:15 - 17:15 & Module 2 (cont'd)     & 15:15 - 16:45 & Module 5 \\ \hline
+17:15 - 18:00 & Module 3              & 16:45 - 17:00 & Wrap-Up \\ \hline
+\end{tabular}
+\end{table}
+
+
+### Material 
+
+- Slides, tutorials etc. will be provided via my personal website: \url{https://tobiasrebholz.github.io/teaching/2024-fall-ML-SMiP}
+
+  - Password: **smip24**
+
+
+### Literature
+
+1. James, G., Witten, D., Hastie, T., \& Tibshirani, R. (2021). \textit{An introduction to statistical learning: With applications in R} (2nd ed.). Springer US. \url{https://doi.org/10.1007/978-1-0716-1418-1}
+
+    - More technical, less related to behavioral science, but more standard
+
+    - Available for free at: \url{https://www.statlearning.com/}
+  
+    - Now also available for Python: \url{https://doi.org/10.1007/978-3-031-38747-0}
+
+
+2. Jacobucci, R., Grimm, K. J., \& Zhang, Z. (2023). \textit{Machine Learning for social and behavioral research} (2nd ed.). The Guilford Press.
+
+    - Less technical, more related to behavioral science, but less standard
+
+    - Should be freely available for universities, at least in BW: E.g., via \href{https://ebookcentral.proquest.com/lib/unitueb/detail.action?docID=30555833}{Proquest}
+  
+3. Hastie, T. J., Tibshirani, R., \& Friedman, J. H. (2009). \textit{The elements of statistical learning: Data mining, inference, and prediction} (2nd ed). Springer.
+
+    - Extremely technical, but basically the ML bible
+
+
+### Questions
+
+- Any open questions about the organizational details?
+
+
+
+
+
+
+
+
+# Module 1: Foundations
+
+### A Brief History of ML
+
+- Early 19th century: Method of least squares was developed
+
+  - Precursor to linear regression (see below)
+  
+- 1940s: Introduction of logistic regression for predicting qualitative values (see below)
+
+- Early 1970s: Coining of the term "generalized linear models," encompassing linear and logistic regression (not directly discussed!)
+
+- 1980s: Improvement in computing technology $\Rightarrow$ Nonlinear methods
+
+  - Mid-1980s: Development of classification/regression trees (see Module 2)
+
+  - 1980s: Early neural networks (e.g., perceptron; see Module 4)
+
+  - 1990s: Emergence of support vector machines (see Module 2)
+
+  - 2001: Random Forests (i.e., ensample methods; see Module 2)
+
+- 2010s: Deep Learning (i.e., advanced neural networks; see Module 4)
+
+  - 2017: Transformer models (e.g., large language models; see Module 4)
+
+    - Enabled high-performance chatbots, such as OpenAI's ChatGPT
+
+
+### Your experiences
+
+```{r include=FALSE}
+surv <- read.csv('subfiles/survey/SMiP_ Introduction to Machine Learning (Fall 2024).csv')
+
+# Renaming
+colnames(surv)[4] <- "Other_Programming..please.specify."
+colnames(surv)[12] <- "Other_General..please.specify."
+surv <- surv |> 
+  rename_with(~ gsub("\\.\\..*", "", .))
+
+# Select relevant columns and calculate means
+items_prog <- seq(2,3)
+items_general <- seq(5,11)
+items_specific <- seq(13,22)
+```
+
+```{r warnings=FALSE, echo=FALSE, out.width="100%", fig.align="center", fig.width=6, fig.height=4}
+# Calculate mean experience and confidence intervals for each item
+surv_summary <- surv |> 
+  summarize_at(
+    items_general, 
+    list(~mean_cl_normal(., na.rm = TRUE))
+  ) |> 
+  pivot_longer(cols = everything(), names_to = "Item", values_to = "value")
+
+# Create the bar chart
+ggplot(surv_summary, aes(x = reorder(Item, value$y), y = value$y)) +
+  geom_bar(stat = "identity", fill = "purple") +
+  geom_errorbar(aes(ymin = value$ymin, ymax = value$ymax), width = 0.2) +
+  coord_flip() +
+  ylim(0,10) +
+  labs(
+    title = "Average Experience with General ML Concepts",
+    x = "Concept",
+    y = "Average Experience (1-10)"
+  ) +
+  theme_minimal()
+```
+
+
+### Your experiences
+
+```{r warnings=FALSE, echo=FALSE, out.width="100%", fig.align="center", fig.width=6, fig.height=4}
+# Calculate mean experience and confidence intervals for each item
+surv_summary <- surv |> 
+  summarize_at(
+    items_specific, 
+    list(~mean_cl_normal(., na.rm = TRUE))
+  ) |> 
+  pivot_longer(cols = everything(), names_to = "Item", values_to = "value")
+
+# Create the bar chart
+ggplot(surv_summary, aes(x = reorder(Item, value$y), y = value$y)) +
+  geom_bar(stat = "identity", fill = "purple") +
+  geom_errorbar(aes(ymin = value$ymin, ymax = value$ymax), width = 0.2) +
+  coord_flip() +
+  ylim(0,10) +
+  labs(
+    title = "Average Experience with Specific ML Concepts",
+    x = "Concept",
+    y = "Average Experience (1-10)"
+  ) +
+  theme_minimal()
+```
+
+
+### Analytics
+
+- Supervised Learning: Predicting/estimating an output based on one or more inputs
+
+- Unsupervised Learning: Learning relationships/structure from inputs only
+
+  - I.e., there is no supervising output
+
+- Visualization: Visual representations of predictions and relationships, but also of raw data
+
+
+### Important Topics
+
+- Overfitting
+
+- Imbalance
+
+- Sparseness
+
+- Robustness
+
+- Hyperparameters
+
+
+### Data Types
+
+- Continuous data 
+
+  - E.g., age, income, ...
+
+  - Can be discretized (e.g., age categories)
+
+- Binary data
+  
+  - E.g., yes vs. no response
+
+  - Usually coded as a 0-1 dummy variable
+
+- Categorical data
+
+  - E.g., gender, group membership, ...
+
+  - Sometimes converted into dummies: One dummy variable per category
+
+- Ordinal data 
+
+  - E.g., highest educational degree
+
+  - Must be treated with caution, as they are neither continuous nor categorical
+
+
+### Complex Data: Multivariate
+
+- Data on demographics and Big Five personality trait scores:
+
+```{r}
+head(dat, 15)
+```
+
+
+### Complex Data: Spatial
+
+- Traffic data:
+
+\begin{figure}
+  \includegraphics[width=0.85\textwidth]{subfiles/pics/data-spatial.jpg}
+\end{figure}
+
+\begin{srcs}
+  (\url{https://unece.org/traffic-census-map})
+\end{srcs}
+
+### Complex Data: Time-stamped
+
+- Stock market data:
+
+\begin{figure}
+  \includegraphics[width=0.6\textwidth]{subfiles/pics/data-time_series.png}
+\end{figure}
+
+\begin{srcs}
+ (\url{https://www.r-bloggers.com/2020/05/forecasting-the-next-decade-in-the-stock-market-using-time-series-models/})
+\end{srcs}
+
+### Complex Data: Relational
+
+- Network data:
+
+\begin{figure}
+  \includegraphics[width=0.575\textwidth]{subfiles/pics/data-relational.png}
+\end{figure}
+
+\begin{srcs}
+  (\url{https://www.martingrandjean.ch/star-wars-data-visualization/})
+\end{srcs}
+
+### Complex Data: Unstructured
+
+- Image data:
+
+\begin{figure}
+  \includegraphics[width=0.7\textwidth]{subfiles/pics/data-image.png}
+\end{figure}
+
+\begin{srcs}
+ (\url{https://github.com/zandreika/letters-recognition})
+\end{srcs}
+
+### Complex Data: Unstructured
+
+- Further unstructured data: 
+  
+  - Audios
+  
+  - Videos (i.e., image + audio)
+  
+  - Text (see Module 4)
+  
+  - Health records
+  
+  - ...
+
+
+### Important Statistics of Data
+
+- Mean: $\mu = \frac{1}{N}\sum_{i=1}^{N}x_{i}$
+
+- Variance: $\sigma^2 = \frac{1}{N}\sum_{i=1}^{N}\left(x_{i}-\mu\right)^2$
+
+- Standard deviation: $\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}\left(x_{i}-\mu\right)^2}$
+
+- Minimum: $\min = \minimize_{i \in N} \left\{x_{i}\right\}$
+
+- Maximum: $\max = \maximize_{i \in N} \left\{x_{i}\right\}$
+
+\vspace{\baselineskip}
+- Bringing variables to the same range (very useful for multivariate data):
+
+  - Standarizing: 
+  \begin{equation}
+    \frac{x-\mu}{\sigma}
+  \end{equation}
+  
+  - Normalizing:
+  \begin{equation}
+    \frac{x-\min}{\max-\min}
+  \end{equation}
+
+
+### Summary
+
+- Data Science builds mathematical models to extract and represent knowledge
+
+- Data-driven decision-making can be relevant to any setting in:
+
+  - Psychology
+  
+  - Economics
+  
+  - Medicine
+  
+  - Physics
+  
+  - ...
+
+- Prior to building the models, data often needs some preprocessing
+
+
+
+
+
+
+
+
+
+
+# Linear Regression
+
+```{r warnings=FALSE, out.width="70%", fig.align="center", fig.width=6, fig.height=3}
+library(tidyverse)
+
+ggplot(dat, aes(y = agree, x = age)) +
+  geom_point() +
+  stat_smooth(method = "lm")
+```
+
+
+### Research Goal
+
+- **Description:** Research with the aim of describing relationships or distributions
+
+vs.
+
+- **Explanation:** Research with the aim of understanding the underlying mechanisms
+
+vs. 
+
+- **Prediction:** Research with the aim of maximally explaining the variability in an outcome
+
+  - ML, and therefore this course, is mainly devoted to predictive analytics
+
+
+### Predictive Analytics
+
+- There is a dependent variable or "target", $y$
+
+- There is a set of $p$ explanatory variables or "features", $x_1, x_2, \ldots, x_p$
+
+- We build a model that predicts $y$ using the information in $X = \left(x_{1}, x_{2}, \ldots, x_{p}\right)$, often denoted as $f(X)$
+
+- The model differs depending on the nature of the target
+
+  - Regression task: The target is continuous
+
+  - Classification task: The target is discrete
+
+
+### Simple Linear Regression
+
+- For each instance $i$ in a population, we have:
+
+  - \textbf{One} feature, $x_{i}$ 
+  
+  - Continuous target, $y_{i} \in \mathbb{R}$
+
+- Goal: Predict the target for new instances of which we know the value of the feature, but not the value of the target:
+\begin{equation}
+  x_{new} \rightarrow \hat{y}_{new} \in \mathbb{R}
+\end{equation}
+
+
+### Simple Linear Regression
+
+- We assume that there is a linear relationship between the (single) feature and the target: $y = \beta_{0} + \beta_{1}x + \varepsilon$
+
+- As $\beta_{0}$ and $\beta_{1}$ are unknown, we have to estimate them from the data
+
+  - Goal: Ensuring low errors ("residuals"), $e_{i} = y_{i} - \hat{y}_{i}$
+
+    - where $\hat{y} = \hat{\beta}_{0} + \hat{\beta}_{1}x$ -- the target value predicted by the model
+  
+  - Note: The residuals are assumed to be normally distributed, $\varepsilon  \sim N\left(0,\sigma_{\varepsilon}^2\right)$
+
+- In other words, we want to find the values of $\beta_{0}$ and $\beta_{1}$ that minimize the difference between the predicted and observed target values for the entire sample
+
+  - E.g., mean squared (prediction) error/loss function:
+  \begin{equation}
+    MSE = \sum_{i=1}^{N} e_{i}^{2} = \sum_{i=1}^{N} \left(y_{i} - \hat{y}_{i}\right)^{2}
+  \end{equation}
+
+
+### Simple Linear Regression
+
+```{r out.width="70%", fig.align="center", fig.width=6, fig.height=3}
+mdl <- lm(agree ~ age, data = dat)
+
+mdl %>% 
+  ggplot(aes(y = agree, x = age)) + 
+  geom_point() + 
+  geom_smooth(method = "lm") + 
+  geom_segment(aes(xend = age, yend = .fitted))
+```
+
+
+### Simple Linear Regression in `base` R
+
+```{r}
+summary(mdl)
+```
+
+- Fitted model: $\hat{agree} = \hat{\beta}_{0} + \hat{\beta}_{1}*age = `r printnum(coef(mdl)[['(Intercept)']])` + `r printnum(coef(mdl)[['age']])`*age$
+
+  - E.g., prediction for a new participant of $age = 30$: $\hat{agree} = `r printnum(coef(mdl)[['(Intercept)']])` + `r printnum(coef(mdl)[['age']])`*30 = `r printnum(coef(mdl)[['(Intercept)']] + coef(mdl)[['age']]*30)`$
+
+
+### Prediction "Out-of-Sample"
+
+1. Use a subset of the sample to fit the model:
+
+```{r}
+N <- nrow(dat)
+train <- sample(1:N, N*0.9)
+
+df_subset <- dat[train,]
+
+mdl_subset <- lm(agree ~ age, data = df_subset)
+summary(mdl_subset)
+```
+
+
+### Prediction "Out-of-Sample"
+
+2. Test the model on the remaining, held-out "test" data:
+
+```{r}
+df_rest <- dat[-train,]
+
+df_rest$agree_predicted <- predict(mdl_subset, df_rest)
+
+df_rest %>% select(agree, agree_predicted)
+```
+
+- We will expand on this idea over the next modules
+
+
+### Simple Linear Regression in `mlr3`
+
+1. Define a (prediction) task, which is mlr3's way to store the raw data along with some meta-information for modeling
+
+    - E.g., specify what kind of task to be completed
+
+2. Specify which ML model to apply later for prediction
+
+    - `mlr3` does not implement its own ML models but links to available implementations in other R packages 
+    
+      - E.g., "regr.lm" links to the ordinary `lm()` function in the stats package
+
+3. Train the linear regression model
+
+    - In `mlr3`, objects have “abilities” (or “methods”) that can be applied with the following `$`-syntax (cf. other object-oriented programming languages, such as Python)
+    
+      - Here, the train method of the learner object is used to fit the model ("train the learner") from step 2 on the task specified in step 1:
+
+```{r cache=FALSE}
+library(mlr3verse)
+tsk = as_task_regr(agree ~ age, data = dat) #1.
+mdl = lrn("regr.lm") #2.
+mdl$train(tsk) #3.
+```
+
+
+### Simple Linear Regression in `mlr3`
+
+- The estimated model output is exactly the same as for `base` R
+
+  - Not surprising, as `lrn("regr.lm")` is simply applying the `lm()` function to estimate the model, which is exactly equivalent to what we did a couple of slides ago
+
+```{r}
+summary(mdl$model)
+```
+
+
+### Excurse: Why `mlr3`?
+
+- If the end result (i.e., fitted model) is exactly the same as with `base` R, why should we bother about using `mlr3` in the first place?
+
+- In `mlr3`, the model fitting procedure (i.e., steps 1-3) is exactly the same **no matter what ML method we're using** to model the data
+  
+  - In other words, it (merely) provides a **unified framework/syntax** (cf. `tidyverse`) to fit different ML models to data
+    
+    - The ML models themselves, however, stem from other, established R packages (e.g., "regr.lm" links to the ordinary `lm()` function in the stats package), which are also described in detail in, e.g., James et al. (2021)
+  
+  - Allows us to **focus more on the concepts** and less on the specific programming in R
+
+- `mlr3` is **the state-of-the-art framework for ML in R** (cf. `scikit-learn` in Python)
+
+
+### Excurse: Nonlinear Regression
+
+- Using linear modeling, we can even build nonlinear models 
+
+  - E.g., by including polynomial transformations of features (i.e., quadratic `age`): $\hat{agree} = \hat{\beta}_{0} + \hat{\beta}_{1}*age + \hat{\beta}_{2}*{age}^{2}$
+
+```{r warnings=FALSE, out.width="70%", fig.align="center", fig.width=6, fig.height=3}
+ggplot(dat, aes(y = agree, x = age)) +
+  geom_point() +
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2))
+```
+
+
+### Bias-Variance Trade-Off
+
+- Bias-variance trade-off: Good out-of-sample performance requires low variance as well as low squared bias 
+  
+  - Why "trade-off"? -- "Inflexible" model with low variance but high bias *vs.* "flexible" model with low bias but high variance
+
+  - The challenge lies in finding a model for which both the variance and the (squared) bias are low
+
+\begin{figure}
+  \includegraphics[width=0.6\textwidth]{subfiles/pics/Pargent23-bias-variance_trade-off.png}
+\end{figure}
+
+\begin{srcs}
+  (Pargent et al., 2023, Figure 3a)
+\end{srcs}
+
+
+### Bias-Variance Trade-Off
+
+- Darts metaphor: 
+
+  - Bullseye $=$ True value (i.e., expected target value for a given combination of feature values)
+  
+  - Each cross is the prediction made by a concrete ML model
+  
+    - Models are trained on a randomly drawn training set, all from the same population and with the same sample size
+
+- Optimal model: Low bias and low variance (bottom left)
+
+  - Noise $=$ Irreducible error of the true model
+  
+    - Reason why predictions (across different samples) are not similar, even when hitting the bullseye
+
+\begin{figure}
+  \includegraphics[width=0.25\textwidth]{subfiles/pics/Pargent23-bias-variance_trade-off.jpg}
+\end{figure}
+
+\begin{srcs}
+  (Pargent et al., 2023, ESM, Figure 2)
+\end{srcs}
+
+
+### Multiple Linear Regression
+
+- Everything is the same as in simple regression
+  
+  - Except that we now have multiple features (incl. polynomial transformations of features to build nonlinear models)
+
+  - Note: Higher dimensionality (i.e., more features) $=$ More flexibility
+
+- For each instance $i$ in a population, we have:
+
+  - A \textbf{vector} of features, $X_{i} = \left(x_{i1}, x_{i2}, \ldots, x_{ip}\right)$ 
+  
+  - Continuous target, $y_{i} \in \mathbb{R}$
+
+- Goal: Predict the target for new instances of which we know the vector of features but not the value of the target:
+\begin{equation}
+  X_{new} \rightarrow \hat{y}_{new} \in \mathbb{R}
+\end{equation}
+
+
+### Multiple Linear Regression
+
+- E.g., vector of features of size 2:
+
+\begin{figure}
+  \includegraphics[width=0.45\textwidth]{subfiles/pics/James21-multiple_regression.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 3.4) 
+\end{srcs}
+
+### Multiple Linear Regression in `base` R
+
+```{r}
+mdl <- lm(agree ~ age + gender, data = dat)
+summary(mdl)
+```
+
+
+### Multiple Linear Regression in `mlr3`
+
+```{r cache=FALSE}
+tsk = as_task_regr(agree ~ age + gender, data = dat)
+mdl = lrn("regr.lm")
+mdl$train(tsk)
+summary(mdl$model)
+```
+
+
+### Hands-on Practical Tutorial
+
+- Now it's your turn: 
+
+  - Go to \url{https://tobiasrebholz.github.io/teaching}
+  
+  - Select "Introduction to Machine Learning" > "Materials"
+  
+    - Password: **smip24**
+  
+  - Download the "Linear Regression" tutorial
+  
+  - Work through the tasks
+
+
+
+
+
+
+# Logistic Regression
+
+- Everything is the same as in linear regression
+
+  - Except that we now have a discrete target
+
+- For each instance $i$ in a population, we have:
+
+  - A vector of features, $X_{i} = \left(x_{i1}, x_{i2}, \ldots, x_{ip}\right)$ 
+  
+  - \textbf{Binary} class membership, $y_{i} \in \left\{0,1\right\}$
+  
+    - E.g., buying vs. not buying a specific product
+
+- Goal: Predict the target (i.e., class membership) for new instances of which we know the vector of features but not the value of the target:
+\begin{equation}
+  X_{new} \rightarrow \hat{y}_{new} \in \mathbb{R}
+\end{equation}
+
+
+### Logistic Regression
+
+- Auxiliary target: Probability of membership in class 1, $p$ 
+
+  - Counter probability $1-p$: Membership in class 0
+  
+  - \textbf{Continuous, but bounded} target
+    
+- Auxiliary goal: Predict the auxiliary target (i.e., probability) for new instances of which we know the vector of features but not the value of the target:
+\begin{equation}
+  X_{new} \rightarrow \hat{p}_{new} \in (0,1)
+\end{equation}
+
+- Predicted class:
+  \begin{equation}
+    \hat{y}_{new} = \begin{cases}1 \text{ if } \hat{p}_{new} > 0.5 \\ 0 \text{ else}\end{cases}
+  \end{equation}
+
+
+### Logistic Regression
+
+- Fitting a logistic function to the probability of class 1:
+\begin{equation}
+  p = \frac{e^{\beta_{0} + \beta_{1}x_{1} + \cdots + \beta_{p}x_{p}}}{1 + e^{\beta_{0} + \beta_{1}x_{1} + \cdots + \beta_{p}x_{p}}}
+\end{equation}
+
+  - Is equivalent to fitting a linear function to the logarithm of the odds:
+  \begin{equation}
+    \log\left(\frac{p}{1-p}\right) = \beta_{0} + \beta_{1}x_{1} + \cdots + \beta_{p}x_{p}
+  \end{equation}
+
+- In general, "odds" is defined as the probability of an event occurring relative to the probability of the event not occurring
+    
+  - Here, the odds are the probability for membership in class 1, relative to the probability for membership in class 0
+
+- As $\beta_{0},\beta_{1},\ldots,\beta_{p}$ are unknown, we have to estimate them from the data
+
+  - E.g., by maximizing the log likelihood function $\Rightarrow$ $\hat{\beta}_{p}$ is called the "maximum likelihood estimate" (MLE)
+
+
+### Logistic Regression in `mlr3`
+
+- Data preparation:
+
+```{r}
+dat$agree_high <- ifelse(dat$agree > 4, 1, 0)
+dat %>% select(agree, agree_high) %>% tail(., 10)
+```
+
+
+### Logistic Regression in `mlr3`
+
+- Model fitting:
+
+```{r cache=FALSE}
+tsk = as_task_classif(agree_high ~ age, data = dat, positive = "1")
+mdl = lrn("classif.log_reg")
+mdl$train(tsk)
+summary(mdl$model)
+```
+
+
+### Logistic Regression in `mlr3`
+
+```{r include=FALSE}
+mdl_print <- mdl$model
+```
+
+- Fitted model: $\hat{p}_{agree>4} = \frac{e^{\hat{\beta}_{0} + \hat{\beta}_{1}*age}}{1 + e^{\hat{\beta}_{0} + \hat{\beta}_{1}*age}} = \frac{e^{`r printnum(coef(mdl_print)[['(Intercept)']])` + `r printnum(coef(mdl_print)[['age']])`*age}}{1 + e^{`r printnum(coef(mdl_print)[['(Intercept)']])` + `r printnum(coef(mdl_print)[['age']])`*age}}$
+
+  - Prediction for a new participant with $age = 30$: $\hat{p}_{agree>4} = \frac{e^{`r printnum(coef(mdl_print)[['(Intercept)']])` + `r printnum(coef(mdl_print)[['age']])`*30}}{1 + e^{`r printnum(coef(mdl_print)[['(Intercept)']])` + `r printnum(coef(mdl_print)[['age']])`*30}} = `r printnum(exp(coef(mdl_print)[['(Intercept)']] + coef(mdl_print)[['age']]*30) / (1 + exp(coef(mdl_print)[['(Intercept)']] + coef(mdl_print)[['age']]*30)))`$
+  
+```{r}
+summary(mdl$model)$coefficients
+```
+
+- Odds ratios:
+
+```{r}
+exp(coefficients(mdl$model))
+```
+
+
+### Logistic Regression in `mlr3`
+
+- We can plot the estimated probability of class 1 membership as a function of `age`:
+
+```{r warnings=FALSE, out.width="70%", fig.align="center", fig.width=6, fig.height=3}
+ggplot(dat, aes(y = agree_high, x = age)) + 
+  geom_point() + 
+  geom_smooth(method = "glm", method.args = list(family = binomial(link = "logit")))
+```
+
+
+### Classification Performance
+
+- Main goal: Correct classification
+
+  - E.g., minimizing the mean misclassification error: 
+  \begin{equation}
+    MMCE = \frac{1}{N} \sum_{i=1}^{N} I\left\{y_{i} \neq \hat{y}_{i}\right\}
+  \end{equation}
+  
+    - Where $I\left\{\cdot\right\}$ is the indicator function taking the value 1 if the condition in the parentheses is true and 0 otherwise 
+  
+  - This is equivalent to maximizing classification accuracy: 
+  \begin{equation}
+    Acc = 1 - MMCE = \frac{N_{0,0} + N_{1,1}}{N}
+  \end{equation}
+  
+- Confusion matrix:
+\begin{table}
+  \begin{tabular}{c|cc|c}
+    & $\hat{y} = 0$ & $\hat{y} = 1$ & \\
+    \hline
+    $y = 0$ & $N_{0,0}$ (TN) & $N_{0,1}$ (FP) & $N_{0,\cdot}$ \\
+    $y = 1$ & $N_{1,0}$ (FN) & $N_{1,1}$ (TP) & $N_{1,\cdot}$ \\
+    \hline
+    & $N_{\cdot,0}$ & $N_{\cdot,1}$ & $N$
+  \end{tabular}
+\end{table}
+
+
+### Classification Performance
+
+- Other important metrics:
+
+  - Sensitivity (or true positive rate, recall): 
+  \begin{equation}
+    Sens = \frac{TP}{TP + FN}
+  \end{equation}
+  
+  - Specificity (or true negative rate): 
+  \begin{equation}
+    Spec = \frac{TN}{TN + FP}
+  \end{equation}
+
+
+### Classification Performance
+
+- Predicted class: $\hat{y} = \begin{cases}1 \text{ if } \hat{p} > 0.5 \\ 0 \text{ else}\end{cases}$
+
+  - Note: Thresholds other than $0.5$ may lead to better performance
+
+- Area under the (receiver operating) curve (AUC): 
+
+  - The probability that an observation randomly drawn from class 1 has a higher predicted probability to belong to class 1 than an observation randomly drawn from class 0
+    
+  - The ROC traces out $Sens$ and $Spec$ for varying classification thresholds:
+  
+\begin{figure}
+  \includegraphics[width=0.275\textwidth]{subfiles/pics/James21-ROC.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 4.8)
+\end{srcs}
+
+### Excurse: Logistic vs. Linear Regression
+
+- Linear regression: Some estimated probabilities are negative
+
+  - I.e., ill-defined for binary target
+
+- Logistic regression: All estimated probabilities lie between 0 and 1
+
+  - I.e., well-defined for binary target
+
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{subfiles/pics/James21-linear_vs_logistic_regression.png}
+\end{figure}
+
+\begin{srcs}
+  (James et al., 2021, Figure 4.2) 
+\end{srcs}
+
+### Hands-on Practical Tutorial
+
+- Now it's your turn: 
+
+  - Go to \url{https://tobiasrebholz.github.io/teaching}
+  
+  - Select "Introduction to Machine Learning" > "Materials"
+  
+    - Password: **smip24**
+  
+  - Download the "Logistic Regression" tutorial
+  
+  - Work through the tasks
+
+
+
+
+
+
+# Summary
+
+- Machine Learning (ML) is as easy and straightforward as:
+
+  - Linear regression: Building models to estimate the (linear) relationship between a continuous target variable and a set of features
+    
+    - Goal: Predict target values of new instances
+
+  - Logistic regression: Building models to estimate the probability of (binary) class membership based on a set of features
+  
+    - Goal: Predict class memberships of new instances
+
+- Before building the model, the data may need to be preprocessed
+
+  - E.g., normalized or standardized features, transformed targets, ...
+
+- To expand:
+
+  - Other, more advanced (supervised and unsupervised) learning algorithms
+  
+  - Variable selection
+  
+  - Cross validation
+
+  
+
+
+
+
+# Appendix: R for Beginners
+
+### Your experiences
+
+```{r warnings=FALSE, echo=FALSE, out.width="100%", fig.align="center", fig.width=6, fig.height=4}
+# Calculate mean experience and confidence intervals for each item
+surv_summary <- surv |> 
+  summarize_at(
+    items_prog, 
+    list(~mean_cl_normal(., na.rm = TRUE))
+  ) |> 
+  pivot_longer(cols = everything(), names_to = "Item", values_to = "value")
+
+# Create the bar chart
+ggplot(surv_summary, aes(x = reorder(Item, value$y), y = value$y)) +
+  geom_bar(stat = "identity", fill = "purple") +
+  geom_errorbar(aes(ymin = value$ymin, ymax = value$ymax), width = 0.2) +
+  coord_flip() +
+  ylim(0,10) +
+  labs(
+    title = "Average Experience with Programming",
+    x = "Concept",
+    y = "Average Experience (1-10)"
+  ) +
+  theme_minimal()
+```
+
+
+### Quick Facts about R
+
+- It is a programming language
+
+- It contains tools from Statistics, Data Mining, Machine Learning, Visualization, ...
+
+- It has good graphical facilities
+
+- It includes cutting-edge technology
+
+- It is Open Source
+
+- It runs on different platforms (Windows, MacOS, UNIX)
+
+- It has extensive documentation for help
+
+
+### R Console
+
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{subfiles/pics/R_console.png}
+\end{figure}
+
+### Installation
+
+- Go to \url{http://www.r-project.org}
+
+- Click on the download link on the main page
+
+- Choose your preferred CRAN mirror
+
+- Navigate to "Download and Install R"
+
+- Choose your platform
+
+\vspace{\baselineskip}
+
+- Important: We will be working with R Version 4.3.3
+
+  - Same version makes troubleshooting much easier
+  
+  - You can check your installed version by executing `R.Version()` in your console
+
+
+### RStudio Editor
+
+\begin{figure}
+  \includegraphics[width=0.8\textwidth]{subfiles/pics/rstudio-panes-labeled.jpeg}
+\end{figure}
+
+
+### Installation
+
+- Before starting, make sure that R is installed correctly
+
+- Go to \url{https://posit.co/downloads/}
+
+- Click on the download link on the main page
+
+- Navigate to "Install RStudio"
+
+- Choose your platform
+
+
+### Coding in R
+
+- Command lines start with ">"
+
+- Comment lines start with "#"
+
+- Use "<-" or "=" to assign a value to a variable
+
+- Use "==", "<", ">", and "!=" to check logical conditions
+
+
+### Variables, Vectors, Matrices, ...
+
+- Variables: Define a variable, `x`, assign it the value 1, print `x`, add 5 to `x`, print `x` again
+
+```{r}
+x <- 1
+print(x)
+
+x <- x + 5
+print(x)
+```
+
+- Vectors: Define two vectors, `u = (1, 4, 10, -1)` and `v = (10, -4, 3, 0)`, print `u + v`
+
+```{r}
+u <- c(1, 4, 10, -1)
+v <- c(10, -4, 3, 0)
+
+z = u + v
+print(z)
+```
+
+
+### Variables, Vectors, Matrices, ...
+
+- Matrices: Define a 4 $\times$ 2 matrix with columns `u` and `v`, print the matrix
+
+```{r}
+mtrx <- cbind(u, v)
+print(mtrx)
+```
+
+- Data frame: Closely related to the concept of a matrix 
+
+  - The rows represent individual observations or "instances" (lines 1-4) and the columns represent variables (`u` and `v`)
+
+```{r}
+as.data.frame(mtrx)
+```
+
+### Arithmetics
+
+- Mathematical operations:
+
+```{r}
+x <- 10
+y <- 7
+
+x + y
+
+x - y
+
+x * y
+
+x / y
+
+x %% y
+```
+
+
+### Functions
+
+- Mathematical functions:
+
+```{r}
+x
+
+sqrt(x)
+
+v
+
+abs(v)
+```
+
+- Logical functions:
+
+```{r}
+if (x >= 1) {
+  print(TRUE)
+} else {
+  print(FALSE)
+}
+```
+
+
+### Functions
+
+- Statistical functions:
+
+```{r}
+u
+
+mean(u)
+
+sd(u)
+
+median(u)
+
+summary(u)
+```
+
+### Dataset Handling
+
+- Reading from/writing to a file:
+
+```{r}
+#reading data from drive
+dat <- read.csv('subfiles/data/bfi.csv', header = TRUE)
+head(dat)
+
+# writing data to drive
+write.csv(dat, file = 'subfiles/data/bfi.csv', row.names = FALSE)
+```
+
+- Well-known data repositories for research purposes: 
+
+  - \url{http://archive.ics.uci.edu/ml/}
+  
+  - \url{https://www.kaggle.com/datasets}
+
+
+
+### Plotting
+
+- Scatterplot:
+
+```{r out.width="70%", fig.align="center", fig.width=6, fig.height=4.5}
+plot(dat$agree ~ dat$age)
+```
+
+### Plotting
+
+- Histogram:
+
+```{r out.width="70%", fig.align="center", fig.width=6, fig.height=4.5}
+hist(dat$agree)
+```
+
+### Packages
+
+- Some packages are included by default, such as `stats` and `graphics`
+
+  - Use `installed.packages()` to find out which ones
+
+- Other packages can be installed using `install.packages("name")`
+
+  - Packages provide extended functionality for R
+  
+    - Most important package for data handling: `tidyverse`
+  
+    - Most important package for ML: `mlr3verse`
+  
+  - Ideally, install packages with `dependencies = TRUE` to also include any packages that might be used in the package `name` you are installing
+
+- You have to load new packages with `library("name")` every time you start a new session
+
+  - Alternatively, you can access individual functions from installed packages without loading the entire package (cf. Python) with `name::function()`
+
+
+### Packages
+
+- Caution: Different packages can have the same names for different functions
+
+  - The last loaded package overwrites any functions with the same name in previously loaded packages
+  
+- Recommendations: 
+
+  - Load all packages needed for the analysis in one section at the beginning of the script
+  
+  - Usually it is best to load `tidyverse` and `mlr3verse` last
+  
+  - Pay attention to warnings when loading packages 
+  
+    - If certain functions are overwritten, you can still access them with `name::function()`
+  
+  - Always start a new R session when you start your analysis to avoid unexpected behavior from packages loaded from previous sessions
+
+
+### More to Come
+
+- You can access the internal help with `?command`
+
+- Google (and recently also GPT) are your best friends for solving programming issues
+
+- With the practical tutorials, we will get more familiar with R
+
+

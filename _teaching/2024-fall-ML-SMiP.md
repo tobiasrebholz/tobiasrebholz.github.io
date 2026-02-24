@@ -22,7 +22,13 @@ location: "Tübingen, Germany"
     });
 </script>
 
-[Download Document](/files/2024-RISE_Germany-DAAD/CfP-CS_BI_4992.pdf)
+<ul>
+  {% for file in site.static_files %}
+    {% if file.path contains '/files/teaching/2024-fall-ML-SMiP/Slides' %}
+      <li><a href="{{ file.path | relative_url }}">{{ file.name }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
 
 ### Slides
 

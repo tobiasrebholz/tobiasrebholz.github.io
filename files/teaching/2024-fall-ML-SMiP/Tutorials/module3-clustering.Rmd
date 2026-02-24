@@ -1,0 +1,95 @@
+---
+title: 'Module 3: Tutorial: Clustering'
+output:
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: inline
+---
+
+# Clustering
+
+## Description of data set
+
+In this tutorial, we will use the dataset from Wulff et al. (2023), which is part of the `moursetrap` package. The dataset, as prepared in the following code chunk, contains the mouse movement trajectories of participants in a two-options forced-choice paradigm. The trajectories are normalized using the `mt_length_normalize()` function from the `moursetrap` package so that all trajectories consist of 50 points (default is 20) in a 2D space.
+
+```{r}
+library(mousetrap)
+library(tidyverse)
+dat <- data(KH2017)
+
+# Preprocess trajectory data
+dat <- KH2017 %>% mt_length_normalize(n_points = 50)
+dat <- dat$ln_trajectories
+dat[1:5,1:5,'xpos']; dat[1:5,1:5,'ypos'] #examles
+dat2 <- data.frame(cbind(dat[,,'xpos'], dat[,,'ypos']))
+```
+
+We can use the `mt_heatmap()` function from the `moursetrap` package to visualize the trajectories. The resulting plot contains 1064 mouse movement trajectories of participants. In this tutorial, we want to cluster these trajectories to make sense of this kind of data (i.e., shed light on the processes of information integration and preference formation; Wulff et al., 2023).
+
+```{r}
+mt_heatmap(dat, colors = c('white', 'black'), verbose = FALSE)
+```
+
+## Tasks
+
+1.  Cluster the trajectories from `dat2` (i.e., treating the x- and y-coordinates as features) into 5 clusters by means of agglomerative hierarchical clustering using the `agnes` algorithm via `mlr3`.
+
+```{r}
+
+```
+
+2.  Predict the cluster of each individual trajectory using the model from task 1 and use the predictions to calculate a frequency table for the relative proportions of instances in each cluster.
+
+```{r}
+
+```
+
+3.  Redo task 1 and cluster the trajectories into 5 clusters using agglomerative hierarchical clustering and Ward's method (i.e., set the learner's `method` argument to "ward"). Also predict the clusters using the new model. Did the relative frequencies improve (in terms of a more balanced clustering)?
+
+```{r}
+
+```
+
+
+4.  Plot the trajectories according to the clustering from task 4. For instance, use a `for`-loop and the `mt_heatmap()` function from above to produce a separate heatmap for each cluster of movement trajectories.
+
+```{r}
+
+```
+
+
+5.  Redo task 1 and cluster the trajectories into 5 clusters using partitional (i.e., $k$-means) clustering. Then, redo task 2 and predict the clusters using the new model.
+
+```{r}
+
+```
+
+6.  Compare the results from task 5 to the results with the hierarchical clustering by redoing task 4, that is, visualize the trajectories of the partitional clustering. Do you spot any major (performance) differences?
+
+```{r}
+
+```
+
+
+7.  Bonus: Also plot the prototypes of your $k$-means clustering solution.
+
+```{r}
+
+```
+
+
+8.  Bonus: Prior to performing the clustering, do a principal component analysis (PCA). Then, redo task 6 (i.e., compare agglomerative hierarchicalc lustering using Ward's method and $k$-means partitional clustering) with both clusterings specified using only the 5 principal components (PCs) as features that explain the highest amount of variance in the data. (Hint: You can select a subset of PCs that should be used for the modeling by adding a `filter` pipeline operation after the `pca` pipeline operation. Filter for "variance" using the `flt()` function and set a corresponding fraction for clustering according to the PCs that explain the highest amount of variance in the data)
+
+Agnes clustering:
+
+```{r}
+
+```
+
+$k$-means clustering:
+
+```{r}
+
+```
+
