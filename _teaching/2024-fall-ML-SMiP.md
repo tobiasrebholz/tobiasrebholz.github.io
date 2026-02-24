@@ -22,6 +22,7 @@ location: "Tübingen, Germany"
     });
 </script>
 
+[Download Document](/files/2024-RISE_Germany-DAAD/CfP-CS_BI_4992.pdf)
 
 ### Slides
 
