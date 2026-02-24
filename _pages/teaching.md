@@ -11,7 +11,7 @@ author_profile: true
 
 - <b>Heuristics and Biases</b><br>
 Research seminar, B.Sc. Psychology, University of Tübingen<br>
-<a href='/files/teaching/2024-winter-HB-UT/syllabus.pdf'><button>Download syllabus (in German)</button></a>
+<a href='/files/teaching/2024-winter-HB-UT/syllabus.pdf'><button>Syllabus</button></a>
 
 - <b>Introduction to Machine Learning</b><br>
 Method workshop, Ph.D. Statistical Modeling in Psychology (SMiP), Universities of Freiburg, Heidelberg, Landau, Mannheim, and Tübingen<br>
