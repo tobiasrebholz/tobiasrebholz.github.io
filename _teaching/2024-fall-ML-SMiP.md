@@ -67,7 +67,7 @@ location: "Tübingen, Germany"
 ### Markdown Source Files
 
 <ul>
-  {% assign folder_pages = site.pages | where_exp: "item", "item.path contains 'files/teaching/2024-fall-ML-SMiP/Slides/'" %}
+  {% assign folder_pages = site.pages | where_exp: "item", "item.path contains 'files/teaching/2024-fall-ML-SMiP/Tutorials/'" %}
   {% for p in folder_pages %}
     {% if p.path contains '.Rmd' %}
       <li>
