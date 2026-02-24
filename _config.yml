@@ -122,7 +122,6 @@ include:
   - .htaccess
   - _pages
   - files
-  - ".Rmd"
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"

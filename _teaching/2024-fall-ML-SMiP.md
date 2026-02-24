@@ -25,7 +25,8 @@ location: "Tübingen, Germany"
 
 ## Syllabus
 
-- [Syllabus.pdf](/files/2024-RISE_Germany-DAAD/CfP-CS_BI_4992.pdf)
+- [Syllabus.pdf](/files/teaching/2024-fall-ML-SMiP/syllabus.pdf)
+
 
 ## Slides
 
@@ -36,6 +37,20 @@ location: "Tübingen, Germany"
     {% endif %}
   {% endfor %}
 </ul>
+
+<ul>
+  {% assign folder_pages = site.pages | where_exp: "item", "item.path contains 'files/'" %}
+  {% for p in folder_pages %}
+    {% if p.path contains '.Rmd' %}
+      <li>
+        <a href="{{ p.url | relative_url }}">
+          {{ p.title | default: p.name }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
 
 ## Tutorials
 
