@@ -38,6 +38,8 @@ location: "Tübingen, Germany"
   {% endfor %}
 </ul>
 
+### Markdown Source Files
+
 <ul>
   {% assign folder_pages = site.pages | where_exp: "item", "item.path contains 'files/teaching/2024-fall-ML-SMiP/Slides/'" %}
   {% for p in folder_pages %}
@@ -61,6 +63,22 @@ location: "Tübingen, Germany"
     {% endif %}
   {% endfor %}
 </ul>
+
+### Markdown Source Files
+
+<ul>
+  {% assign folder_pages = site.pages | where_exp: "item", "item.path contains 'files/teaching/2024-fall-ML-SMiP/Slides/'" %}
+  {% for p in folder_pages %}
+    {% if p.path contains '.Rmd' %}
+      <li>
+        <a href="{{ p.url | relative_url }}">
+          {{ p.name }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
 
 <!-- ALT: GDrive integration
 
