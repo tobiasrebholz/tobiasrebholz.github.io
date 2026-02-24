@@ -23,6 +23,12 @@ location: "Tübingen, Germany"
 </script>
 
 
+### Syllabus
+
+<ul>
+    <li>[Syllabus.pdf](/files/2024-RISE_Germany-DAAD/CfP-CS_BI_4992.pdf)</li>
+</ul>
+
 ### Slides
 
 <ul>
