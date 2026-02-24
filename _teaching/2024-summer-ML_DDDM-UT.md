@@ -12,7 +12,7 @@ location: "Tübingen, Germany"
 
 <!-- naive password protection
 <script>
-    const password = "smip24";
+    const password = "ml_dddm24";
 
     document.addEventListener("DOMContentLoaded", function() {
         const userPassword = prompt("Enter password to access this page:");
