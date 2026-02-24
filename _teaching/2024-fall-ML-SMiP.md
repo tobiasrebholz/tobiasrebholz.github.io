@@ -23,13 +23,11 @@ location: "Tübingen, Germany"
 </script>
 
 
-### Syllabus
+## Syllabus
 
-<ul>
-    <li>[Syllabus.pdf](/files/2024-RISE_Germany-DAAD/CfP-CS_BI_4992.pdf)</li>
-</ul>
+- [Syllabus.pdf](/files/2024-RISE_Germany-DAAD/CfP-CS_BI_4992.pdf)
 
-### Slides
+## Slides
 
 <ul>
   {% for file in site.static_files %}
@@ -39,7 +37,7 @@ location: "Tübingen, Germany"
   {% endfor %}
 </ul>
 
-### Tutorials
+## Tutorials
 
 <ul>
   {% for file in site.static_files %}
@@ -51,13 +49,13 @@ location: "Tübingen, Germany"
 
 <!-- ALT: GDrive integration
 
-### Slides
+## Slides
 - <a href="https://drive.google.com/drive/folders/1-t7K_oENLJ54192cjvTejiuZXjPfsJXv?usp=drive_link">Download all slides here</a>
 
 <iframe src="https://drive.google.com/embeddedfolderview?id=1-t7K_oENLJ54192cjvTejiuZXjPfsJXv#list" style="width:90%; height:300px;"></iframe>
 
 
-### Tutorials
+## Tutorials
 
 - <a href="https://drive.google.com/drive/folders/10EiREBfzM1-9niTGqHaFZlasS8-dqRF0?usp=drive_link">Download all tutorial materials here</a>
 
