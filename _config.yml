@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : #&twitter
 facebook:
   username               :
   app_id                 :
@@ -86,9 +86,9 @@ author:
   location         : "Visiting Researcher @<a href='https://areas.fuqua.duke.edu/management/index.html'>Duke University</a>"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.de/citations?user=p5cLq4IAAAAJ"
+  googlescholar    : "p5cLq4IAAAAJ"
   email            :
-  researchgate     : "https://www.researchgate.net/profile/Tobias-Rebholz"
+  researchgate     : "Tobias-Rebholz"
   uri              :
   bitbucket        :
   codepen          :
@@ -103,19 +103,19 @@ author:
   impactstory      : 
   lastfm           :
   linkedin         : "tobiasrebholz"
-  orcid            : "https://orcid.org/0000-0001-5436-0253"
+  orcid            : "0000-0001-5436-0253"
   pinterest        :
   soundcloud       :
   stackoverflow    : "11118919"
   steam            :
   tumblr           :
   twitter          :
-  bsky             : "https://bsky.app/profile/tobiasrebholz.bsky.social"
-  mastodon         : "https://mastodon.social/@tobiasrebholz"
+  bluesky          : "tobiasrebholz.bsky.social"
+  mastodon         : "tobiasrebholz"
   vine             :
   weibo            :
   xing             : "TobiasR_Rebholz"
-  youtube          : "@Tobias.Rebholz"
+  youtube          : "Tobias.Rebholz"
   wikipedia        :
 
 
