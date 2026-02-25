@@ -106,14 +106,16 @@ author:
   orcid            : "https://orcid.org/0000-0001-5436-0253"
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    : http://stackoverflow.com/users/11118919/username
   steam            :
   tumblr           :
-  twitter          : "TobiasRebholz"
+  twitter          :
+  bsky             : "https://bsky.app/profile/tobiasrebholz.bsky.social"
+  mastodon         : "https://mastodon.social/@tobiasrebholz"
   vine             :
   weibo            :
-  xing             :
-  youtube          :
+  xing             : "https://www.xing.com/profile/TobiasR_Rebholz/"
+  youtube          : "https://www.youtube.com/@Tobias.Rebholz"
   wikipedia        :
 
 
