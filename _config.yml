@@ -102,11 +102,11 @@ author:
   instagram        :
   impactstory      : 
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/tobiasrebholz/"
-  orcid            : "https://orcid.org/0000-0001-5436-0253"
+  linkedin         : "tobiasrebholz"
+  orcid            : "0000-0001-5436-0253"
   pinterest        :
   soundcloud       :
-  stackoverflow    : http://stackoverflow.com/users/11118919/username
+  stackoverflow    : "11118919"
   steam            :
   tumblr           :
   twitter          :
@@ -114,8 +114,8 @@ author:
   mastodon         : "https://mastodon.social/@tobiasrebholz"
   vine             :
   weibo            :
-  xing             : "https://www.xing.com/profile/TobiasR_Rebholz/"
-  youtube          : "https://www.youtube.com/@Tobias.Rebholz"
+  xing             : "TobiasR_Rebholz"
+  youtube          : "@Tobias.Rebholz"
   wikipedia        :
 
 
