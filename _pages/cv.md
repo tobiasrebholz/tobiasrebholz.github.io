@@ -9,10 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
-<p align="center">
-  <a href="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/view?usp=sharing">Download full CV as pdf</a><br><br>
-</p>
+-	<a href="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/view?usp=sharing">Download full CV as pdf</a>
 
 <div style="text-align: center"> 
-  <iframe src="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/preview" width="85%" height="400px"></iframe>
+  <iframe src="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/preview" width="100%" height="800px"></iframe>
 </div>
