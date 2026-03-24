@@ -21,6 +21,7 @@ author_profile: true
   }
   .bio-band{
     width: 100%;
+    aspect-ratio: 16 / 9;
     height: auto;
     background-size: cover;
     background-position: center;

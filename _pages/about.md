@@ -23,18 +23,23 @@ redirect_from:
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   }
   .bio-band{
-    width: 100%;
-    height: auto;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  .bio-band::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0));
-  }
+  width: 100%;
+  position: relative;
+}
+
+.bio-band img{
+  display: block;
+  width: 100%;
+  height: auto;   /* preserves original aspect ratio */
+}
+
+.bio-band::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0));
+  pointer-events: none;
+}
   .bio-sec p{
     margin: 0;
     padding: 16px 18px 18px;
