@@ -24,7 +24,7 @@ redirect_from:
   }
   .bio-band{
     width: 100%;
-    height: clamp(140px, 18vw, 220px);
+    height: auto;
     background-size: cover;
     background-position: center;
     position: relative;
