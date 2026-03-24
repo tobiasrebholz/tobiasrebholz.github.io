@@ -15,7 +15,7 @@ author_profile: true
 {% include base_path %}
 
 
-## Peer-Reviewed Journal Articles <i><a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a></i>
+## Peer-Reviewed Journal Articles (<i><a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a></i>)
 
 <div class="apa">
 
@@ -51,7 +51,7 @@ von Dielingen, J., <b>Rebholz, T. R.</b>, & Papenmeier, F. (2025). Empirical inv
 
 <p>
 Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilovich, T., ... <b>Rebholz, T. R.</b>, ... Weick, M. (2024). Kahneman in quotes and reflections. <i>Psychological Inquiry</i>, <i>35</i>(1), 3–10. <a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">https://doi.org/10.1080/1047840X.2024.2366813</a><br>
-<a href="https://www.tandfonline.com/eprint/WBGT6BDDDDPTMZ4UXWRN/full?target=10.1080/1047840X.2024.2366813"><button>Download article as pdf (first 50 free)</button></a> or <a href="https://osf.io/m4c7f/download/"><button>Download preprint as pdf (unlimited free)</button></a>
+<a href="https://www.tandfonline.com/eprint/WBGT6BDDDDPTMZ4UXWRN/full?target=10.1080/1047840X.2024.2366813"><button>Download article as pdf (first 50 free)</button></a> or <a href="https://osf.io/m4c7f/download/"><button>Download preprint as pdf</button></a>
 </p>
 
 
