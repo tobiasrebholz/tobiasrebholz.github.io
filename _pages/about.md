@@ -85,7 +85,7 @@ redirect_from:
       <img src="/images/culinary.jpg" alt="Culinary">
     </div>
     <p>
-      Beyond academia, I am trained as a professional chef (see <a href="/culinary/">Culinary</a> corner for details). I was in one of the first cohorts of the double-degree program <i><a href="https://foerderverein-lize.de/lize-koch/" target="_blank">LIZE-Koch (Gesellenbrief + Abitur)</a></i>, which has since become an established program at my former German high school. I worked as a sous-chef at the restaurant <a href="https://donauperle.com/" target="_blank">Donauperle</a> for many years and as a restaurant critic for the <a href="https://www.bodensee.de/erleben/seezunge" target="_blank">Seezunge</a> magazine, a local gourmet guide in the Lake Constance region. Although I no longer cook professionally, I continue to volunteer in various culinary roles—for example, cooking for youth and community programs.
+      Beyond academia, I am trained as a professional chef (see <a href="/culinary/">Culinary</a> corner for details). I was in one of the first cohorts of the double-degree program <i><a href="https://foerderverein-lize.de/lize-koch/" target="_blank">LIZE-Koch (Gesellenbrief + Abitur)</a></i>, which has since become an established program at my former German high school. I worked as a sous-chef at the <a href="https://donauperle.com/" target="_blank">Restaurant Donauperle</a> for many years and as a restaurant critic for <a href="https://www.bodensee.de/erleben/seezunge" target="_blank">Seezunge</a>, a regional dining guide around Lake Constance in Germany, Austria, and Switzerland. Although I no longer cook professionally, I continue to volunteer in various culinary roles—for example, cooking for youth and community programs.
     </p>
   </section>
 
