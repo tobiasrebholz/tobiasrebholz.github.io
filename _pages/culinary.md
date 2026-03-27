@@ -48,12 +48,7 @@ author_profile: true
 
 {% include base_path %}
 
-## Stay tuned! 
-
-More is coming soon ...
-
-
-## Restaurant Critics
+## Culinary Arts Training
 
 <div class="bio-content">
 
@@ -68,6 +63,22 @@ More is coming soon ...
 
   <section class="bio-sec">
     <div class="bio-band">
+        <img src="/images/LIZE_Koch-graduation.png" alt="Graduation Ceremony">
+    </div>
+    <p>
+      In 2014, I completed the “LIZE-Koch” program together with seven fellow graduates at our “Charity Night” graduation dinner, where we were recognized for our outstanding performance in the practical journeyman’s examination administered by the Chamber of Commerce and Industry (IHK) Bodensee-Oberschwaben at the culinary school in Tettnang, Germany (see <a href="https://www.liebfrauenschule-sigmaringen.de/files/UkSChm4c/imblick-2014-12-archiv-js-2014-12-22.pdf" target="_blank">school newspaper article</a>).
+    </p>
+  </section>
+
+</div>
+
+
+## Restaurant Critics
+
+<div class="bio-content">
+
+  <section class="bio-sec">
+    <div class="bio-band">
         <img src="/images/Seezunge2016.jpg" alt="Seezunge">
     </div>
     <p>
@@ -75,12 +86,9 @@ More is coming soon ...
     </p>
   </section>
 
-  <section class="bio-sec">
-    <div class="bio-band">
-        <img src="/images/LIZE_Koch-graduation.png" alt="Graduation Ceremony">
-    </div>
-    <p>
-      In 2014, I completed the "LIZE-Koch" program together with seven fellow graduates during our “Charity Night” graduation dinner, where we were recognized for our performance in the practical journeyman’s examination one year after completing the German high school diploma ("Abitur;" see <a href="https://www.liebfrauenschule-sigmaringen.de/files/UkSChm4c/imblick-2014-12-archiv-js-2014-12-22.pdf" target="_blank">school newspaper article</a>). Looking back, it remains a nice snapshot of an important milestone in my culinary training.
-    </p>
-  </section>
 </div>
+
+
+## Volunteering
+
+- Coming soon... Stay tuned! 
