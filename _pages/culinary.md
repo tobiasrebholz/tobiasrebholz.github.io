@@ -57,7 +57,7 @@ author_profile: true
         <img src="/images/LIZE_Koch-anniversary.png" alt="25th Anniversary">
     </div>
     <p>
-      In 2023, I was invited back to Liebfrauenschule as one of the alumni featured during the 25th anniversary celebration of the “LIZE-Koch” program (see <a href="https://www.schwaebische.de/regional/sigmaringen/sigmaringen/schulfoerderverein-der-liebfrauenschule-feiert-dreifach-jubilaeum-1754305" target="_blank">press release</a>). Together with other alumni, I was interviewed about how the combination of the German high school diploma (“Abitur”) and the Culinary Arts certificate shaped my subsequent professional path. It was a meaningful opportunity to reflect on a formative part of my education and to see the program continue to thrive across new generations.
+      In 2023, I was invited back to Liebfrauenschule as one of the alumni featured during the 25th anniversary celebration of the “LIZE-Koch” program (<a href="https://foerderverein-lize.de/2023/07/10/3-fach-jubilaeum-des-foerdervereins/" target="_blank">press release</a>; <a href="https://www.schwaebische.de/regional/sigmaringen/sigmaringen/schulfoerderverein-der-liebfrauenschule-feiert-dreifach-jubilaeum-1754305" target="_blank">local news coverage</a>). Together with other alumni, I was interviewed about how the combination of the German high school diploma (“Abitur”) and the Culinary Arts certificate shaped my subsequent professional path. It was a meaningful opportunity to reflect on a formative part of my education and to see the program continue to thrive across new generations.
     </p>
   </section>
 
