@@ -9,10 +9,6 @@ redirect_from:
 ---
 
 <style>
-  .apa p {
-    padding-left: 0.5in;
-    text-indent: -0.5in;
-  }
   .bio-content{
     max-width: 900px;
     margin: 0 auto;
@@ -49,6 +45,11 @@ redirect_from:
     padding: 16px 18px 18px;
     line-height: 1.4;
   }
+
+  .bio-sec p.apa{
+    padding-left: calc(18px + 0.5in);
+    text-indent: -0.5in;
+  }
 </style>
 
 
@@ -82,23 +83,23 @@ redirect_from:
     <p>
       The articles below are most representative of my work on behavioral science and quantitative methods (see [Publications](../publications/), for a full list of articles, incl. software/data, preprints, and manuscripts):
     </p>
-    <div class="apa">
-      <p>
+    <div>
+      <p class="apa">
         <b>Rebholz, T. R.</b> (2026). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Collabra: Psychology</i>, <i>12</i>(1). <a href='https://doi.org/10.1525/collabra.155671' target="_blank">https://doi.org/10.1525/collabra.155671</a>
       </p>
-      <p>
+      <p class="apa">
         Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (2025). Investigating factors influencing audiences’ integration of scientific evidence. <i>Journal of Experimental Psychology: Applied</i>. <a href='https://doi.org/10.1037/xap0000552' target="_blank">https://doi.org/10.1037/xap0000552</a>
       </p>
-      <p>
+      <p class="apa">
         Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilovich, T., ... <b>Rebholz, T. R.</b>, ... Weick, M. (2024). Kahneman in quotes and reflections. <i>Psychological Inquiry</i>, <i>35</i>(1), 3–10. <a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">https://doi.org/10.1080/1047840X.2024.2366813</a>
       </p>
-      <p>
+      <p class="apa">
         <b>Rebholz, T. R.</b>, Biella, M., & Hütter, M. (2024). Mixed-effects regression weights for advice taking and related phenomena of information sampling and utilization. <i>Journal of Behavioral Decision Making</i>, <i>37</i>(2), e2369. <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">http://dx.doi.org/10.1002/bdm.2369</a>
       </p>
-      <p>
+      <p class="apa">
         <b>Rebholz, T. R.</b>, Koop, A., & Hütter, M. (2024). Conversational user interfaces: Explanations and interactivity positively influence advice taking from generative artificial intelligence. <i>Technology, Mind, and Behavior</i>, 5(4). <a href='https://doi.org/10.1037/tmb0000136' target="_blank">https://doi.org/10.1037/tmb0000136</a>
       </p>
-      <p>
+      <p class="apa">
         <b>Rebholz, T. R.</b>, & Hütter, M. (2022). The advice less taken: The consequences of receiving unexpected advice. <i>Judgment and Decision Making</i>, <i>17</i>(4), 816–848. <a href='https://doi.org/10.1017/S1930297500008950' target="_blank">https://doi.org/10.1017/S1930297500008950</a>
       </p>
     </div>
