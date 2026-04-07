@@ -78,10 +78,10 @@ redirect_from:
 
   <section class="bio-sec">
     <div class="bio-band">
-      <img src="/images/Wiley-Top10_most-cited_papers-2025.png" height="300px" alt="Selected Publications">
+      <img src="/images/selected_publications.png" alt="Selected Publications">
     </div>
     <p>
-      The following articles are a representative selection of my work on behavioral science and quantitative methods (see <a href="/publications/">Publications</a>, for a full list of articles, incl. software/data, preprints, and manuscripts):
+      The following articles, some of which are award-winning publications in the respective outlets, are a representative selection of my work on behavioral science and quantitative methods (see <a href="/publications/">Publications</a>, for a full list of articles, incl. software/data, preprints, and manuscripts):
     </p>
     <div>
       <p class="apa">
