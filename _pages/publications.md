@@ -15,7 +15,10 @@ author_profile: true
 {% include base_path %}
 
 
-## Peer-Reviewed Journal Articles (<i><a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a></i>)
+
+## Peer-Reviewed Journal Articles
+
+- See also <a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a>
 
 <div class="apa">
 
@@ -62,7 +65,7 @@ Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilo
 
 
 <p>
-<b>Rebholz, T. R.</b>, Koop, A., & Hütter, M. (2024). Conversational user interfaces: Explanations and interactivity positively influence advice taking from generative artificial intelligence. <i>Technology, Mind, and Behavior</i>, 5(4). <a href='https://doi.org/10.1037/tmb0000136' target="_blank">https://doi.org/10.1037/tmb0000136</a>.<br>
+<b>Rebholz, T. R.</b>, Koop, A., & Hütter, M. (2024). Conversational user interfaces: Explanations and interactivity positively influence advice taking from generative artificial intelligence. <i>Technology, Mind, and Behavior</i>, 5(4). <a href='https://doi.org/10.1037/tmb0000136' target="_blank">https://doi.org/10.1037/tmb0000136</a><br>
 <a href="https://assets.pubpub.org/bbvzfpn2/tmb_tmb0000136-01733760227226.pdf"><button>Download article as pdf</button></a>
 </p>
 
@@ -81,7 +84,10 @@ Biella, M., <b>Rebholz, T. R.</b>, Holthausen M., & Hütter, M. (2023). The inte
 </div>
 
 
-## Peer-Reviewed Software & Data <i>(<a href="https://github.com/TobiasRebholz">GitHub profile</a>; <a href="https://osf.io/user/fd8gn?tab=2">OSF profile</a>)</i>
+
+## Peer-Reviewed Software & Data
+
+- See also <a href="https://github.com/TobiasRebholz">GitHub profile</a>; <a href="https://osf.io/user/fd8gn?tab=2">OSF profile</a>
 
 <div class="apa">
 
@@ -105,7 +111,10 @@ Röseler, L., Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., .
 -->
 
 
-## Preprints <i>(<a href="https://osf.io/user/fd8gn?tab=5">PsyArXiv profile</a>; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R">arXiv profile</a>)</i>
+
+## Preprints
+
+- See also <a href="https://osf.io/user/fd8gn?tab=5">PsyArXiv profile</a>; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R">arXiv profile</a>
 
 <div class="apa">
 
@@ -141,6 +150,7 @@ Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2024). <i>Metacognitive myop
 </div>
 
 
+
 ## Manuscripts
 
-See my [CV](../cv/).
+- See my [CV](../cv/).
