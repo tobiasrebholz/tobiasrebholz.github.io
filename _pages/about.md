@@ -125,7 +125,7 @@ redirect_from:
 
   <section class="bio-sec">
     <div class="bio-band">
-      <img src="/images/contact.jpg" alt="Contact">
+      <img src="/images/contact.png" alt="Contact">
     </div>
     <p>
       On this website, you can find an overview of my main <a href="/research/">Research</a> topics and interests, <a href="/publications/">Publications</a>, and full academic <a href="/cv/">Vita</a>. If you have any questions or would like to connect, feel free to reach out at <a href="mailto:tr.rebholz@gmail.com">tr.rebholz@gmail.com</a>.
