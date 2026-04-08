@@ -54,7 +54,7 @@ author_profile: true
 
   <section class="bio-sec">
     <div class="bio-band">
-        <img src="/images/LIZE_Koch-anniversary.png" alt="25th Anniversary">
+        <img src="/images/culinary.png" alt="25th Anniversary">
     </div>
     <p>
       In 2023, I was invited back to Liebfrauenschule as one of the alumni featured during the 25th anniversary celebration of the “LIZE-Koch” program (<a href="https://foerderverein-lize.de/2023/07/10/3-fach-jubilaeum-des-foerdervereins/" target="_blank">press release</a>; <a href="https://www.schwaebische.de/regional/sigmaringen/sigmaringen/schulfoerderverein-der-liebfrauenschule-feiert-dreifach-jubilaeum-1754305" target="_blank">local news coverage</a>). Together with other alumni, I was interviewed about how the combination of the German high school diploma (“Abitur”) and the Culinary Arts certificate shaped my subsequent professional path. It was a meaningful opportunity to reflect on a formative part of my education and to see the program continue to thrive across new generations.
@@ -63,7 +63,7 @@ author_profile: true
 
   <section class="bio-sec">
     <div class="bio-band">
-        <img src="/images/LIZE_Koch-graduation.png" alt="Graduation">
+        <img src="/images/culinary.png" alt="Graduation">
     </div>
     <p>
       In 2014, I completed the “LIZE-Koch” program together with seven fellow graduates. At our “Charity Night” graduation dinner, we were recognized for our exceptional performance in the practical journeyman’s examination administered by the Chamber of Commerce and Industry (IHK) Bodensee-Oberschwaben at the culinary school in Tettnang, Germany (see <a href="https://www.liebfrauenschule-sigmaringen.de/files/UkSChm4c/imblick-2014-12-archiv-js-2014-12-22.pdf" target="_blank">school newspaper article</a>).
