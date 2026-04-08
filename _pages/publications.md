@@ -153,4 +153,4 @@ Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2024). <i>Metacognitive myop
 
 ## Manuscripts
 
-- See my [CV](../cv/).
+- See my full <a href="/cv/">vita</a>.
