@@ -1,4 +1,5 @@
 ---
+layout: archive
 permalink: /
 title: "Dr. Tobias R. Rebholz"
 excerpt: "About me"
@@ -51,6 +52,7 @@ redirect_from:
   }
 </style>
 
+{% include base_path %}
 
 
 ## How do people make judgments and decisions when the information they rely on is noisy and incomplete—and how is this changing in the age of AI?
