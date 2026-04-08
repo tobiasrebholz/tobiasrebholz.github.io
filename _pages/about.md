@@ -10,7 +10,6 @@ redirect_from:
 
 <style>
   .bio-content{
-    max-width: 900px;
     margin: 0 auto;
     padding: 24px 0 64px;
   }
