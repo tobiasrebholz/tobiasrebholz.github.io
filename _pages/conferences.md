@@ -25,12 +25,13 @@ author_profile: true
 </p>
 
 <p>
-3. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., &amp; Scholten, F. (2026, March). <i>Strategic algorithmic advice taking</i>. In M. Mayer &amp; T. R. Rebholz (Chairs), <i>Part I: New advances in advice taking research: Cognitive, social, and algorithmic perspectives</i> [Symposium]. 68th Conference of Experimental Psychologists (TeaP). Tübingen, Germany.
+3. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., &amp; Scholten, F. (2026, March). <i>Strategic algorithmic advice taking</i>. In M. Mayer &amp; T. R. Rebholz (Chairs), <i>Part I: New advances in advice taking research: Cognitive, social, and algorithmic perspectives</i> [Symposium]. 68th Conference of Experimental Psychologists (TeaP). Tübingen, Germany.<br>
+<a href="https://osf.io/n6k39/download"><button>Download slides as pdf</button></a>
 </p>
 
 <p>
 2. <b>Rebholz, T. R.</b>, Röseler, L., &amp; Groß, J. (2025, March). <i>Assimilation to external cues: Comparing the reliability of anchoring, advice taking, and hindsight bias</i>. In T. R. Rebholz &amp; M. Mayer (Chairs), <i>Numerical assimilation in anchoring, advice taking, and hindsight bias</i> [Symposium]. 67th Conference of Experimental Psychologists (TeaP). Frankfurt, Germany.<br>
-<a href="https://osf.io/sb2gr"><button>Download pdf</button></a>
+<a href="https://osf.io/sb2gr/download"><button>Download slides as pdf</button></a>
 </p>
 
 <p>
@@ -71,16 +72,17 @@ author_profile: true
 
 <p>
 16. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., &amp; Scholten, F. (2025, October). <i>Strategic algorithmic advice taking</i> [Talk]. Fisher AI in Business Conference. Columbus, OH, USA.<br>
-<a href="https://osf.io/vywxh?view_only=cca0b1bc89c342e0abfbc125e5656941"><button>Download pdf</button></a>
+<a href="https://osf.io/vywxh?view_only=cca0b1bc89c342e0abfbc125e5656941"><button>Download slides as pdf</button></a>
 </p>
 
 <p>
-15. <b>Rebholz, T. R.</b>, Röseler, L., &amp; Groß, J. (2025, July). <i>Assimilation to external cues: Comparing the reliability of anchoring, advice taking, and hindsight bias</i>. In A. Gordon (Chair), <i>The mechanics and implications of advice</i> [Symposium]. 85th Annual Meeting of the Academy of Management (AOM). Copenhagen, Denmark.
+15. <b>Rebholz, T. R.</b>, Röseler, L., &amp; Groß, J. (2025, July). <i>Assimilation to external cues: Comparing the reliability of anchoring, advice taking, and hindsight bias</i>. In A. Gordon (Chair), <i>The mechanics and implications of advice</i> [Symposium]. 85th Annual Meeting of the Academy of Management (AOM). Copenhagen, Denmark.<br>
+<a href="https://osf.io/4n3am/files/7srde"><button>Download slides as pdf</button></a>
 </p>
 
 <p>
 14. <b>Rebholz, T. R.</b> (2024, September). <i>Algorithm-centric perspectives on augmented judgment and decision-making: The case of interactive conversional interfaces to generative AI</i> [Talk]. 53rd Congress of the German Psychological Society (DGPs)/15th Austrian Society for Psychology (ÖGP) Conference. Vienna, Austria.<br>
-<a href="https://osf.io/9ja3t"><button>Download pdf</button></a>
+<a href="https://osf.io/9ja3t/download"><button>Download slides as pdf</button></a>
 </p>
 
 <p>
@@ -97,7 +99,7 @@ author_profile: true
 
 <p>
 10. <b>Rebholz, T. R.</b>, Hütter, M., &amp; Voss, A. (2023, June). <i>Bayesian advice taking: Adaptive strategy selection in sequential advice seeking</i> [Talk]. Virtual Annual Meeting of the Society for Mathematical Psychology (Virtual MathPsych). Amsterdam, the Netherlands (Online).<br>
-<a href="https://youtu.be/TUzStxOX3j4"><button>Watch recording</button></a>
+<a href="https://youtu.be/TUzStxOX3j4"><button>Watch recording on YouTube</button></a>
 </p>
 
 <p>
@@ -118,7 +120,7 @@ author_profile: true
 
 <p>
 5. <b>Rebholz, T. R.</b>, &amp; Hütter, M. (2022, February). <i>The advice less taken: On the consequences of receiving unexpected advice</i> [Talk]. Annual Meeting of the Society for Judgment and Decision Making (SJDM). San Diego, CA, USA (Online).<br>
-<a href="https://sjdm.org/presentations/2021-Talk-Rebholz-Tobias_R.-unexpected-advice-receipt.pdf"><button>Download pdf</button></a>
+<a href="https://sjdm.org/presentations/2021-Talk-Rebholz-Tobias_R.-unexpected-advice-receipt.pdf"><button>Download slides as pdf</button></a>
 </p>
 
 <p>
@@ -147,22 +149,22 @@ author_profile: true
 
 <p>
 14. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., &amp; Scholten, F. (2025, November). <i>Strategic algorithmic advice taking</i> [Poster]. Annual Meeting of the Society for Judgment and Decision Making (SJDM). Denver, CO, USA.<br>
-<a href="https://sjdm.org/presentations/2025-Poster-Rebholz-Tobias_R.-Strategic-Algorithmic-AdviceTaking.pdf"><button>Download pdf</button></a>
+<a href="https://sjdm.org/presentations/2025-Poster-Rebholz-Tobias_R.-Strategic-Algorithmic-AdviceTaking.pdf"><button>Download poster as pdf</button></a>
 </p>
 
 <p>
 13. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., &amp; Scholten, F. (2025, November). <i>Strategic algorithmic advice taking</i> [Poster]. 66th Annual Meeting of the Psychonomic Society. Denver, CO, USA.<br>
-<a href="https://sjdm.org/presentations/2025-Poster-Rebholz-Tobias_R.-Strategic-Algorithmic-AdviceTaking.pdf"><button>Download pdf</button></a>
+<a href="https://sjdm.org/presentations/2025-Poster-Rebholz-Tobias_R.-Strategic-Algorithmic-AdviceTaking.pdf"><button>Download poster as pdf</button></a>
 </p>
 
 <p>
 12. <b>Rebholz, T. R.</b>, Koop, A., &amp; Hütter, M. (2024, November). <i>Advice taking from interactive, self-explanatory generative AI</i> [Poster]. Annual Meeting of the Society for Judgment and Decision Making (SJDM). New York City, NY, USA.<br>
-<a href="https://sjdm.org/presentations/2024-Poster-Koop-Alena-Explanations-Interactivity-GenAI~.pdf"><button>Download pdf</button></a>
+<a href="https://sjdm.org/presentations/2024-Poster-Koop-Alena-Explanations-Interactivity-GenAI~.pdf"><button>Download poster as pdf</button></a>
 </p>
 
 <p>
 11. <b>Rebholz, T. R.</b>, Koop, A., &amp; Hütter, M. (2024, November). <i>Advice taking from interactive, self-explanatory generative AI</i> [Poster]. 65th Annual Meeting of the Psychonomic Society. New York City, NY, USA.<br>
-<a href="https://sjdm.org/presentations/2024-Poster-Koop-Alena-Explanations-Interactivity-GenAI~.pdf"><button>Download pdf</button></a>
+<a href="https://sjdm.org/presentations/2024-Poster-Koop-Alena-Explanations-Interactivity-GenAI~.pdf"><button>Download poster as pdf</button></a>
 </p>
 
 <p>
@@ -171,20 +173,22 @@ author_profile: true
 
 <p>
 9. <b>Rebholz, T. R.</b>, Biella, M., &amp; Hütter, M. (2023, November). <i>Novel insights into the wisdom of crowds by process-consistent modeling</i> [Poster]. Annual Meeting of the Society for Judgment and Decision Making (SJDM). San Francisco, CA, USA.<br>
-<a href="https://sjdm.org/presentations/2023-Poster-Rebholz-Tobias_R.-Consistent-Modeling-WisdomOfCrowds.pdf"><button>Download pdf</button></a>
+<a href="https://sjdm.org/presentations/2023-Poster-Rebholz-Tobias_R.-Consistent-Modeling-WisdomOfCrowds.pdf"><button>Download poster as pdf</button></a>
 </p>
 
 <p>
-8. <b>Rebholz, T. R.</b>, Biella, M., &amp; Hütter, M. (2023, November). <i>Novel insights into the wisdom of crowds by process-consistent modeling</i> [Poster]. 64th Annual Meeting of the Psychonomic Society. San Francisco, CA, USA.
+8. <b>Rebholz, T. R.</b>, Biella, M., &amp; Hütter, M. (2023, November). <i>Novel insights into the wisdom of crowds by process-consistent modeling</i> [Poster]. 64th Annual Meeting of the Psychonomic Society. San Francisco, CA, USA.<br>
+<a href="https://sjdm.org/presentations/2023-Poster-Rebholz-Tobias_R.-Consistent-Modeling-WisdomOfCrowds.pdf"><button>Download poster as pdf</button></a>
 </p>
 
 <p>
-7. <b>Rebholz, T. R.</b>, Biella, M., &amp; Hütter, M. (2023, November). <i>Novel insights into the wisdom of crowds by process-consistent modeling</i> [Poster]. Satellite Meeting of the Society for Mathematical Psychology at Psychonomics (SMP@PS). San Francisco, CA, USA.
+7. <b>Rebholz, T. R.</b>, Biella, M., &amp; Hütter, M. (2023, November). <i>Novel insights into the wisdom of crowds by process-consistent modeling</i> [Poster]. Satellite Meeting of the Society for Mathematical Psychology at Psychonomics (SMP@PS). San Francisco, CA, USA.<br>
+<a href="https://sjdm.org/presentations/2023-Poster-Rebholz-Tobias_R.-Consistent-Modeling-WisdomOfCrowds.pdf"><button>Download poster as pdf</button></a>
 </p>
 
 <p>
 6. <b>Rebholz, T. R.</b>, Hütter, M., &amp; Voss, A. (2022, November). <i>Strategy selection in sequential advice taking</i> [Poster]. Annual Meeting of the Society for Judgment and Decision Making (SJDM). San Diego, CA, USA.<br>
-<a href="https://sjdm.org/presentations/2022-Poster-Rebholz-Tobias_R.-sequential-advice-taking~.pdf"><button>Download pdf</button></a>
+<a href="https://sjdm.org/presentations/2022-Poster-Rebholz-Tobias_R.-sequential-advice-taking~.pdf"><button>Download poster as pdf</button></a>
 </p>
 
 <p>
