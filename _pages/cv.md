@@ -9,9 +9,15 @@ redirect_from:
 
 {% include base_path %}
 
-## Preview
 
+
+<br>
 <a href="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/view?usp=sharing"><button>Download full vita as pdf</button></a>
+<br>
+
+
+
+## Preview
 
 <div style="text-align: center"> 
   <iframe src="https://drive.google.com/file/d/1-BEdhrowe43OyS2Xym4WbE9JM1LG3YlX/preview" width="90%" height="800px"></iframe>
