@@ -76,7 +76,7 @@ author_profile: true
 
 <p>
 16. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025, October). <i>Strategic algorithmic advice taking</i> [Talk]. Fisher AI in Business Conference. Columbus, OH, USA.<br>
-<img src="/images/awards-best_talk-finalist.png" width="150px" height="150px" alt="Best Junior Faculty Talk Finalist"></a> &emsp; <a href="https://osf.io/vywxh/download"><button>Download slides as pdf</button></a>
+<img src="/images/awards-best_talk-finalist.png" width="150px" height="150px" alt="Best Junior Faculty Talk Finalist"> &emsp; <a href="https://osf.io/vywxh/download"><button>Download slides as pdf</button></a>
 </p>
 
 <p>
@@ -217,7 +217,7 @@ author_profile: true
 
 <p>
 1. <b>Rebholz, T. R.</b> (2021, July). <i>Adaptive advice taking: Mixed-effects weights and Bayesian stopping</i> [Poster]. Joint SMiP-IOPS Summer Conference. Mannheim, Germany (Online).<br>
-<img src="/images/awards-best_poster.png" width="150px" height="150px" alt="Best Poster Award"></a>
+<img src="/images/awards-best_poster-winner.png" width="150px" height="150px" alt="Best Poster Award">
 </p>
 
 </div>
