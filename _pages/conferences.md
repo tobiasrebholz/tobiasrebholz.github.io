@@ -76,12 +76,12 @@ author_profile: true
 
 <p>
 16. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025, October). <i>Strategic algorithmic advice taking</i> [Talk]. Fisher AI in Business Conference. Columbus, OH, USA.<br>
-<a href="https://osf.io/vywxh?view_only=cca0b1bc89c342e0abfbc125e5656941"><button>Download slides as pdf</button></a>
+<img src="/images/awards-best_talk-finalist.png" width="150px" height="150px" alt="Best Junior Faculty Talk Finalist"></a> &emsp; <a href="https://osf.io/vywxh/download"><button>Download slides as pdf</button></a>
 </p>
 
 <p>
 15. <b>Rebholz, T. R.</b>, Röseler, L., & Groß, J. (2025, July). <i>Assimilation to external cues: Comparing the reliability of anchoring, advice taking, and hindsight bias</i>. In A. Gordon (Chair), <i>The mechanics and implications of advice</i> [Symposium]. 85th Annual Meeting of the Academy of Management (AOM). Copenhagen, Denmark.<br>
-<a href="https://osf.io/4n3am/files/7srde"><button>Download slides as pdf</button></a>
+<a href="https://osf.io/7srde/download"><button>Download slides as pdf</button></a>
 </p>
 
 <p>
@@ -216,7 +216,8 @@ author_profile: true
 </p>
 
 <p>
-1. <b>Rebholz, T. R.</b> (2021, July). <i>Adaptive advice taking: Mixed-effects weights and Bayesian stopping</i> [Poster]. Joint SMiP-IOPS Summer Conference. Mannheim, Germany (Online).
+1. <b>Rebholz, T. R.</b> (2021, July). <i>Adaptive advice taking: Mixed-effects weights and Bayesian stopping</i> [Poster]. Joint SMiP-IOPS Summer Conference. Mannheim, Germany (Online).<br>
+<img src="/images/awards-best_poster.png" width="150px" height="150px" alt="Best Poster Award"></a>
 </p>
 
 </div>

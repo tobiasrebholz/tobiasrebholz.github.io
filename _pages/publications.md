@@ -60,7 +60,7 @@ author_profile: true
 
 <p>
 4. <b>Rebholz, T. R.</b>, Biella, M., & Hütter, M. (2024). Mixed-effects regression weights for advice taking and related phenomena of information sampling and utilization. <i>Journal of Behavioral Decision Making</i>, <i>37</i>(2), e2369. <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">http://dx.doi.org/10.1002/bdm.2369</a><br>
-<a href="https://cloud.email2.wiley.com/Top_Cited_Article_2025?ContactID=003B1BDC091B2E7421&utm_source=sfmc&utm_medium=email&utm_campaign=B2CJNL_MIS_1693076_Top_Cited_Authors_EM1_T" target="_blank"><img src="/images/Wiley-Top10_most-cited_papers-2025.png" width="150px" height="150px" alt="JBDM Award"></a> <a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/bdm.2369?download=true"><button>Download article as pdf</button></a>
+<a href="https://cloud.email2.wiley.com/Top_Cited_Article_2025?ContactID=003B1BDC091B2E7421&utm_source=sfmc&utm_medium=email&utm_campaign=B2CJNL_MIS_1693076_Top_Cited_Authors_EM1_T" target="_blank"><img src="/images/Wiley-Top10_most-cited_papers-2025.png" width="150px" height="150px" alt="JBDM Award"></a> &emsp; <a href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/bdm.2369?download=true"><button>Download award-winning article as pdf</button></a>
 </p>
 
 
