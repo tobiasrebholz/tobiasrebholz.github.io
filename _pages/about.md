@@ -66,10 +66,10 @@ redirect_from:
     <p>
       As an interdisciplinary scholar and open-science enthusiast, I address research questions about human and AI behavior using methods from statistics, econometrics, machine learning, and behavioral science. This includes experimental research on social cognition, human-computer interaction, and machine behavior.
     </p>
-    <p>>
+    <p>
       I am currently a DFG-funded Walter Benjamin Fellow and visiting research scholar in the <a href="https://areas.fuqua.duke.edu/management/index.html" target="_blank">Management and Organizations Area</a> at Duke University's Fuqua School of Business. Previously, I was a research associate in the <a href="https://uni-tuebingen.de/en/174183" target="_blank">Social Cognition and Decision Sciences</a> group in the Department of Psychology at the University of Tübingen, Germany.
     </p>
-    <p>>
+    <p>
       I earned my PhD in Psychology in 2023 from the DFG-funded Research Training Group <i>Statistical Modeling in Psychology (<a href="https://www.uni-mannheim.de/smip/team/alumni/dr-tobias-rebholz/" target="_blank">SMiP</a>)</i>—a transregional collaboration involving the Universities of Mannheim, Freiburg, Heidelberg, Landau, and Tübingen. My academic foundation lies in business studies and economics, with a BSc in 2017 and an MSc in 2020, both from the University of Konstanz, Germany.
     </p>
     <p>
