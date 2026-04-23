@@ -70,7 +70,7 @@ author_profile: true
           </ul>
         <li>Sequential sampling and utilization of external evidence, e.g.:
           <ul>
-            <li>Bayesian updating (<a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">Rebholz et al., 2023</a>)</li>
+            <li>Bayesian updating (<a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">Rebholz et al., 2023</a>; <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">Schreiner, Rebholz, et al., 2025</a>)</li>
           </ul>
         <li>The adaptiveness of belief updating in these contexts, e.g.:
           <ul>
