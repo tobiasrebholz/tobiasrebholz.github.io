@@ -59,15 +59,30 @@ author_profile: true
     <img src="https://drive.google.com/thumbnail?id=11Ar0HXOfNkAxqcWyDZTlQ8ZeMAeLh17d&sz=w1000" alt="Research Agenda">
   </div>
     <p>
-      Experimentation following psychological and economic traditions and the development and application of advanced quantitative methods (e.g., Rebholz, Biella, et al., <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">2024</a>) form the methodological roof of my research program investigating how people form judgments, make choices, and update their beliefs.
+      Experimentation following psychological and economic traditions and the development and application of advanced quantitative methods (e.g., <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">Rebholz, Biella, et al., 2024</a>; <a href='https://doi.org/10.31234/osf.io/5u8br' target="_blank">Rebholz, Groß, et al., 2025</a>) form the methodological roof of my research program investigating how people form judgments, make choices, and update their beliefs.
     </p>
     <p>
       The phenomena I study empirically can be clustered into four main pillars:
       <ul>
-        <li>Informational and social influence from others (e.g., advice taking; Rebholz & Hütter, <a href='https://doi.org/10.1017/S1930297500008950' target="_blank">2022</a>)</li>
-        <li>Sequential sampling and utilization of external evidence (e.g., Bayesian updating; Rebholz et al., <a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">2023</a>)</li>
-        <li>The adaptiveness of belief updating in these contexts (e.g., heuristics and biases; Rebholz, Groß, et al., <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">2025</a>; but also science communication; Schreiner et al., <a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">2025</a>, <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">in press</a>)</li>
-        <li>Implications of these phenomena for human-computer interaction (e.g., algorithm aversion vs. appreciation; Rebholz, <a href='https://doi.org/10.31234/osf.io/ekz9a' target="_blank">conditionally recommended</a>; Rebholz, Koop, et al., <a href='https://doi.org/10.1037/tmb0000136' target="_blank">2024</a>; Rebholz, Uphoff, et al., <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">2025</a>)</li>
+        <li>Informational and social influence from others, e.g.:
+          <ul>
+            <li>Advice taking (<a href='https://doi.org/10.1017/S1930297500008950' target="_blank">Rebholz & Hütter, 2022</a>)</li>
+          </ul>
+        <li>Sequential sampling and utilization of external evidence, e.g.:
+          <ul>
+            <li>Bayesian updating (<a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">Rebholz et al., 2023</a>)</li>
+          </ul>
+        <li>The adaptiveness of belief updating in these contexts, e.g.:
+          <ul>
+            <li>Heuristics and biases (<a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">Buttliere et al., 2024</a>; <a href='https://doi.org/10.31234/osf.io/69jwr' target="_blank">Mayer & Rebholz, 2024</a>; <a href='https://doi.org/10.31234/osf.io/5u8br' target="_blank">Rebholz, Groß, et al., 2025</a>; <a href='https://doi.org/10.15626/MP.2024.4137' target="_blank">Röseler et al., 2025</a>)</li>
+            <li>Science communication (<a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">Schreiner, Quevedo Pütter, et al., 2025</a>; <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">Schreiner, Rebholz, et al., 2025</a>)</li>
+          </ul>
+        <li>Implications of these phenomena for human-computer interaction, e.g.:
+          <ul>
+            <li>Algorithm aversion vs. appreciation (<a href='https://doi.org/10.1525/collabra.155671' target="_blank">Rebholz, 2026</a>; <a href='https://doi.org/10.1037/tmb0000136' target="_blank">Rebholz, Koop, et al., 2024</a>)</li>
+            <li>Interpersonal dynamics (<a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">Rebholz, Uphoff, et al., 2025</a>)</li>
+            <li>Metacognitive AI (<a href='https://doi.org/10.48550/arXiv.2408.05568' target="_blank">Scholten et al., 2025</a>)</li>
+          </ul>
       </ul>
     </p>
   </section>
