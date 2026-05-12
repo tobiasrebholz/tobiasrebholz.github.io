@@ -71,7 +71,7 @@ author_profile: true
 <div class="apa">
 
 <p>
-17. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, August). <i>Strategic algorithmic advice taking</i> [Talk]. 86th Annual Meeting of the Academy of Management (AOM). Philadelphia, PA, USA.
+17. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, August). <i>Strategic algorithmic advice taking</i> [Talk]. 86th Annual Meeting of the Academy of Management (AOM). Philadelphia, PA, USA.<br>
 <img src="/images/awards-best_paper-finalist-AOM2026-MOC.png" width="150px" height="150px" alt="Best MOC Paper (AOM 2026)"> &emsp; 
 </p>
 
