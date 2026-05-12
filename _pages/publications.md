@@ -18,7 +18,7 @@ author_profile: true
 
 ## Peer-Reviewed Journal Articles
 
-- See also <a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank">Google Scholar profile</a>
+<a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank"><button style="background-color:#156082; color:white">Google Scholar profile</button></a>
 
 <div class="apa">
 
@@ -87,7 +87,7 @@ author_profile: true
 
 ## Peer-Reviewed Software & Data
 
-- See also <a href="https://github.com/TobiasRebholz">GitHub profile</a>; <a href="https://osf.io/user/fd8gn?tab=2">OSF profile</a>
+<a href="https://github.com/TobiasRebholz"><button style="background-color:#156082; color:white">GitHub profile</button></a> &emsp; <a href="https://osf.io/user/fd8gn?tab=2"><button style="background-color:#156082; color:white">OSF profile</button></a>
 
 <div class="apa">
 
@@ -114,7 +114,7 @@ author_profile: true
 
 ## Preprints
 
-- See also <a href="https://osf.io/user/fd8gn?tab=5">PsyArXiv profile</a>; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R">arXiv profile</a>
+<a href="https://osf.io/user/fd8gn?tab=5"><button style="background-color:#156082; color:white">PsyArXiv profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R"><button style="background-color:#156082; color:white">arXiv profile</button></a>
 
 <div class="apa">
 
@@ -153,4 +153,4 @@ author_profile: true
 
 ## Manuscripts
 
-- See my full <a href="/cv/">vita</a>.
+<a href="/cv/"><button style="background-color:#156082; color:white">Vita</button></a>
