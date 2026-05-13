@@ -91,7 +91,7 @@ author_profile: true
 
 ## Peer-Reviewed Software & Data
 
-<a href="https://github.com/TobiasRebholz" target="_blank"><button class="btn-primary">GitHub profile</button></a> &emsp; <a href="https://osf.io/user/fd8gn?tab=2" target="_blank"><button class="btn-primary">OSF profile</button></a>
+<a href="https://github.com/TobiasRebholz" target="_blank"><button class="btn-profile">GitHub profile</button></a> &emsp; <a href="https://osf.io/user/fd8gn?tab=2" target="_blank"><button class="btn-profile">OSF profile</button></a>
 
 <div class="apa">
 
@@ -118,7 +118,7 @@ author_profile: true
 
 ## Preprints
 
-<a href="https://osf.io/user/fd8gn?tab=5" target="_blank"><button class="btn-primary">PsyArXiv profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R" target="_blank"><button class="btn-primary">arXiv profile</button></a>
+<a href="https://osf.io/user/fd8gn?tab=5" target="_blank"><button class="btn-profile">PsyArXiv profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R" target="_blank"><button class="btn-profile">arXiv profile</button></a>
 
 <div class="apa">
 
@@ -157,4 +157,4 @@ author_profile: true
 
 ## Manuscripts
 
-<a href="/cv/"><button class="btn-primary">Vita</button></a>
+<a href="/cv/"><button class="btn-profile">Vita</button></a>
