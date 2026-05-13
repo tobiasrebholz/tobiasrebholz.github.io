@@ -10,6 +10,10 @@ author_profile: true
     padding-left: 0.5in;
     text-indent: -0.5in;
   }
+  .btn-profile {
+    background-color: #042433;
+    color: white;
+  }
 </style>
 
 {% include base_path %}
