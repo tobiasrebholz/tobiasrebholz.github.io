@@ -22,7 +22,7 @@ author_profile: true
 
 ## Peer-Reviewed Journal Articles
 
-<a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank"><button class="btn-profile">Google Scholar Profile</button></a> &emsp; <a href="https://www.webofscience.com/wos/author/record/36691155" target="_blank"><button class="btn-profile">OSF Profile</button></a>
+<a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank"><button class="btn-profile">Google Scholar Profile</button></a> &emsp; <a href="https://www.webofscience.com/wos/author/record/36691155" target="_blank"><button class="btn-profile">Web of Science Profile</button></a>
 
 <div class="apa">
 
