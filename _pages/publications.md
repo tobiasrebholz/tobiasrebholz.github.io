@@ -22,7 +22,7 @@ author_profile: true
 
 ## Peer-Reviewed Journal Articles
 
-<a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank"><button class="btn-profile">Google Scholar profile</button></a>
+<a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank"><button class="btn-profile">Google Scholar Profile</button></a> &emsp; <a href="https://www.webofscience.com/wos/author/record/36691155" target="_blank"><button class="btn-profile">OSF Profile</button></a>
 
 <div class="apa">
 
@@ -91,7 +91,7 @@ author_profile: true
 
 ## Peer-Reviewed Software & Data
 
-<a href="https://github.com/TobiasRebholz" target="_blank"><button class="btn-profile">GitHub profile</button></a> &emsp; <a href="https://osf.io/user/fd8gn?tab=2" target="_blank"><button class="btn-profile">OSF profile</button></a>
+<a href="https://github.com/TobiasRebholz" target="_blank"><button class="btn-profile">GitHub Profile</button></a> &emsp; <a href="https://osf.io/user/fd8gn?tab=2" target="_blank"><button class="btn-profile">OSF Profile</button></a>
 
 <div class="apa">
 
@@ -118,7 +118,7 @@ author_profile: true
 
 ## Preprints
 
-<a href="https://osf.io/user/fd8gn?tab=5" target="_blank"><button class="btn-profile">PsyArXiv profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R" target="_blank"><button class="btn-profile">arXiv profile</button></a>
+<a href="https://osf.io/user/fd8gn?tab=5" target="_blank"><button class="btn-profile">PsyArXiv Profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R" target="_blank"><button class="btn-profile">arXiv Profile</button></a>
 
 <div class="apa">
 
@@ -157,4 +157,4 @@ author_profile: true
 
 ## Manuscripts
 
-<a href="/cv/"><button class="btn-profile">Vita</button></a>
+<a href="/cv/"><button class="btn-profile">See Vita</button></a>
