@@ -130,7 +130,7 @@ author_profile: true
 
 <p>
 4. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025). <i>Algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a><br>
-<img src="/images/awards-best_paper-finalist-AOM2026-MOC.png" width="150px" height="150px" alt="Best MOC Paper (AOM 2026)"> &emsp; <a href="https://arxiv.org/pdf/2511.09454"><button>Download preprint as pdf</button></a>
+<img src="/images/awards-best_paper-finalist-AOM2026-MOC.png" width="150px" height="150px" alt="Best MOC Paper (AOM 2026)"> &emsp; <a href="https://arxiv.org/pdf/2511.09454"><button>Download award-nominated preprint as pdf</button></a>
 </p>
 
 
