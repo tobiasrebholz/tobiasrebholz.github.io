@@ -48,7 +48,7 @@ author_profile: true
 
 -	<b>Quantitative Research Methods</b>
     - Multi-Level & Multivariate Regression
-    - Generative AI (GenAI) / Natural Language Processing (NLP)
+    - Generative Artificial Intelligence (GenAI) / Natural Language Processing (NLP)
     - Cognitive Modeling / Agent-Based Simulation
 -	<b>Behavioral/Experimental Research</b>
     -	Human Judgment & Decision-Making (JDM) / Belief Updating
