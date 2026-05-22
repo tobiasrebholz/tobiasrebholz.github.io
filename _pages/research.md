@@ -46,7 +46,7 @@ author_profile: true
 
 {% include base_path %}
 
--	<b>Quantitative Methods</b>
+-	<b>Quantitative Research Methods</b>
     - <b>Multi-Level & Multivariate Regression</b>
     - <b>Generative AI (GenAI) / Natural Language Processing (NLP)</b>
 -	<b>Behavioral/Experimental Research</b>
