@@ -52,7 +52,7 @@ author_profile: true
     - Cognitive Modeling / Agent-Based Simulation
 -	<b>Behavioral/Experimental Research</b>
     -	Human Judgment & Decision-Making (JDM) / Belief Updating
-    - Augmented (Social) Cognition / Human-AI Interaction (HAI)
+    - Augmented (Social) Cognition / Human-Computer Interaction (HCI)
     - Machine Behavior: Artificial Cognition
 
 <div class="bio-content">
