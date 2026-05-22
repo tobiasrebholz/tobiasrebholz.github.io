@@ -46,11 +46,11 @@ author_profile: true
 
 {% include base_path %}
 
--	<b>Quantitative Behavioral Research Methods</b>
--	<b>Artificial Intelligence (AI)</b>
--	<b>Human-Computer Interaction (HCI)</b>
--	<b>Judgment and Decision-Making (JDM)</b>
+-	<b>Quantitative Methods (i.e., Statistics, Machine/Deep Learning) for Behavioral Research</b>
+-	<b>Judgment & Decision-Making (JDM) / Heuristics & Biases</b>
 - <b>Social Cognition/Rationality</b>
+-	<b>Human-AI Interaction (HAI) / Decision-Support Systems (DSS)</b>
+- <b>Artificial Cognition / Explainable AI (XAI)</b>
 
 <div class="bio-content">
 
