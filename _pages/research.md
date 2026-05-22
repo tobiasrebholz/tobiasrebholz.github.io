@@ -46,11 +46,15 @@ author_profile: true
 
 {% include base_path %}
 
--	<b>Quantitative Methods (i.e., Statistics, Machine/Deep Learning) for Behavioral Research</b>
--	<b>Judgment & Decision-Making (JDM) / Heuristics & Biases</b>
-- <b>Social Cognition/Rationality</b>
--	<b>Human-AI Interaction (HAI) / Decision-Support Systems (DSS)</b>
-- <b>Artificial Cognition / Explainable AI (XAI)</b>
+-	<b>Quantitative Methods</b>
+    - <b>Multi-Level & Multivariate Regression</b>
+    - <b>Generative AI (GenAI) / Natural Language Processing (NLP)</b>
+-	<b>Behavioral/Experimental Research</b>
+    -	<b>Human Judgment & Decision-Making (JDM) / Belief Updating</b>
+        - <b>Social Cognition/Rationality</b>
+        -	<b>Augmented Cognition / Human-AI Interaction (HAI)</b>
+    - <b>Machine Behavior</b>
+        - <b>Artificial Cognition</b>
 
 <div class="bio-content">
 
