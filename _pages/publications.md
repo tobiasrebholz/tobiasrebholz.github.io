@@ -10,10 +10,6 @@ author_profile: true
     padding-left: 0.5in;
     text-indent: -0.5in;
   }
-  .btn-profile {
-    background-color: #042433;
-    color: white;
-  }
 </style>
 
 {% include base_path %}
@@ -22,7 +18,7 @@ author_profile: true
 
 ## Peer-Reviewed Journal Articles
 
-<a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank"><button class="btn-profile">Google Scholar profile</button></a> &emsp; <a href="https://www.webofscience.com/wos/author/record/36691155" target="_blank"><button class="btn-profile">Web of Science profile</button></a> &emsp; <a href="https://www.scopus.com/authid/detail.uri?authorId=57824556800" target="_blank"><button class="btn-profile">Scopus profile</button></a>
+<a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank"><button>Google Scholar profile</button></a> &emsp; <a href="https://www.webofscience.com/wos/author/record/36691155" target="_blank"><button>Web of Science profile</button></a> &emsp; <a href="https://www.scopus.com/authid/detail.uri?authorId=57824556800" target="_blank"><button>Scopus profile</button></a>
 
 <div class="apa">
 
@@ -91,7 +87,7 @@ author_profile: true
 
 ## Peer-Reviewed Software & Data
 
-<a href="https://github.com/TobiasRebholz" target="_blank"><button class="btn-profile">GitHub profile</button></a> &emsp; <a href="https://osf.io/user/fd8gn?tab=2" target="_blank"><button class="btn-profile">OSF profile</button></a>
+<a href="https://github.com/TobiasRebholz" target="_blank"><button>GitHub profile</button></a> &emsp; <a href="https://osf.io/user/fd8gn?tab=2" target="_blank"><button>OSF profile</button></a>
 
 <div class="apa">
 
@@ -118,7 +114,7 @@ author_profile: true
 
 ## Preprints
 
-<a href="https://osf.io/user/fd8gn?tab=5" target="_blank"><button class="btn-profile">PsyArXiv profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R" target="_blank"><button class="btn-profile">arXiv profile</button></a>
+<a href="https://osf.io/user/fd8gn?tab=5" target="_blank"><button>PsyArXiv profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R" target="_blank"><button>arXiv profile</button></a>
 
 <div class="apa">
 
@@ -157,4 +153,4 @@ author_profile: true
 
 ## Manuscripts
 
-<a href="/cv/"><button class="btn-profile">See Vita</button></a>
+<a href="/cv/"><button>Go to Vita</button></a>
