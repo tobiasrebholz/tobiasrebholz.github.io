@@ -85,6 +85,19 @@ author_profile: true
 
 
 
+## Peer-Reviewed Stage 1 Registered Reports 
+
+<div class="apa">
+
+<p>
+1. <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2025). <i>Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants. [Stage 1 Registered Report; peer-reviewed and recommended for in-principle acceptance by Peer Community in Registered Reports: <a href='https://rr.peercommunityin.org/articles/rec?id=1100' target="_blank">https://rr.peercommunityin.org/articles/rec?id=1100</a>]</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v1</a><br>
+<a href="https://osf.io/5u8br_v1/download/"><button>Download peer-reviewed preprint as pdf</button></a>
+</p>
+
+</div>
+
+
+
 ## Peer-Reviewed Software & Data
 
 <a href="https://github.com/TobiasRebholz" target="_blank"><button>GitHub profile</button></a> &emsp; <a href="https://osf.io/user/fd8gn?tab=2" target="_blank"><button>OSF profile</button></a>
@@ -117,12 +130,6 @@ author_profile: true
 <a href="https://osf.io/user/fd8gn?tab=5" target="_blank"><button>PsyArXiv profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R" target="_blank"><button>arXiv profile</button></a> &emsp; <a href="https://www.researchgate.net/profile/Tobias-Rebholz" target="_blank"><button>ResearchGate profile</button></a>
 
 <div class="apa">
-
-<p>
-5. <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2025). <i>Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v1</a><br>
-<a href="https://osf.io/5u8br_v1/download/"><button>Download preprint as pdf</button></a>
-</p>
-
 
 <p>
 4. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025). <i>Algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a><br>
