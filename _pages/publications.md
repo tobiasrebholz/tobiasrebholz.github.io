@@ -127,7 +127,9 @@ author_profile: true
 
 
 
-## Preprints
+## Working Papers
+
+### Preprints
 
 <a href="https://osf.io/user/fd8gn?tab=5" target="_blank"><button>PsyArXiv profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R" target="_blank"><button>arXiv profile</button></a> &emsp; <a href="https://www.researchgate.net/profile/Tobias-Rebholz" target="_blank"><button>ResearchGate profile</button></a>
 
@@ -160,6 +162,6 @@ author_profile: true
 
 
 
-## Manuscripts
+### Manuscripts
 
 <a href="/cv/"><button>Go to Vita</button></a>
