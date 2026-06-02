@@ -18,7 +18,7 @@ author_profile: true
 
 ## Peer-Reviewed Journal Articles
 
-<a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank"><button><i class="ai ai-google-scholar-square ai-fw"></i> Google Scholar profile</button></a> &emsp; <a href="https://www.webofscience.com/wos/author/record/36691155" target="_blank"><button><i class="ai ai-clarivate-square ai-fw"></i> Web of Science profile</button></a> &emsp; <a href="https://www.scopus.com/authid/detail.uri?authorId=57824556800" target="_blank"><button><i class="ai ai-scopus-square ai-fw"></i> Scopus profile</button></a>
+<a href="https://scholar.google.de/citations?user=p5cLq4IAAAAJ" target="_blank"><button>Google Scholar profile</button></a> &emsp; <a href="https://www.webofscience.com/wos/author/record/36691155" target="_blank"><button>Web of Science profile</button></a> &emsp; <a href="https://www.scopus.com/authid/detail.uri?authorId=57824556800" target="_blank"><button>Scopus profile</button></a>
 
 <div class="apa">
 
@@ -114,7 +114,7 @@ author_profile: true
 
 ## Preprints
 
-<a href="https://osf.io/user/fd8gn?tab=5" target="_blank"><button>PsyArXiv profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R" target="_blank"><button>arXiv profile</button></a>
+<a href="https://osf.io/user/fd8gn?tab=5" target="_blank"><button>PsyArXiv profile</button></a> &emsp; <a href="https://arxiv.org/search/cs?searchtype=author&query=Rebholz%2C+T+R" target="_blank"><button>arXiv profile</button></a> &emsp; <a href="https://www.researchgate.net/profile/Tobias-Rebholz" target="_blank"><button>ResearchGate profile</button></a>
 
 <div class="apa">
 
