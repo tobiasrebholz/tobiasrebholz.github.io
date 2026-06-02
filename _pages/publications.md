@@ -87,6 +87,8 @@ author_profile: true
 
 ## Peer-Reviewed Stage 1 Registered Reports 
 
+<a href="https://rr.peercommunityin.org/public/user_public_page?userId=11127" target="_blank"><button>PCI Registered Reports profile</button></a> &emsp; <a href="https://psych.peercommunityin.org/public/user_public_page?userId=152" target="_blank"><button>PCI Psychology profile</button></a>
+
 <div class="apa">
 
 <p>
