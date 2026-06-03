@@ -92,8 +92,8 @@ author_profile: true
 <div class="apa">
 
 <p>
-1. <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2025). <i>Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants. [Stage 1 Registered Report; peer-reviewed and recommended for in-principle acceptance by Peer Community in Registered Reports: <a href='https://rr.peercommunityin.org/articles/rec?id=1100' target="_blank">https://rr.peercommunityin.org/articles/rec?id=1100</a>]</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v1</a><br>
-<a href="https://osf.io/5u8br_v1/download/"><button>Download peer-reviewed preprint as pdf</button></a>
+1. <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2025). <i>Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants. [Stage 1 Registered Report; peer-reviewed and recommended for in-principle acceptance by Peer Community in Registered Reports: <a href='https://rr.peercommunityin.org/articles/rec?id=1100' target="_blank">https://rr.peercommunityin.org/articles/rec?id=1100</a>]</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v4' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v4</a><br>
+<a href="https://osf.io/5u8br_v4/download/"><button>Download peer-reviewed preprint as pdf</button></a>
 </p>
 
 </div>
@@ -136,7 +136,7 @@ author_profile: true
 <div class="apa">
 
 <p>
-4. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025). <i>Algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a><br>
+4. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025). <i>Algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.48550/arXiv.2511.09454' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a><br>
 <img src="/images/awards-best_paper-finalist-AOM2026-MOC.png" width="150px" height="150px" alt="Best MOC Paper (AOM 2026)"> &emsp; <a href="https://arxiv.org/pdf/2511.09454"><button>Download award-nominated preprint as pdf</button></a>
 </p>
 

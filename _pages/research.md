@@ -63,7 +63,7 @@ author_profile: true
     <img src="https://drive.google.com/thumbnail?id=11Ar0HXOfNkAxqcWyDZTlQ8ZeMAeLh17d&sz=w1000" alt="Research Agenda">
   </div>
     <p>
-      Experimentation following psychological and economic traditions and the development and application of advanced quantitative and computational methods (e.g., <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">Rebholz, Biella, et al., 2024</a>; <a href='https://doi.org/10.31234/osf.io/5u8br' target="_blank">Rebholz, Groß, et al., 2025</a>) form the methodological roof of my research program investigating how people form judgments, make choices, and update their beliefs.
+      Experimentation following psychological and economic traditions and the development and application of advanced quantitative and computational methods (e.g., <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">Rebholz, Biella, et al., 2024</a>; <a href='https://doi.org/10.31234/osf.io/5u8br_v4' target="_blank">Rebholz, Groß, et al., 2026</a>) form the methodological roof of my research program investigating how people form judgments, make choices, and update their beliefs.
     </p>
     <p>
       The phenomena I study empirically can be clustered into four main pillars:
@@ -81,7 +81,7 @@ author_profile: true
           </ul>
         <li>The adaptiveness of belief updating in these contexts, e.g.:</li>
           <ul>
-            <li>Heuristics and biases (<a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">Buttliere et al., 2024</a>; <a href='https://doi.org/10.31234/osf.io/69jwr' target="_blank">Mayer & Rebholz, 2024</a>; <a href='https://doi.org/10.31234/osf.io/5u8br' target="_blank">Rebholz, Groß, et al., 2025</a>; <a href='https://doi.org/10.15626/MP.2024.4137' target="_blank">Röseler et al., 2025</a>)</li>
+            <li>Heuristics and biases (<a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">Buttliere et al., 2024</a>; <a href='https://doi.org/10.31234/osf.io/69jwr' target="_blank">Mayer & Rebholz, 2024</a>; <a href='https://doi.org/10.31234/osf.io/5u8br_v4' target="_blank">Rebholz, Groß, et al., 2026</a>; <a href='https://doi.org/10.15626/MP.2024.4137' target="_blank">Röseler et al., 2025</a>)</li>
             <li>Science communication (<a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">Schreiner, Quevedo Pütter, et al., 2025</a>; <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">Schreiner, Rebholz, et al., 2025</a>)</li>
           </ul>
         <li>Implications of these phenomena for human-computer interaction, e.g.:</li>
