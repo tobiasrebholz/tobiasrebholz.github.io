@@ -71,10 +71,13 @@ author_profile: true
         <li>Informational and social influence from others, e.g.:</li>
           <ul>
             <li>Advice taking (<a href='https://doi.org/10.1017/S1930297500008950' target="_blank">Rebholz & Hütter, 2022</a>)</li>
+            <li>Wisdom of crowds & error decomposition (work in progress)</li>
           </ul>
         <li>Sequential sampling and utilization of external evidence, e.g.:</li>
           <ul>
             <li>Bayesian updating (<a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">Rebholz et al., 2023</a>; <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">Schreiner, Rebholz, et al., 2025</a>)</li>
+            <li>Memory effects (work in progress)</li>
+            <li>Consensus & similarity (work in progress)</li>
           </ul>
         <li>The adaptiveness of belief updating in these contexts, e.g.:</li>
           <ul>
@@ -84,7 +87,7 @@ author_profile: true
         <li>Implications of these phenomena for human-computer interaction, e.g.:</li>
           <ul>
             <li>Algorithm aversion vs. appreciation (<a href='https://doi.org/10.1525/collabra.155671' target="_blank">Rebholz, 2026</a>; <a href='https://doi.org/10.1037/tmb0000136' target="_blank">Rebholz, Koop, et al., 2024</a>)</li>
-            <li>Interpersonal dynamics (<a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">Rebholz, Uphoff, et al., 2025</a>)</li>
+            <li>Interindividual dynamics in market settings (<a href='https://doi.org/10.31234/osf.io/5u8br_v1' target="_blank">Rebholz, Uphoff, et al., 2025</a>)</li>
             <li>Metacognitive AI (<a href='https://doi.org/10.48550/arXiv.2408.05568' target="_blank">Scholten et al., 2025</a>)</li>
           </ul>
       </ul>
