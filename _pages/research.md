@@ -46,14 +46,15 @@ author_profile: true
 
 {% include base_path %}
 
--	<b>Quantitative Research Methods</b>
-    - Multi-Level & Multivariate Regression Modeling
-    - Generative Artificial Intelligence (GenAI) / Natural Language Processing (NLP)
-    - Cognitive Modeling / Agent-Based Simulation
--	<b>Behavioral/Experimental Research</b>
-    -	Human Judgment & Decision-Making (JDM) / Belief Updating
-    - Augmented (Social) Cognition / Human-Computer Interaction (HCI)
-    - Machine Behavior: Artificial Cognition
+-	<b>Quantitative, Computational, & Open Research Methods</b>
+    - Multilevel & Multivariate Regression
+    - Generative AI / Large Language Models
+    - Reliability, Replicability, & Open Science
+-	<b>Behavioral & Experimental Research</b>
+    -	Judgment & Decision-Making / Heuristics & Biases
+    - Belief Updating & Science Communication
+    - Augmented (Social) Cognition / Human-AI Interaction
+    - Artificial Cognition / Machine Behavior
 
 <div class="bio-content">
 
@@ -62,7 +63,7 @@ author_profile: true
     <img src="https://drive.google.com/thumbnail?id=11Ar0HXOfNkAxqcWyDZTlQ8ZeMAeLh17d&sz=w1000" alt="Research Agenda">
   </div>
     <p>
-      Experimentation following psychological and economic traditions and the development and application of advanced quantitative methods (e.g., <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">Rebholz, Biella, et al., 2024</a>; <a href='https://doi.org/10.31234/osf.io/5u8br' target="_blank">Rebholz, Groß, et al., 2025</a>) form the methodological roof of my research program investigating how people form judgments, make choices, and update their beliefs.
+      Experimentation following psychological and economic traditions and the development and application of advanced quantitative and computational methods (e.g., <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">Rebholz, Biella, et al., 2024</a>; <a href='https://doi.org/10.31234/osf.io/5u8br' target="_blank">Rebholz, Groß, et al., 2025</a>) form the methodological roof of my research program investigating how people form judgments, make choices, and update their beliefs.
     </p>
     <p>
       The phenomena I study empirically can be clustered into four main pillars:
