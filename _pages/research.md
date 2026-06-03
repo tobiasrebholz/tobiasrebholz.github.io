@@ -50,8 +50,8 @@ author_profile: true
     - Multilevel & Multivariate Regression
     - Generative AI / Large Language Models
     - Reliability, Replicability, & Open Science
--	<b>Behavioral & Experimental Research</b>
-    -	Judgment & Decision-Making / Heuristics & Biases
+-	<b>Experimental Behavioral Research</b>
+    - Judgment & Decision-Making / Heuristics & Biases
     - Belief Updating & Science Communication
     - Augmented (Social) Cognition / Human-AI Interaction
     - Artificial Cognition / Machine Behavior
