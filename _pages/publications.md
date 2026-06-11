@@ -24,10 +24,7 @@ author_profile: true
 
 <p>
 10. <b>Rebholz, T. R.</b> (2026). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Collabra: Psychology</i>, <i>12</i>(1). <a href='https://doi.org/10.1525/collabra.155671' target="_blank">https://doi.org/10.1525/collabra.155671</a><br>
-<a href="https://online.ucpress.edu/collabra/article-pdf/12/1/155671/927168/collabra_2026_12_1_155671.pdf"><button>Download article as pdf</button></a>
-<ul>
-  <li>Recommendation by <i>Peer Community in Psychology</i>: <a href='https://psych.peercommunityin.org/articles/rec?id=10' target="_blank">https://psych.peercommunityin.org/articles/rec?id=10</a></li>
-</ul>
+<a href='https://psych.peercommunityin.org/articles/rec?id=10' target="_blank"><img src="/images/recommendation-PCI_Psych.png" width="150px" height="150px" alt="PCI Psychology recommendation"></a> &emsp; <a href="https://online.ucpress.edu/collabra/article-pdf/12/1/155671/927168/collabra_2026_12_1_155671.pdf"><button>Download article as pdf</button></a>
 </p>
 
 
@@ -96,10 +93,7 @@ author_profile: true
 
 <p>
 1. <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2026). <i>Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants. [Stage 1 Registered Report]</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v4' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v4</a><br>
-<a href="https://osf.io/5u8br_v4/download/"><button>Download peer-reviewed preprint as pdf</button></a>
-<ul>
-  <li>Recommendation for in-principle acceptance by <i>Peer Community in Registered Reports</i>: <a href='https://rr.peercommunityin.org/articles/rec?id=1100' target="_blank">https://rr.peercommunityin.org/articles/rec?id=1100</a></li>
-</ul>
+<a href='https://rr.peercommunityin.org/articles/rec?id=1100' target="_blank"><img src="/images/recommendation-PCI_RR.png" width="150px" height="150px" alt="PCI Psychology recommendation"></a> &emsp; <a href="https://osf.io/5u8br_v4/download/"><button>Download peer-reviewed preprint as pdf</button></a>
 </p>
 
 </div>
