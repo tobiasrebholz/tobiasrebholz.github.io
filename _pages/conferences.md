@@ -157,7 +157,11 @@ author_profile: true
 <div class="apa">
 
 <p>
-15. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, July). <i>Strategic algorithmic advice taking</i> [Poster]. Annual Meeting of the Cognitive Science Society (CogSci). Rio de Janeiro, Brazil.
+16. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, July). <i>Strategic algorithmic advice taking</i> [Poster]. Annual Meeting of the Cognitive Science Society (CogSci). Rio de Janeiro, Brazil.
+</p>
+
+<p>
+15. <b>Rebholz, T. R.</b>, Zhang, C., & Soll, J. B. (2026, June). <i>Strategic AI advice taking in organizations</i> [Poster]. INFORMS Advances in Decision Analysis (ADA). Durham, NC, USA.
 </p>
 
 <p>
