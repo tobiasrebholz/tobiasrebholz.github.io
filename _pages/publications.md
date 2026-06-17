@@ -75,6 +75,14 @@ author_profile: true
 
 <div class="pub-list">
 
+  <div class="pub-item no-image">
+    <div class="pub-cite">
+      <p>
+        11. Höhs, J. M., <b>Rebholz, T. R.</b>, & Hütter, M. (in press). Integration of argument-based advice: An evaluative ecological perspective on the structural differences between positive and negative advice. <i>Judgment and Decision Making</i>.
+      </p>
+    </div>
+  </div>
+
   <div class="pub-item">
     <div class="pub-cite">
       <p>
