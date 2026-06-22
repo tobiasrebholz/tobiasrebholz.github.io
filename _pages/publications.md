@@ -301,7 +301,7 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        2. Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2024). <i>Metacognitive myopia in large language models</i>. arXiv. <a href='https://doi.org/10.48550/arXiv.2408.05568' target="_blank">https://doi.org/10.48550/arXiv.2408.05568</a>
+        2. Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2026). <i>Metacognitive myopia in large language models</i>. arXiv. <a href='https://doi.org/10.48550/arXiv.2408.05568' target="_blank">https://doi.org/10.48550/arXiv.2408.05568</a>
       </p>
       <div class="pub-links">
         <a href="https://arxiv.org/pdf/2408.05568"><button>Download preprint as pdf</button></a>
