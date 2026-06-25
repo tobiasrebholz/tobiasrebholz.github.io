@@ -340,8 +340,11 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        15. <b>Rebholz, T. R.</b>, Zhang, C., & Soll, J. B. (2026, June). <i>Strategic AI advice taking in organizations</i> [Poster]. INFORMS Advances in Decision Analysis (ADA). Durham, NC, USA.
+        15. <b>Rebholz, T. R.</b>, Zhang, C., & Soll, J. B. (2026, June). <i>Strategic AI advice taking in organizations</i> [Poster]. INFORMS Advances in Decision Analysis (ADA) Conference. Durham, NC, USA.
       </p>
+      <div class="pub-links">
+        <a href="https://github.com/tobiasrebholz/AI_sycophancy_interventions/blob/main/reporting/presentations/presentation-ADA2026_Durham.pdf"><button>Download poster as pdf</button></a>
+      </div>
     </div>
   </div>
 
