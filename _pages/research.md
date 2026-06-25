@@ -75,14 +75,14 @@ author_profile: true
           </ul>
         <li>Sequential sampling and utilization of external evidence, e.g.:</li>
           <ul>
-            <li>Bayesian updating (<a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">Rebholz et al., 2023</a>; <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">Schreiner, Rebholz, et al., 2025</a>)</li>
+            <li>Bayesian updating (<a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">Rebholz et al., 2023</a>; <a href='https://doi.org/10.1037/xap0000552' target="_blank">Schreiner et al., 2026</a>)</li>
             <li>Memory effects (work in progress)</li>
-            <li>Consensus & similarity (work in progress)</li>
+            <li>Consensus & similarity (Höhs et al., in press)</li>
           </ul>
         <li>The adaptiveness of belief updating in these contexts, e.g.:</li>
           <ul>
             <li>Heuristics and biases (<a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">Buttliere et al., 2024</a>; <a href='https://doi.org/10.31234/osf.io/69jwr' target="_blank">Mayer & Rebholz, 2024</a>; <a href='https://doi.org/10.31234/osf.io/5u8br_v4' target="_blank">Rebholz, Groß, et al., 2026</a>; <a href='https://doi.org/10.15626/MP.2024.4137' target="_blank">Röseler et al., 2025</a>)</li>
-            <li>Science communication (<a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">Schreiner, Quevedo Pütter, et al., 2025</a>; <a href='https://doi.org/10.31234/osf.io/hkct6' target="_blank">Schreiner, Rebholz, et al., 2025</a>)</li>
+            <li>Science communication (<a href='https://doi.org/10.1027/2151-2604/a000571' target="_blank">Schreiner et al., 2025</a>; <a href='https://doi.org/10.1037/xap0000552' target="_blank">Schreiner et al., 2026</a>)</li>
           </ul>
         <li>Implications of these phenomena for human-computer interaction, e.g.:</li>
           <ul>

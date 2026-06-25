@@ -104,7 +104,7 @@ redirect_from:
         <b>Rebholz, T. R.</b> (2026). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Collabra: Psychology</i>, <i>12</i>(1). <a href='https://doi.org/10.1525/collabra.155671' target="_blank">https://doi.org/10.1525/collabra.155671</a>
       </p>
       <p class="apa">
-        Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (2025). Investigating factors influencing audiences’ integration of scientific evidence. <i>Journal of Experimental Psychology: Applied</i>. <a href='https://doi.org/10.1037/xap0000552' target="_blank">https://doi.org/10.1037/xap0000552</a>
+        Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (2026). Investigating factors influencing audiences’ integration of scientific evidence. <i>Journal of Experimental Psychology: Applied</i>, <i>32</i>(2), 292–305. <a href='https://doi.org/10.1037/xap0000552' target="_blank">https://doi.org/10.1037/xap0000552</a>
       </p>
       <p class="apa">
         Buttliere, B., Arvanitis, A., Białek, M., Choshen-Hillel, S., Davidai, S., Gilovich, T., ... <b>Rebholz, T. R.</b>, ... Weick, M. (2024). Kahneman in quotes and reflections. <i>Psychological Inquiry</i>, <i>35</i>(1), 3–10. <a href='https://doi.org/10.1080/1047840X.2024.2366813' target="_blank">https://doi.org/10.1080/1047840X.2024.2366813</a>

@@ -111,10 +111,10 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        8. Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (2025). Investigating factors influencing audiences’ integration of scientific evidence. <i>Journal of Experimental Psychology: Applied</i>. <a href='https://doi.org/10.1037/xap0000552' target="_blank">https://doi.org/10.1037/xap0000552</a>
+        8. Schreiner, M. R., <b>Rebholz, T. R.</b>, Quevedo Pütter, J., & Landrum, A. R. (2026). Investigating factors influencing audiences’ integration of scientific evidence. <i>Journal of Experimental Psychology: Applied</i>, <i>32</i>(2), 292–305. <a href='https://doi.org/10.1037/xap0000552' target="_blank">https://doi.org/10.1037/xap0000552</a>
       </p>
       <div class="pub-links">
-        <a href="https://osf.io/hkct6/download/"><button>Download postprint as pdf</button></a>
+        <a href="https://osf.io/hkct6/download/"><button>Download open-access postprint as pdf</button></a>
       </div>
     </div>
   </div>
