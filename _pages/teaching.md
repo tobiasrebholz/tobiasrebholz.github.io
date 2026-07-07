@@ -108,9 +108,7 @@ author_profile: true
         </p>
       </div>
       <div class="course-image">
-        <a href="/award-link">
-          <img src="/images/awards-best_teaching-winner-UT2026.png" alt="2026 University of Tübingen Teaching Award">
-        </a>
+        <img src="/images/awards-best_teaching-winner-UT2026.png" alt="2026 University of Tübingen Teaching Award">
       </div>
     </div>
   </li>
