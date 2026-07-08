@@ -325,14 +325,14 @@ author_profile: true
 
 
 
-## Posters
+## Posters and Flash Talks
 
 <div class="pub-list">
 
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        16. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, July). <i>Strategic algorithmic advice taking</i> [Poster]. Annual Meeting of the Cognitive Science Society (CogSci). Rio de Janeiro, Brazil.
+        16. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, July). <i>Strategic algorithmic advice taking</i> [Flash Talk]. Annual Meeting of the Cognitive Science Society (CogSci). Rio de Janeiro, Brazil (Online).
       </p>
     </div>
   </div>
