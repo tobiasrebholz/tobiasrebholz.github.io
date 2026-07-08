@@ -107,9 +107,11 @@ author_profile: true
           Method seminar, B.Sc. Psychology, University of Tübingen
         </p>
       </div>
+      <!--
       <div class="course-image">
         <img src="/images/awards-best_teaching-winner-UT2026.png" alt="2026 University of Tübingen Teaching Award">
       </div>
+      -->
     </div>
   </li>
 </ul>

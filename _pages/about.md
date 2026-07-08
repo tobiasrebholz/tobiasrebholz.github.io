@@ -125,9 +125,11 @@ redirect_from:
     <p>
       My <a href="/teaching/">teaching</a> combines substantive seminars on human and AI decision-making in various contexts with methodological training in applied machine learning, statistical programming, and experimental data analytics.
     </p>
+    <!--
     <p>
       More recently, I have contributed to an instructional framework for statistical programming in R that integrates a generative AI-tutor into a flipped-classroom architecture, providing adaptive, non-solutionist feedback designed to strengthen both technical competence and critical AI literacy. Developed for the Department of Psychology’s R-programming course, our framework was awarded the University of Tübingen’s <a href="https://uni-tuebingen.de/lehrende/studiengangsplanung-und-entwicklung/preise-und-ausschreibungen/landeslehrpreis-und-lehrpreis-der-universitaet/" target="_blank" rel="noopener noreferrer">2026 Teaching Prize</a> for innovative and sustainable concepts in higher education. It was also nominated for the <a href="https://mwk.baden-wuerttemberg.de/de/hochschulen-studium/hochschulpolitik/landeslehrpreis" target="_blank" rel="noopener noreferrer">2027 State Teaching Award <i>(“Landeslehrpreis”)</i></a> of the Ministry of Science, Research and the Arts Baden-Württemberg, Germany.
     </p>
+    -->
   </section>
 
   <section class="bio-sec">
