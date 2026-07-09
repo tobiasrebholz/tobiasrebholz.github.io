@@ -212,7 +212,7 @@ author_profile: true
   <div class="pub-item">
     <div class="pub-cite">
       <p>
-        1. <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2026). <i>Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants. [Stage 1 Registered Report]</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/5u8br_v4' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v4</a>
+        1. <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2026). Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants [Stage 1 Registered Report]. <i>Peer Community In: Registered Reports</i>. <a href='https://doi.org/10.31234/osf.io/5u8br_v4' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v4</a>
       </p>
       <div class="pub-links">
         <a href="https://osf.io/5u8br_v4/download/"><button>Download peer-reviewed preprint as pdf</button></a>
