@@ -167,6 +167,14 @@ author_profile: true
   <div class="pub-item">
     <div class="pub-cite">
       <p>
+        18. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, August). <i>Strategic algorithmic advice taking</i> [Talk]. 10th Meeting of the Behavioral and Experimental Economists of the Mid-Atlantic (BEEMA). University Park, PA, USA.
+      </p>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-cite">
+      <p>
         17. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, August). <i>Strategic algorithmic advice taking</i> [Talk]. 86th Annual Meeting of the Academy of Management (AOM). Philadelphia, PA, USA.
       </p>
     </div>
