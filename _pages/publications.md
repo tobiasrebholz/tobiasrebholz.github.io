@@ -272,7 +272,7 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        1. <b>Rebholz, T. R.</b> (accepted pending minor revisions). Theory of Machine: How we form lay beliefs about conversational AI. <i>The Inquisitive Mind</i>.
+        1. <b>Rebholz, T. R.</b> (in press). Theory of Machine: How we form lay beliefs about conversational AI. <i>The Inquisitive Mind</i>.
       </p>
     </div>
   </div>
