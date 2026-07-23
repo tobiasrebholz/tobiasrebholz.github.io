@@ -77,7 +77,7 @@ author_profile: true
           <ul>
             <li>Bayesian updating (<a href='https://doi.org/10.31234/osf.io/y8x92' target="_blank">Rebholz et al., 2023</a>; <a href='https://doi.org/10.1037/xap0000552' target="_blank">Schreiner et al., 2026</a>)</li>
             <li>Memory effects (work in progress)</li>
-            <li>Consensus & similarity (Höhs et al., in press)</li>
+            <li>Consensus & similarity (<a href='https://doi.org/10.1017/jdm.2026.10045' target="_blank">Höhs et al., 2026</a>)</li>
           </ul>
         <li>The adaptiveness of belief updating in these contexts, e.g.:</li>
           <ul>
