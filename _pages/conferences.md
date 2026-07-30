@@ -175,7 +175,7 @@ author_profile: true
   <div class="pub-item">
     <div class="pub-cite">
       <p>
-        18. <b>Rebholz, T. R.</b>, Zhang, C., & Soll, J. B. (2026, June). <i>Strategic AI advice taking in organizations</i> [Talk]. 13th Triennial Invitational Choice Symposium, Vail, CO, USA.
+        18. <b>Rebholz, T. R.</b>, Zhang, C., & Soll, J. B. (2026, August). <i>Strategic AI advice taking in organizations</i> [Talk]. 13th Triennial Invitational Choice Symposium, Vail, CO, USA.
       </p>
     </div>
   </div>
