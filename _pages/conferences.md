@@ -167,7 +167,7 @@ author_profile: true
   <div class="pub-item">
     <div class="pub-cite">
       <p>
-        19. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, August). <i>Strategic algorithmic advice taking</i> [Talk]. 10th Meeting of the Behavioral and Experimental Economists of the Mid-Atlantic (BEEMA). University Park, PA, USA.
+        18. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, August). <i>Strategic algorithmic advice taking</i> [Talk]. 10th Meeting of the Behavioral and Experimental Economists of the Mid-Atlantic (BEEMA). University Park, PA, USA.
       </p>
     </div>
   </div>
@@ -175,21 +175,23 @@ author_profile: true
   <div class="pub-item">
     <div class="pub-cite">
       <p>
-        18. <b>Rebholz, T. R.</b>, Zhang, C., & Soll, J. B. (2026, August). <i>Strategic AI advice taking in organizations</i> [Talk]. 13th Triennial Invitational Choice Symposium, Vail, CO, USA.
+        17. <b>Rebholz, T. R.</b>, Zhang, C., & Soll, J. B. (2026, August). <i>Strategic AI advice taking in organizations</i> [Talk]. 13th Triennial Invitational Choice Symposium, Vail, CO, USA.
       </p>
     </div>
   </div>
 
+<!--
   <div class="pub-item">
     <div class="pub-cite">
       <p>
-        17. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, August). <i>Strategic algorithmic advice taking</i> [Talk]. 86th Annual Meeting of the Academy of Management (AOM). Philadelphia, PA, USA.
+        17. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, August). <i>Strategic algorithmic advice taking</i> [Talk]. 86th Annual Meeting of the Academy of Management (AOM). Philadelphia, PA, USA. [WITHDRAWN]
       </p>
     </div>
     <div class="pub-image">
       <img src="/images/awards-best_paper-finalist.png" alt="Best MOC Paper (AOM 2026)">
     </div>
   </div>
+-->
 
   <div class="pub-item">
     <div class="pub-cite">
@@ -204,6 +206,16 @@ author_profile: true
       <img src="/images/awards-best_talk-finalist.png" alt="Best Junior Faculty Talk Finalist">
     </div>
   </div>
+
+<!--
+  <div class="pub-item no-image">
+    <div class="pub-cite">
+      <p>
+        16. <b>Rebholz, T. R.</b>, Röseler, L., & Groß, J. (2025, September). <i>Assimilation to external cues: Comparing the reliability of anchoring, advice taking, and hindsight bias</i> [Talk]. 30th Subjective Probability, Utility and Decision Making (SPUDM) Conference. Lucca, Italy. [WITHDRAWN]
+      </p>
+    </div>
+  </div>
+-->
 
   <div class="pub-item no-image">
     <div class="pub-cite">
