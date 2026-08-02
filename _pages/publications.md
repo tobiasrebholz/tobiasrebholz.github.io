@@ -275,6 +275,14 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
+        2. <b>Rebholz, T. R.</b>, Mayer, M., Reis, M., Scholten, F., & Schreiner, M. (in press). Allgemein-gebräuchliche Chatbots nach EU-KI-Verordnung: Verhaltenswissenschaftliche Analyse der Grenzen von Transparenzpflichten aus Betroffenenperspektive [General-use chatbots under the EU AI Act: A behavioral scientific analysis of the limits of transparency from the perspective of affected users]. <i>Policy Ultra-Briefs</i>.
+      </p>
+    </div>
+  </div>
+
+  <div class="pub-item no-image">
+    <div class="pub-cite">
+      <p>
         1. <b>Rebholz, T. R.</b> (in press). How humans form beliefs about conversational AI. <i>The Inquisitive Mind</i>.
       </p>
     </div>
