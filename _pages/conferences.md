@@ -167,7 +167,7 @@ author_profile: true
   <div class="pub-item">
     <div class="pub-cite">
       <p>
-        19. <b>Rebholz, T. R.</b>, Zhang, C., & Soll, J. B. (2026, september). <i>Strategic human-GenAI collaboration in organizations</i> [Talk]. NSF AI-SDM Workshop on Human-AI Complementarity for Decision Making, Pittsburgh, PA, USA.
+        19. <b>Rebholz, T. R.</b>, Zhang, C., & Soll, J. B. (2026, September). <i>Strategic human-GenAI collaboration in organizations</i> [Talk]. NSF AI-SDM Workshop on Human-AI Complementarity for Decision Making, Pittsburgh, PA, USA.
       </p>
     </div>
   </div>
