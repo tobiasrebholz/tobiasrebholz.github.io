@@ -167,6 +167,14 @@ author_profile: true
   <div class="pub-item">
     <div class="pub-cite">
       <p>
+        19. <b>Rebholz, T. R.</b>, Zhang, C., & Soll, J. B. (2026, september). <i>Strategic human-GenAI collaboration in organizations</i> [Talk]. NSF AI-SDM Workshop on Human-AI Complementarity for Decision Making, Pittsburgh, PA, USA.
+      </p>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-cite">
+      <p>
         18. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, August). <i>Strategic algorithmic advice taking</i> [Talk]. 10th Meeting of the Behavioral and Experimental Economists of the Mid-Atlantic (BEEMA). University Park, PA, USA.
       </p>
     </div>
