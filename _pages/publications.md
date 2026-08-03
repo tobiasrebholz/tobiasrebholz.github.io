@@ -283,7 +283,7 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        1. <b>Rebholz, T. R.</b> (in press). How humans form beliefs about conversational AI. <i>The Inquisitive Mind</i>.
+        1. <b>Rebholz, T. R.</b> (2026). How humans form beliefs about conversational AI. <i>The Inquisitive Mind</i>. <a href='https://www.in-mind.org/article/how-humans-form-beliefs-about-conversational-ai' target="_blank">https://www.in-mind.org/article/how-humans-form-beliefs-about-conversational-ai</a>
       </p>
     </div>
   </div>
