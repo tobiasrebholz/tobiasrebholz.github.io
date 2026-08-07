@@ -300,10 +300,34 @@ author_profile: true
 
 <div class="pub-list">
 
+  
+  <div class="pub-item no-image">
+    <div class="pub-cite">
+      <p>
+        5. Préau, C., Burke, M., Müller, T., <b>Rebholz, T. R.</b>, & Papenmeier, F. (2026). <i>Student adoption of an AI tutor for statistical programming: A longitudinal study</i>. PsyArXiv. <a href='https://doi.org/10.31234/osf.io/umspj_v1' target="_blank">https://doi.org/10.31234/osf.io/umspj_v1</a>
+      </p>
+      <div class="pub-links">
+        <a href="https://osf.io/umspj/download/"><button>Download preprint as pdf</button></a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="pub-item no-image">
+    <div class="pub-cite">
+      <p>
+        4. Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2026). <i>Metacognitive myopia in large language models</i>. arXiv. <a href='https://doi.org/10.48550/arXiv.2408.05568' target="_blank">https://doi.org/10.48550/arXiv.2408.05568</a>
+      </p>
+      <div class="pub-links">
+        <a href="https://arxiv.org/pdf/2408.05568"><button>Download preprint as pdf</button></a>
+      </div>
+    </div>
+  </div>
+
   <div class="pub-item">
     <div class="pub-cite">
       <p>
-        4. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025). <i>Algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.48550/arXiv.2511.09454' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a>
+        3. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025). <i>Algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.48550/arXiv.2511.09454' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a>
       </p>
       <div class="pub-links">
         <a href="https://arxiv.org/pdf/2511.09454"><button>Download award-nominated preprint as pdf</button></a>
@@ -317,21 +341,10 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        3. Mayer, M., & <b>Rebholz, T. R.</b> (2024). <i>Navigating anchor relevance skillfully: Expertise reduces susceptibility to anchoring effects.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/69jwr' target="_blank">https://doi.org/10.31234/osf.io/69jwr</a>
+        2. Mayer, M., & <b>Rebholz, T. R.</b> (2024). <i>Navigating anchor relevance skillfully: Expertise reduces susceptibility to anchoring effects.</i> PsyArXiv. <a href='https://doi.org/10.31234/osf.io/69jwr' target="_blank">https://doi.org/10.31234/osf.io/69jwr</a>
       </p>
       <div class="pub-links">
         <a href="https://osf.io/69jwr/download/"><button>Download preprint as pdf</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="pub-item no-image">
-    <div class="pub-cite">
-      <p>
-        2. Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2026). <i>Metacognitive myopia in large language models</i>. arXiv. <a href='https://doi.org/10.48550/arXiv.2408.05568' target="_blank">https://doi.org/10.48550/arXiv.2408.05568</a>
-      </p>
-      <div class="pub-links">
-        <a href="https://arxiv.org/pdf/2408.05568"><button>Download preprint as pdf</button></a>
       </div>
     </div>
   </div>
