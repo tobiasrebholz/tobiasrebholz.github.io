@@ -60,7 +60,7 @@ author_profile: true
 
   <section class="bio-sec">
   <div class="bio-band">
-    <img src="https://lh3.googleusercontent.com/d/1xPiO1p5_qRlVuuuIlKdVgPWU09LKpLFo" alt="Research Agenda" style="max-width: 100%; height: auto;">
+    <img src="https://lh3.googleusercontent.com/d/1xPiO1p5_qRlVuuuIlKdVgPWU09LKpLFo" alt="Research Agenda">
   </div>
     <p>
       Experimentation following psychological and economic traditions and the development and application of advanced quantitative and computational methods (e.g., <a href='http://dx.doi.org/10.1002/bdm.2369' target="_blank">Rebholz, Biella, et al., 2024</a>; <a href='https://doi.org/10.31234/osf.io/5u8br_v4' target="_blank">Rebholz, Groß, et al., 2026</a>) form the methodological roof of my research program investigating how people form judgments, make choices, and update their beliefs in individual, organizational, and societal contexts.
