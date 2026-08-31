@@ -327,7 +327,7 @@ author_profile: true
   <div class="pub-item">
     <div class="pub-cite">
       <p>
-        3. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025). <i>Algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.48550/arXiv.2511.09454' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a>
+        3. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025). <i>Individualized algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.48550/arXiv.2511.09454' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a>
       </p>
       <div class="pub-links">
         <a href="https://arxiv.org/pdf/2511.09454"><button>Download award-nominated preprint as pdf</button></a>
