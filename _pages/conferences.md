@@ -177,6 +177,9 @@ author_profile: true
       <p>
         18. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026, August). <i>Strategic algorithmic advice taking</i> [Talk]. 10th Meeting of the Behavioral and Experimental Economists of the Mid-Atlantic (BEEMA). University Park, PA, USA.
       </p>
+      <div class="pub-links">
+        <a href="https://osf.io/sw9g2/download"><button>Download slides as pdf</button></a>
+      </div>
     </div>
   </div>
 
