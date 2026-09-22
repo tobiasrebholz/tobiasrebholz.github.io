@@ -312,29 +312,28 @@ author_profile: true
     </div>
   </div>
 
-
-  <div class="pub-item no-image">
-    <div class="pub-cite">
-      <p>
-        4. Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2026). <i>Metacognitive myopia in large language models</i>. arXiv. <a href='https://doi.org/10.48550/arXiv.2408.05568' target="_blank">https://doi.org/10.48550/arXiv.2408.05568</a>
-      </p>
-      <div class="pub-links">
-        <a href="https://arxiv.org/pdf/2408.05568"><button>Download preprint as pdf</button></a>
-      </div>
-    </div>
-  </div>
-
   <div class="pub-item">
     <div class="pub-cite">
       <p>
-        3. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2025). <i>Individualized algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.48550/arXiv.2511.09454' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a>
+        4. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026). <i>Individualized algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.48550/arXiv.2511.09454' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a>
       </p>
       <div class="pub-links">
-        <a href="https://arxiv.org/pdf/2511.09454"><button>Download award-nominated preprint as pdf</button></a>
+        <a href="https://arxiv.org/pdf/2511.09454"><button>Download award-winning preprint as pdf</button></a>
       </div>
     </div>
     <div class="pub-image">
       <img src="/images/awards-best_paper-winner-AOM2026-MOC.png" alt="Best MOC Paper Award Winner (AOM 2026)">
+    </div>
+  </div>
+
+  <div class="pub-item no-image">
+    <div class="pub-cite">
+      <p>
+        3. Scholten, F., <b>Rebholz, T. R.</b>, & Hütter, M. (2026). <i>Metacognitive myopia in large language models</i>. arXiv. <a href='https://doi.org/10.48550/arXiv.2408.05568' target="_blank">https://doi.org/10.48550/arXiv.2408.05568</a>
+      </p>
+      <div class="pub-links">
+        <a href="https://arxiv.org/pdf/2408.05568"><button>Download preprint as pdf</button></a>
+      </div>
     </div>
   </div>
 
