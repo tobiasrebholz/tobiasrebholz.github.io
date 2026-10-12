@@ -78,6 +78,14 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
+        12. Höhs, J. M., <b>Rebholz, T. R.</b>, & Hütter, M. (in press). A memory perspective on advice taking: Source memory for advisor expertise moderates advice integration. <i>Journal of Experimental Psychology: Applied</i>.
+      </p>
+    </div>
+  </div>
+
+  <div class="pub-item no-image">
+    <div class="pub-cite">
+      <p>
         11. Höhs, J. M., <b>Rebholz, T. R.</b>, & Hütter, M. (2026). Integration of argument-based advice: An evaluative ecological perspective on the structural differences between positive and negative advice. <i>Judgment and Decision Making</i>, <i>21</i>, e18. <a href='https://doi.org/10.1017/jdm.2026.10045' target="_blank">https://doi.org/10.1017/jdm.2026.10045</a>
       </p>
       <div class="pub-links">
