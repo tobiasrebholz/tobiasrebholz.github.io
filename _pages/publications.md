@@ -330,7 +330,7 @@ author_profile: true
       </div>
     </div>
     <div class="pub-image">
-      <img src="/images/awards-best_paper-winner-AOM2026-MOC.png" alt="Best MOC Paper Award Winner (AOM 2026)">
+      <img src="/images/awards-best_paper-winner-AOM2026-MOC-ORIGINAL.png" alt="Best MOC Paper Award Winner (AOM 2026)">
     </div>
   </div>
 
