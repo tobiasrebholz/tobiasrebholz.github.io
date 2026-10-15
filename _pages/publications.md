@@ -78,7 +78,7 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        12. Höhs, J. M., <b>Rebholz, T. R.</b>, & Hütter, M. (in press). A memory perspective on advice taking: Source memory for advisor expertise moderates advice integration. <i>Journal of Experimental Psychology: Applied</i>.
+        12. Höhs, J. M., <b>Rebholz, T. R.</b>, & Hütter, M. (in press). A memory perspective on advice taking: Source memory for advisor expertise moderates advice integration. <i>Journal of Experimental Psychology: Applied</i>. <a href='https://doi.org/10.1037/xap0000596' target="_blank">https://doi.org/10.1037/xap0000596</a>
       </p>
     </div>
   </div>
