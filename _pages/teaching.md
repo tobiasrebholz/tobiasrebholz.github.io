@@ -108,7 +108,7 @@ author_profile: true
         </p>
       </div>
       <div class="course-image">
-        <img src="/images/awards-best_teaching-winner-UT2026.png" alt="2026 University of Tübingen Teaching Award">
+        <a href="https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/psychologie/aktuelles/newsfullview-aktuell/?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=137496&cHash=2c449d90bf0972e5f96c044bde0b26ae" target="_blank"><img src="/images/awards-best_teaching-winner-UT2026.png" alt="2026 University of Tübingen Teaching Award"></a>
       </div>
     </div>
   </li>
