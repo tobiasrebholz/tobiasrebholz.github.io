@@ -283,8 +283,11 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        2. <b>Rebholz, T. R.</b>, Mayer, M., Reis, M., Scholten, F., & Schreiner, M. (in press). Allgemein-gebräuchliche Chatbots nach EU-KI-Verordnung: Verhaltenswissenschaftliche Analyse der Grenzen von Transparenzpflichten aus Betroffenenperspektive [General-use chatbots under the EU AI Act: A behavioral scientific analysis of the limits of transparency from the perspective of affected users]. In T. Jansen, M. Langer, N. Rummel, N. Krämer, U. Mertens, S. Berretta, J. Laux & A. Kluge (Eds.), <i>Policy Ultra-Briefs aus der Psychologie und angrenzenden Verhaltenswissenschaften, Reihe 3 – Künstliche Intelligenz [Policy Ultra-Briefs from Psychology and Related Behavioral Sciences, Series 3 – Artificial Intelligence]</i>.
+        2. <b>Rebholz, T. R.</b>, Mayer, M., Reis, M., Scholten, F., & Schreiner, M. (2026). Allgemein-gebräuchliche Chatbots nach EU-KI-Verordnung: Verhaltenswissenschaftliche Analyse der Grenzen von Transparenzpflichten aus Betroffenenperspektive [General-use chatbots under the EU AI Act: A behavioral scientific analysis of the limits of transparency from the perspective of affected users]. In T. Jansen, M. Langer, N. Rummel, N. Krämer, U. Mertens, S. Berretta, J. Laux & A. Kluge (Eds.), <i>Policy Ultra-Briefs aus der Psychologie und angrenzenden Verhaltenswissenschaften, Reihe 3 – Künstliche Intelligenz [Policy Ultra-Briefs from Psychology and Related Behavioral Sciences, Series 3 – Artificial Intelligence]</i>. <a href='https://doi.org/10.23668/psycharchives.22681' target="_blank">https://doi.org/10.23668/psycharchives.22681</a>
       </p>
+      <div class="pub-links">
+        <a href="https://pada.psycharchives.org/bitstream/37a7f302-9d64-4805-b3f6-08ef3e7d11d8"><button>Download essay as pdf</button></a>
+      </div>
     </div>
   </div>
 
