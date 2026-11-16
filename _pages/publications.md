@@ -78,15 +78,29 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        12. Höhs, J. M., <b>Rebholz, T. R.</b>, & Hütter, M. (in press). A memory perspective on advice taking: Source memory for advisor expertise moderates advice integration. <i>Journal of Experimental Psychology: Applied</i>. <a href='https://doi.org/10.1037/xap0000596' target="_blank">https://doi.org/10.1037/xap0000596</a>
+        14. Höhs, J. M., <b>Rebholz, T. R.</b>, & Hütter, M. (in press). A memory perspective on advice taking: Source memory for advisor expertise moderates advice integration. <i>Journal of Experimental Psychology: Applied</i>. <a href='https://doi.org/10.1037/xap0000596' target="_blank">https://doi.org/10.1037/xap0000596</a>
       </p>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-cite">
+      <p>
+        13. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (in press). Individualized algorithmic advice as a strategic signal on competitive markets. <i>Journal of Economic Psychology</i> [arXiv preprint: <a href='https://doi.org/10.48550/arXiv.2511.09454' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a>]
+      </p>
+      <div class="pub-links">
+        <a href="https://arxiv.org/pdf/2511.09454"><button>Download award-winning preprint as pdf</button></a>
+      </div>
+    </div>
+    <div class="pub-image">
+      <img src="/images/awards-best_paper-winner-AOM2026-MOC-ORIGINAL.png" alt="Best MOC Paper Award Winner (AOM 2026)">
     </div>
   </div>
 
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        11. Höhs, J. M., <b>Rebholz, T. R.</b>, & Hütter, M. (2026). Integration of argument-based advice: An evaluative ecological perspective on the structural differences between positive and negative advice. <i>Judgment and Decision Making</i>, <i>21</i>, e18. <a href='https://doi.org/10.1017/jdm.2026.10045' target="_blank">https://doi.org/10.1017/jdm.2026.10045</a>
+        12. Höhs, J. M., <b>Rebholz, T. R.</b>, & Hütter, M. (2026). Integration of argument-based advice: An evaluative ecological perspective on the structural differences between positive and negative advice. <i>Judgment and Decision Making</i>, <i>21</i>, e18. <a href='https://doi.org/10.1017/jdm.2026.10045' target="_blank">https://doi.org/10.1017/jdm.2026.10045</a>
       </p>
       <div class="pub-links">
         <a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/77FD504C40F4B2371A65A418AC932B14/S193029752610045Xa.pdf/integration-of-argument-based-advice-an-evaluative-ecological-perspective-on-the-structural-differences-between-positive-and-negative-advice.pdf"><button>Download article as pdf</button></a>
@@ -97,7 +111,7 @@ author_profile: true
   <div class="pub-item">
     <div class="pub-cite">
       <p>
-        10. <b>Rebholz, T. R.</b> (2026). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Collabra: Psychology</i>, <i>12</i>(1). <a href='https://doi.org/10.1525/collabra.155671' target="_blank">https://doi.org/10.1525/collabra.155671</a>
+        11. <b>Rebholz, T. R.</b> (2026). Lay beliefs about artificial versus artificial intelligence: Rethinking theory of machine. <i>Collabra: Psychology</i>, <i>12</i>(1). <a href='https://doi.org/10.1525/collabra.155671' target="_blank">https://doi.org/10.1525/collabra.155671</a>
       </p>
       <div class="pub-links">
         <a href="https://online.ucpress.edu/collabra/article-pdf/12/1/155671/927168/collabra_2026_12_1_155671.pdf"><button>Download article as pdf</button></a>
@@ -105,6 +119,20 @@ author_profile: true
     </div>
     <div class="pub-image">
       <a href='https://psych.peercommunityin.org/articles/rec?id=10' target="_blank"><img src="/images/recommendation-PCI_Psych.png" alt="PCI Psychology recommendation"></a>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-cite">
+      <p>
+        10. <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2026). Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants [Stage 1 Registered Report]. <i>Peer Community In: Registered Reports</i>. <a href='https://doi.org/10.31234/osf.io/5u8br_v4' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v4</a>
+      </p>
+      <div class="pub-links">
+        <a href="https://osf.io/5u8br_v4/download/"><button>Download peer-reviewed preprint as pdf</button></a>
+      </div>
+    </div>
+    <div class="pub-image">
+      <a href='https://rr.peercommunityin.org/articles/rec?id=1100' target="_blank"><img src="/images/recommendation-PCI_RR.png" alt="PCI Registered Reports recommendation"></a>
     </div>
   </div>
 
@@ -214,30 +242,6 @@ author_profile: true
 
 
 
-## Peer-Reviewed Stage 1 Registered Reports
-
-<a href="https://rr.peercommunityin.org/public/user_public_page?userId=11127" target="_blank"><button>PCI Registered Reports profile</button></a> &emsp; <a href="https://psych.peercommunityin.org/public/user_public_page?userId=152" target="_blank"><button>PCI Psychology profile</button></a>
-
-<div class="pub-list">
-
-  <div class="pub-item">
-    <div class="pub-cite">
-      <p>
-        1. <b>Rebholz, T. R.</b>, Groß, J., & Röseler, L. (2026). Assimilation to external cues: Comparing the reliability of anchoring effects, advice taking, and hindsight bias and exploring its determinants [Stage 1 Registered Report]. <i>Peer Community In: Registered Reports</i>. <a href='https://doi.org/10.31234/osf.io/5u8br_v4' target="_blank">https://doi.org/10.31234/osf.io/5u8br_v4</a>
-      </p>
-      <div class="pub-links">
-        <a href="https://osf.io/5u8br_v4/download/"><button>Download peer-reviewed preprint as pdf</button></a>
-      </div>
-    </div>
-    <div class="pub-image">
-      <a href='https://rr.peercommunityin.org/articles/rec?id=1100' target="_blank"><img src="/images/recommendation-PCI_RR.png" alt="PCI Registered Reports recommendation"></a>
-    </div>
-  </div>
-
-</div>
-
-
-
 ## Peer-Reviewed Software & Data
 
 <a href="https://github.com/TobiasRebholz" target="_blank"><button>GitHub profile</button></a> &emsp; <a href="https://osf.io/user/fd8gn?tab=2" target="_blank"><button>OSF profile</button></a>
@@ -315,25 +319,11 @@ author_profile: true
   <div class="pub-item no-image">
     <div class="pub-cite">
       <p>
-        6. Préau, C., Burke, M., Müller, T., <b>Rebholz, T. R.</b>, & Papenmeier, F. (2026). <i>Student adoption of an AI tutor for statistical programming: A longitudinal study</i>. PsyArXiv. <a href='https://doi.org/10.31234/osf.io/umspj_v1' target="_blank">https://doi.org/10.31234/osf.io/umspj_v1</a>
+        5. Préau, C., Burke, M., Müller, T., <b>Rebholz, T. R.</b>, & Papenmeier, F. (2026). <i>Student adoption of an AI tutor for statistical programming: A longitudinal study</i>. PsyArXiv. <a href='https://doi.org/10.31234/osf.io/umspj_v1' target="_blank">https://doi.org/10.31234/osf.io/umspj_v1</a>
       </p>
       <div class="pub-links">
         <a href="https://osf.io/umspj/download/"><button>Download preprint as pdf</button></a>
       </div>
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <div class="pub-cite">
-      <p>
-        5. <b>Rebholz, T. R.</b>, Uphoff, M., Bernges, C. H. R., & Scholten, F. (2026). <i>Individualized algorithmic advice as a strategic signal on competitive markets.</i> arXiv. <a href='https://doi.org/10.48550/arXiv.2511.09454' target="_blank">https://doi.org/10.48550/arXiv.2511.09454</a>
-      </p>
-      <div class="pub-links">
-        <a href="https://arxiv.org/pdf/2511.09454"><button>Download award-winning preprint as pdf</button></a>
-      </div>
-    </div>
-    <div class="pub-image">
-      <img src="/images/awards-best_paper-winner-AOM2026-MOC-ORIGINAL.png" alt="Best MOC Paper Award Winner (AOM 2026)">
     </div>
   </div>
 
